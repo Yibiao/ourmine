@@ -8,6 +8,7 @@
   * Add copyright  *(done)*
   * Add "show" and "reload" commands *(done)*
   * Add stuff to project home , including install instructions *(done)*
+  * Add ourmine v2 paper to repository  *(done)*
   * Fix canopy
   * Implement GenIc
   * Implement Inter/Intra cluster similarity
