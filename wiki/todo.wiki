@@ -10,5 +10,6 @@
   * Add stuff to project home , including install instructions *(done)*
   * Fix canopy
   * Implement GenIc
+  * Implement Inter/Intra cluster similarity
   * Set up experiment using newly coded Kmeans, GenIc and Canopy
   * Implement Wilcoxon
