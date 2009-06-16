@@ -1,0 +1,14 @@
+#summary Things to do for Ourmine
+
+=Ourmine things to do=
+
+==6/16/09==
+  * Fix logArff bug  *(done)*
+  * Make install script to $HOME/opt/ourmine  *(done)*
+  * Add copyright  *(done)*
+  * Add "show" and "reload" commands *(done)*
+  * Add stuff to project home , including install instructions *(done)*
+  * Fix canopy
+  * Implement GenIc
+  * Set up experiment using newly coded Kmeans, GenIc and Canopy
+  * Implement Wilcoxon
