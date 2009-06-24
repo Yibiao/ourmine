@@ -14,3 +14,10 @@
   * Implement Inter/Intra cluster similarity
   * Set up experiment using newly coded Kmeans, GenIc and Canopy
   * Implement Wilcoxon
+
+==6/23/09==
+  * Fix canopy 
+  * Implement GenIc *(done)*
+  * Implement Inter/Intra cluster similarity *(done)*
+  * Set up experiment using newly coded Kmeans, GenIc and Canopy 
+  * Implement Wilcoxon
