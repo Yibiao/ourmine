@@ -20,3 +20,5 @@
   * Optimize KNN filter <still need to code ideas>
   * Implement help and build help functions *(done)*
   * Implement {{{fun}}} function *(done)*
+  * Add beginning help file 
+  * Add to / clean up demos
