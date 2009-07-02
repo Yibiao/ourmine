@@ -17,5 +17,5 @@
   * Fix permissions bug in install script *(done)*
   * Implement kmeans++ as an optional argument in java clustering *(done?)*
     # Haven't finished awk version... will it be slow? (k*n comparisons)
-  * Optimize KNN filter [still need to code, but have a plan]
+  * Optimize KNN filter <still need to code ideas>
   * Implement help and build help functions *(done)*
