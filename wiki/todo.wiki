@@ -22,3 +22,6 @@
   * Implement {{{fun}}} function *(done)*
   * Add beginning help file 
   * Add to / clean up demos
+  * Stratified cross val
+  * install script crap
+  * fix kmeans++??
