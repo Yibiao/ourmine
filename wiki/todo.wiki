@@ -3,10 +3,10 @@
 =Ourmine things to do=
 
 ==7/1/09==
-  * Fix logArff bug  *(done)*
-  * Make install script to $HOME/opt/ourmine  *(done)*
+  * Fix {{{logArff}}} bug  *(done)*
+  * Make install script to {{{$HOME/opt/ourmine}}}  *(done)*
   * Add copyright  *(done)*
-  * Add "show" and "reload" commands *(done)*
+  * Add {{{show}}} and {{{reload}}} commands *(done)*
   * Add stuff to project home , including install instructions *(done)*
   * Add ourmine v2 paper to repository  *(done)*
   * Fix canopy *(done)*
