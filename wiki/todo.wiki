@@ -19,3 +19,4 @@
     # Haven't finished awk version... will it be slow? (k*n comparisons)
   * Optimize KNN filter <still need to code ideas>
   * Implement help and build help functions *(done)*
+  * Implement {{{fun}} function, showing all bash functions available *(done)*
