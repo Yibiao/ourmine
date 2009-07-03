@@ -23,5 +23,5 @@
   * Add beginning help file 
   * Add to / clean up demos
   * Stratified cross val
-  * install script crap
+  * install script across all systems *(done)*
   * fix kmeans++??
