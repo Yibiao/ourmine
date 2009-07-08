@@ -1,1 +1,3 @@
-#summary This contains tutorials for most Ourmine features.
+#sidebar TOCArticles
+
+== This is a test ==
