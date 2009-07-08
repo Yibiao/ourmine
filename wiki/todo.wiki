@@ -17,11 +17,11 @@
   * Fix permissions bug in install script *(done)*
   * Implement kmeans++ as an optional argument in java clustering *(done?)*
     # Haven't finished awk version... will it be slow? (k*n comparisons)
-  * Optimize KNN filter <still need to code ideas>
+  * Optimize KNN filter *(done)*
+    # Run optimized filter against naive on numeric ourmine data *(done)*
   * Implement help and build help functions *(done)*
   * Implement {{{fun}}} function *(done)*
-  * Add beginning help file 
   * Add to / clean up demos
   * Stratified cross val
-  * install script across all systems *(done)*
+  * Fix install script for all systems *(done)*
   * fix kmeans++??
