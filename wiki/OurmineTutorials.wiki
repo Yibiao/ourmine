@@ -1,3 +1,1 @@
 #sidebar TOCArticles
-
-== This is a test ==
