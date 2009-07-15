@@ -26,3 +26,5 @@
   * Fix install script for all systems *(done)*
   * fix kmeans++ *(done)*
   * Run all custom clusterers with ourmine datasets testing sim and purity measures *(ongoing)*
+  * Can now run all demos at once *(done)*
+  * Implement cluster purity measures *(done)*
