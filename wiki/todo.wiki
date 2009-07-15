@@ -2,7 +2,7 @@
 
 =Ourmine things to do=
 
-==7/1/09==
+==7/15/09==
   * Fix {{{logArff}}} bug  *(done)*
   * Make install script to {{{$HOME/opt/ourmine}}}  *(done)*
   * Add copyright  *(done)*
@@ -24,4 +24,5 @@
   * Add to / clean up demos
   * Stratified cross val
   * Fix install script for all systems *(done)*
-  * fix kmeans++??
+  * fix kmeans++ *(done)*
+  * Run all custom clusterers with ourmine datasets testing sim and purity measures *(ongoing)*
