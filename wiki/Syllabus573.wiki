@@ -1,0 +1,84 @@
+#summary cs473/572 syllabus for Advanced Data Mining (WVU, Fall 2009)
+#labels teaching,timm
+
+||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] ||
+
+----
+
+
+= Syllabus =
+
+ * Course name: cs573 Advanced Data Mining
+ * Effective data of syllabus: Aug 15, 2009
+ * Site: LCSEE, WVU
+ * Course number: 87640 (cs573)
+ * Course format: 3 credit hours 3 hr lectures, assesssment by project only
+ * Textbook (optional):
+   * [http://www.amazon.com/exec/obidos/ASIN/0133708756  ANSI Common LISP] : Paul Graham
+ * Schedule : Tuesday/Thursday 	1700-1815 and, occastionally, 1815 to 1845 (cs573)
+ * Location : ESB 207
+ * Instructor name: Tim Menzies Ph.D. ESB 841a, tim@menzies.us. Note: use the above email for private messages. For most of the class traffic, use the class discussion list (http://groups.google.com/group/agent-oriented)
+ * Consultation times : Tuesday/Thursday 4:00 to 5:00pm, 841a or by appointment 
+
+= Objectives =
+
+Upon successful completion of this course, students should have:
+
+ * Ability to program elementary data mining methods.
+ * Ability to run data mining evaluation experiments.
+ * Ability to convert domain data into valid inputs for a learner;
+ * Ability to describe the differences between widely-used data miners;
+ * Ability to describe the practical issues associated with data mining for real-world applications;
+ * Students will have gained experience in working within a team of their peers.
+ * Ability to program data mining algorithms
+ * Students will increase their proficiency in oral and written communications.
+
+= Links =
+ * http://www.arc.wvu.edu/courses/ : WVU course pages
+ * http://groups.google.com/group/agent-oriented : Class discussion list
+
+All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
+Official annountements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
+
+= Expected Workload =
+
+You MUST be prepared to dedicate AT LEAST 5-8 working hours a week
+to this class (excluding the time spent in the classroom). A minimal
+prerequisite for the successful completion is good understanding
+of programming concepts. You will be given class accounts on CS
+Department machines and all assignments will have to be submitted
+and run there. Please note that a Linux server can be accessed from
+any PC using a secure connection service, such as SSH (explanation
+to be provided in class).  Communcation
+
+
+= Assessment =
+
+September 30, 2009: Smalltalk 101 exercise
+
+October 14, 2009: Theory of Agents: essay (8 pages, 2 column)
+
+Late marks: 2 marks off per day (weekend = 1 day)
+
+See also, below, for how to lose marks due to poor attendance.
+
+For special consideration on the above, either:
+
+    * See me at start of semester advising planned absences or
+    * provide a doctor's certificate indicating reasons for non-performance. 
+
+= Attendance policy =
+
+Students are expected to regularly attend all lectures. After three noted absences, students will lose two points per absence. After three noted lated arrivals, students will lose one point per late arrival. If you have another commitment that requires you to be consistently late, you should drop the class.
+
+= Social Justice Statement =
+
+West Virginia University is committted to social justice. I concur with that commitment and expect to foster a nurturing learning environment based upon open communication, mutual respect, and non-discrimination. Our University does not discriminate on the basis of race, sex, age, disability, veteran status, religion, sexual orientation, color or national origin. Any suggestions as to how to further such a positive and open environment in this class will be appreciated and given serious consideration.
+
+If you are a person with a disability and anticipate needing any type of accommodation in order to participate in this class, please advise me and make appropriate arrangements with Disability Services (293-6700).
+
+= Statement of Academic Integrity =
+
+The integrity of the classes offered by any academic institution solidifies the foundation of its mission and cannot be sacrificed to expediency, ignorance, or blatant fraud. Therefore, I will enforce rigorous standards of academic integrity in all aspects and assignments of this course.
+
+For the detailed policy of West Virginia University regarding the definitions of acts considered to fall under academic dishonesty and possible ensuing sanctions, please see the Student Conduct Code at http://www.arc.wvu.edu/admissions/integrity.html. Should you have any questions about possibly improper research citations or references, or any other activity that may be interpreted as an attempt at academic dishonesty, please see me before the assignment is due to discuss the matter
