@@ -52,6 +52,8 @@ to be provided in class).
 
 = Assessment =
 
+Note that all reports will be submitted using subversion to the [http://code.google.com/p/ourmine/   ourmine] website and written in  [http://code.google.com/p/support/wiki/WikiSyntax Wiki/Markdown] syntax.
+
  * Monday week 4 : Assignnment #1: Intro exercises 10%
  * Monday week 7 : Assignment #2: intermediary data mining techniques, 10%
  * Thursday week 7 : Mid term 15%
