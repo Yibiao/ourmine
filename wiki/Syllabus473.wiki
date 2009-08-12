@@ -3,6 +3,7 @@
 
 ||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] ||
 
+The official version of this syllabus is [http://code.google.com/p/ourmine/source/browse/wiki/Syllabus473.wiki?r=134 version 134].
 ----
 
 = Syllabus =
@@ -16,7 +17,7 @@
    * [http://www.amazon.com/exec/obidos/ASIN/0133708756  ANSI Common LISP] : Paul Graham
  * Schedule : Tuesday/Thursday 	1700-1815 
  * Location : ESB 207
- * Instructor name: Tim Menzies Ph.D. ESB 841a, tim@menzies.us. Note: use the above email for private messages. For most of the class traffic, use the class discussion list (http://groups.google.com/group/agent-oriented)
+ * Instructor name: Tim Menzies Ph.D. ESB 841a, tim@menzies.us. Note: use the above email for private messages. For most of the class traffic, use the class discussion list (http://groups.google.com/group/csx73) and its email csx73@googlegroups.com.
  * Consultation times : Tuesday/Thursday 4:00 to 5:00pm, 841a or by appointment 
 
 = Objectives =
@@ -33,7 +34,7 @@ Upon successful completion of this course, students should have:
 = Links =
  * http://www.arc.wvu.edu/courses/ : WVU course pages
  * http://www.arc.wvu.edu/examschedule_fall.html : exam schedule page
- * http://groups.google.com/group/agent-oriented : Class discussion list
+ * csx73@googlegroups.com : class email list
 
 All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
 Official annountements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
