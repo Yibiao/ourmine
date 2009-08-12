@@ -48,7 +48,7 @@ of programming concepts. You will be given class accounts on CS
 Department machines and all assignments will have to be submitted
 and run there. Please note that a Linux server can be accessed from
 any PC using a secure connection service, such as SSH (explanation
-to be provided in class).  Communcation
+to be provided in class).  
 
 
 = Assessment =
@@ -64,9 +64,7 @@ See also, below, for how to lose marks due to poor attendance.
 For special consideration on the above, either:
 
     * See me at start of semester advising planned absences or
-    * provide a doctor's certificate indicating reasons for non-performance. 
-
-A-Z
+    * provide a doctor's certificate indicating that the student was unable to work on their studies for a relevant period (that note need name the illness, but should list its duration)
 
 = Attendance policy =
 
