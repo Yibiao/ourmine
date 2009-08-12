@@ -59,7 +59,13 @@ Note: all reports to be in PDF using ACM conference "tighter" format http://www.
  * Monday week 7 : Report on preliminary results (4 pages, 2 column), 20%
  * Monday week 10 : Progress report (8 pages, 2 column) 30%
  * Tuesday week 13 : Presentation of results (20 slides, using Google Docs), 10%
- * Monday week 15 : Final report (8 pages, 2 column), 30%
+ * Monday week 15 : Final report (8 pages, 2 column), 25%
+
+Note that students must complete one other 5% tasks, at any time, during the term. But this tasks must be completed by 
+the middle of Novemeber:
+
+ * Task 1: data mining studies, 5%
+
 
 For special consideration on the above, either:
 
