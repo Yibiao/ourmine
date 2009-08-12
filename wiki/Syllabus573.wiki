@@ -1,4 +1,4 @@
-#summary cs473/572 syllabus for Advanced Data Mining (WVU, Fall 2009)
+#summary cs573 syllabus for Advanced Data Mining (WVU, Fall 2009)
 #labels teaching,timm
 
 ||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] ||
