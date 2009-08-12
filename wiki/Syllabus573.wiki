@@ -49,18 +49,17 @@ of programming concepts. You will be given class accounts on CS
 Department machines and all assignments will have to be submitted
 and run there. Please note that a Linux server can be accessed from
 any PC using a secure connection service, such as SSH (explanation
-to be provided in class).  Communcation
-
+to be provided in class).  
 
 = Assessment =
 
-September 30, 2009: Smalltalk 101 exercise
+Note: all reports to be in PDF using ACM conference "tighter" format http://www.acm.org/sigs/publications/proceedings-templates
 
-October 14, 2009: Theory of Agents: essay (8 pages, 2 column)
-
-Late marks: 2 marks off per day (weekend = 1 day)
-
-See also, below, for how to lose marks due to poor attendance.
+ * Monday week 4 : Intro exercises (10%)
+ * Monday week 7 : Report on preliminary results (4 pages, 2 column), 20%
+ * Monday week 10 : Progress report (8 pages, 2 column) 30%
+ * Tuesday week 13 : Presentation of results (20 slides, using Google Docs), 10%
+ * Monday week 15 : Final report (8 pages, 2 column), 30%
 
 For special consideration on the above, either:
 
