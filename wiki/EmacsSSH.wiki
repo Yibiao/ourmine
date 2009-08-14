@@ -1,5 +1,5 @@
 #summary Using EMACS via SSH
-#labels emacs,ide,ssh
+#labels emacs,ide,ssh,lisp
 
 = Background =
 
