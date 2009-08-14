@@ -5,8 +5,8 @@
 
 I'm often asked how to a LISP IDE for home use. There are two answers, one quite long and one quite short:
 
- # The short answer: download and install x-windows, EMACS, SLIME, sbcl, and 100 add-ons to the above.
- # SSH in to any decent UNIX installation and use the tools already installed there.
+ # The long answer: download and install x-windows, EMACS, SLIME, sbcl, and 100 add-ons to the above.
+ # The short answer SSH in to any decent UNIX installation and use the tools already installed there.
 
 Note that option 1 takes days and option 2 is instant. 
 
