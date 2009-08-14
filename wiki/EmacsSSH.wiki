@@ -13,7 +13,7 @@ Note that option 1 takes days and option 2 is instant.
 
 SSH-based EMACS can be quite powerful. For example, here is the EMACS screen I am working on right now, via SSH:
 
-http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs600.png
+[http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs.png http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs600.png]
 
 (If you want a bigger view, [http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs.png click here].) 
 
