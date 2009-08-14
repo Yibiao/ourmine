@@ -30,7 +30,12 @@ Yes, you have to use ascii-based tools but get over it. Command keys are your fr
 
 = Details =
 
-There is a simple trick that allows you to use the mouse to jump around your emacs screen. Just add this to your `$HOME/.emacs` file:
+If you want to avoid must frustration, use a decent terminal emulator. The default Terminal,Cmd for OS/X,Windows are not recommended.
+ * For Windows, use [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html Putty].
+ * For OS/X, [http://iterm.sourceforge.net/download.shtml iTerm] is pretty good.
+ * For LINUX, dear old XTERM is pretty darn good.
+
+No matter which emulator you use, you still want to be able to mouse around the screen. Just add this to your `$HOME/.emacs` file:
 {{{
 (xterm-mouse-mode t)
 }}}
