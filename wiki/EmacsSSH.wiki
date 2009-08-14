@@ -4,7 +4,6 @@
 = Background =
 
 I'm often asked how to a LISP IDE for home use. There are two answers, one quite long and one quite short:
-
  # The long answer: download and install x-windows, EMACS, SLIME, sbcl, and 100 add-ons to the above.
  # The short answer SSH in to any decent UNIX installation and use the tools already installed there.
 
@@ -24,9 +23,9 @@ Note that:
  * And on the right I can edit LISP source code.
 
 And, this being EMACS, I can divide the screen up any way I want to edit multiple files:
-
- * Cntl-X-2 splits the current buffer horizontally.
  * Cntl-X-3 splits the current buffer vertically.
+ * Cntl-X-2 splits the current buffer horizontally.
+ * Cntl-X-0 kills the current buffer 
 
 Yes, you have to use ascii-based tools but get over it. Command keys are your friends. I've written and debugged very large and complex hunks of code this way- it really works quite well.
 
