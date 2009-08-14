@@ -47,9 +47,9 @@ The default color scheme for EMACS can really suck over SSH. So download and ins
 There is a little dotconfig file editing required to get the LISP working- see
 [http://code.google.com/p/ourmine/wiki/EmacsLISP EMACS LISP configuration].
 
-= If You Still Want Local Installs =
+= If you still want a local installation.... =
 
-Look for the packages SLIME, SBCL, Emacs in
+.... look for the packages SLIME, SBCL, Emacs in
 
  * CYGWIN for Windows
  * DarwinPorts or Fink for OS/X
