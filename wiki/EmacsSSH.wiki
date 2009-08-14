@@ -1,7 +1,7 @@
 #summary Using EMACS via SSH
 #labels emacs,ide,ssh
 
-= Using EMACS via SSH =
+= Background =
 
 I'm often asked how to a LISP IDE for home use. There are two answers, one quite long and one quite short:
 
