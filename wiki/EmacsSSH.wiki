@@ -1,13 +1,38 @@
-#summary One-sentence summary of this page.
+#summary Using emacs via ssh
+#labels emacs,ide,ssh
 
 = Introduction =
 
-Add your content here.
+I'm often asked how to a LISP IDE for home use. There are two answers, one quite long and one quite short:
 
+ # The short answer: download and install x-windows, EMACS, SLIME, sbcl, and 100 add-ons to the above.
+ # SSH in to any decent *NIX installation and use the tools already installed there.
+
+Note that option 1 takes days and option 2 is instant. 
+
+SSH-based EMACS can be quite powerful. For example, here is the EMACS screen I am working on right now, via SSH:
+
+http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs600.png
+
+(If you want a bigger view, [http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs.png click here].) 
+
+Note that:
+ *  Top-left I am running a UNIX shell (called using `M-x eshell`) so I can create directories, hunt for source code using `grep -R`, etc etc.
+ *  Bottom-left I am running a LISP shell so I can interactively run my code.
+ * And on the right I can edit LISP source code.
+
+And, this being EMACS, I can divide the screen up any way I want to edit multiple files:
+
+ * Cntl-X-2 splits the current buffer horizontally.
+ * Cntl-X-3 splits the current buffer vertically.
+
+Yes, you have to use ascii-based tools but get over it. Command keys are your friends. I've written and debugged very large and complex hunks of code this way- it really works quite well.
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+And just to add icing to the cake, there is a neat trick that allows you to use the mouse to jump around your emacs screen. Just add this to your `$HOME/.emacs` file:
+{{{
+(xterm-mouse-mode t)
+}}}
+
+So, before you spend days downloading and configuring your local machine, see if you can jump onto to a pre-configured on.
