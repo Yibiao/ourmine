@@ -10,6 +10,8 @@ I'm often asked how to a LISP IDE for home use. There are two answers, one quite
 
 Note that option 1 takes days and option 2 is instant. 
 
+= Using SSH =
+
 SSH-based EMACS can be quite powerful. For example, here is the EMACS screen I am working on right now, via SSH:
 
 http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs600.png
