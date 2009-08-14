@@ -43,7 +43,7 @@ No matter which emulator you use, you still want to be able to mouse around the 
 
 The default color scheme for EMACS can really suck over SSH. So download and install the [http://code.google.com/p/ourmine/wiki/EMACScolorThemes EMACS color themes]. 
 
-And speaking of color, sometimes SLIME likes highlighting changed text. Which is all well and good but in SSH mode, this often means the underlying text is obscured. This behavior can be disabled, but I've only found out how to do it on a buffer-by-buffer basis. The following code, added to _$HOME/.emacs_, lets you type _M-x nope_ to disable that highlighting:
+And speaking of color, sometimes SLIME likes highlighting changed text. Which is all well and good but in SSH mode, this often means the underlying text is obscured. To disable this annyong behavior, add the  following code  to _$HOME/.emacs_. Then,  _M-x nope_  disables that highlighting.
 
 {{{
 (defun nope ()
