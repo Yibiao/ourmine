@@ -6,7 +6,7 @@
 I'm often asked how to a LISP IDE for home use. There are two answers, one quite long and one quite short:
 
  # The short answer: download and install x-windows, EMACS, SLIME, sbcl, and 100 add-ons to the above.
- # SSH in to any decent *NIX installation and use the tools already installed there.
+ # SSH in to any decent (LI|U)NIX installation and use the tools already installed there.
 
 Note that option 1 takes days and option 2 is instant. 
 
@@ -30,9 +30,17 @@ Yes, you have to use ascii-based tools but get over it. Command keys are your fr
 
 = Details =
 
-And just to add icing to the cake, there is a neat trick that allows you to use the mouse to jump around your emacs screen. Just add this to your `$HOME/.emacs` file:
+There is a simple trick that allows you to use the mouse to jump around your emacs screen. Just add this to your `$HOME/.emacs` file:
 {{{
 (xterm-mouse-mode t)
 }}}
 
-So, before you spend days downloading and configuring your local machine, see if you can jump onto to a pre-configured on.
+The default color scheme for EMACS can really suck over SSH. So download and install the [http://code.google.com/p/ourmine/wiki/EmacsColorThemes EMACS color themes].
+
+There is a little dotconfig file editing required to get the LISP working- see
+[http://code.google.com/p/ourmine/wiki/EmacsLISP EMACS LISP configuration].
+
+
+= Summary =
+
+Before you spend days downloading and configuring your local machine, see if you can jump onto to a pre-configured one. It could save you a lot of time!
