@@ -42,10 +42,10 @@ No matter which emulator you use, you still want to be able to mouse around the 
 (xterm-mouse-mode t)
 }}}
 
-The default color scheme for EMACS can really suck over SSH. So download and install the EMACScolorThemes .
+The default color scheme for EMACS can really suck over SSH. So download and install the [http://code.google.com/p/ourmine/wiki/EMACScolorThemes EMACS color themes].
 
 There is a little dotconfig file editing required to get the LISP working- see
-EmacsLISPconfig .
+[http://code.google.com/p/ourmine/wiki/EmacsLISPconfig Emacs LISP config].
 
 = If you still want a local installation.... =
 
