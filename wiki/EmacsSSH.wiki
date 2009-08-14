@@ -19,7 +19,7 @@ http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs600.png
 (If you want a bigger view, [http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs.png click here].) 
 
 Note that:
- *  Top-left I am running a UNIX shell (called using `M-x eshell`) so I can create directories, hunt for source code using `grep -R`, etc etc.
+ *  Top-left I am running a UNIX shell (called using _M-x eshell_) so I can create directories, hunt for source code using _grep -R_, etc etc.
  *  Bottom-left I am running a LISP shell so I can interactively run my code.
  * And on the right I can edit LISP source code.
 
@@ -46,6 +46,15 @@ The default color scheme for EMACS can really suck over SSH. So download and ins
 
 There is a little dotconfig file editing required to get the LISP working- see
 [http://code.google.com/p/ourmine/wiki/EmacsLISP EMACS LISP configuration].
+
+= If You Still Want Local Installs =
+
+Look for the packages SLIME, SBCL, Emacs in
+
+ * CYGWIN for Windows
+ * DarwinPorts or Fink for OS/X
+
+And may the force be with you.
 
 
 = Summary =
