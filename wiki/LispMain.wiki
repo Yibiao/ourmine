@@ -8,4 +8,65 @@ This page contains some notes on the LISP code used in Ourmine.
 
 Data mining  is not about the algorithms, it is about the data. We use tools like Ourmine to build microscopes to look at data. Therefore, I'm a great fan of scripting, of getting a prototype up and running as fast as possible in order to gather insights from the domain.
 
+But which scripting language? Well, for tiny tasks, Awk and Bash are great. But for more complex tasks requiring intricate data structures, you need something with a little more structure. 
+
+So let's play the language selection game. Let's pick a language that runs fast, has mature tools, lots of tutorial material out there on the web, good textbooks, and has a fighting chance of being around in time to come (think of your favorite language: Ruby, Lua, Clojure, etc.  How old is it? When did it get popular? When will it fade away?).
+
+That last one is an interesting criteria. I choose LISP since it has longevity and staying power. 
+
+== Getting Started ==
+
+This instructions are for a standard UNIX/LINUX machine.
+
+== Getting Started with EMACS ==
+
+Here are my EMACS configuration tricks.
+
+{{{
+(transient-mark-mode t)          ; show incremental search results
+(setq scroll-step 1)             ; don't scroll in large jumps
+(setq require-final-newline   t) ; every file has at least one new line
+(setq inhibit-startup-message t) ; disable start up screen
+(global-font-lock-mode t 1)      ; enable syntax highlighting
+(line-number-mode t)             ; show line numbers and time in status line
+
+; show line numbers and time in status line
+(setq display-time-24hr-format nil)
+(display-time)
+(xterm-mouse-mode t)             ; make mouse work in text windows     
+}}}
+
+That last line (about _xterm-mouse-mode_) is really handy. It means you can SSH into a UNIX installation and still use a mouse as you click around EMACS. Very nice.
+
+== Getting Started with SLIME ==
+
+S.L.I.M.E. = superior LISP interaction mode for emacs.
+
+It is my recommendation for writing, running, and debugging LISP code (though some people prefer the CUSP SBCL plugin for ECLIPSE).
+
+If you want to get started on slime on a CSEE Linux machine, edit your $HOME/.emacs and add these lines.
+
+{{{
+(setq inferior-lisp-program "/usr/bin/sbcl --noinform")
+(add-to-list 'load-path "/usr/share/common-lisp/source/slime/") ;; this path is WVU CSEE specific
+(setq slime-path "/usr/share/common-lisp/source/slime/")        ;; this path is WVU CSEE specific
+(require 'slime)
+(slime-autodoc-mode)
+(slime-setup)
+(add-hook 'lisp-mode-hook (lambda ()  
+	(slime-mode t) 
+	(local-set-key "\r" 'newline-and-indent)
+	(setq lisp-indent-function 'common-lisp-indent-function)
+	(setq indent-tabs-mode nil)))
+
+(global-set-key "\C-cs" 'slime-selector)
+(defun nope ()
+  (interactive)
+  (slime-highlight-edits-mode)) 
+}}}
+
+(That last function is a bit of kludge. SLIME can highlights the text you are changing, while you are changing it. This means, on some terminals, you can read what is under the highlight. If that happens to you, then _M-x nope_ will kill that highlight.
+
+Then fire up emacs and type M-x slime. After that, any .lisp file you edit will have some cool LISP bindings (see http://common-lisp.net/project/slime/doc/html/Compilation.html#Compilation). 
+
  
