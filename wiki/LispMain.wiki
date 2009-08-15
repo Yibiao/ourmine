@@ -1,0 +1,11 @@
+#summary Notes on the LISP code in OURMINE
+
+= Introduction =
+
+This page contains some notes on the LISP code used in Ourmine.
+
+= Why LISP? =
+
+Data mining  is not about the algorithms, it is about the data. We use tools like Ourmine to build microscopes to look at data. Therefore, I'm a great fan of scripting, of getting a prototype up and running as fast as possible in order to gather insights from the domain.
+
+ 
