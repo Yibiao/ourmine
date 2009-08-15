@@ -83,4 +83,9 @@ That last function is a bit of kludge. SLIME can highlights the text you are cha
 
 Then fire up emacs and type M-x slime. After that, any .lisp file you edit will have some cool LISP bindings (see http://common-lisp.net/project/slime/doc/html/Compilation.html#Compilation). 
 
+If all the above EMACS/SLIME configuration works then you should be able to generate a screen that looks like this:
+
+
+[http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs.png http://ourmine.googlecode.com/svn/trunk/share/img/screen-emacs600.png]
+
  
