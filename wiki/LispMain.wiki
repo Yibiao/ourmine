@@ -20,21 +20,28 @@ That last one is an interesting criteria. I choose LISP since it has longevity a
 
 This instructions are for a standard UNIX/LINUX machine.
 
+== Before you Start ==
+
+ * Create a directory $HOME/opt/backup
+ * If you want some of the config files described below, then do the [http://code.google.com/p/ourmine/ Ourmine install] before everything else.
+
 == Getting Started with EMACS ==
 
-Here are my EMACS configuration tricks.
+It is recommended that you add the following lines to your $HOME/.emacs. 
 
 {{{
+ (setq backup-directory-alist nil) 
+  (setq backup-directory-alist ; get the backups out of the working directories 
+      (cons (cons "\\.*$" (expand-file-name "~/opt/tmp/backup")) backup-directory-alist)) 
 (transient-mark-mode t)          ; show incremental search results
 (setq scroll-step 1)             ; don't scroll in large jumps
 (setq require-final-newline   t) ; every file has at least one new line
 (setq inhibit-startup-message t) ; disable start up screen
 (global-font-lock-mode t 1)      ; enable syntax highlighting
 (line-number-mode t)             ; show line numbers and time in status line
-
-; show line numbers and time in status line
-(setq display-time-24hr-format nil)
+(setq display-time-24hr-format nil) ; show line numbers and time in status line
 (display-time)
+
 (xterm-mouse-mode t)             ; make mouse work in text windows     
 }}}
 
@@ -62,12 +69,20 @@ If you want to get started on slime on a CSEE Linux machine, edit your $HOME/.em
 	(setq indent-tabs-mode nil)))
 
 (global-set-key "\C-cs" 'slime-selector)
+; color themes
+  (setq load-path 
+      (cons "~/opt/ourmine/our/etc/color-theme/color-themes/6.6.0" load-path))
+  (require 'color-theme) 
+  
+(color-theme-initialize) 
+(color-theme-hober)    ; default color theme . For others, see M-x color-theme-selector
+
 (defun nope ()
   (interactive)
   (slime-highlight-edits-mode)) 
 }}}
 
-(That last function is a bit of kludge. SLIME can highlights the text you are changing, while you are changing it. This means, on some terminals, you can read what is under the highlight. If that happens to you, then _M-x nope_ will kill that highlight.
+That last function is a bit of kludge. SLIME can highlights the text you are changing, while you are changing it. This means, on some terminals, you can read what is under the highlight. If that happens to you, then _M-x nope_ will kill that highlight.
 
 Then fire up emacs and type M-x slime. After that, any .lisp file you edit will have some cool LISP bindings (see http://common-lisp.net/project/slime/doc/html/Compilation.html#Compilation). 
 
