@@ -4,6 +4,8 @@
 
 This page contains some notes on the LISP code used in Ourmine.
 
+|| <wiki:toc max_depth="4" /> || http://ourmine.googlecode.com/svn/trunk/share/img/lisplogo_alien_256.png'||
+
 = Why LISP? =
 
 Data mining  is not about the algorithms, it is about the data. We use tools like Ourmine to build microscopes to look at data. Therefore, I'm a great fan of scripting, of getting a prototype up and running as fast as possible in order to gather insights from the domain.
@@ -14,7 +16,7 @@ So let's play the language selection game. Let's pick a language that runs fast,
 
 That last one is an interesting criteria. I choose LISP since it has longevity and staying power. 
 
-== Getting Started ==
+= Getting Started =
 
 This instructions are for a standard UNIX/LINUX machine.
 
