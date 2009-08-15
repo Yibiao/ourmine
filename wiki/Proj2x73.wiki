@@ -1,0 +1,6 @@
+#summary Project 2, cs474/cs573 data mining
+#labels csx73,teaching
+
+= Data Mining Literature Review =
+
+XXX
