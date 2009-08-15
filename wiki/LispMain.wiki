@@ -1,8 +1,5 @@
 #summary Notes on the LISP code in OURMINE
-
-= Introduction =
-
-This page contains some notes on the LISP code used in Ourmine.
+ 
 
 || <wiki:toc max_depth="4" /> || http://ourmine.googlecode.com/svn/trunk/share/img/lisplogo_alien_256.png'||
 
