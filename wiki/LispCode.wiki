@@ -433,12 +433,12 @@ CL-USER> (make-data1)
    :INDEXED NIL)
 }}}
 The above code shows
- a <em>table</em> (on the outside) containing five _header_s (four _discrete_ and one _numeric_) describing each column
+a <em>table</em> (on the outside) containing five _header_s (four _discrete_ and one _numeric_) describing each column
 of data. 
- For the _discrete_ headers, the  set of unique symbols seen in each column is stored in the _:uniques_ slot.
- The _:class_ slot shows that the class variable is the fifth header (which, you will note, has _:classp T_).   
- An _all_ slot stores all the examples.
-  Each example as some _:features_ and a  _:class_ value.
+For the _discrete_ headers, the  set of unique symbols seen in each column is stored in the _:uniques_ slot.
+The _:class_ slot shows that the class variable is the fifth header (which, you will note, has _:classp T_).   
+An _all_ slot stores all the examples.
+Each example as some _:features_ and a  _:class_ value.
  
 The _:indexed_ slot of the above is NIL. A _table_ becomes indexed when the _xindex_ function does some detailed counts of the symbols
 seen in all the rows. We will return to this function is just a moment.
