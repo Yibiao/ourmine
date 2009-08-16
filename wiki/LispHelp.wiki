@@ -7,7 +7,7 @@
 
 = Books =
 
- * Paul Graham's ANSI Common LISP: http://www.paulgraham.com/acl.html
+ * Paul Graham's  [http://www.paulgraham.com/acl.html ANSI Common LISP]
 
 = Links  =
 
@@ -21,4 +21,4 @@
 
 = On-line references =
 
- * The CommonLisp [http://www.lispworks.com/documentation/HyperSpec/Front/X_Master.htm HyperSpec]
+ * The Common Lisp [http://www.lispworks.com/documentation/HyperSpec/Front/X_Master.htm HyperSpec]
