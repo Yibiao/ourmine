@@ -434,7 +434,7 @@ CL-USER> (make-data1)
 }}}
 The above code shows:
 
- *  A _table_ (on the outside) containing five _header_s (four _discrete_ and one _numeric_) describing each column
+ *  A <em>table</em> (on the outside) containing five _header_s (four _discrete_ and one _numeric_) describing each column
 of data. 
  * For the _discrete_ headers, the  set of unique symbols seen in each column is stored in the _:uniques_ slot.
  * The _:class_ slot shows that the class variable is the fifth header (which, you will note, has _:classp T_).   
