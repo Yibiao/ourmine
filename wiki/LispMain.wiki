@@ -55,9 +55,10 @@ This code structure will be discussed below.
 
 == Getting Started ==
 
-At the UNIX shell prompt:
+First, you have to [http://ourmine.googlecode.com install Ourmine]. Then
+at the UNIX shell prompt:
 {{{
-cd our/lib/lisp
+cd ~/opt/our/lib/lisp
 emacs
 }}}
 Once inside EMACS:
@@ -110,7 +111,7 @@ runs over the table and:
 
 === Other Structures ==
 
- * [#normal normal] : used to store normal distributions.
+ * [#normal normal] : used to store normal distributions and report mean, standard deviation, pdf, etc.
  * [#caution caution] : collects any error strings on flaws found  when reading the data. If two many flaws are found, _caution_ calls an abort.
 
 = The Details = 
@@ -125,9 +126,16 @@ This file defines a list of files to load; e.g.
                           etc
                        ))
 }}}
-This file supports loading the code in two modes:
+Once this file is loaded, then the whole system can be reloaded with _make_. 
+{{{
+(defun make (&optional (verbose nil))
+  (if verbose
+      (make1 *files*)
+      (handler-bind 
+          ((style-warning #'muffle-warning))
+        (make1 *files*))))
+}}}
+Note that _make_ works in two modes. The call _(make)_ loads the system, suppressing SBCL's verbose load information. To see that output, use _(make t)_.
 
- # verbose mode
-
- LISP utils
- * *our/lib/lisp/tricks*
+== tests ==
+The unit test system used by Ourmine is based on code  from Peter Seibel. The 
