@@ -13,7 +13,9 @@ So let's play the language selection game. Let's pick a language that runs fast,
 
 That last one is an interesting criteria. I choose LISP since it has longevity and staying power. 
 
-= Development Structure =
+= The Big Picture =
+
+== Development Structure ==
 
 This code was written using a test-driven approach. i.e. whenever I built a new functionality, I wrote a _deftest_ command to test that code. 
 
@@ -37,7 +39,7 @@ A site effect of using _deftest_ is that a global _*tests*_ stores all the known
 
 It is impossible to understate the value of this kind of development. Everyday, I stop with a broken test. Every new day, I start with the test broken from last night. And if ever I make any changes to anything, I can check if that breaks anything else.
 
-= Code structure =
+== Code structure ==
 
 At the time of this writing, the main LISP directory is our/lib/lisp. This is broken down into:
 
@@ -49,9 +51,35 @@ At the time of this writing, the main LISP directory is our/lib/lisp. This is br
 
 This code structure will be discussed below.
 
-= Data Structure =
+== Data Structure ==
 
-The command
+=== Main Data Structures ===
+
+At the time of this writing, the main data structures are:
+
+ * [#eg eg] : an example data row
+ * [#header header] : meta-information about each column of data (e.g. the maximum and minimum number seen in an row in a particular column). Headers have two sub-classes
+   * *Discrete* : for non-numeric data
+   * *Numeric*  : for numeric data
+ * [#table table] : combines examples with column headers. 
+ 
+{{{
+(data
+   :name   'weather
+   :columns '(forecast temp humidty $wind play)
+   :egs    '((sunny    hot  high   20  no) 
+             (sunny    hot  high   10 no) 
+             (sunny    hot  high   30  no) 
+             (sunny    hot  high   20.2  yes)
+             (sunny    hot  high   20.1  yes)
+             (sunny    hot  high   20.7  yes)
+             ))
+}}}
+
+=== Other Structures ==
+
+ * [#caution caution]
+ * [#normal normal]
 
 = The Details = 
 
