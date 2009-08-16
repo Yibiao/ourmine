@@ -1,0 +1,129 @@
+#summary Notes on Ourmine's LISP code.
+
+
+<wiki:toc max_depth="4" />  
+
+= The Big Picture =
+
+== Development Structure ==
+
+This code was written using a test-driven approach. i.e. whenever I built a new functionality, I wrote a _deftest_ command to test that code. 
+
+{{{
+(deftest test-normal ()
+  (let ((n (make-normal)))
+    (dolist (x '( 1 2 3 4 5 4 3 2 1))
+      (add n x))
+    (check 
+      (samep n "#S(NORMAL :MAX 5 :MIN 1 :N 9 :SUM 25 :SUMSQ 85)")
+      (equal (mean n) (/ 25 9))
+      (equal (stdev n) 1.3944334)
+      (samep (format nil "~10,9f" (pdf n 5))  ".080357649")
+    )))
+}}}
+This code throws a set of numbers at a normal distribution. If it is working correctly, then that distribution should generate certain values.
+
+The above shows four _check_s. The _samep_ functions checks if two forms evaluate to the same print string, ignoring minor details like white space and capitalization.
+
+A site effect of using _deftest_ is that a global _*tests*_ stores all the known tests and the _(tests)_ function can report what percent of the test suite is working right now.
+
+It is impossible to understate the value of this kind of development. Everyday, I stop with a broken test. Every new day, I start with the test broken from last night. And if ever I make any changes to anything, I can check if that breaks anything else.
+
+== Code structure ==
+
+At the time of this writing, the main LISP directory is our/lib/lisp. This is broken down into:
+
+ * [#miner.lisp our/lib/lisp/miner.lisp] : main load file. Loads the rest of the code.
+ * [#tests our/lib/lisp/tests] : code for test suite
+ * [#tricks our/lib/lisp/tricks] : general LISP utils
+ * [#table our/lib/lisp/table] : code for storing data 
+ * [#learn our/lib/lisp/learn] : code for learners 
+
+This code structure will be discussed below.
+
+== Getting Started ==
+
+First, you have to [http://ourmine.googlecode.com install Ourmine]. Then
+at the UNIX shell prompt:
+{{{
+cd ~/opt/our/lib/lisp
+emacs
+}}}
+Once inside EMACS:
+{{{
+M-x slime
+(load "miner.lisp")
+}}}
+
+== Data Structure ==
+
+=== Main Data Structures ===
+
+At the time of this writing, the main data structures are:
+
+ * [#eg eg] : an example data row
+ * [#header header] : meta-information about each column of data (e.g. the maximum and minimum number seen in an row in a particular column). Headers have two sub-classes
+   * *Discrete* : for non-numeric data
+   * *Numeric*  : for numeric data
+ * [#table table] : combines examples with column headers. 
+ 
+
+For example, this code returns a _table_ with five _eg_s, one for each row of the data:
+
+{{{
+(defun did-you-play-golf ()
+  (data
+    :name   'weather
+    :columns '( forecast temp humidity $wind play)
+    :egs     '((sunny    hot  high     20    no) 
+               (sunny    hot  high     10    no) 
+               (sunny    hot  high     30    no) 
+               (sunny    hot  high     20.2  yes)
+               (sunny    hot  high     20.1  yes)
+               (sunny    hot  high     20.7  yes)
+              )
+)
+}}}
+
+The table has four _discrete_ columns (forecast, temp, humidity, play) and one numeric one (denoted with a "$" sign: see"$wind"). The last column is the _class_ (so it  columns satisfies _header-classp_).  
+
+Optionally, the columns can store frequency counts of the data seen in each column.  The code
+
+{{{
+(xindex (did-you-play-golf))
+}}}
+runs over the table and:
+ * For _discrete_ columns, it stores the count of symbols seen in each class.
+ * _Numeric_ columns are summarized,  assuming  [http://en.wikipedia.org/wiki/Normal_distribution normal distributions].
+
+
+=== Other Structures ==
+
+ * [#normal normal] : used to store normal distributions and report mean, standard deviation, pdf, etc.
+ * [#caution caution] : collects any error strings on flaws found  when reading the data. If two many flaws are found, _caution_ calls an abort.
+
+= The Details = 
+
+== miner.lisp ==
+
+This file defines a list of files to load; e.g. 
+{{{
+(defparamater *files* '(
+                          "tests/deftest"
+                          "tricks/lispfuns"
+                          etc
+                       ))
+}}}
+Once this file is loaded, then the whole system can be reloaded with _make_. 
+{{{
+(defun make (&optional (verbose nil))
+  (if verbose
+      (make1 *files*)
+      (handler-bind 
+          ((style-warning #'muffle-warning))
+        (make1 *files*))))
+}}}
+Note that _make_ works in two modes. The call _(make)_ loads the system, suppressing SBCL's verbose load information. To see that output, use _(make t)_.
+
+== tests ==
+The unit test system used by Ourmine is based on code  from Peter Seibel. The 
