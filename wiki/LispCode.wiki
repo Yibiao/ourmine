@@ -296,11 +296,12 @@ CL-USER> (watch (test-normal))
 }}}
 CL-USER> 
 </dd>
-
+</dl>
 === number.lisp ===
 <dl>
 <dt>_(square  number) _ </dt><dd>
 Returns the square of a number. 
+</dd>
 </dl>
 === random.lisp ===
 It is hard to reproduce the behavior of  code that uses random number generation. This is a problem when tracking down bugs or when
@@ -311,10 +312,8 @@ _X<sub>0</sub>_.
 <dl>
 <dt>_(my-random number)_</dt>
 <dd>Returns a pseudo-random float in the range zero to _number_.</dd>
-</dd>
 <dt>_(my-random-int number)_</dt>
 <dd>Returns a pseudo-random integer in the range zero to _number_.</dd>
-</dd>
 <dt>_(reset-seed)_</dt>
 <dd>Resets the random number seed to an initial value.</dd>
 </dl>
@@ -359,6 +358,7 @@ the mean, standard deviation, etc.
   (sumSq 0))
 }}}
 <dl>
+<dt>_(add  normal number)_</dt> <dd>Add a _number_ to a _normal_ distribution</dd>
 <dt>_(mean normal)_</dt> <dd>Returns the mean of a  _normal_ distribution</dd>
 <dt>_(stdev normal)_</dt> <dd>Returns the standard deviation of a _normal_ distribution.</dd>
 <dt>_(pdf normal number)_</dt> <dd>Returns the probability of _number_ belonging to a normal distributon.</dd>
