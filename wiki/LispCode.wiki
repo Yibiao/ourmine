@@ -173,14 +173,14 @@ Tricks stores some common COMMON LISP tricks- should be useful for more than jus
 === string.lisp ===
 <dl>
 <dt>_(lt x y)_ </dt><dd>
-Returns true if _x_ is lexogragphically less than _y_.
+Returns true if _x_ is   less than _y_.
 </dd>
 <dt>_(nchars integer &optional char)_ </dt><dd>
-Returns a string of length _integer_ containin _char_ (default: space).
+Returns a string of length _integer_ containing _char_ (default: space).
 </dd>
 <dt>_(samep x y)_ </dt><dd>
-Returns true if a  string comparison of the results _x_ and ithe results of _y_
-are lexiographically different. Ignores differences like whitespace of upper or lower case.
+Returns true if a  string comparison of the results _x_ and the results of _y_
+are lexicographically different. Ignores differences like whitespace of upper or lower case.
 </dd>
 <dt>_(whiteout seq)_ </dt><dd>
 Returns a sequence without any whitespace (space, tab, newline, page breaks).
@@ -193,7 +193,7 @@ Returns a sequence without any whitespace (space, tab, newline, page breaks).
 Redefines the printed representation of a hashtable. 
 </dd>
 <dt>_(showh hash &key indent stream before after if-empty show lt)_ </dt><dd>
-Pretty prints the contents of _hash_ on _stream_ (defaults to standard ouput). 
+Pretty prints the contents of _hash_ on _stream_ (defaults to standard output). 
 The strings _before_ and _after_ are printed before and after showing the hash table contents.
 Buckets are printed in a sort order controlled by _lt_. If a bucket is empty, _if-empty_ is shown.
 
@@ -218,7 +218,7 @@ In this example, fruit is stored in a hash table at a key equal to the string le
 
 <dl>
 <dt>_(o &rest items)_</dt><dd>
-For each item in _items_, print its symbolic name, then its current value. This is useful for adding print statemetns into LISP code.
+For each item in _items_, print its symbolic name, then its current value. This is useful for adding print statements into LISP code.
 
 Example usage:
 {{{
@@ -322,7 +322,7 @@ _X<sub>0</sub>_.
 A _caution_ is a place to store a list of errors seen thus far. Such _caution_ structures have finite patience (initially set to 20)
 and after enough errors, _caution_ calls a halt to the processing.
 {{{
-defstruct (caution (:print-function caution-print))
+(defstruct (caution (:print-function caution-print))
   all (patience 20) killed)
 
 (defun caution-print (c s depth)
@@ -361,8 +361,268 @@ the mean, standard deviation, etc.
 <dt>_(add  normal number)_</dt> <dd>Add a _number_ to a _normal_ distribution</dd>
 <dt>_(mean normal)_</dt> <dd>Returns the mean of a  _normal_ distribution</dd>
 <dt>_(stdev normal)_</dt> <dd>Returns the standard deviation of a _normal_ distribution.</dd>
-<dt>_(pdf normal number)_</dt> <dd>Returns the probability of _number_ belonging to a normal distributon.</dd>
+<dt>_(pdf normal number)_</dt> <dd>Returns the probability of _number_ belonging to a normal distribution.</dd>
 </dl>
 == table ==
 
+When we read data, we have to store it somewhere. Ourmine uses _table_:
+{{{
+(defstruct table 
+  name                      ; symbol          : name of the table
+  columns                   ; list of header  : one header to describe each column of data
+  class                     ; number          : which column is the header column?
+  (cautions (make-caution)) ; list of caution : any load-time errors?
+  all                       ; list of eg      : all the examples
+  indexed
+)
+}}}
+
+The _data_ function  builds _table_s. The list of words given to _:columns: defines each column of the data. For example,
+in the following, _windy_ is marked with a "$" so we expect all numbers in that column.
+{{{
+(defun make-data1 ()
+  (data
+   :name   'weather
+   :columns '(forecast temp humidity $windy play)
+   :egs    '((sunny    hot  high   FALSE no) 
+             (sunny    hot  high   TRUE  yes)
+             (sunny    hot  high         yes)
+             )))
+}}}
+Note that the data has some errors. Row 3 does not have enough columns and all the values in the _windy_ column are non-numeric.
+The following call shows that Ourmine has seen those errors:
+{{{
+CL-USER> (make-data1)
+
+ #S(TABLE
+   :NAME WEATHER
+   :COLUMNS (#S(DISCRETE
+                :NAME FORECAST
+                :CLASSP NIL
+                :IGNOREP NIL
+                :F {hash of 0 items}
+                :UNIQUES (SUNNY))
+             #S(DISCRETE
+                :NAME TEMP
+                :CLASSP NIL
+                :IGNOREP NIL
+                :F {hash of 0 items}
+                :UNIQUES (HOT))
+             #S(DISCRETE
+                :NAME HUMIDITY
+                :CLASSP NIL
+                :IGNOREP NIL
+                :F {hash of 0 items}
+                :UNIQUES (HIGH))
+             #S(NUMERIC
+                :NAME $WINDY
+                :CLASSP NIL
+                :IGNOREP NIL
+                :F {hash of 0 items})
+             #S(DISCRETE
+                :NAME PLAY
+                :CLASSP T
+                :IGNOREP NIL
+                :F {hash of 0 items}
+                :UNIQUES (YES NO)))
+   :CLASS 4
+   :CAUTIONS #(CAUTION :ALL ((SUNNY HOT HIGH YES) wrong size
+                             TRUE is not a number
+                             FALSE is not a number) :PATIENCE 17)
+   :ALL (#S(EG :FEATURES (SUNNY HOT HIGH TRUE YES) :CLASS YES)
+         #S(EG :FEATURES (SUNNY HOT HIGH FALSE NO) :CLASS NO))
+   :INDEXED NIL)
+}}}
+The above code shows:
+
+ *  A _table_ (on the outside) containing five _header_s (four _discrete_ and one _numeric_) describing each column
+of data. 
+ * For the _discrete_ headers, the  set of unique symbols seen in each column is stored in the _:uniques_ slot.
+ * The _:class_ slot shows that the class variable is the fifth header (which, you will note, has _:classp T_).   
+ * An _all_ slot storing the examples.
+ * Each example as some _:features_ and a  _:class_ value.
+ 
+The _:indexed_ slot of the above is NIL. A _table_ becomes indexed when the _xindex_ function does some detailed counts of the symbols
+seen in all the rows. We will return to this function is just a moment.
+Note that the  file _our/lib/lisp/data.lisp_ defines a hook that triggers whenever we see discrete or number data. This hook has two methods (one for each column type). For example, this hook notes when we have missed a numeric column.
+{{{
+(defmethod datum ((column discrete) datum oops)
+  "things to do when reading a discrete datum"
+  (declare (ignore  oops))
+  (unless (member datum (discrete-uniques column))
+    (push datum (discrete-uniques column)))
+  t)
+
+(defmethod datum ((column numeric) datum oops)
+  "things to do when reading a numeric datum"
+  (ok (numberp datum) oops"~a is not a number" datum)
+  t)
+}}}
+
+Returning now to _xindex_, this function stores the information about the distribution in the _f_ slot of _header_ structures.
+{{{
+; e.g.
+(xindex (make-data1))
+}}}
+Just as with _datum_, there is a hook defined for handling numeric data differently to numeric data (see _our/lib/lisp/xindex.lisp_):
+{{{
+(defmethod xindex-datum ((column discrete) class  datum)
+  (let* ((key `(,class ,datum))
+         (hash (header-f column)))
+    (incf (gethash key hash 0))))
+
+(defmethod xindex-datum ((column numeric) class  datum)
+  (let* ((key      class)
+         (hash     (header-f column))
+         (counter  (gethash  key hash (make-normal))))
+    (setf (gethash key hash) counter) ; make sure the hash has the counter
+    (add counter datum)))
+}}}
+(The _add_ method comes from the _normal_ code, described above.)
+
+Note that distribution information is hashed on class name; i.e. separate distribution information is kept for each class.
+For example, the following data has very different mean values  for _$humidity_. Also, _forecast=overcast_ appears four times
+in class=YES but never in class=NO.
+{{{
+(defun make-some-weather-data ()
+  (data
+   :name   'weather
+   :columns '(forecast $temp $humidity wind play)
+   :egs    '((sunny 85 85 FALSE no)
+             (sunny 80 90 TRUE no)
+             (overcast 83 86 FALSE yes)
+             (rainy 70 96 FALSE yes)
+             (rainy 68 80 FALSE yes)
+             (rainy 65 70 TRUE no)
+             (overcast 64 65 TRUE yes)
+             (sunny 72 95 FALSE no)
+             (sunny 69 70 FALSE yes)
+             (rainy 75 80 FALSE yes)
+             (sunny 75 70 TRUE yes)
+             (overcast 72 90 TRUE yes)
+             (overcast 81 75 FALSE yes)
+             (rainy 71 91 TRUE no))))
+
+(deftest test-some-counts ()
+  (check
+    (samep 
+     (with-output-to-string (str)
+       (dolist (col (table-columns (xindex (make-some-weather-data))))
+         (format str "~%~a~%" (header-name col))
+         (showh (header-f col) :indent 10 :stream str)))
+    "
+    FORECAST
+          (NO RAINY) = 2
+          (NO SUNNY) = 3
+          (YES OVERCAST) = 4
+          (YES RAINY) = 3
+          (YES SUNNY) = 2
+
+    $TEMP
+          NO = #S(NORMAL :MAX 85 :MIN 65 :N 5 :SUM 373 :SUMSQ 28075)
+          YES = #S(NORMAL :MAX 83 :MIN 64 :N 9 :SUM 657 :SUMSQ 48265)
+
+    $HUMIDITY
+          NO = #S(NORMAL :MAX 95 :MIN 70 :N 5 :SUM 431 :SUMSQ 37531)
+          YES = #S(NORMAL :MAX 96 :MIN 65 :N 9 :SUM 712 :SUMSQ 57162)
+
+    WIND
+          (NO FALSE) = 2
+          (NO TRUE) = 3
+          (YES FALSE) = 6
+          (YES TRUE) = 3
+
+    PLAY
+          (NO NO) = 5
+          (YES YES) = 9")))
+
+}}}
+For convenience, the _f_ function allows simple access to the frequency counts. It can be called with 1,2,of 4 arguments depending on
+how much information you want.
+<dl>
+<dt>_(f tbl)_ </dt>
+<dd>Return the number of examples in a table </dd>
+<dt>_(f tbl class)_ </dt>
+<dd>Return the number of examples of one _class_ in a table </dd>
+<dt>_(f tbl class index range)_ </dt>
+<dd>Return the number of examples in one _class_ of  a table in _index_-th column with a certain _range_. </dd>
+</dl>
 == learn == 
+With all the above machinery, we can now define a learner. A _Naive Bayes_ classifier takes a training and a test data set.
+_Xindex_ is called on the training set, and the resulting statistics are applied on the test set.
+
+Ignoring for the moment the details of its internal working, here's how we'd call it:
+{{{
+(defun nb-simple (train test &key (stream t))
+  (xindex train)
+  (dolist (one (table-all test))
+    (let* ((got     (bayes-classify (eg-features one) train))
+           (want    (eg-class one))
+           (success (eql got want)))
+      (format stream "~a ~a ~a~%"  got want 
+              (if (eql got want) "   " "<--")))))
+
+ (defun make-weather (eg)
+    (data :name    'weather 
+          :columns '(forecast temp humidity windy play)  
+          :egs     '((sunny    hot  high   TRUE  skip)
+                	 (rainy    cool normal TRUE  skip)    
+                	 (sunny    mild high   FALSE skip)
+                	 (overcast cool normal TRUE  play)
+                	 (overcast hot  high   FALSE play)
+                	 (rainy    mild high   FALSE play)
+                	 (rainy    cool normal FALSE play)
+                	 (sunny    cool normal FALSE play)
+                	 (rainy    mild normal FALSE play)
+                	 (rainy    mild high   TRUE  skip)
+                	 (sunny    mild normal TRUE  play)
+                	 (overcast mild high   TRUE  play)
+                	 (overcast hot  normal FALSE play))))
+}}}
+This produces:
+{{{
+CL-USER> (nb-simple  (make-weather egs) (make-weather egs))
+PLAY PLAY    
+PLAY PLAY    
+PLAY PLAY    
+SKIP SKIP    
+PLAY PLAY    
+PLAY PLAY    
+PLAY PLAY    
+PLAY PLAY    
+PLAY PLAY    
+PLAY PLAY    
+PLAY SKIP <--
+PLAY SKIP <--
+SKIP SKIP    
+SKIP SKIP    
+}}}
+Note that our learner nearly works in every case (see the arrowed lines).
+
+But how does the learner work? Well, that requires a little data mining theory. To conclude this
+walk through, all we need to 
+say at this time is that the classifier returns what it thinks is the mostly likely classification of one example.
+{{{
+(defun bayes-classify (one tbl &optional (m 2) (k 1))
+  (let* ((classes        (klasses tbl))        ; all the class names
+         (nclasses       (nklasses tbl))       ; number of classes 
+         (n              (f        tbl))       ; number of instances
+         (classi         (table-class tbl))    ; what column has the class
+         (like           most-negative-fixnum)
+         (classification (first classes)))     ; default classification
+    (dolist (class classes)                      ; for all classes do...
+      (let* ((prior (/ (+ (f tbl class) k)       ; again, we call "f".
+                       (+  n (* k nclasses))))
+             (tmp   (log prior)))
+        (doitems (feature i one)
+          (unless (= classi i)
+            (unless (unknownp feature)
+              (let ((delta (/ (+ (f tbl class i feature) ; note the call to "f"
+                                 (* m prior))
+                              (+ (f tbl class) m))))     ; note the call to "f"
+                (incf tmp (log delta))))))
+        (when (> tmp like)                      ; if you've got something better
+          (setf like tmp
+                classification class))))        ; switch to it
+    classification))                          ; return the classification
+}}}
