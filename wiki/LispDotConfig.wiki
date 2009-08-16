@@ -51,7 +51,7 @@ If you want to get started on slime on a CSEE Linux machine, edit your $HOME/.em
 (global-set-key "\C-cs" 'slime-selector)
 ; color themes
   (setq load-path 
-      (cons "~/opt/ourmine/our/etc/color-theme/color-themes/6.6.0" load-path))
+      (cons "~/opt/ourmine/our/etc/color-themes/6.6.0" load-path))
   (require 'color-theme) 
   
 (color-theme-initialize) 
