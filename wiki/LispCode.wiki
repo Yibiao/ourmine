@@ -225,9 +225,10 @@ Example usage:
 (deftest test-o ()
   (let* ((a 'tim)
          (b 'tom)
-         (result  (with-output-to-string (s)
-                    (let ((*standard-output* s))
-                      (o a b)))))
+         (result  
+			(with-output-to-string (s)
+               (let ((*standard-output* s))
+                  (o a b)))))
     (check
       (samep result
              "[A]=[TIM] [B]=[TOM]"))))
@@ -261,14 +262,107 @@ For example:
 )))
 }}}
 </dd>
+</dl>
+
+==== Macros for Profiling ====
+
+<dl>
+<dt>_(watch  code) _ </dt><dd>
+Run _code_ and report what functions took the most time. Useful for optimization.
+For example, the following _watch_ result shows that 12/28=43% of the runtimes of _test-normal_
+is spend computing the mean value. Clearly, incrementally updating the mean would be a candidate optimization for this code.
+{{{
+CL-USER> (watch (test-normal))
+      seconds  |   consed  | calls |  sec/call  |  name  
+    -------------------------------------------------------
+         0.016 |   613,888 |     9 |   0.001777 | ADD
+         0.012 |   540,256 |     2 |   0.005999 | MEAN
+         0.000 |         0 |   114 |   0.000000 | WHITESPACEP
+         0.000 |    16,296 |     2 |   0.000000 | SAMEP
+         0.000 |         0 |     1 |   0.000000 | NORMAL-SUM
+         0.000 |         0 |     4 |   0.000000 | REPORT-RESULT
+         0.000 |    24,536 |     1 |   0.000000 | PDF
+         0.000 |         0 |     1 |   0.000000 | NORMAL-N
+         0.000 |         0 |    13 |   0.000000 | SQUARE
+         0.000 |         0 |     1 |   0.000000 | NORMAL-MIN
+         0.000 |         0 |     1 |   0.000000 | MAKE-NORMAL
+         0.000 |     8,192 |     4 |   0.000000 | WHITEOUT
+         0.000 |    16,360 |     2 |   0.000000 | STDEV
+         0.000 |         0 |     1 |   0.000000 | NORMAL-SUMSQ
+         0.000 |     8,184 |     1 |   0.000000 | TEST-NORMAL
+         0.000 |         0 |     1 |   0.000000 | NORMAL-MAX
+    -------------------------------------------------------
+         0.028 | 1,227,712 |   158 |            | Total
+}}}
+CL-USER> 
+</dd>
 
 === number.lisp ===
+<dl>
+<dt>_(square  number) _ </dt><dd>
+Returns the square of a number. 
+</dl>
 === random.lisp ===
-
+It is hard to reproduce the behavior of  code that uses random number generation. This is a problem when tracking down bugs or when
+writing _deftest_s. Hence, sometimes it is useful to use random number generators that build random number _X<sub>i</sub>_ from 
+random number _X<sub>i-1</sub>_. 
+The behavior of code that uses these _pseudo-random generators_ can then be reproduced by setting the "seed"; i.e.
+_X<sub>0</sub>_.
+<dl>
+<dt>_(my-random number)_</dt>
+<dd>Returns a pseudo-random float in the range zero to _number_.</dd>
+</dd>
+<dt>_(my-random-int number)_</dt>
+<dd>Returns a pseudo-random integer in the range zero to _number_.</dd>
+</dd>
+<dt>_(reset-seed)_</dt>
+<dd>Resets the random number seed to an initial value.</dd>
+</dl>
 === Abstract Data Types ===
 ==== caution.lisp ====
-==== normal.lisp ====
+A _caution_ is a place to store a list of errors seen thus far. Such _caution_ structures have finite patience (initially set to 20)
+and after enough errors, _caution_ calls a halt to the processing.
+{{{
+defstruct (caution (:print-function caution-print))
+  all (patience 20) killed)
 
+(defun caution-print (c s depth)
+  (declare (ignore depth))
+  (format s "#(CAUTION :ALL ~a :PATIENCE ~a)"
+          (caution-all c)
+          (caution-patience c)))
+}}}
+_Caution_ is useful when parsing user inputted data structures. If the user makes too many errors, _caution_ calls a halt.
+<dl>
+<dt>(ok test cautions format-str &rest args)
+</dt>
+<dd>If _test_ return nil, then a new string (generated using _(format nil format-str ,@args)_ is added to cautions.
+
+For example, here's the Ourmine function called when it expects to see a number. If _datum_ is not a number then a new error
+message is added to the _cautions_ structure: 
+{{{
+(defmethod datum ((column numeric) datum cautions)
+  (ok (numberp datum) cautions "~a is not a number" datum)
+  t)
+}}}
+</dd>
+</dl>
+==== normal.lisp ====
+A _normal_ is a place to summarize a stream of numeric Gaussian data.  Each addition to a _normal_ updates the information  required to determine 
+the mean, standard deviation, etc.
+{{{
+(defstruct normal 
+  (max (* -1 most-positive-single-float))
+  (min       most-positive-single-float)
+  (n 0)
+  (sum 0)
+  (sumSq 0))
+}}}
+<dl>
+<dt>_(mean normal)_</dt> <dd>Returns the mean of a  _normal_ distribution</dd>
+<dt>_(stdev normal)_</dt> <dd>Returns the standard deviation of a _normal_ distribution.</dd>
+<dt>_(pdf normal number)_</dt> <dd>Returns the probability of _number_ belonging to a normal distributon.</dd>
+</dl>
 == table ==
 
 == learn == 
