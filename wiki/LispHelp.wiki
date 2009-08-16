@@ -11,6 +11,7 @@
 
 = Links  =
 
+ * The Common Lisp [http://cl-cookbook.sourceforge.net/index.html cookbook] (lots of great coding samples)
  * Lots of good material from [http://www.apl.jhu.edu/~hall/lisp.html Marty Hall]
 
 = Tutorials =
