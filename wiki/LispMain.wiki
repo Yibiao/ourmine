@@ -16,6 +16,7 @@ After filtering languages on the above criteria, I came down to LISP.   It runs 
 
 = LISP Links =
 
- * LispCode : Notes on Ourmine's LISP code
+ * LispDotConfig : Getting started (config files)
  * LispQuotes : quotes on LISP
  * LispHelp : Books, on-line tutorials, etc 
+ * LispCode : Notes on Ourmine's LISP code
