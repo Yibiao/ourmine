@@ -126,13 +126,37 @@ Once this file is loaded, then the whole system can be reloaded with _make_.
 Note that _make_ works in two modes. The call _(make)_ loads the system, suppressing SBCL's verbose load information. To see that output, use _(make t)_.
 
 == tests ==
-The unit test system used by Ourmine is based on code  from Peter Seibel. The 
+The unit test system used by Ourmine is based on code  from Peter Seibel. The _deftest_ macro calls a _defun_ and, as a side-effect, registers
+the test in a list *tests*. One test can can contain _check_s and, if passed, each _check_ adds one to a counter of passed tests:
+{{{
+(deftest test-normal ()
+  (let ((n (make-normal)))
+    (dolist (x '( 1 2 3 4 5 4 3 2 1))
+      (add n x))
+    (check 
+      (samep n "#S(NORMAL :MAX 5 :MIN 1 :N 9 :SUM 25 :SUMSQ 85)")
+      (equal (mean n) (/ 25 9))
+      (equal (stdev n) 1.3944334)
+      (samep (format nil "~10,9f" (pdf n 5))  ".080357649")
+    )))
+}}}
+All the current tests can be called using _(tests)_.
 
 == tricks ==
 
 
 === list.lisp ===
+<dl>
+<dt>(shuffle list) => list
+<dd>Randomly reorders _list_. Note: the original _list_ is changed by this function.
+</dl>
 === string.lisp ===
+<dl>
+<dt>(nchars integer &optional char) => string<dd>
+Returns a string of length _integer_ containin _char_ (default: space).
+<dt>whiteout<dd>
+<dt>samep<dd>
+<dt>lt<dd>
 
 === hash.lisp ===
 === macros.lisp ===
