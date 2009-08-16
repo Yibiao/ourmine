@@ -123,9 +123,23 @@ Once this file is loaded, then the whole system can be reloaded with _make_.
           ((style-warning #'muffle-warning))
         (make1 *files*))))
 }}}
-Note that _make_ works in two modes. The call _(make)_ loads the system, suppressing SBCL's verbose load information. To see that output, use _(make t)_.
+_make_ works in two modes. The call _(make)_ loads the system, suppressing SBCL's verbose load information. To see that output, use _(make t)_.
+
+Note that there is a better way to define systems in LISP- the asdf system. But while debugging this code, I found some quirks in my local
+installation of that system, so....
 
 == tests ==
+
+ <em>Debugging had to be discovered.  I can remember the exact instant
+when I realized that a large part of my life from then on was going
+to be spent in finding mistakes in my own programs. </em>
+<br>--Maurice Wilkes, 1949
+
+
+
+At least half the development time of any system is spent debugging the code. So it is worthwhile to spend a little time
+simplifying this very, very, common task.
+
 The unit test system used by Ourmine is based on code  from Peter Seibel. The _deftest_ macro calls a _defun_ and, as a side-effect, registers
 the test in a list *tests*. One test can can contain _check_s and, if passed, each _check_ adds one to a counter of passed tests:
 {{{
@@ -140,7 +154,12 @@ the test in a list *tests*. One test can can contain _check_s and, if passed, ea
       (samep (format nil "~10,9f" (pdf n 5))  ".080357649")
     )))
 }}}
-All the current tests can be called using _(tests)_.
+An individual test like _test-normal_ can be 
+called like any other function.
+
+All the current tests can be called using _(tests)_. 
+When _(tests)_ terminates, it reports what percent of tests passed/failed.
+
 
 == tricks ==
 
@@ -170,14 +189,13 @@ Returns a sequence without any whitespace (space, tab, newline, page breaks).
 
 === hash.lisp ===
 <dl>
-<dt>_(dohash (key valye hash &optional out) body) _ </dt><dd>
-For each _key_ and _valyue_ in _hash_, call _body_.
-Returns _out_ (defaults to nil).
+<dt>_(print-object hash stream)_ </dt><dd>
+Redefines the printed representation of a hashtable. 
 </dd>
 <dt>_(showh hash &key indent stream before after if-empty show lt)_ </dt><dd>
 Pretty prints the contents of _hash_ on _stream_ (defaults to standard ouput). 
 The strings _before_ and _after_ are printed before and after showing the hash table contents.
-Buckets are printed in a sort order controlled by _lt_. If a buckt is empty, the _if-empty_ is shown.
+Buckets are printed in a sort order controlled by _lt_. If a bucket is empty, _if-empty_ is shown.
 
 In this example, fruit is stored in a hash table at a key equal to the string length of the fruit (e.g. "PEAR" goes to "4"):
 {{{
@@ -196,6 +214,54 @@ In this example, fruit is stored in a hash table at a key equal to the string le
 </dd>
 </dl>
 === macros.lisp ===
+==== Macros for Debugging =====
+
+<dl>
+<dt>_(o &rest items)_</dt><dd>
+For each item in _items_, print its symbolic name, then its current value. This is useful for adding print statemetns into LISP code.
+
+Example usage:
+{{{
+(deftest test-o ()
+  (let* ((a 'tim)
+         (b 'tom)
+         (result  (with-output-to-string (s)
+                    (let ((*standard-output* s))
+                      (o a b)))))
+    (check
+      (samep result
+             "[A]=[TIM] [B]=[TOM]"))))
+}}}
+</dd>
+</dl>
+==== Macros for Iteration =====
+<dl>
+<dt>_(dohash (key value hash &optional out) body) _ </dt><dd>
+For each _key_ and _value_ in _hash_, call _body_. Useful for traversing all items in a hash table.
+Returns _out_ (defaults to nil).
+</dd>
+<dt>_(doitems (item integer list &optional out) body) _ </dt><dd>
+For each _item_ at position _integer_ within the _list_,  call _body_. Useful for traversing all items in a list while knowing
+your index in the list.
+Returns _out_ (defaults to nil).
+
+For example:
+
+{{{
+(deftest test-doitems ()
+  (check (samep
+          (with-output-to-string (s)
+            (doitems (item pos '(the quick brown fox))
+              (format s "~a is at position ~a~%" item pos)))
+
+          "THE is at position 0
+           QUICK is at position 1
+           BROWN is at position 2
+           FOX is at position 3"
+)))
+}}}
+</dd>
+
 === number.lisp ===
 === random.lisp ===
 
