@@ -2,7 +2,7 @@
  
 
 
-|| <wiki:toc max_depth="4" /> || http://ourmine.googlecode.com/svn/trunk/share/img/lisplogo_alien_256.png ||
+ http://ourmine.googlecode.com/svn/trunk/share/img/lisplogo_alien_256.png 
  
 
 
