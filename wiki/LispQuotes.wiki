@@ -1,0 +1,39 @@
+#summary Quotes about LISP
+
+ "...Please don't assume Lisp is only useful for Animation and Graphics, AI, Bioinformatics, B2B and E-Commerce, Data Mining, EDA/Semiconductor applications, Expert Systems, Finance, Intelligent Agents, Knowledge Management, Mechanical CAD, Modeling and Simulation, Natural Language, Optimization, Research, Risk Analysis, Scheduling, Telecom, and Web Authoring just because these are the only things they happened to list."
+- Kent M. Pitman
+
+Lisp is the red pill.
+- John Fraser, comp.lang.lisp
+
+Lisp isn't a language, it's a building material.
+- Alan Kay
+
+Lisp is a programmable programming language.
+- John Foderaro, CACM, September 1991
+
+Lisp is like a ball of mud - you can throw anything you want into it, and it's still Lisp.
+- Anonymous
+
+LISP stands for: Lots of Insane Stupid Parentheses.
+- Anonymous
+
+These are your father's parentheses. Elegant weapons, for a more... civilized age.
+- XKCDp
+
+Lisp has jokingly been called "the most intelligent way to misuse a computer". I think that description is a great compliment because it transmits the full flavor of liberation: it has assisted a number of our most gifted fellow humans in thinking previously impossible thoughts.
+- "The Humble Programmer", E. Dijkstra, CACM, vol. 15, n. 10, 1972
+
+Lisp is worth learning for the profound enlightenment experience you will have when you finally get it; that experience will make you a better programmer for the rest of your days, even if you never actually use Lisp itself a lot.
+- Eric S. Raymond, "How to Become a Hacker".
+
+Any sufficiently complicated C or Fortran program contains an ad hoc informally-specified bug-ridden slow implementation of half of Common Lisp.
+-Philip Greenspun's Tenth Rule of Programming
+
+Java was, as Gosling says in the first Java white paper, designed for average programmers. It's a perfectly legitimate goal to design a language for average programmers. (Or for that matter for small children, like Logo.) But it is also a legitimate, and very different, goal to design a language for good programmers.
+-Paul Graham
+
+In Lisp, if you want to do aspect-oriented programming, you just do a bunch of macros and you're there. In Java, you have to get Gregor Kiczales to go out and start a new company, taking months and years and try to get that to work. Lisp still has the advantage there, it's just a question of people wanting that.
+-Peter Norvig
+
+Common Lisp people seem to behave in a way that is akin to the Borg: they study the various new things that people do with interest and then find that
