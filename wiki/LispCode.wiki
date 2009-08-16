@@ -147,16 +147,15 @@ All the current tests can be called using _(tests)_.
 
 === list.lisp ===
 <dl>
-<dt>(shuffle list) => list
-<dd>Randomly reorders _list_. Note: the original _list_ is changed by this function.
+<dt>(shuffle list) => list</dt>
+<dd>Randomly reorders _list_. Note: the original _list_ is changed by this function.</dd>
 </dl>
 === string.lisp ===
 <dl>
-<dt>(nchars integer &optional char) => string<dd>
+<dt>(nchars integer &optional char) => string</dt><dd>
 Returns a string of length _integer_ containin _char_ (default: space).
-<dt>whiteout<dd>
-<dt>samep<dd>
-<dt>lt<dd>
+</dd>
+</dl>
 
 === hash.lisp ===
 === macros.lisp ===
