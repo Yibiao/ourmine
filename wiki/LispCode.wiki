@@ -148,26 +148,53 @@ Tricks stores some common COMMON LISP tricks- should be useful for more than jus
 
 === list.lisp ===
 <dl>
-<dt>_(shuffle list)_ => list</dt>
-<dd>Randomly reorders _list_. Note: the original _list_ is changed by this function.</dd>
+<dt>_(shuffle list)_ </dt>
+<dd>Returns a randomly reordered _list_. Note: the original _list_ is changed by this function.</dd>
 </dl>
 === string.lisp ===
 <dl>
-<dt>_(lt x y)_ => bool</dt><dd>
+<dt>_(lt x y)_ </dt><dd>
 Returns true if _x_ is lexogragphically less than _y_.
 </dd>
-<dt>_(nchars integer &optional char)_ => string</dt><dd>
+<dt>_(nchars integer &optional char)_ </dt><dd>
 Returns a string of length _integer_ containin _char_ (default: space).
 </dd>
-<dt>_(samep x y)_ => bool</dt><dd>
-String comparison of _x_ and _y_. Ignores differences like whitespace of upper or lower case.
+<dt>_(samep x y)_ </dt><dd>
+Returns true if a  string comparison of the results _x_ and ithe results of _y_
+are lexiographically different. Ignores differences like whitespace of upper or lower case.
 </dd>
-<dt>_(whiteout seq)_ => string</dt><dd>
+<dt>_(whiteout seq)_ </dt><dd>
 Returns a sequence without any whitespace (space, tab, newline, page breaks).
 </dd>
 </dl>
 
 === hash.lisp ===
+<dl>
+<dt>_(dohash (key valye hash &optional out) body) _ </dt><dd>
+For each _key_ and _valyue_ in _hash_, call _body_.
+Returns _out_ (defaults to nil).
+</dd>
+<dt>_(showh hash &key indent stream before after if-empty show lt)_ </dt><dd>
+Pretty prints the contents of _hash_ on _stream_ (defaults to standard ouput). 
+The strings _before_ and _after_ are printed before and after showing the hash table contents.
+Buckets are printed in a sort order controlled by _lt_. If a buckt is empty, the _if-empty_ is shown.
+
+In this example, fruit is stored in a hash table at a key equal to the string length of the fruit (e.g. "PEAR" goes to "4"):
+{{{
+(deftest test-showh ()
+  (let ((h (make-hash-table)))
+    (dolist (one '(apple pear banana))
+      (setf (gethash (length (string one)) h) one))
+   (check
+     (samep (with-output-to-string (s) 
+            (showh h  :stream s))
+                "4 = PEAR
+                 5 = APPLE
+                 6 = BANANA"
+))))
+}}}
+</dd>
+</dl>
 === macros.lisp ===
 === number.lisp ===
 === random.lisp ===
