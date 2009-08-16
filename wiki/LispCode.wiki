@@ -130,9 +130,7 @@ installation of that system, so....
 
 == tests ==
 
- <em>Debugging had to be discovered.  I can remember the exact instant
-when I realized that a large part of my life from then on was going
-to be spent in finding mistakes in my own programs. </em>
+ <em>Debugging had to be discovered.  I can remember the exact instant when I realized that a large part of my life from then on was going to be spent in finding mistakes in my own programs. </em>
 <br>--Maurice Wilkes, 1949
 
 
@@ -294,7 +292,6 @@ CL-USER> (watch (test-normal))
     -------------------------------------------------------
          0.028 | 1,227,712 |   158 |            | Total
 }}}
-CL-USER> 
 </dd>
 </dl>
 === number.lisp ===
@@ -304,11 +301,13 @@ Returns the square of a number.
 </dd>
 </dl>
 === random.lisp ===
+
 It is hard to reproduce the behavior of  code that uses random number generation. This is a problem when tracking down bugs or when
 writing _deftest_s. Hence, sometimes it is useful to use random number generators that build random number _X<sub>i</sub>_ from 
 random number _X<sub>i-1</sub>_. 
 The behavior of code that uses these _pseudo-random generators_ can then be reproduced by setting the "seed"; i.e.
 _X<sub>0</sub>_.
+
 <dl>
 <dt>_(my-random number)_</dt>
 <dd>Returns a pseudo-random float in the range zero to _number_.</dd>
