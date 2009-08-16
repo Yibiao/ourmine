@@ -13,19 +13,61 @@ So let's play the language selection game. Let's pick a language that runs fast,
 
 That last one is an interesting criteria. I choose LISP since it has longevity and staying power. 
 
+= Development Structure =
+
+This code was written using a test-driven approach. i.e. whenever I built a new functionality, I wrote a _deftest_ command to test that code. 
+
+{{{
+(deftest test-normal ()
+  (let ((n (make-normal)))
+    (dolist (x '( 1 2 3 4 5 4 3 2 1))
+      (add n x))
+    (check 
+      (samep n "#S(NORMAL :MAX 5 :MIN 1 :N 9 :SUM 25 :SUMSQ 85)")
+      (equal (mean n) (/ 25 9))
+      (equal (stdev n) 1.3944334)
+      (samep (format nil "~10,9f" (pdf n 5))  ".080357649")
+    )))
+}}}
+This code throws a set of numbers at a normal distribution. If it is working correctly, then that distribution should generate certain values.
+
+The above shows four _checks_. The _samep_ functions checks if two forms evaluate to the same print string, ignoring minor details like white space and capitalization.
+
+A site effect of using _deftest_ is that a global _*tests*_ stores all the known tests and the _(tests)_ function can report what percent of the test suite is working right now.
+
+It is impossible to understate the value of this kind of development. Everyday, I stop with a broken test. Every new day, I start with the test broken from last night. And if ever I make any changes to anything, I can check if that breaks anything else.
+
 = Code structure =
 
 At the time of this writing, the main LISP directory is our/lib/lisp. This is broken down into:
 
- * [#miner.lisp *our/lib/lisp/miner.lisp*] : main load file. Loads the rest of the code.
- * *our/lib/lisp/tests* : code for test suite
- * *our/lib/lisp/tricks* : general LISP utils
- * *our/lib/lisp/table* : code for storing data 
- * *our/lib/lisp/learn* : code for learners 
+ * [#miner.lisp our/lib/lisp/miner.lisp] : main load file. Loads the rest of the code.
+ * [#tests our/lib/lisp/tests] : code for test suite
+ * [#tricks our/lib/lisp/tricks] : general LISP utils
+ * [#table our/lib/lisp/table] : code for storing data 
+ * [#learn our/lib/lisp/learn] : code for learners 
 
-= miner.lisp =
+This code structure will be discussed below.
 
-asdas
+= Data Structure =
+
+The command
+
+= The Details = 
+
+== miner.lisp ==
+
+This file defines a list of files to load; e.g. 
+{{{
+(defparamater *files* '(
+                          "tests/deftest"
+                          "tricks/lispfuns"
+                          etc
+                       ))
+}}}
+This file supports loading the code in two modes:
+
+ # verbose mode
 
  LISP utils
  * *our/lib/lisp/tricks*
