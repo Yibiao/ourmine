@@ -9,13 +9,11 @@
 
 = Why LISP? =
 
-Data mining  is not about the algorithms, it is about the data. We use tools like Ourmine to build microscopes to look at data. Therefore, I'm a great fan of scripting, of getting a prototype up and running as fast as possible in order to gather insights from the domain.
-
-But which scripting language? Well, for tiny tasks, Awk and Bash are great. But for more complex tasks requiring intricate data structures, you need something with a little more structure. 
+Data mining  is not about the algorithms, it is about the data. We use tools like Ourmine to build microscopes to look at data. Therefore, I'm a great fan of scripting, of getting a prototype up and running as fast as possible in order to gather insights from the domain. But which scripting language? Well, for tiny tasks, Awk and Bash are great. But for more complex tasks requiring intricate data structures, you need something with a little more structure. 
 
 So let's play the language selection game. Let's pick a language that runs fast, has mature tools, lots of tutorial material out there on the web, good textbooks, and has a fighting chance of being around in time to come (think of your favorite language: Ruby, Lua, Clojure, etc.  How old is it? When did it get popular? When will it fade away?).
 
-That last one is an interesting criteria. I choose LISP since it has longevity and staying power. 
+After filtering languages on the above criteria, I came down to LISP.   It runs fast. It has a ton of one-line material. But most of all, it has it has longevity and staying power. 
 
 = The Big Picture =
 
@@ -37,7 +35,7 @@ This code was written using a test-driven approach. i.e. whenever I built a new 
 }}}
 This code throws a set of numbers at a normal distribution. If it is working correctly, then that distribution should generate certain values.
 
-The above shows four _checks_. The _samep_ functions checks if two forms evaluate to the same print string, ignoring minor details like white space and capitalization.
+The above shows four _check_s. The _samep_ functions checks if two forms evaluate to the same print string, ignoring minor details like white space and capitalization.
 
 A site effect of using _deftest_ is that a global _*tests*_ stores all the known tests and the _(tests)_ function can report what percent of the test suite is working right now.
 
@@ -55,6 +53,19 @@ At the time of this writing, the main LISP directory is our/lib/lisp. This is br
 
 This code structure will be discussed below.
 
+== Getting Started ==
+
+At the UNIX shell prompt:
+{{{
+cd our/lib/lisp
+emacs
+}}}
+Once inside EMACS:
+{{{
+M-x slime
+(load "miner.lisp")
+}}}
+
 == Data Structure ==
 
 === Main Data Structures ===
@@ -67,18 +78,38 @@ At the time of this writing, the main data structures are:
    * *Numeric*  : for numeric data
  * [#table table] : combines examples with column headers. 
  
+Two helper structures are
+  * [#normal normal] : for handling Gaussian distributions
+  * [#caution caution] : for some simple error handling.
+
+For example, this code returns a _table_ with five _eg_s, one for each row of the data:
+
 {{{
-(data
-   :name   'weather
-   :columns '(forecast temp humidty $wind play)
-   :egs    '((sunny    hot  high   20  no) 
-             (sunny    hot  high   10 no) 
-             (sunny    hot  high   30  no) 
-             (sunny    hot  high   20.2  yes)
-             (sunny    hot  high   20.1  yes)
-             (sunny    hot  high   20.7  yes)
-             ))
+(defun did-you-play-golf ()
+  (data
+    :name   'weather
+    :columns '( forecast temp humidity $wind play)
+    :egs     '((sunny    hot  high     20    no) 
+               (sunny    hot  high     10    no) 
+               (sunny    hot  high     30    no) 
+               (sunny    hot  high     20.2  yes)
+               (sunny    hot  high     20.1  yes)
+               (sunny    hot  high     20.7  yes)
+              )
+)
 }}}
+
+The table has four _discrete_ columns (forecast, temp, humidity, play) and one numeric one (denoted with a "$" sign: see"$wind"). The last column is the _class_ (so it  columns satisfies _header-classp_).  
+
+Optionally, the columns can store frequency counts of the data seen in each column.  The code
+
+{{{
+(xindex (did-you-play-golf))
+}}}
+runs over the table and:
+ * For _discrete_ columns, it stores the count of symbols seen in each class.
+ * _Numeric_ columns are summarized,  assuming  [http://en.wikipedia.org/wiki/Normal_distribution normal distributions].
+
 
 === Other Structures ==
 
