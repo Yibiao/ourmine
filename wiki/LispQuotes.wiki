@@ -1,5 +1,7 @@
 #summary Quotes about LISP
 
+http://www.mrbill.net/images/comics/xkcd/lisp_cycles.gif
+
 ...please don't assume Lisp is only useful for Animation and Graphics, AI, Bioinformatics, B2B and E-Commerce, Data Mining, EDA/Semiconductor applications, Expert Systems, Finance, Intelligent Agents, Knowledge Management, Mechanical CAD, Modeling and Simulation, Natural Language, Optimization, Research, Risk Analysis, Scheduling, Telecom, and Web Authoring just because these are the only things they happened to list.<br>
 - Kent M. Pitman
 
@@ -18,8 +20,7 @@ Lisp is like a ball of mud - you can throw anything you want into it, and it's s
 LISP stands for: Lots of Insane Stupid Parentheses.<br>
 - Anonymous
 
-These are your father's parentheses. Elegant weapons, for a more... civilized age.<br>
-- XKCDp
+
 
 Lisp has jokingly been called "the most intelligent way to misuse a computer". I think that description is a great compliment because it transmits the full flavor of liberation: it has assisted a number of our most gifted fellow humans in thinking previously impossible thoughts.<br>
 - "The Humble Programmer", E. Dijkstra, CACM, vol. 15, n. 10, 1972
