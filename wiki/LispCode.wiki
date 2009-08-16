@@ -7,7 +7,7 @@
 
 == Development Structure ==
 
-This code was written using a test-driven approach. i.e. whenever I built a new functionality, I wrote a _deftest_ command to test that code. 
+This code was written using a test-driven approach; i.e. whenever I built a new functionality, I wrote a _deftest_ command to test that code. 
 
 {{{
 (deftest test-normal ()
@@ -144,16 +144,26 @@ All the current tests can be called using _(tests)_.
 
 == tricks ==
 
+Tricks stores some common COMMON LISP tricks- should be useful for more than just Ourmine.
 
 === list.lisp ===
 <dl>
-<dt>(shuffle list) => list</dt>
+<dt>_(shuffle list)_ => list</dt>
 <dd>Randomly reorders _list_. Note: the original _list_ is changed by this function.</dd>
 </dl>
 === string.lisp ===
 <dl>
-<dt>(nchars integer &optional char) => string</dt><dd>
+<dt>_(lt x y)_ => bool</dt><dd>
+Returns true if _x_ is lexogragphically less than _y_.
+</dd>
+<dt>_(nchars integer &optional char)_ => string</dt><dd>
 Returns a string of length _integer_ containin _char_ (default: space).
+</dd>
+<dt>_(samep x y)_ => bool</dt><dd>
+String comparison of _x_ and _y_. Ignores differences like whitespace of upper or lower case.
+</dd>
+<dt>_(whiteout seq)_ => string</dt><dd>
+Returns a sequence without any whitespace (space, tab, newline, page breaks).
 </dd>
 </dl>
 
