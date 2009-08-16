@@ -1,6 +1,6 @@
 #summary Quotes about LISP
 
-http://www.mrbill.net/images/comics/xkcd/lisp_cycles.gif
+[http://xkcd.com/297/ http://www.mrbill.net/images/comics/xkcd/lisp_cycles.gif]
 
 ...please don't assume Lisp is only useful for Animation and Graphics, AI, Bioinformatics, B2B and E-Commerce, Data Mining, EDA/Semiconductor applications, Expert Systems, Finance, Intelligent Agents, Knowledge Management, Mechanical CAD, Modeling and Simulation, Natural Language, Optimization, Research, Risk Analysis, Scheduling, Telecom, and Web Authoring just because these are the only things they happened to list.<br>
 - Kent M. Pitman
