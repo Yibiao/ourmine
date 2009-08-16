@@ -16,7 +16,6 @@
 = Tutorials =
 
  * Great on-line tutorial [http://cs.gmu.edu/~sean/lisp/LispTutorial.html tutorial]
-
  * For the very nervous: a [http://www.lisperati.com/casting.html very gentle intro to LISP]
 
 = On-line references =
