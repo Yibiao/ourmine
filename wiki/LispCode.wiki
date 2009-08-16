@@ -130,6 +130,19 @@ The unit test system used by Ourmine is based on code  from Peter Seibel. The
 
 == tricks ==
 
+
+=== list.lisp ===
+=== string.lisp ===
+
+=== hash.lisp ===
+=== macros.lisp ===
+=== number.lisp ===
+=== random.lisp ===
+
+=== Abstract Data Types ===
+==== caution.lisp ====
+==== normal.lisp ====
+
 == table ==
 
 == learn == 
