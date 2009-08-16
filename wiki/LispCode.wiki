@@ -303,7 +303,7 @@ Returns the square of a number.
 === random.lisp ===
 
 It is hard to reproduce the behavior of  code that uses random number generation. This is a problem when tracking down bugs or when
-writing _deftest_s. Hence, sometimes it is useful to use random number generators that build random number _X<sub>i</sub>_ from 
+writing tests. Hence, sometimes it is useful to use random number generators that build random number _X<sub>i</sub>_ from 
 random number _X<sub>i-1</sub>_. 
 The behavior of code that uses these _pseudo-random generators_ can then be reproduced by setting the "seed"; i.e.
 _X<sub>0</sub>_.
