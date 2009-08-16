@@ -433,8 +433,9 @@ CL-USER> (make-data1)
    :INDEXED NIL)
 }}}
 
-The above code shows a <em>table</em> (on the outside) containing five _header_s (four _discrete_ and one _numeric_) describing each column of data.  For the _discrete_ headers, the  set of unique symbols seen in each column is stored in the _:uniques_ slot.  The _:class_ slot shows that the class variable is the fifth header (which, you will note, has _:classp T_).   An _all_ slot stores all the examples.  Each example as some _:features_ and a  _:class_ value.
+The above code shows a <em>table</em> (on the outside) containing five <em>header</em>s (four <em>discrete</em> and one <em>numeric</em>) describing each column of data.  For the <em>discrete</em> headers, the  set of unique symbols seen in each column is stored in the <em>:uniques</em> slot.  The <em>:class</em> slot shows that the class variable is the fifth header (which, you will note, has <em>:classp T</em>).   An <em>all</em> slot stores all the examples.  Each example as some <em>:features</em> and a  <em>:class</em> value.
   
+
 The _:indexed_ slot of the above is NIL. A _table_ becomes indexed when the _xindex_ function does some detailed counts of the symbols
 seen in all the rows. We will return to this function is just a moment.
 Note that the  file _our/lib/lisp/data.lisp_ defines a hook that triggers whenever we see discrete or number data. This hook has two methods (one for each column type). For example, this hook notes when we have missed a numeric column.
