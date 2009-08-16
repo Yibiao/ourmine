@@ -1,0 +1,24 @@
+#summary Tutorial material for LISP
+
+= On-Line Books =
+
+ * Fantastic book: Peter Seibel's  [http://gigamonkeys.com/book/ Practical Common LISP]
+ * Great book: Paul Graham's [http://www.paulgraham.com/onlisp.html On LISP]
+
+= Books =
+
+ * Paul Graham's ANSI Common LISP: http://www.paulgraham.com/acl.html
+
+= Links  =
+
+ * Lots of good material from [http://www.apl.jhu.edu/~hall/lisp.html Marty Hall]
+
+= Tutorials =
+
+ * Great on-line tutorial [http://cs.gmu.edu/~sean/lisp/LispTutorial.html tutorial]
+
+ * For the very nervous: a [http://www.lisperati.com/casting.html very gentle intro to LISP]
+
+= On-line references =
+
+ * The CommonLisp [http://www.lispworks.com/documentation/HyperSpec/Front/X_Master.htm HyperSpec]
