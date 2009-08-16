@@ -61,11 +61,11 @@ M-x slime
 
 At the time of this writing, the main data structures are:
 
- * [#eg eg] : an example data row
- * [#header header] : meta-information about each column of data (e.g. the maximum and minimum number seen in an row in a particular column). Headers have two sub-classes
+ * *eg* : an example data row
+ * *header* : meta-information about each column of data (e.g. the maximum and minimum number seen in an row in a particular column). Headers have two sub-classes
    * *Discrete* : for non-numeric data
    * *Numeric*  : for numeric data
- * [#table table] : combines examples with column headers. 
+ * *table* : combines examples with column headers. 
  
 
 For example, this code returns a _table_ with five _eg_s, one for each row of the data:
@@ -99,8 +99,8 @@ runs over the table and:
 
 === Other Structures ==
 
- * [#normal normal] : used to store normal distributions and report mean, standard deviation, pdf, etc.
- * [#caution caution] : collects any error strings on flaws found  when reading the data. If two many flaws are found, _caution_ calls an abort.
+ * *normal* : used to store normal distributions and report mean, standard deviation, pdf, etc.
+ * *caution* : collects any error strings on flaws found  when reading the data. If two many flaws are found, _caution_ calls an abort.
 
 = The Details = 
 
@@ -127,3 +127,9 @@ Note that _make_ works in two modes. The call _(make)_ loads the system, suppres
 
 == tests ==
 The unit test system used by Ourmine is based on code  from Peter Seibel. The 
+
+== tricks ==
+
+== table ==
+
+== learn == 
