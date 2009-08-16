@@ -78,9 +78,6 @@ At the time of this writing, the main data structures are:
    * *Numeric*  : for numeric data
  * [#table table] : combines examples with column headers. 
  
-Two helper structures are
-  * [#normal normal] : for handling Gaussian distributions
-  * [#caution caution] : for some simple error handling.
 
 For example, this code returns a _table_ with five _eg_s, one for each row of the data:
 
@@ -113,8 +110,8 @@ runs over the table and:
 
 === Other Structures ==
 
- * [#caution caution]
- * [#normal normal]
+ * [#normal normal] : used to store normal distributions.
+ * [#caution caution] : collects any error strings on flaws found  when reading the data. If two many flaws are found, _caution_ calls an abort.
 
 = The Details = 
 
