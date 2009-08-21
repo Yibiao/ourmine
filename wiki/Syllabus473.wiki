@@ -40,6 +40,28 @@ Upon successful completion of this course, students should have:
 All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
 Official annountements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
 
+<table border=0 style="background-color: #fff; padding: 5px;" cellspacing=0>
+  <tr><td>
+  <img src="http://groups.google.com/intl/en/images/logos/groups_logo_sm.gif"
+         height=30 width=140 alt="Google Groups">
+  </td></tr>
+  <tr><td style="padding-left: 5px">
+  <b>Subscribe to csx73</b>
+  </td></tr>
+  <form action="http://groups.google.com/group/csx73/boxsubscribe">
+  <input type=hidden name="hl" value="en">
+  <tr><td style="padding-left: 5px;">
+  Email: <input type=text name=email>
+  <input type=submit name="sub" value="Subscribe">
+  </td></tr>
+</form>
+<tr><td align=right>
+  <a href="http://groups.google.com/group/csx73?hl=en">Visit this group</a>
+</td></tr>
+</table>
+
+
+
 = Expected Workload =
 
 You MUST be prepared to dedicate AT LEAST 5-8 working hours a week
