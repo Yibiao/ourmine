@@ -52,6 +52,16 @@ And speaking of color, sometimes SLIME likes highlighting changed text. Which is
 )
 }}}
 
+Alternatively, you can use a nil color for the highlight by editing your  _$HOME/.emacs_ file as follows:
+{{{
+'(slime-highlight-edits-face ((((class color) (background dark))
+(:background "dimgray")))))
+
+(This  removes the highlight since (:background "dimgray") is
+nil. You should also be able to change the color there but I haven't
+attempted that.)
+}}}
+
 There is a little dotconfig file editing required to get the LISP working- see
 [http://code.google.com/p/ourmine/wiki/EmacsLISPconfig Emacs LISP config].
 
