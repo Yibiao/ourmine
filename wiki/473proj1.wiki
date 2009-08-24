@@ -3,14 +3,14 @@
 
 = Introduction =
 
-In this project you will learn how to (very simple) data miners in LISP.
+In this project you will do some introductory LISP exercises.
 
 Before following these instructions, follow the StartUpInstructions
 
 
 = Study the UnitTest tool =
 
-1a) Familiarize yourself with the Ourmine unit test system.
+Familiarize yourself with the Ourmine unit test system.
 Ourmine was written using  a test-driven development method. Much of the code has _deftest_ unit test
 statements that checks what works. For more on deftest, see 
 http://code.google.com/p/ourmine/wiki/LispCode#tests.
@@ -45,11 +45,15 @@ Write 50 deftests showing your understand Paul Graham's text chapters
     include at least one test for each of 
     figures 3.6/3.7,3.12,4.2,4.5,4.6,5.2,6.1,7.1,10.2,14.2 
   
-    Note that some of Graham's code is on-line at 
+Note that some of Graham's code is on-line at 
     http://lib.store.yahoo.net/lib/paulgraham/acl2.lisp
 
-    Also, there are errors in some of his text. See http://www.paulgraham.com/ancomliser.html
-    
+Also, there are errors in some of his text. See http://www.paulgraham.com/ancomliser.html
+
+= Bonus Work (5 marks) =
+
+Implement HyperPipes. Hint: modify [http://ourmine.googlecode.com/svn/trunk/our/lib/lisp/learn/nb.lisp nb.lisp].
+ 
 = How to Submit =
 
 For this assignment, work outside of the repository. Then, on submission day,
@@ -66,15 +70,3 @@ I will change to the directory _svns/ourmine/branches/YourGroupNumber/our/etc/pr
  * (tests)
 
 I will expect to see "50 tests passed".
-
-Then I will do a code review with you all
- Write as
-I will change to the directory 
-1c) Add  files for your deftests in branches/team/N/lib/tests
-    (note, no more than 55 lines per file or they won't include
-    in the doco).
-
- * Modify lib/tests/tests.lisp and lib/tests.asd such that these
-    tests are loaded when you load iccle.
-
- * Test your code runs. If you run (tests) you should now see 107 tests past.
