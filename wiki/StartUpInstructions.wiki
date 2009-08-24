@@ -10,7 +10,8 @@
     * Zack Murray
 
 = Downloads =
- * Edit $HOME/.bashrc and add the line _export SVN_EDITOR="`which nano` -m"_ 
+ * Edit $HOME/.bashrc and add the line
+     * export SVN_EDITOR="`which nano` -m"
  * Make room. Clean your CSEE account. The following download will consume up to 135M.
  * Find your ICCLE password (look for "googlecode.com password") in http://code.google.com/p/ourmine/source/checkout
  * Run these commands:
@@ -26,18 +27,27 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
 = Uploads =
 
  * Get a picture of yourself (less than 100KB) and add it to svns/ourmine/trunk/share/img 
- * Add that picture to the repository (_svn add svns/ourmine/trunk/share/img/MyPic.jpg_)
- * Commit those changes (_svn commit -m "my picture added"_).
+ * Add that picture to the repository
+       * svn add svns/ourmine/trunk/share/img/MyPic.jpg
+ * Commit those changes 
+       * svn commit -m "my picture added"
 
 = Create Your Group =
  * Find some like-minded folks, form a group of three.
  * Get your group number (from me).
  * Create a branch for your work:
-    * _cd svns/ourmine; svn cp trunk/our branches/Number; svn commit -m "branch Number created"_
+    * cd svns/ourmine; svn cp trunk/our branches/Number; svn commit -m "branch Number created"
  * Create your own personnel page:  svns/ourmine/wiki/YourName. Note that your picture is accessible at http://ourmine.googlecode.com/svn/trunk/share/img/MyPic.jpg.
  * With your group, add your group  page svns/ourmine/wiki/GroupNumber.
 
-Most of your assignments will be submitted via the wiki (this simplifies word processing).
+Most of your assignments will be submitted via the wiki (this simplifies word processing). Note that the wiki pages are NOT in your branch but can be found in svns/ourmine/wiki. To edit pages, you can either:
+
+ * create and edit them on-line (at http://code.google.com/p/ourmine/w/list)
+ * or edit them on your local machine (at svns/ourmine/wiki/SomeNewPage) then commit the changes:
+      * cd $HOME/svns/ourmine/wiki
+      * Edit SomeNewPage.wiki
+      * svn add SomeNewPage.wiki
+      * svn commit -m "some new page"
 
 Btw, the source of my [Timm] page is:
 {{{
