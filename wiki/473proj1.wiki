@@ -1,4 +1,5 @@
 #summary Initial project for WVU cs473
+#labels 473,projects
 
 = Introduction =
 
