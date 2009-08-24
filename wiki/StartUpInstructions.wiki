@@ -50,7 +50,7 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
  * I belong to GroupZero.
  * For more information, see my [http://menzies.us home page]
 }}}
-<p>Note that I do not list my email and neither should you (death to spammers). 
+<p>Note that I do not list my email and neither should you (death to spammers). </p>
 </li><li>
 With your group, add your group  page svns/ourmine/wiki/GroupNumber. For example, I am in GroupZero so I wrote this page:
 {{{
@@ -61,7 +61,8 @@ With your group, add your group  page svns/ourmine/wiki/GroupNumber. For example
 = Members =
 
  * [Timm Tim Menzies]
-}}}</li>
+}}}
+</li>
 </ul>
 Most of your assignments will be submitted via the wiki (this simplifies word processing). Note that the wiki pages are NOT in your branch but can be found in svns/ourmine/wiki. To edit pages, you can either:
 
