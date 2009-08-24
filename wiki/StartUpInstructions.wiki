@@ -38,10 +38,10 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
 </li><li> Get your group number (from me).
 </li><li> Create a branch for your work:
     <ul>
-       <li>cd svns/ourmine; svn cp trunk/our branches/Number; svn commit -m "branch Number created"
+       <li>cd svns/ourmine; svn cp trunk/our branches/Number; svn commit -m "branch Number created"</li>
     </ul>
 </li><li> Create your own personnel page:  svns/ourmine/wiki/YourName. Note that your picture is accessible at http://ourmine.googlecode.com/svn/trunk/share/img/MyPic.jpg. For example, the source of my [Timm] page is:
-<pre>
+{{{
 #summary About Tim Menzies
 
 <img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/TimM.jpg">
@@ -49,11 +49,11 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
  * Assoc prof, CSEE.
  * I belong to GroupZero.
  * For more information, see my [http://menzies.us home page]
-</pre>
-Note that I do not list my email and neither should you (death to spammers). 
+}}}
+<p>Note that I do not list my email and neither should you (death to spammers). 
 </li><li>
 With your group, add your group  page svns/ourmine/wiki/GroupNumber. For example, I am in GroupZero so I wrote this page:
-<pre>
+{{{
 #summary This is the admin group.
 
 <img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/captain_zero.jpg">
@@ -61,7 +61,7 @@ With your group, add your group  page svns/ourmine/wiki/GroupNumber. For example
 = Members =
 
  * [Timm Tim Menzies]
-</pre></li>
+}}}</li>
 </ul>
 Most of your assignments will be submitted via the wiki (this simplifies word processing). Note that the wiki pages are NOT in your branch but can be found in svns/ourmine/wiki. To edit pages, you can either:
 
