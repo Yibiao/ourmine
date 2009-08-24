@@ -32,6 +32,7 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
 = Create Your Group =
  * Find some like-minded folks, form a group of three.
  * Get your group number (from me).
+ * Create a branch for your work (_cd svns/ourmine; svn cp trunk branches/Number; svn commit -m "branch Number created_)
  * Create your own personnel page:  svns/ourmine/wiki/YourName. Note that your picture is accessible at http://ourmine.googlecode.com/svn/trunk/share/img/MyPic.jpg.
  * With your group, add your group  page svns/ourmine/wiki/GroupNumber.
 
