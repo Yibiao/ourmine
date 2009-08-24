@@ -7,8 +7,7 @@ In this project you will do some introductory LISP exercises.
 
 Before following these instructions, follow the StartUpInstructions
 
-
-= Study the UnitTest tool =
+= Study the Unit Test tool =
 
 Familiarize yourself with the Ourmine unit test system.
 Ourmine was written using  a test-driven development method. Much of the code has _deftest_ unit test
@@ -40,19 +39,19 @@ Write 50 deftests showing your understand Paul Graham's text chapters
    * 10.1,10.2,10.3,10.4,10.5,10.6,10.7
    * 14.5 
 
-30 tests should relate to basic stuff (chapters 2,3,4);
-    no more than 10 tests per chapter; and 
-    include at least one test for each of 
-    figures 3.6/3.7,3.12,4.2,4.5,4.6,5.2,6.1,7.1,10.2,14.2 
-  
-Note that some of Graham's code is on-line at 
-    http://lib.store.yahoo.net/lib/paulgraham/acl2.lisp
+30 tests should relate to basic stuff (chapters 2,3,4); no more
+than 10 tests per chapter; and include at least one test for each
+of figures 3.6/3.7,3.12,4.2,4.5,4.6,5.2,6.1,7.1,10.2,14.2
+
+Note that some of Graham's code is on-line at
+http://lib.store.yahoo.net/lib/paulgraham/acl2.lisp
 
 Also, there are errors in some of his text. See http://www.paulgraham.com/ancomliser.html
 
 = Bonus Work (5 marks) =
 
 Implement HyperPipes. Hint: modify [http://ourmine.googlecode.com/svn/trunk/our/lib/lisp/learn/nb.lisp nb.lisp].
+To demonstrate the code, emulate the _deftest_ in nb.lisp but demonstrate the code using ten of the (smaller) datasets in 
  
 = How to Submit =
 
