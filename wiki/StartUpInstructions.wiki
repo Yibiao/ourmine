@@ -98,4 +98,4 @@ M-x slime
 }}}
 This should produce a screen that looks (somewhat) like this:
 
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/lispworksings.jpg">
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/lispworking.png">
