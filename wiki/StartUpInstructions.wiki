@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary For students of cs473, cs573, fall 2009.
 
 = Preliminaries =
  * Get a gmail account.
