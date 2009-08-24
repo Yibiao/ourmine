@@ -27,9 +27,9 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
 Notes:
 
  * Last year, this was a very slow process due to file server problems- which should be fixed.
- * Once you've got a full check out, you'll enver want to do that again. Only update svns/ourmine/wiki and svns/ourmine/branches/YourGroupNumber.
+ * Once you've got a full check out, you'll never want to do that again. Only update svns/ourmine/wiki and svns/ourmine/branches/YourGroupNumber.
 
-= Uplodas =
+= Uploads =
 
  * Get a picture of yourself (less than 100KB) and add it to svns/ourmine/trunk/share/img 
  * Add that picture to the repository
@@ -69,7 +69,7 @@ With your group, add your group  page svns/ourmine/wiki/GroupNumber. For example
 }}}
 </li>
 </ul>
-Most of your assignments will be submitted via the wiki (this simplifies word processing). Note that the wiki pages are NOT in your branch but can be found in svns/ourmine/wiki. To edit pages, you can either:
+Note that the wiki pages are NOT in your branch but can be found in svns/ourmine/wiki. To edit pages, you can either:
 
  * create and edit them on-line (at http://code.google.com/p/ourmine/w/list)
  * or edit them on your local machine (at svns/ourmine/wiki/SomeNewPage) then commit the changes:
@@ -79,6 +79,9 @@ Edit SomeNewPage.wiki
 svn add SomeNewPage.wiki
 svn commit -m "some new page"
 }}}
+Most of your assignments will be submitted via the wiki (this simplifies word processing). 
+If you want word-processing tips for the wiki, see 
+http://code.google.com/p/support/wiki/WikiSyntax.
 
 = LISPing = 
 
@@ -86,7 +89,7 @@ svn commit -m "some new page"
     * Do not run the install instructions at http://code.google.com/p/ourmine/ (see note at top of page).
     * Near the bottom, where it mentions the path to color-themes, replace that path with _$HOME/svns/ourmine/branches/YourGrouNumber/our/etc/color-themes/6.6.0_
 
-If all that workds, then the following should work:
+If all that works, then the following should work:
 
 {{{
 cd $HOME/svns/ourmine/branches/YourGroupNumber/lib/lisp

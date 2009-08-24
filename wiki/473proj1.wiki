@@ -5,4 +5,4 @@
 
 In this project you will learn how to (very simple) data miners in LISP.
 
-Before following these instructions, follow the StartupInstructions
+Before following these instructions, follow the StartUpInstructions
