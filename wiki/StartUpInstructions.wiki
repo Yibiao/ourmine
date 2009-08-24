@@ -84,8 +84,7 @@ svn commit -m "some new page"
 
 * Follow the instructions in DotConfig to adjust your LISP environment with two exceptions:
   * Do not run the install instructions at http://code.google.com/p/ourmine/ (see note at top of page).
-  * Near the bottom, where it mentions the path to color-themes, replace that path with 
-	 * $HOME/svns/ourmine/branches/YourGrouNumber/our/etc/color-themes/6.6.0
+  * Near the bottom, where it mentions the path to color-themes, replace that path with _$HOME/svns/ourmine/branches/YourGrouNumber/our/etc/color-themes/6.6.0_
 
 If all that workds, then the following should work:
 
