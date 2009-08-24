@@ -10,9 +10,9 @@
     * Zack Murray
 
 = Downloads =
-
- * Make room. Clean your CSEE account. The following download will consume up to 60M.
- * Find your ICCLE password (look for "googlecode.com password") in http://code.google.com/p/ourmine/source/checkou
+ * Edit $HOME/.bashrc and add the line _export SVN_EDITOR="`which nano` -m"_ 
+ * Make room. Clean your CSEE account. The following download will consume up to 135M.
+ * Find your ICCLE password (look for "googlecode.com password") in http://code.google.com/p/ourmine/source/checkout
  * Run these commands:
 
 {{{
@@ -32,7 +32,8 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
 = Create Your Group =
  * Find some like-minded folks, form a group of three.
  * Get your group number (from me).
- * Create a branch for your work (_cd svns/ourmine; svn cp trunk branches/Number; svn commit -m "branch Number created_)
+ * Create a branch for your work:
+    * _cd svns/ourmine; svn cp trunk/our branches/Number; svn commit -m "branch Number created"_
  * Create your own personnel page:  svns/ourmine/wiki/YourName. Note that your picture is accessible at http://ourmine.googlecode.com/svn/trunk/share/img/MyPic.jpg.
  * With your group, add your group  page svns/ourmine/wiki/GroupNumber.
 
