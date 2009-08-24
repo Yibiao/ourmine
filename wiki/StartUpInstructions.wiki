@@ -44,11 +44,12 @@ Most of your assignments will be submitted via the wiki (this simplifies word pr
 
  * create and edit them on-line (at http://code.google.com/p/ourmine/w/list)
  * or edit them on your local machine (at svns/ourmine/wiki/SomeNewPage) then commit the changes:
-      * cd $HOME/svns/ourmine/wiki
-      * Edit SomeNewPage.wiki
-      * svn add SomeNewPage.wiki
-      * svn commit -m "some new page"
-
+{{{
+cd $HOME/svns/ourmine/wiki
+Edit SomeNewPage.wiki
+svn add SomeNewPage.wiki
+svn commit -m "some new page"
+}}}
 Btw, the source of my [Timm] page is:
 {{{
 #summary About Tim Menzies
