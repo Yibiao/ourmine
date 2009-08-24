@@ -37,8 +37,26 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
  * Get your group number (from me).
  * Create a branch for your work:
     * cd svns/ourmine; svn cp trunk/our branches/Number; svn commit -m "branch Number created"
- * Create your own personnel page:  svns/ourmine/wiki/YourName. Note that your picture is accessible at http://ourmine.googlecode.com/svn/trunk/share/img/MyPic.jpg.
- * With your group, add your group  page svns/ourmine/wiki/GroupNumber.
+ * Create your own personnel page:  svns/ourmine/wiki/YourName. Note that your picture is accessible at http://ourmine.googlecode.com/svn/trunk/share/img/MyPic.jpg. For example, the source of my [Timm] page is:
+{{{
+#summary About Tim Menzies
+
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/TimM.jpg">
+
+ * Assoc prof, CSEE.
+ * I belong to GroupZero.
+ * For more information, see my [http://menzies.us home page]
+}}}Note that I do not list my email and neither should you (death to spammers). 
+ * With your group, add your group  page svns/ourmine/wiki/GroupNumber. For example, I am in GroupZero so I wrote this page:
+{{{
+#summary This is the admin group.
+
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/captain_zero.jpg">
+
+= Members =
+
+ * [Timm Tim Menzies]
+}}}
 
 Most of your assignments will be submitted via the wiki (this simplifies word processing). Note that the wiki pages are NOT in your branch but can be found in svns/ourmine/wiki. To edit pages, you can either:
 
@@ -50,25 +68,4 @@ Edit SomeNewPage.wiki
 svn add SomeNewPage.wiki
 svn commit -m "some new page"
 }}}
-Btw, the source of my [Timm] page is:
-{{{
-#summary About Tim Menzies
-
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/TimM.jpg">
-
- * Assoc prof, CSEE.
- * I belong to GroupZero.
- * For more information, see my [http://menzies.us home page]
-}}}
-Note that I do not list my email and neither should you (death to spammers). 
-
-Since I belong to group zero, I also created the GroupZero page:
-{{{
-#summary This is the admin group.
-
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/captain_zero.jpg">
-
-= Members =
-
- * [Timm Tim Menzies]
- }}}
+ 
