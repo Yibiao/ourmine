@@ -2,5 +2,5 @@
 
 = Members =
 
- * [TimM Tim Menzies]
+ * [Timm Tim Menzies]
  
