@@ -3,6 +3,8 @@
 
 ||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] ||
 
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/Advanced.gif" width=300>
+
 The official version of this syllabus is TBD.
 
 ----
@@ -14,10 +16,10 @@ The official version of this syllabus is TBD.
  * Effective data of syllabus: Aug 15, 2009
  * Site: LCSEE, WVU
  * Course number: 87640 (cs573)
- * Course format: 3 credit hours 3 hr lectures, assesssment by project only
+ * Course format: 3 credit hours 3 hr lectures, assessment by project only
  * Textbook (optional):
    * [http://www.amazon.com/exec/obidos/ASIN/0133708756  ANSI Common LISP] : Paul Graham
- * Schedule : Tuesday/Thursday 	1700-1815 and, occastionally, 1815 to 1845 (cs573)
+ * Schedule : Tuesday/Thursday 	1700-1815 and, occasionally, 1815 to 1845 (cs573)
  * Location : ESB 207
  * Instructor name: Tim Menzies Ph.D. ESB 841a, tim@menzies.us. Note: use the above email for private messages. For most of the class traffic, use the class discussion list (http://groups.google.com/group/csx73) and its email csx73@googlegroups.com.
  * Consultation times : Tuesday/Thursday 4:00 to 5:00pm, 841a or by appointment 
@@ -41,7 +43,7 @@ Upon successful completion of this course, students should have:
  * csx73@googlegroups.com : class email list
 
 All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
-Official annountements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
+Official announcements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
 
 = Expected Workload =
 
@@ -65,7 +67,7 @@ Note: all reports to be in PDF using ACM conference "tighter" format http://www.
  * Monday week 15 : Final report (8 pages, 2 column), 25%
 
 Note that students must complete one other 5% tasks, at any time, during the term. But this tasks must be completed by 
-the middle of Novemeber:
+the middle of November:
 
  * Task 1: data mining studies, 5%
 
@@ -81,7 +83,7 @@ Students are expected to regularly attend all lectures. After three noted absenc
 
 = Social Justice Statement =
 
-West Virginia University is committted to social justice. I concur with that commitment and expect to foster a nurturing learning environment based upon open communication, mutual respect, and non-discrimination. Our University does not discriminate on the basis of race, sex, age, disability, veteran status, religion, sexual orientation, color or national origin. Any suggestions as to how to further such a positive and open environment in this class will be appreciated and given serious consideration.
+West Virginia University is committed to social justice. I concur with that commitment and expect to foster a nurturing learning environment based upon open communication, mutual respect, and non-discrimination. Our University does not discriminate on the basis of race, sex, age, disability, veteran status, religion, sexual orientation, color or national origin. Any suggestions as to how to further such a positive and open environment in this class will be appreciated and given serious consideration.
 
 If you are a person with a disability and anticipate needing any type of accommodation in order to participate in this class, please advise me and make appropriate arrangements with Disability Services (293-6700).
 

@@ -13,7 +13,7 @@ The official version of this syllabus is TBD.
  * Effective data of syllabus: Aug 15, 2009
  * Site: LCSEE, WVU
  * Course number: 87638 cs473
- * Course format: 3 credit hours 3 hr lectures, assesssment by project+exams (cs473)
+ * Course format: 3 credit hours 3 hr lectures, assessment by project+exams (cs473)
  * Textbook (optional):
    * [http://www.amazon.com/exec/obidos/ASIN/0133708756  ANSI Common LISP] : Paul Graham
  * Schedule : Tuesday/Thursday 	1700-1815 
@@ -38,7 +38,7 @@ Upon successful completion of this course, students should have:
  * csx73@googlegroups.com : class email list
 
 All students are required to join the GOOGLE news group [ http://groups.google.com/group/agent-oriented agent-oriented].
-Official annountements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
+Official announcements will be posted to the thread [http://groups.google.com/group/agent-oriented/browse_thread/thread/d53c8ea98b2de9c8# admin]. Students are require to read these thread on a regular basis.
 
  
 
@@ -58,7 +58,7 @@ to be provided in class).
 
 Note that all reports will be submitted using subversion to the [http://code.google.com/p/ourmine/   ourmine] website and written in  [http://code.google.com/p/support/wiki/WikiSyntax Wiki/Markdown] syntax.
 
- * Monday week 4 : Assignnment #1: Intro exercises 10%
+ * Monday week 4 : Assignment #1: Intro exercises 10%
  * Monday week 7 : Assignment #2: intermediary data mining techniques, 10%
  * Thursday week 7 : Mid term 15%
  * Monday week 10 : Assignment #3: Experimental methods in data mining 10%
@@ -68,7 +68,7 @@ Note that all reports will be submitted using subversion to the [http://code.goo
  * End-of-term exam : 15%
 
 Note that students must complete one other 5% tasks, at any time, during the term. But this tasks must be completed by 
-the middle of Novemeber:
+the middle of November:
 
  * Task 1: data mining studies, 5%
 
@@ -83,18 +83,19 @@ The code written for this subject can be quite complex. To run it and grade it, 
 Therefore, for the coding projects, the code will be marked in _debrief_ sessions which all group members will attend:
 
  * Attendance is mandatory or you will score zero on that project (exception: medical  certificates).
- * Prior to the sessions, I will publish a calendar for stdents to fill in when they want to be graded. Students must negotiate amongst themselves for the avialable slots. *It is your responsibility, not mine, for you to find a suitable time.* 
+ * Prior to the sessions, I will publish a calendar for students to fill in when they want to be graded. Students must negotiate amongst themselves for the available slots. *It is your responsibility, not mine, to adjust your other commitments so you can attend.*
  * At the start of each session, I will collect from each student one sealed unmarked envelope.
      * This envelope will contain the name of the student at the top, followed by a list of the group members.
-     * Each group member (includeing the stdudent) will be marked with the share of the  project grade that the student feel their peers deserve for that project. 
-     * e.g. Mathew=1, Mark=1, Luke=1 means that this student thinks that all students deserve equal marks. 
-     * e.g. Mathew=0, mark=1, Luke=1 means that this student believed that Mathew should get zero marks for that project while Mark and Luke should get equal marks.
+     * Each group member (including the student) will be marked with the share of the  project grade that the student feel their peers deserve for that project. 
+     * e.g. Tim=1, James=1, ObiWon=1 means that this student thinks that all students deserve equal marks. 
+     * e.g. Tim=0.5, James=0.75, ObiWon=1 means that this student thinks ObiWon did most of the work, Tim worked half as much as ObiWon, and James worked somewhere in between.
+     * e.g. Tim=0, James=1, ObiWon=1 means that this student believed that Tim should get zero marks for that project while James and ObiWon should get equal marks.
  * During those  sessions,  I will run the code and ask students questions about the code base. These questions will be asked on a round-robin basis (so all students will get an equal number of questions).
  * After the sessions, after the students have left, I will open the envelopes. 
  * The final mark for each student will be computed from:
-   * the functionality seen during the session (was the project goal achieved); 
-   * the answers the students gave to the questions (did each student demonstrate mastery of the techniques?); 
-   * the contents of the envelopes (did all students work equally on the project?).
+   * The functionality seen during the session (was the project goal achieved); 
+   * The answers the students gave to the questions (did each student demonstrate mastery of the techniques?); 
+   * The contents of the envelopes (did all students work equally on the project?).
 
 = Attendance policy =
 
@@ -102,7 +103,7 @@ Students are expected to regularly attend all lectures. After three noted absenc
 
 = Social Justice Statement =
 
-West Virginia University is committted to social justice. I concur with that commitment and expect to foster a nurturing learning environment based upon open communication, mutual respect, and non-discrimination. Our University does not discriminate on the basis of race, sex, age, disability, veteran status, religion, sexual orientation, color or national origin. Any suggestions as to how to further such a positive and open environment in this class will be appreciated and given serious consideration.
+West Virginia University is committed to social justice. I concur with that commitment and expect to foster a nurturing learning environment based upon open communication, mutual respect, and non-discrimination. Our University does not discriminate on the basis of race, sex, age, disability, veteran status, religion, sexual orientation, color or national origin. Any suggestions as to how to further such a positive and open environment in this class will be appreciated and given serious consideration.
 
 If you are a person with a disability and anticipate needing any type of accommodation in order to participate in this class, please advise me and make appropriate arrangements with Disability Services (293-6700).
 

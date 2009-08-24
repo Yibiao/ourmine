@@ -45,7 +45,7 @@ Write 50 deftests showing your understand Paul Graham's text chapters
     include at least one test for each of 
     figures 3.6/3.7,3.12,4.2,4.5,4.6,5.2,6.1,7.1,10.2,14.2 
   
-    Note that ome of Graham's code is on-line at 
+    Note that some of Graham's code is on-line at 
     http://lib.store.yahoo.net/lib/paulgraham/acl2.lisp
 
     Also, there are errors in some of his text. See http://www.paulgraham.com/ancomliser.html
