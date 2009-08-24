@@ -1,4 +1,6 @@
 #summary For students of cs473, cs573, fall 2009.
+   
+(IMPORTANT NOTE: *DO NOT* following the OURMINE install instructions from [http://code.google.com/p/ourmine/]. Those instructions are for those that want read-only access to Ourmine. You, on the other hand, want read-write access. So you should follow the notes shown below.)
 
 = Preliminaries =
  * Get a gmail account.
@@ -22,9 +24,12 @@ cd svns
 svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.user,name
 }}}
 
-(Warning: last year, this was a very slow process due to file server problems- which should be fixed.)
+Notes:
 
-= Uploads =
+ * Last year, this was a very slow process due to file server problems- which should be fixed.
+ * Once you've got a full check out, you'll enver want to do that again. Only update svns/ourmine/wiki and svns/ourmine/branches/YourGroupNumber.
+
+= Uplodas =
 
  * Get a picture of yourself (less than 100KB) and add it to svns/ourmine/trunk/share/img 
  * Add that picture to the repository
@@ -74,4 +79,23 @@ Edit SomeNewPage.wiki
 svn add SomeNewPage.wiki
 svn commit -m "some new page"
 }}}
- 
+
+= LISPing = 
+
+* Follow the instructions in DotConfig to adjust your LISP environment with two exceptions:
+  * Do not run the install instructions at http://code.google.com/p/ourmine/ (see note at top of page).
+  * Near the bottom, where it mentions the path to color-themes, replace that path with 
+	 * $HOME/svns/ourmine/branches/YourGrouNumber/our/etc/color-themes/6.6.0
+
+If all that workds, then the following should work:
+
+{{{
+cd $HOME/svns/ourmine/branches/YourGroupNumber/lib/lisp
+emacs
+M-x slime
+(load "miner")
+(tests)
+}}}
+This should produce a screen that looks (somewhat) like this:
+
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/lispworksings.jpg">
