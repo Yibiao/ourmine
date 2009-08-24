@@ -1,10 +1,9 @@
-#summary Initial project for WVU cs473
+#summary Initial project for WVU cs473, Fall 2009
 #labels 473,projects
 
 = Introduction =
 
 In this project you will learn how to (very simple) data miners in LISP.
-
 
 = Setup =
 
@@ -26,8 +25,10 @@ In this project you will learn how to (very simple) data miners in LISP.
 {{{
 mkdir $HOME/svns
 cd svns
-svn checkout https://ourmine.googlecode.com/svn iccle --username your.gmail.user,name
+svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.user,name
 }}}
+
+(Warning: last year, this was a very slow process due to file server problems- which should be fixed.)
 
 == Uploads ==
 
@@ -41,7 +42,7 @@ svn checkout https://ourmine.googlecode.com/svn iccle --username your.gmail.user
  * Create your own personnel page:  svns/ourmine/wiki/YourName  
  * With your group, add your group  page svns/ourmine/wiki/GroupNumber.
 
-Most of your assignments will be submitted via the wiki (simplifies word processing).
+Most of your assignments will be submitted via the wiki (this simplifies word processing).
 
 Btw, the source of my [Timm] page is:
 {{{
