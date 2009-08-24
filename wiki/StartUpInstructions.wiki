@@ -1,8 +1,6 @@
 #summary One-sentence summary of this page.
 
-= Setup =
-
-== Preliminaries ==
+= Preliminaries =
  * Get a gmail account.
  * Join the class google group : http://groups.google.com/group/csx73
  * Join the class repository by asking an administrator of that group to add you:
@@ -11,7 +9,7 @@
     * Aaron Riesbeck
     * Zack Murray
 
-== Downloads ==
+= Downloads =
 
  * Make room. Clean your CSEE account. The following download will consume up to 60M.
  * Find your ICCLE password (look for "googlecode.com password") in http://code.google.com/p/ourmine/source/checkou
@@ -25,16 +23,16 @@ svn checkout https://ourmine.googlecode.com/svn ourmine --username your.gmail.us
 
 (Warning: last year, this was a very slow process due to file server problems- which should be fixed.)
 
-== Uploads ==
+= Uploads =
 
  * Get a picture of yourself (less than 100KB) and add it to svns/ourmine/trunk/share/img 
  * Add that picture to the repository (_svn add svns/ourmine/trunk/share/img/MyPic.jpg_)
  * Commit those changes (_svn commit -m "my picture added"_).
 
-== Create Your Group ==
+= Create Your Group =
  * Find some like-minded folks, form a group of three.
  * Get your group number (from me).
- * Create your own personnel page:  svns/ourmine/wiki/YourName  
+ * Create your own personnel page:  svns/ourmine/wiki/YourName. Note that your picture is accessible at http://ourmine.googlecode.com/svn/trunk/share/img/MyPic.jpg.
  * With your group, add your group  page svns/ourmine/wiki/GroupNumber.
 
 Most of your assignments will be submitted via the wiki (this simplifies word processing).
