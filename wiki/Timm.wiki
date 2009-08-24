@@ -1,7 +1,7 @@
 #summary About Tim Menzies
 #labels who,TimM
 
-http://ourmine.googlecode.com/svn/trunk/share/img/TimM.jpg
+<img width=100 src="http://ourmine.googlecode.com/svn/trunk/share/img/TimM.jpg">
 
-* Assoc prof, CSEE.
-* For more information, see my [http://menzies.us home page]
+ * Assoc prof, CSEE.
+ * For more information, see my [http://menzies.us home page]
