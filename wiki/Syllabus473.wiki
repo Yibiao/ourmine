@@ -77,7 +77,24 @@ See also, below, for how to lose marks due to poor attendance.
 For special consideration on the above, either:
 
     * See me at start of semester advising planned absences or
-    * provide a doctor's certificate indicating that the student was unable to work on their studies for a relevant period (that note need NOT name the illness, but should list its duration)
+    * provide a medical certificate indicating that the student was unable to work on their studies for a relevant period (that note need NOT name the illness, but should list its duration)
+
+The code written for this subject can be quite complex. To run it and grade it, I often need project members present.
+Therefore, for the coding projects, the code will be marked in _debrief_ sessions which all group members will attend:
+
+ * Attendance is mandatory or you will score zero on that project (exception: medical  certificates).
+ * Prior to the sessions, I will publish a calendar for stdents to fill in when they want to be graded. Students must negotiate amongst themselves for the avialable slots. *It is your responsibility, not mine, for you to find a suitable time.* 
+ * At the start of each session, I will collect from each student one sealed unmarked envelope.
+     * This envelope will contain the name of the student at the top, followed by a list of the group members.
+     * Each group member (includeing the stdudent) will be marked with the share of the  project grade that the student feel their peers deserve for that project. 
+     * e.g. Mathew=1, Mark=1, Luke=1 means that this student thinks that all students deserve equal marks. 
+     * e.g. Mathew=0, mark=1, Luke=1 means that this student believed that Mathew should get zero marks for that project while Mark and Luke should get equal marks.
+ * During those  sessions,  I will run the code and ask students questions about the code base. These questions will be asked on a round-robin basis (so all students will get an equal number of questions).
+ * After the sessions, after the students have left, I will open the envelopes. 
+ * The final mark for each student will be computed from:
+   * the functionality seen during the session (was the project goal achieved); 
+   * the answers the students gave to the questions (did each student demonstrate mastery of the techniques?); 
+   * the contents of the envelopes (did all students work equally on the project?).
 
 = Attendance policy =
 
