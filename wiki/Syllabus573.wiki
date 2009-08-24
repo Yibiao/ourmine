@@ -1,7 +1,7 @@
 #summary cs573 syllabus for Advanced Data Mining (WVU, Fall 2009)
 #labels teaching,timm
 
-||<wiki:toc max_depth="4" />||<img src="http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif" width=150> <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || <img src="http://ourmine.googlecode.com/svn/trunk/share/img/Advanced.gif" width=150> ||
+||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || <img src="http://ourmine.googlecode.com/svn/trunk/share/img/Advanced.gif" width=150> ||
 
 The official version of this syllabus is TBD.
 
@@ -73,7 +73,26 @@ the middle of November:
 For special consideration on the above, either:
 
     * See me at start of semester advising planned absences or
-    * provide a doctor's certificate indicating that the student was unable to work on their studies for a relevant period (that note need NOT name the illness, but should list its duration)
+    * provide a medical certificate indicating that the student was unable to work on their studies for a relevant period (that note need NOT name the illness, but should list its duration)
+
+The code written for this subject can be quite complex. To run it and grade it, I often need project members present.
+Therefore, for the coding projects, the code will be marked in _debrief_ sessions which all group members will attend:
+
+ * Attendance is mandatory or you will score zero on that project (exception: medical  certificates).
+ * Prior to the sessions, I will publish a calendar for students to fill in when they want to be graded. Students must negotiate amongst themselves for the available slots. *It is your responsibility, not mine, to adjust your other commitments so you can attend.*
+ * At the start of each session, I will collect from each student one sealed unmarked envelope.
+     * This envelope will contain the name of the student at the top, followed by a list of the group members.
+     * Each group member (including the student) will be marked with the share of the  project grade that the student feel their peers deserve for that project. 
+     * e.g. Tim=1, James=1, ObiWon=1 means that this student thinks that all students deserve equal marks. 
+     * e.g. Tim=0.5, James=0.75, ObiWon=1 means that this student thinks ObiWon did most of the work, Tim worked half as much as ObiWon, and James worked somewhere in between.
+     * e.g. Tim=0, James=1, ObiWon=1 means that this student believed that Tim should get zero marks for that project while James and ObiWon should get equal marks.
+ * During those  sessions,  I will run the code and ask students questions about the code base. These questions will be asked on a round-robin basis (so all students will get an equal number of questions).
+ * After the sessions, after the students have left, I will open the envelopes. 
+ * The final mark for each student will be computed from:
+   * The functionality seen during the session (was the project goal achieved); 
+   * The answers the students gave to the questions (did each student demonstrate mastery of the techniques?); 
+   * The contents of the envelopes (did all students work equally on the project?).
+
 
 = Attendance policy =
 
