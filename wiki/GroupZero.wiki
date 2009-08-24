@@ -1,5 +1,7 @@
 #summary This is the admin group.
 
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/captian_zero.jpg">
+
 = Members =
 
  * [Timm Tim Menzies]
