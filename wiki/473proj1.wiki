@@ -19,10 +19,8 @@ In this project you will learn how to (very simple) data miners in LISP.
 
 == Downloads ==
 
- * Make room. Clean your CSEE account. The following download will consume
-   up to 60M.
- * Find your ICCLE password (look for "googlecode.com password") in
-   http://code.google.com/p/ourmine/source/checkou
+ * Make room. Clean your CSEE account. The following download will consume up to 60M.
+ * Find your ICCLE password (look for "googlecode.com password") in http://code.google.com/p/ourmine/source/checkou
  * Run these commands:
 
 {{{
@@ -45,8 +43,7 @@ svn checkout https://ourmine.googlecode.com/svn iccle --username your.gmail.user
 
 Most of your assignments will be submitted via the wiki (simplifies word processing).
 
-
-Btw, the source of my Timm page is:
+Btw, the source of my [Timm] page is:
 {{{
 #summary About Tim Menzies
 
