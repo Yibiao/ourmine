@@ -7,7 +7,6 @@ so well that it is worthy of exploration.
 Here's the official blurb:
 
  * For each class, a HyperPipe is constructed that contains all points of that class (essentially records the attribute bounds observed for each category).  Test instances are classified according to the class that "most contains the instance".
-
  * Hyperpies do not handle numeric class.
  * Hyperpies are an extremely simple algorithm, has the advantage of being extremely fast, and works quite well when you have "smegloads" of attributes.
 

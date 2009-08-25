@@ -52,6 +52,7 @@ Also, there are errors in some of his text. See http://www.paulgraham.com/ancoml
 
 Implement HyperPipes. Hint: modify [http://ourmine.googlecode.com/svn/trunk/our/lib/lisp/learn/nb.lisp nb.lisp].
 To demonstrate the code, emulate the _deftest_ in nb.lisp but demonstrate the code using ten of the (smaller) datasets in 
+http://ourmine.googlecode.com/svn/trunk/our/lib/lisp/tests/data,
  
 = How to Submit =
 
