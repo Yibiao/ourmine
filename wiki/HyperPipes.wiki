@@ -33,7 +33,8 @@ function train() {
 
 An instance is "contained" if its "_i-th_>" value overlaps with the ranges seen during testing.
 
-{{{function contains(klass,i,value) {
+{{{
+function contains(klass,i,value) {
      if (numericp(i) { 
          if ((Max[klass,i] >= value) && (Min[klass,i] <= value))
               return 1
