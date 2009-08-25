@@ -1,6 +1,6 @@
 #summary all things "G"
 
-= G = 
+<wiki:toc max_depth="4" />
 
 == Gama06 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/gama06.pdf

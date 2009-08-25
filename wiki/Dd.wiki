@@ -1,6 +1,6 @@
 #summary all things "D"
 
-= D =
+<wiki:toc max_depth="4" />
 
 == Demsar06 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/demsar06.pdf

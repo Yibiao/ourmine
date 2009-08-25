@@ -1,6 +1,6 @@
 #summary lists of all thing starting with "E"
 
-= E =
+<wiki:toc max_depth="4" />
 
 == Eisentein04 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/eisenstein04.pdf

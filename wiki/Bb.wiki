@@ -1,6 +1,6 @@
 #summary all things "B"
 
-= B =
+<wiki:toc max_depth="4" />
 
 == Boland07 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/boland06.pdf

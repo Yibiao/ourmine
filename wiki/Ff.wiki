@@ -1,6 +1,6 @@
 #summary all things "F"
 
-= F =
+<wiki:toc max_depth="4" />
 
 == Fayyad93 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/fayyad93.pdf

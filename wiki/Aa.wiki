@@ -1,6 +1,6 @@
 #summary all things "A"
 
-= A =
+<wiki:toc max_depth="4" />
 
 == Arthur06 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/kMeansPlusPlus.pdf

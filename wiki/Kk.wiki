@@ -1,6 +1,6 @@
 #summary all things "K"
 
-= K =
+<wiki:toc max_depth="4" />
 
 == Kitchenham07 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/kitchenham07.pdf
