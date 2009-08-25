@@ -1,0 +1,20 @@
+#summary all things "H"
+
+= H =
+
+== hall03 ==
+http://ourmine.googlecode.com/svn/trunk/share/pdf/hall03.pdf
+
+{{{
+@article{hall03,
+  journal = "IEEE Transactions On Knowledge And Data Engineering",
+  year    = 2003,
+  volume  = 15,
+  number  = 6,
+  pages   = "1437- 1447",
+  title   = "Benchmarking Attribute Selection Techniques for
+             Discrete Class Data Mining",
+  author  = "M.A. Hall and G. Holmes"
+}
+}}}
+

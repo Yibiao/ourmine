@@ -3,7 +3,7 @@
 = E =
 
 == Eisentein04 ==
-http://iccle.ourmine.com/svn/trunk/share/pdf/eisenstein04.pdf
+http://ourmine.googlecode.com/svn/trunk/share/pdf/eisenstein04.pdf
 {{{
 @inproceedings{Eisenstein04,
   author         = {Jacob Eisenstein and
@@ -11,10 +11,6 @@ http://iccle.ourmine.com/svn/trunk/share/pdf/eisenstein04.pdf
   title          = {Visual and linguistic information in gesture classification},
   booktitle      = {ICMI},
   year           = {2004},
-  pages          = {113-120},
-  ee             = {http://doi.acm.org/10.1145/1027933.1027954},
-  crossref       = {DBLP:conf/icmi/2004},
-  bibsource      = {DBLP, http://dblp.uni-trier.de},
-  url            = "http://iccle.ourmine.com/svn/trunk/share/pdf/eisenstein04.pdf"
+  pages          = {113-120}
 }
 }}}
