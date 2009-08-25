@@ -4,7 +4,7 @@
 ||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || <img src="http://ourmine.googlecode.com/svn/trunk/share/img/introduction.png" width=250> ||
 
 The official version of this syllabus is 
-http://code.google.com/p/ourmine/source/browse/wiki/Syllabus473.wiki?r=363
+http://code.google.com/p/ourmine/source/browse/wiki/Syllabus473.wiki?r=364
 ----
 
 = Syllabus =
@@ -77,12 +77,18 @@ For special consideration on the above, either:
     * See me at start of semester advising planned absences or
     * provide a medical certificate indicating that the student was unable to work on their studies for a relevant period (that note need NOT name the illness, but should list its duration)
 
-The code written for this subject can be quite complex. To run it and grade it, I often need project members present.
+By the end of project1, and for all subsequent work, students must regularly commit their work to a code repository provided by the lecturer. This repository will be
+monitored by the lecturer and students who are not making regular commits will be told to opt out of the group projects and work on their own.
+
+Students can choose, or be told, to opt out of the group projects. If so, they will write 2*2000 essays for each remaining project in the term. They will also loose 7.5 marks from their end-of-year grade.
+
+The code written for this subject's projects can be quite complex. To run it and grade it, I often need project members present.
 Therefore, for the coding projects, the code will be marked in _debrief_ sessions which all group members will attend:
 
  * Attendance is mandatory or you will score zero on that project (exception: medical  certificates).
  * Prior to the sessions, I will publish a calendar for students to fill in when they want to be graded. Students must negotiate amongst themselves for the available slots. *It is your responsibility, not mine, to adjust your other commitments so you can attend.*
- * At the start of each session, I will collect from each student one sealed unmarked envelope.
+ * At the start of each debrief session, I load the code from the code repository that was committed at the time of project submission. This will be the version that is graded.
+ * At the start of each debrief session, I will collect from each student one sealed unmarked envelope.
      * This envelope will contain the name of the student at the top, followed by a list of the group members.
      * Each group member (including the student) will be marked with the share of the  project grade that the student feel their peers deserve for that project. 
      * e.g. Tim=1, James=1, ObiWon=1 means that this student thinks that all students deserve equal marks. 
@@ -92,8 +98,10 @@ Therefore, for the coding projects, the code will be marked in _debrief_ session
  * After the sessions, after the students have left, I will open the envelopes. 
  * The final mark for each student will be computed from:
    * The functionality seen during the session (was the project goal achieved); 
-   * The answers the students gave to the questions (did each student demonstrate mastery of the techniques?); 
+   * The answers the students gave to the questions (did each student demonstrate mastery of the techniques?);
    * The contents of the envelopes (did all students work equally on the project?).
+
+
 
 = Attendance policy =
 
