@@ -4,7 +4,7 @@
 ||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || <img src="http://ourmine.googlecode.com/svn/trunk/share/img/introduction.png" width=250> ||
 
 The official version of this syllabus is 
-http://code.google.com/p/ourmine/source/browse/wiki/Syllabus473.wiki?r=354
+http://code.google.com/p/ourmine/source/browse/wiki/Syllabus473.wiki?r=363
 ----
 
 = Syllabus =
