@@ -1,4 +1,5 @@
 #summary project details for the advanced data mining class.
+#labels Featured
 
 = Project 1b (intro exercise) =
 
