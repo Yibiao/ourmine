@@ -1,0 +1,29 @@
+#summary project details for the advanced data mining class.
+
+= Project 1b (intro exercise) =
+
+ * Mandatory:
+    * Do the same project as the [473proj1 473] students. Also:
+       * Note: their "bonus work" is mandatory for you. 
+ * Optimal:
+    * For 5 bonus marks, implement   TWCNB (the whole algorithm is shown top right of page 7 of [Rr#Rennie03].
+
+= Project 2b (preliminary results) =
+
+ * Implement [Hh#Holte01] and  [Dd#Dou95 Douherty] in Ourmine. Do you agree with their conclusions?
+ * Rereun the  [Tt#Turhan09 Turhan] study in Ourmine. Do you agree with their conclusions?
+ * Write a report in Latex using [http://www.acm.org/sigs/publications/proceedings-templates ACM tight style] that discusses recent contradictory results in defect prediction. Your report should propose some mechanism for reviewing models learned from multiple defect data sets, looking for the presence (or absence) of general patterns. Use at least these references:
+      * There is no generality in the defect models: [Kk#Kitchenham07], [Zz#Zimmerman09], [Mm#Menzies07a]  (note: the Kitchenham paper is about effort estimation, not defect prediction. But, by analogy, what lessons can we learn from that paper?)
+      * There is generality: [Tt#Turhan09], [Oo#Ostrand04]
+
+= Project 3b (progress report) =
+ * Write a report in Latex using [http://www.acm.org/sigs/publications/proceedings-templates ACM tight style] that discusses your results looking for the presence (or absence) of general patterns. * Have a code review sesssion with the lecturer demonstrating your tools.
+
+= Project 3c (progress report) = 
+ * New report, new demos, same format as 3b.
+
+= Project 3d (Results presentation) =
+ * Present to class at least 20 slides, at most 20 minutes using  Google Docs
+
+= Project 3e (Final report) =
+ * New report, new demos, same format as 3b.

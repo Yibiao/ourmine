@@ -1,7 +1,7 @@
 #summary Initial project for WVU cs473, Fall 2009
 #labels 473,projects
 
-= Introduction =
+= Project 1a =
 
 In this project you will do some introductory LISP exercises.
 

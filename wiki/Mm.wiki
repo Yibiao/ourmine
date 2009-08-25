@@ -1,0 +1,15 @@
+#summary lists of all thing starting with "M"
+
+<wiki:toc max_depth="4" />
+
+== Menzies07a ==
+http://ourmine.googlecode.com/svn/trunk/share/pdf/07menzies.pdf
+{{{
+@article{Menzies071,
+		author="Tim Menzies and Jeremy Greenwald and Art Frank",
+		year=2007,
+		month="January",
+		title="Data Mining Static Code Attributes to Learn Defect Predictors",
+		journal="IEEE Transactions on Software Engineering"
+}
+}}}

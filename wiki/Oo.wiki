@@ -1,0 +1,15 @@
+#summary lists of all thing starting with "O"
+
+<wiki:toc max_depth="4" />
+
+== Ostrand04 ==
+http://ourmine.googlecode.com/svn/trunk/share/pdf/eisenstein04.pdf
+{{{
+@inproceedings{Ostrand04,
+  author         = {Thomas J. Ostrand and Elaine J. Weyuker and Robert M. Bell },
+  title          = {Where the Bugs Are},
+  booktitle      = {ISSTA'04},
+  year           = {2004},
+  pages          = {86-96}
+}
+}}}

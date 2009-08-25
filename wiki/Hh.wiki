@@ -17,4 +17,17 @@ http://ourmine.googlecode.com/svn/trunk/share/pdf/hall03.pdf
   author  = "M.A. Hall and G. Holmes"
 }
 }}}
+== Holte83 ==
+http://ourmine.googlecode.com/svn/trunk/share/pdf/93holte.pdf
+{{{
+@article{holte93,
+  author =	 "R.C. Holte",
+  title =	 "Very Simple Classification Rules Perform Well on
+                  Most Commonly Used Datasets",
+  journal =	 "Machine Learning",
+  volume =	 "11",
+  pages =	 "63",
+  year =	 "1993"
+}
+}}}
 
