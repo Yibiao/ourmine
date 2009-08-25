@@ -1,5 +1,5 @@
 #summary Initial project for WVU cs473, Fall 2009
-#labels 473,projects
+#labels 473,projects,Featured
 
 = Project 1a =
 
