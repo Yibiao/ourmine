@@ -3,7 +3,7 @@
 
 ||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] || <img src="http://ourmine.googlecode.com/svn/trunk/share/img/Advanced.gif" width=150> ||
 
-The official version of this syllabus is TBD.
+The official version of this syllabus is dated Auguest 24, 2009.
 
 ----
 
@@ -11,7 +11,7 @@ The official version of this syllabus is TBD.
 = Syllabus =
 
  * Course name: cs573 Advanced Data Mining
- * Effective data of syllabus: Aug 15, 2009
+ * Effective data of syllabus: Aug 24, 2009
  * Site: LCSEE, WVU
  * Course number: 87640 (cs573)
  * Course format: 3 credit hours 3 hr lectures, assessment by project only
