@@ -23,14 +23,12 @@ http://code.google.com/p/ourmine/source/browse/wiki/Syllabus473.wiki?r=354
 
 = Objectives =
 
-Upon successful completion of this course, students should have:
+Upon successful completion of this course, students should:
 
- * Ability to program elementary data mining methods.
- * Ability to program data mining evaluation experiments.
- * Ability to convert domain data into valid inputs for a learner;
- * Ability to describe the differences between widely-used data miners;
- * Ability to describe the practical issues associated with data mining for real-world applications;
- * Students will have gained experience in working within a team of their peers.
+ * Be exposed to programming data miners in JAVA, LISP and shell script (CS.a).
+ * Have knowledge of _basic_ principles (data structures, algorithms) required for solving data mining problem (CS.c).
+ * Have knowledge of  principles required for the  design, implementation and analysis of _simple_ data mining experiments (CS.e).
+ * Be able to work and learn effectively as members of a team (CS.g.g3)
 
 = Links =
  * http://www.arc.wvu.edu/courses/ : WVU course pages
@@ -65,7 +63,7 @@ Note that all reports will be submitted using subversion to the [http://code.goo
  * Friday week 10 : Literature reviews, 10%
  * Last week of class : presentation on your project, 10%
  * One week later : final report 15%
- * End-of-term exam : 15%
+ * End-of-term exam (Sunday December 19, 1100 to 1300) : 15%
 
 Note that students must complete one other 5% tasks, at any time, during the term. But this tasks must be completed by 
 the middle of November:

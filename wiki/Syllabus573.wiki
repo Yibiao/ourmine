@@ -24,16 +24,15 @@ http://code.google.com/p/ourmine/source/browse/wiki/Syllabus573.wiki?r=354.
 
 = Objectives =
 
-Upon successful completion of this course, students should have:
+Upon successful completion of this course, students should:
 
- * Ability to program elementary data mining methods.
- * Ability to run data mining evaluation experiments.
- * Ability to convert domain data into valid inputs for a learner;
- * Ability to describe the differences between widely-used data miners;
- * Ability to describe the practical issues associated with data mining for real-world applications;
- * Students will have gained experience in working within a team of their peers.
- * Ability to program data mining algorithms
- * Students will increase their proficiency in oral and written communications.
+ * Be exposed to programming data miners in JAVA, LISP and shell script (CS.a).
+ * Have knowledge of _advanced_ principles (data structures, algorithms) required for solving data mining problem (CS.c).
+ * Have knowledge of  principles required for the  design, implementation and analysis of _complex_ data mining experiments (CS.e).
+ * Be familiar with _advanced_ concepts of data mining (CS.g.k)
+ * Be able to communicate ideas effectively: in writing (CS.g.g1)
+ * Be able to communicate ideas effectively: verbally (CS.g.g2)
+ * Be able to work and learn effectively as members of a team (CS.g.g3)
 
 = Links =
  * http://www.arc.wvu.edu/courses/ : WVU course pages
