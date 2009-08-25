@@ -3,8 +3,8 @@
 
 ||<wiki:toc max_depth="4" />||http://www.lcsee.cemr.wvu.edu/cemrimages/wvulogotag1.gif <p>[http://www.lcsee.wvu.edu Lane Department of Com. Sci. and Elec. Eng.] ||
 
-The official version of this syllabus is dated August 24, 2009.
-
+The official version of this syllabus is 
+http://code.google.com/p/ourmine/source/browse/wiki/Syllabus473.wiki?r=354
 ----
 
 = Syllabus =
