@@ -43,7 +43,7 @@ An instance is "contained" if its "_i-th_>" value overlaps with the ranges seen 
 }
 }}}
 During testing, an instance is assigned the class that is most "contained".
-{{{{
+{{{
 function mostContained() {
    best = -1;
    for(klass in Klasses) {
