@@ -3,6 +3,7 @@
 = E =
 
 == Eisentein04 ==
+http://iccle.ourmine.com/svn/trunk/share/pdf/eisenstein04.pdf
 {{{
 @inproceedings{Eisenstein04,
   author         = {Jacob Eisenstein and
