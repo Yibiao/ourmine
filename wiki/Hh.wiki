@@ -17,7 +17,7 @@ http://ourmine.googlecode.com/svn/trunk/share/pdf/hall03.pdf
   author  = "M.A. Hall and G. Holmes"
 }
 }}}
-== Holte83 ==
+== Holte93 ==
 http://ourmine.googlecode.com/svn/trunk/share/pdf/93holte.pdf
 {{{
 @article{holte93,

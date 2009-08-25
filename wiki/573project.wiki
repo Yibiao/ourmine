@@ -10,14 +10,15 @@
 
 = Project 2b (preliminary results) =
 
- * Implement [Hh#Holte01] and  [Dd#Dou95 Douherty] in Ourmine. Do you agree with their conclusions?
+ * Implement [Hh#Holte93] and  [Dd#Dou95 Douherty] in Ourmine. Do you agree with their conclusions?
  * Rereun the  [Tt#Turhan09 Turhan] study in Ourmine. Do you agree with their conclusions?
  * Write a report in Latex using [http://www.acm.org/sigs/publications/proceedings-templates ACM tight style] that discusses recent contradictory results in defect prediction. Your report should propose some mechanism for reviewing models learned from multiple defect data sets, looking for the presence (or absence) of general patterns. Use at least these references:
       * There is no generality in the defect models: [Kk#Kitchenham07], [Zz#Zimmerman09], [Mm#Menzies07a]  (note: the Kitchenham paper is about effort estimation, not defect prediction. But, by analogy, what lessons can we learn from that paper?)
       * There is generality: [Tt#Turhan09], [Oo#Ostrand04]
 
 = Project 3b (progress report) =
- * Write a report in Latex using [http://www.acm.org/sigs/publications/proceedings-templates ACM tight style] that discusses your results looking for the presence (or absence) of general patterns. * Have a code review sesssion with the lecturer demonstrating your tools.
+ * Write a report in Latex using [http://www.acm.org/sigs/publications/proceedings-templates ACM tight style] that discusses your results looking for the presence (or absence) of general patterns. 
+ * Have a code review sesssion with the lecturer demonstrating your tools.
 
 = Project 3c (progress report) = 
  * New report, new demos, same format as 3b.
