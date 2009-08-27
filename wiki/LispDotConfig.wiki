@@ -2,7 +2,7 @@
 
 = Before you Start =
 
- * Create a directory $HOME/opt/backup
+ * Create a directory $HOME/opt/tmp/backup
  * If you want some of the config files described below, then do the [http://code.google.com/p/ourmine/ Ourmine install] before everything else.
 
 = Getting Started with EMACS =
