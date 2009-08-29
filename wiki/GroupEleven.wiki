@@ -1,0 +1,8 @@
+#summary This is the page for the infamous GroupEleven.
+
+<img width=300 src="http://www.reellifewisdom.com/files/images/eleven.jpg">
+
+= Members =
+
+ * [KelCecil Kel Cecil]
+ 

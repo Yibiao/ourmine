@@ -1,0 +1,22 @@
+#summary About Kel Cecil
+#labels who,Kel Cecil
+
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/kelcecil.JPG">
+
+=Kel Cecil=
+Graduate Student, CSEE @ WVU
+Linux Specialist, Computer and Electronics Shop, MAE @ WVU
+Member of Group Eleven
+
+==Research Interests==
+ * Computer Forensics
+ * Data Mining
+ * Security and hacking
+
+==Hobbies==
+ *Anything Computer Science-related
+ *Reading
+ *Video Games
+ *Assignments
+
+Visit my blog @ [http://www.praisechaos.com].
