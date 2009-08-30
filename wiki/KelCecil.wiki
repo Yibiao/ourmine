@@ -1,5 +1,5 @@
 #summary About Kel Cecil
-#labels who,Kel Cecil
+#labels who,KelCecil
 
 <img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/kelcecil.JPG">
 
@@ -14,9 +14,9 @@ Member of Group Eleven
  * Security and hacking
 
 ==Hobbies==
- *Anything Computer Science-related
- *Reading
- *Video Games
- *Assignments
+ * Anything Computer Science-related
+ * Reading
+ * Video Games
+ * Assignments
 
 Visit my blog @ [http://www.praisechaos.com].
