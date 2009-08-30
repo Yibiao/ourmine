@@ -1,0 +1,20 @@
+#summary About Yasaman Khazaeni
+
+#<img width=300 src="">
+
+=Yasaman Khazaeni=
+Graduate Student, PNGE @ WVU
+
+Reservoir Engineering and Artificial Intelligence in Reservoir Simulation
+
+Member of Group Eleven
+
+==Research Interests==
+ * Artificial Intelligence
+ * Numerical Modeling
+ 
+==Hobbies==
+ * Music and Literature
+ * Hiking
+ 
+ .
