@@ -1,4 +1,4 @@
-#summary This is the page for the infamous GroupEleven.
+﻿#summary This is the page for the infamous GroupEleven.
 
 <img width=300 src="http://www.reellifewisdom.com/files/images/eleven.jpg">
 
@@ -6,5 +6,5 @@
 
  * [KelCecil Kel Cecil]
  * [yasamankhazaeni Yasaman Khazaeni]
-
+ * [JesseTaylor Jesse Taylor]
  
