@@ -54,5 +54,5 @@ else if outlook = rainy and windy = TRUE         then no
 
 Note that PRISM suffers from over-fitting. This problem is addressed in
 
- * The [AlgorithmInduct Induct] that explores each rule-condition in reverse order of addition, and removes conditions which seem dull.
- * The [AlgorithmRipper Ripper] that builds then prunes rule conditions; then builds and prunes sets of rules; then does some other optimizations to see if rules can be replaced by the simplest dumbest alternative.
+ *  [AlgorithmInduct Induct] : explores each rule-condition in reverse order of addition, and removes conditions which seem dull.
+ *  [AlgorithmRipper Ripper] : builds then prunes rule conditions; then builds and prunes sets of rules; then does some other optimizations to see if rules can be replaced by the simplest dumbest alternative.
