@@ -1,4 +1,5 @@
 #summary Notes on recommended changes to $HOME/.xyz files
+#labels Lisp,Systems
 
 = Before you Start =
 
