@@ -1,4 +1,5 @@
 #summary PRISM
+#labels Lecture
 {{{
 For all classes c in C 
 Create a R with an empty condition that predicts for class C . 
