@@ -1,4 +1,5 @@
 #summary a simple learner, suited for sparse data.
+#labels Lecture
 
 [Ee#Eisenstein04 Eisenstein et al.]  offer an empirical
 evaluation of some learners especially designed for sparse learning: TWCNB and a very simple alternative called _hyperpipes_. Hyperpipes work
@@ -89,5 +90,3 @@ And the lesson of this story? Well:
 
  * Sometimes, less is more
  * Any statement that "learner X is best" is trite, unless it speaks to the data space the learner runs over. Hyperpipes fails badly on non-sparse data sets. But on very sparse data sets, it seems like a useful tool.
-
-
