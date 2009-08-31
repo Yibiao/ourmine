@@ -69,8 +69,8 @@ False  6/9    2/5   9/14  5/14
 True   3/9    3/5
 }}}
 Use the counts to _tune_ prior expectations (play=9/14; do not play=5/14):
-    * For "yes" {{{2/9 * 3/9 * 3/9 * 3/9 * 9/14 = 0.0053}}}
-    * For "no"  {{{3/5 * 1/5 * 4/5 * 3/5 * 5/14  = 0.0206}}}
+    * For "yes": {{{2/9 * 3/9 * 3/9 * 3/9 * 9/14 = 0.0053}}}
+    * For "no":  {{{3/5 * 1/5 * 4/5 * 3/5 * 5/14  = 0.0206}}}
 
 Return the class where the parts appear most frequently:
     * "No" is four times more likely than "yes"
@@ -91,14 +91,18 @@ More usual approach (much simpler):
  * Add lower bounds on the counts to handle low frequency counts 
 
 Handling low frequency   priors:
-  * Before:  (#ofClass / # instances) = (5/14) 
-  * Now: (#ofClass + K) / (#instances + K*#Classes) = (5+K) /(14 + K*2)
+  * Before:  
+      * {{{(#ofClass / # instances) = (5/14)}}} 
+  * Now: 
+      * {{{(#ofClass + K) / (#instances + K*#Classes) = (5+K) /(14 + K*2)}}}
   * Default, K=1 so prior(no) = 6/16 = 0.375
   * Note as #ofClass gets larger, influence of K disappears
 
 Handling low frequency counts:
-  * Before: (count / #ofClass) = (0 /5) for  no.outlook=overcast  
-  * Now:  (count + M*prior) / (#ofClass + M) = (0 + M*0.375) / (2 + M)
+  * Before: 
+       * {{{(count / #ofClass) = (0 /5)}}} for  no.outlook=overcast  
+  * Now:  
+       *{{{(count + M*prior) / (#ofClass + M) = (0 + M*0.375) / (2 + M)}}}
   * Default, M=2 so count(outlook=overcast given "n") = 0.1875
   * Note as count gets larger or #ofClass gets larger, influence of M disappears.
 
