@@ -1,0 +1,20 @@
+﻿#summary About Jesse Taylor
+#labels who,JesseTaylor
+
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/JesseT.jpg">
+
+=Jesse Taylor=
+Graduate Student, CSEE @ WVU
+GRA for Katerina Goseva on NASA grant
+Member of Group Eleven
+
+==Research Interests==
+ * Data Mining
+ * Computer/Network Security
+
+==Hobbies==
+ * Cooking
+ * Gym
+ * Reading
+ * Live music
+ 
