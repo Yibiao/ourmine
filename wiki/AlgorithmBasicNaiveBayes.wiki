@@ -1,4 +1,5 @@
 #summary Very simple description for Naive Bayes
+#labels Lecture
 
 (Note that these are introductory notes only. For more details, see AlgorithmNaiveBayes.)
 
