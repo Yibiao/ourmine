@@ -1,7 +1,7 @@
 ﻿#summary About Jesse Taylor
 #labels who,JesseTaylor
 
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/JesseT.jpg">
+<img width=200 src="http://ourmine.googlecode.com/svn/trunk/share/img/JesseT.jpg">
 
 =Jesse Taylor=
 Graduate Student, CSEE @ WVU
