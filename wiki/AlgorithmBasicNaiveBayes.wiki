@@ -102,7 +102,7 @@ Handling low frequency counts:
   * Before: 
        * {{{(count / #ofClass) = (0 /5)}}} for  no.outlook=overcast  
   * Now:  
-       *{{{(count + M*prior) / (#ofClass + M) = (0 + M*0.375) / (2 + M)}}}
+       * {{{(count + M*prior) / (#ofClass + M) = (0 + M*0.375) / (2 + M)}}}
   * Default, M=2 so count(outlook=overcast given "n") = 0.1875
   * Note as count gets larger or #ofClass gets larger, influence of M disappears.
 
