@@ -1,6 +1,6 @@
-#summary About Yasaman Khazaeni
+ #summary About Yasaman Khazaeni
 
-#<img width=300 src="">
+<img width=300 src="">
 
 =Yasaman Khazaeni=
 Graduate Student, PNGE @ WVU
