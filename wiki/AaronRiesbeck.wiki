@@ -1,0 +1,17 @@
+#summary About Aaron Riesbeck
+#labels who,AaronRiesbeck
+<img width=133 
+src="http://ourmine.googlecode.com/svn/trunk/share/img/AaronRiesbeck.jpg">
+
+=Aaron Riesbeck=
+Graduate Student, CSEE @ WVU
+Member of Group 13
+
+==Research Interests==
+ * Artificial Intelligence
+ * Software Reliability
+
+==Hobbies==
+ * Web Development
+ * Windows Mobile Application Development
+ * Taking things apart and attempting to put them back together
