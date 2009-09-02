@@ -3,9 +3,9 @@
 <img width=133 src="http://ourmine.googlecode.com/svn/trunk/share/img/AaronRiesbeck.jpg">
 
 =Aaron Riesbeck=
- - Graduate Student, CSEE @ WVU
- - Software/Database Group Leader @ The Reliability Information Analysis Center
- - Member of Group 13
+ * Graduate Student, CSEE @ WVU
+ * Software/Database Group Leader @ The Reliability Information Analysis Center
+ * Member of Group 13
 
 ==Research Interests==
  * Artificial Intelligence
