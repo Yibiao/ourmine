@@ -1,7 +1,6 @@
 #summary who is doing what
 
-<img align=right idth=200 src="http://ourmine.googlecode.com/svn/trunk/share/img/wmensah.jpg">
-
+<img align=right src="http://www1.pgcps.org/uploadedImages/Offices/Accountability/School_Development/Images/group.gif" width=400>
 
 = CS 573 =
 
