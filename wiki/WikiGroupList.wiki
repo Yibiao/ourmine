@@ -24,7 +24,7 @@ Group 12
  * [AaronRiesbeck Aaron Riesbeck]
  * Adam Brady
 
----- 
+----
 = CS 473 =
 
 Group 20
