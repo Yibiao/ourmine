@@ -1,6 +1,6 @@
 #summary Page for unlucky group 13
 
-<img width=250 src="http://ourmine.googlecode.com/svn/trunk/share/img/Thirteen.jpg">
+<img width=250 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/Thirteen.jpg">
 
 =Members=
  * [AaronRiesbeck Aaron Riesbeck]
