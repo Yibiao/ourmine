@@ -44,7 +44,7 @@ Group 22
  * [JamesDunlevy James Dunlevy]
  * Anthony White
 
-Group 23
+[GroupTwentyThree Group 23]
  * [MarkParsons Mark Parsons]
  * Shaun Reynolds
  * Zachary Murray
