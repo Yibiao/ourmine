@@ -1,5 +1,7 @@
 #summary who is doing what
 
+<img align=right idth=200 src="http://ourmine.googlecode.com/svn/trunk/share/img/wmensah.jpg">
+
 
 = CS 573 =
 
