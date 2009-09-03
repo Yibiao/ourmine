@@ -1,0 +1,8 @@
+#summary This is the page for Group Ten
+
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/10_playing_cards.jpg">
+
+= Members =
+ * [taronti  Aglika Gyaourova]
+ * [zackhutzell Zack Hutzell]
+ * [LonnieBowe Lonnie Bowe]
