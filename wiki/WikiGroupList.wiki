@@ -25,6 +25,7 @@ Group 12
  * Adam Brady
 
 ----
+<img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/group.jpg">
 = CS 473 =
 
 Group 20
