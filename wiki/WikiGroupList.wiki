@@ -22,7 +22,7 @@ Group 12
 
 [GroupThirteen Group 13]
  * [AaronRiesbeck Aaron Riesbeck]
- * Adam Brady
+ * [AboutAdamBrady Adam Brady]
 
 ----
 <img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/group.jpg">
