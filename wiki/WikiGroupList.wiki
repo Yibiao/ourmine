@@ -1,9 +1,5 @@
 #summary who is doing what
 
-= Admin =
-
-[GroupZero Group 0]
- * [Timm Tim Menzies]
 
 = CS 573 =
 
@@ -23,7 +19,7 @@ Group 12
  * Tomi Prifti
 
 [GroupThirteen Group 13]
- * Aaron Riesbeck
+ * [AaronRiesbeck Aaron Riesbeck]
  * Adam Brady
 
 = CS 473 =
@@ -48,3 +44,8 @@ Group 23
  * Mark Parsons
  * Shaun Reynolds
  * Zachary Murray
+
+= Admin =
+
+[GroupZero Group 0]
+ * [Timm Tim Menzies]
