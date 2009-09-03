@@ -5,9 +5,9 @@
 
 = CS 573 =
 
-Group 10
+[GroupTen Group 10]
  * Zack Hutzell
- * Lonnie Bowe
+ * [LonnieBowe Lonnie Bowe]
  * Aglika Gyaourova
 
 [GroupEleven Group 11]
