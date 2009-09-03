@@ -1,43 +1,43 @@
-CS 573
+= CS 573 =
 
 Group 10
-Zack Hutzell
-Lonnie Bowe
-Aglika Gyaourova
+ *  Zack Hutzell
+ * Lonnie Bowe
+ * Aglika Gyaourova
 
 Group 11
-Kel Cecil
-Jesse Taylor
-Yasaman Khazaeni
+ * Kel Cecil
+ * Jesse Taylor
+ * Yasaman Khazaeni
 
 Group 12
-Adam Nelson
-William Mensah
-Tomi Prifti
+ * Adam Nelson
+ * William Mensah
+ * Tomi Prifti
 
 Group 13
-Aaron Riesbeck
-Adam Brady
+ * Aaron Riesbeck
+ * Adam Brady
 
-CS 473
+= CS 473 =
 
 Group 20
-Tim Bielawa
-Elijah Flesher
-Drew Waltman
+ * Tim Bielawa
+ * Elijah Flesher
+ * Drew Waltman
 
 Group 21
-William Kovalick
-Jeffrey Whitlow
-Edward Lockard
+ * William Kovalick
+ * Jeffrey Whitlow
+ * Edward Lockard
 
 Group 22
-Lee Blake
-David Asselstine
-James Dunlevy
-Anthony White
+ * Lee Blake
+ * David Asselstine
+ * James Dunlevy
+ * Anthony White
 
 Group 23
-Mark Parsons
-Shaun Reynolds
-Zachary Murray
+ * Mark Parsons
+ * Shaun Reynolds
+ * Zachary Murray
