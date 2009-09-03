@@ -6,7 +6,7 @@
 = CS 573 =
 
 Group 10
- *  Zack Hutzell
+ * Zack Hutzell
  * Lonnie Bowe
  * Aglika Gyaourova
 
@@ -39,7 +39,7 @@ Group 21
  * Edward Lockard
 
 Group 22
- * Lee Blake
+ * [LeeBlake Lee Blake]
  * David Asselstine
  * [JamesDunlevy James Dunlevy]
  * Anthony White

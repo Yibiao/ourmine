@@ -1,5 +1,4 @@
 #summary About Lee Blake
-#labels who,LeeBlake
 
 <img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/LeeBlake.jpg">
 
