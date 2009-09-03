@@ -1,5 +1,5 @@
 #summary About Adam Brady
-<img align=right width=133 src="http://ourmine.googlecode.com/svn/trunk/share/img/melon-pushing-cat.jpg">
+<img align=right width=350 src="http://ourmine.googlecode.com/svn/trunk/share/img/melon-pushing-cat.jpg">
 
 =Adam Brady=
  * Graduate Student, CSEE @ WVU
