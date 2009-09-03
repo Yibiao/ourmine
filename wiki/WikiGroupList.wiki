@@ -1,5 +1,6 @@
 #summary who is doing what
 
+----
 <img align=right src="http://www1.pgcps.org/uploadedImages/Offices/Accountability/School_Development/Images/group.gif" width=400>
 
 = CS 573 =
@@ -23,6 +24,7 @@ Group 12
  * [AaronRiesbeck Aaron Riesbeck]
  * Adam Brady
 
+---- 
 = CS 473 =
 
 Group 20
@@ -46,6 +48,7 @@ Group 23
  * Shaun Reynolds
  * Zachary Murray
 
+---- 
 = Admin =
 
 [GroupZero Group 0]
