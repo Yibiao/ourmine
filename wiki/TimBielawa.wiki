@@ -15,3 +15,9 @@ I love calculus.
 I’m just a passionate learner trying to get through CS alive. I’ve been fortunate to have a hand full of amazing professors along the way who care.
 
 I’m a member of the WVU ACM and a founding member (current president) of the WVU Free Software Group. I’ve been President of the WVU IEEE chapter once before. I’m a member of the WVU Computer Science Department Student Advisory Council and a member of the College of Engineering’s Student Advisory Council. I’m currently a senior sys. admin for the CS department.
+
+= Links =
+
+http://csee.wvu.edu/~tbielawa/
+http://peopleareducks.com
+http://blog.peopleareducks.com
