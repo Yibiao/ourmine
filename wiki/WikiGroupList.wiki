@@ -1,7 +1,7 @@
 #summary who is doing what
 
 ----
-<img align=right src="http://www1.pgcps.org/uploadedImages/Offices/Accountability/School_Development/Images/group.gif" width=400>
+<img align=right src="http://www1.pgcps.org/uploadedImages/Offices/Accountability/School_Development/Images/group.gif" width=300>
 
 = CS 573 =
 
