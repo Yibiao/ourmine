@@ -1,7 +1,7 @@
 = Admin =
 
 [GroupZero Group 0]
- * Tim Menzies
+ * [Timm Tim Menzies]
 
 = CS 573 =
 
@@ -39,7 +39,7 @@ Group 21
 Group 22
  * Lee Blake
  * David Asselstine
- * James Dunlevy
+ * [JamesDunlevy James Dunlevy]
  * Anthony White
 
 Group 23
