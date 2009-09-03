@@ -1,0 +1,17 @@
+#summary Tim 'Shaggy' Bielawas Ourmine Page
+
+= Introduction =
+
+I’ve contributed some patches to Ubuntu. Mostly small stuff, fixing a typo in a command, adding LSB required options to init scripts. Made a couple bug fixes here and there too on launchpad.
+
+Submitted a patch to the Red Hat Func and Certmaster projects to make their init script Debian/Ubuntu compatable once.
+
+I like well formatted data (XML). DocBook turns me on :-)
+
+I like version control and think every new CS student should be forced to learn proper source control management. Check out my branches on GitHub.
+
+I love calculus. 
+
+I’m just a passionate learner trying to get through CS alive. I’ve been fortunate to have a hand full of amazing professors along the way who care.
+
+I’m a member of the WVU ACM and a founding member (current president) of the WVU Free Software Group. I’ve been President of the WVU IEEE chapter once before. I’m a member of the WVU Computer Science Department Student Advisory Council and a member of the College of Engineering’s Student Advisory Council. I’m currently a senior sys. admin for the CS department.
