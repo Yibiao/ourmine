@@ -1,7 +1,7 @@
 #summary About Kel Cecil
 #labels who,KelCecil
 
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/kelcecil.JPG">
+<img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/kelcecil.JPG">
 
 =Kel Cecil=
 Graduate Student, CSEE @ WVU
@@ -20,4 +20,3 @@ Member of Group Eleven
  * Assignments
 
 Visit my blog @ [http://www.praisechaos.com].
-
