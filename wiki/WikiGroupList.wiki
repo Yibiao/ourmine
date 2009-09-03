@@ -38,7 +38,7 @@ Group 21
  * Jeffrey Whitlow
  * Edward Lockard
 
-Group 22
+[Group22 Group 22]
  * [LeeBlake Lee Blake]
  * David Asselstine
  * [JamesDunlevy James Dunlevy]
