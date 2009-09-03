@@ -5,7 +5,7 @@ Group 10
  * Lonnie Bowe
  * Aglika Gyaourova
 
-Group 11
+[GroupEleven Group 11]
  * Kel Cecil
  * Jesse Taylor
  * Yasaman Khazaeni
@@ -15,7 +15,7 @@ Group 12
  * William Mensah
  * Tomi Prifti
 
-Group 13
+[GroupThirteen Group 13]
  * Aaron Riesbeck
  * Adam Brady
 
