@@ -1,7 +1,7 @@
 #summary About Tim Menzies
 #labels who,TimM
 
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/TimM.jpg">
+<img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/TimM.jpg">
 
  * Assoc prof, CSEE.
  * I belong to GroupZero.
