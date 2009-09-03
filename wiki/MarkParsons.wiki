@@ -2,6 +2,6 @@
 = Introduction =
 
   * Undergraduate, Computer Science, LSCEEEeEeEeEEE, WVU
-  * I belong to group 23.
+  * I belong to group [GroupTwentyThree 23].
   * I have a [http://m-parsons.com website] that I never update.
   * When compared to the time I have to learn new things, the list of things I want to learn is mildly depressing.
