@@ -29,7 +29,7 @@ Group 12
 = CS 473 =
 
 Group 20
- * Tim Bielawa
+ * [TimBielawa Tim Bielawa]
  * Elijah Flesher
  * Drew Waltman
 
