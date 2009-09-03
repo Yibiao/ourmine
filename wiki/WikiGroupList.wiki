@@ -1,3 +1,5 @@
+#summary who is doing what
+
 = Admin =
 
 [GroupZero Group 0]
@@ -11,13 +13,13 @@ Group 10
  * Aglika Gyaourova
 
 [GroupEleven Group 11]
- * Kel Cecil
- * Jesse Taylor
- * Yasaman Khazaeni
+ * [KelCecil Kel Cecil]
+ * [JesseTaylor Jesse Taylor]
+ * [yasamankhazaeni Yasaman Khazaeni]
 
 Group 12
  * Adam Nelson
- * William Mensah
+ * [WilliamMensah William Mensah]
  * Tomi Prifti
 
 [GroupThirteen Group 13]
