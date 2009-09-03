@@ -50,7 +50,9 @@ Group 23
  * Zachary Murray
 
 ----
- 
+
+<img src="http://www.capitolgear.com/images/HP28000%20Adaptation%20Group.gif" width=300 align="right">
+
 = Admin =
 
 [GroupZero Group 0]
