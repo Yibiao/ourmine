@@ -1,0 +1,5 @@
+#summary About Lonnie Bowe
+
+ * Computer Science PhD student.
+ * I belong to GroupTen.
+ * If you're interested, I have [http://twitter.com/lonniebowe Twitter]
