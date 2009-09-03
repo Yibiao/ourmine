@@ -1,5 +1,5 @@
 #summary Tim 'Shaggy' Bielawas Ourmine Page
-
+<img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/tbielawa.jpg">
 = Introduction =
 
 I’ve contributed some patches to Ubuntu. Mostly small stuff, fixing a typo in a command, adding LSB required options to init scripts. Made a couple bug fixes here and there too on launchpad.
