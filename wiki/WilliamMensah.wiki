@@ -1,7 +1,7 @@
 #summary ...William Mensah
 #labels who,WilliamMensah
 
-<img width=200 src="http://ourmine.googlecode.com/svn/trunk/share/img/wmensah.jpg">
+<img align=right width=200 src="http://ourmine.googlecode.com/svn/trunk/share/img/wmensah.jpg">
 
 =William Mensah=
 Graduate Student, CS, Graduate Resident Assistant, Nationality: Ghanaian (pretty cool :))
