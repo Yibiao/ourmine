@@ -1,10 +1,10 @@
 #summary About Tony White.
 
-<img src="http://ourmine.googlecode.com/svn/trunk/share/img/StPatty.jpg">
+<img src="http://code.google.com/p/ourmine/svn/trunk/share/img/StPatty.jpg">
 
 
    * Senior, Computer Science Major.
 
-   * Work at Coliseum.
+   * Work at the Coliseum for FIT/ICPE.
  
    * I am a member of Group 22
