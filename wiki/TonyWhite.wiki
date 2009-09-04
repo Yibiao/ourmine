@@ -1,8 +1,10 @@
 #summary About Tony White.
 
-<img src="http://ourmine.googlecode.com/svn/trunk/share/img/St Patty.jpg">
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/StPatty.jpg">
 
-= Introduction =
 
-* Senior, Computer Science Major.
-* Work at Coliseum.
+   * Senior, Computer Science Major.
+
+   * Work at Coliseum.
+ 
+   * I am a member of Group 22
