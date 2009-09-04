@@ -1,0 +1,8 @@
+#summary About Tony White
+
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/St Patty.jpg">
+
+= Introduction =
+
+* Senior, Computer Science Major
+*Work at Coliseum
