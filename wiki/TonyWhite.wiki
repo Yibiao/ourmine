@@ -1,6 +1,6 @@
 #summary About Tony White.
 
-<img src="http://code.google.com/p/ourmine/svn/trunk/share/img/St Patty.jpg">
+<img src="http://code.google.com/p/ourmine/svn/trunk/share/img/Tony.jpg">
 
 
    * Senior, Computer Science Major.
