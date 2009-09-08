@@ -1,0 +1,4 @@
+#summary About David Asselstine
+
+ * Computer Science ugrad student.
+ * I belong to [Group22].
