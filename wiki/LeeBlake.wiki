@@ -3,4 +3,4 @@
 <img align=right width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/LeeBlake.jpg">
 
  * Senior, CSEE.
- * I belong to Group22.
+ * I belong to [Group22 Group22].
