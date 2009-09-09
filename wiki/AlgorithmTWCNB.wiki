@@ -4,4 +4,4 @@
 
 <img width=350 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/TWCNB.png">
 
-* Step four: &alpha;<sub>i</sub> is outside the sigma
+  * Step four: alpha<sub>i</sub> is outside the sigma
