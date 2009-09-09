@@ -2,4 +2,6 @@
 #labels algorithm
 
 
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/TWCNB.png">
+<img width=350 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/TWCNB.png">
+
+* Step four: &alpha;<sub>i</sub> is outside the sigma
