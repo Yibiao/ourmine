@@ -4,4 +4,6 @@
 
 <img width=350 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/TWCNB.png">
 
-  * Step four: alpha<sub>i</sub> is outside the sigma
+  * Step four: 
+        * denominator: alpha<sub>i</sub> is outside the sigma
+        * numerator: alpha is number of rows of data not in class "c"
