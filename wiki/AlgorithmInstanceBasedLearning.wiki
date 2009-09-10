@@ -78,7 +78,7 @@ E.g. [http://promisedata.org/repository/data/coc81/coc81_1_1.arff Coc81]:
 
 
 <img width=500 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/coc81mreVar.jpg">
-coc81mreVar.jpg
+
 
 
 [http://promisedata.org/repository/data/nasa93/nasa93.arff Nasa93]
