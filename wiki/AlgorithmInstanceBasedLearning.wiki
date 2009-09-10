@@ -6,6 +6,17 @@ Instance-based methods don't _think_, they don't build models from data. Instead
 
 Think about the training data as raisins in a  loaf of bread (the analogy isn't perfect: raisin bread is  3-dimensional object and a data set with N columns forms an N-dimensional object).
 
+{{{
+dev_mode,   rely   ,data   ,cplx  ... ,loc ,time2Develop
+========    ====    ====    ====       ===  ============
+embedded,   0.75   ,0.94   ,1.3   ... , 13   ,82
+embedded,   0.88   ,1.16   ,0.7,  ... ,113 ,2040
+embedded,   0.88   ,1.16   ,0.85, ... ,293 ,1600
+embedded,   0.94   ,1      ,0.85, ... , 48 , 387
+embedded,   1      ,1.16   ,1.15, ... ,252 ,2455
+embedded,   1.15   ,0.94   ,1.3,      , 22 ,1075
+}}}
+
 = How to compute distance? =
 
 Euclidean distance :
