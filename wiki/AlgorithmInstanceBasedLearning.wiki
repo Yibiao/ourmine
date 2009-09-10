@@ -1,0 +1,45 @@
+#summary float new conclusion in amongst the old ones
+
+= Introduction =
+<img width=350 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/raisinBread.jpg">
+Instance-based methods don't _think_, they don't build models from data. Instead, they take new things and float them nearest the older things. And what we decide about the new thing is taken from the older things in the local neighborhood.
+
+Think about the training data as raisins in a  loaf of bread (the analogy isn't perfect: raisin bread is  3-dimensional object and a data set with N columns forms an N-dimensional object).
+
+= How to compute distance? =
+
+Euclidean distance :
+
+    * sqrt( (x2-x1)<sup>2</sup> + (y2-y1)<sup>2</sup> + ... )
+    * for non-numerics:
+          * distance = 0 if the same
+          * distance = 1 if different
+    *  normalize: replace X with (X - MinX)/(MaxX - MinX).
+    *  distort some dimensions if they are more important that others
+
+Squared Euclidean :
+
+    * Place progressively greater weight on objects that are further apart.
+
+City-block (Manhattan) :
+
+    * Average difference across dimensions.
+         * sum(abs(x2 - x1) + abs(y2 - y1) + ..)
+    * Usually, same results as Euclidean
+          * But dampens effect of single large differences (outliers) is dampened
+
+Chebychev distance :
+
+    * Maximum(abs(x2 - x1) + abs(y2 - y1) + ..)
+    * Things are "different" if they are different on any dimensions.
+
+= Example =
+
+Find the nearest neighbor of the training data. Build one "pretend" instance half-way between each instance:
+
+  * For numeric data, half-way is (x1-x2)/2, (y1-y2)/2, etc
+  * For all the discrete columns with different values, flip half of them (picked at random) to the value in the other instance.
+
+<img width=350 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/Binary_tree.png">
+
+Now repeat to form a binary tree who
