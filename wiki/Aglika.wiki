@@ -1,0 +1,14 @@
+﻿#summary About Aglika Gyaourova
+
+<img src="http://ourmine.google.com/svn/trunk/share/img/aga2.jpg">
+
+=Aglika Gyaourova=
+
+* CS graduate student (GRA for Dr. Arun Ross)
+* Member of group 10.
+
+== Research Interests ==
+
+* Pattern Recognition
+* Biometrics
+
