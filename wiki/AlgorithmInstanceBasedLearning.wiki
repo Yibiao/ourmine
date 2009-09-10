@@ -71,6 +71,8 @@ Nice features of this approach
  * In some data sets, there is a relationship between prediction error and variance of the performance statistic in the sub-tree
  * So we can return not just the estimate, but an _trust_ measure of how much we should believe that estimate.
 
+In the following experiments, 20 times, we took out one training instance, GAC the remaining, then estimated the set-aside. Note that after some critical value of variance (on the x-axis), the error spikes (on the y-axis). So, if your test instance falls into sub-trees with that variance, *do not trust the estimate*.
+
 E.g. [http://promisedata.org/repository/data/coc81/coc81_1_1.arff Coc81]:
 
  * x-axis: weighted variance of sub-tree
