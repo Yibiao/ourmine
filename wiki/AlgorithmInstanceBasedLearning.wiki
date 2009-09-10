@@ -42,4 +42,56 @@ Find the nearest neighbor of the training data. Build one "pretend" instance hal
 
 <img width=350 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/Binary_tree.png">
 
-Now repeat to form a binary tree who
+Now repeat to form a binary tree whose leaves (in green) are the real data and the rest is made-up stuff. This is called GAC: _Greedy Agglomerative Clustering_. Warning: it is very slow.
+
+Premise of instance-based learning is that it is local neighborhoods are _better_ than casting a wider net. In terms of recursively descending the tree, this premise is true if the variance of sub-trees is less than the super tree.
+
+  * variance: <img src="http://upload.wikimedia.org/math/6/c/8/6c84cac9b183bb78e05fb51205f7f7a0.png">
+  * variance of a sub-tree: go to the instances in the leaves and compute the variance of their output variable.
+  * weighted variance beneath a node: give three subtrees containing N=N1+N2+N3 leaf nodes with variance V1,V2,V3 then the weighted variance is 
+       * V1 x N1/N + V2 X N2/N + V3 X N3/N
+
+To make a prediction, take a test instance 
+ *  move it to the sub-tree with the closest root. 
+ * stop descending when 
+     * the size of the sub-tree is "k" (some fixed constant)
+     * the weighted-variance of the subtree is greater than the current tree
+ * After stopping, return the median performance statistic of the leaves in the sub-tree.
+
+How big should "k" be?
+ * k = 10
+ * k = sqrt(leaf nodes)
+ * try k = 1 to size of tree and use the k that has the smaller error
+ * irrelevant if stopping using weighted sub-tree variance.
+ * and it doesn't matter (in the results below, nearly the same behavior for k=2,4,8,16
+
+= Instance-based Learning and Trust =
+
+Nice features of this approach
+ * In some data sets, there is a relationship between prediction error and variance of the performance statistic in the sub-tree
+ * So we can return not just the estimate, but an _trust_ measure of how much we should believe that estimate.
+
+E.g. [http://promisedata.org/repository/data/coc81/coc81_1_1.arff Coc81:
+
+coc81mreVar.jpg
+
+ * x-axis: weighted variance of sub-tree
+ * y-axis: log of error = magnitude of relative error = abs(actual - predicted)/ actual
+
+
+<img width=350 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/coc81mreVar.jpg">
+coc81mreVar.jpg
+
+<img width=350 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/nasa93mreVar.jpg">
+
+[http://promisedata.org/repository/data/nasa93/nasa93.arff Nasa93]
+
+ * x-axis: weighted variance of sub-tree
+ * y-axis: log of error = magnitude of relative error = abs(actual - predicted)/ actual
+
+[http://promisedata.org/repository/data/desharnais/desharnais_1_1.arff Desharnis]
+
+ * x-axis: weighted variance of sub-tree
+ * y-axis: log of error = magnitude of relative error = abs(actual - predicted)/ actual
+
+<img width=350 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/desharnaisMreVar.jpg">
