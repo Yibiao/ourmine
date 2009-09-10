@@ -71,7 +71,7 @@ Nice features of this approach
  * In some data sets, there is a relationship between prediction error and variance of the performance statistic in the sub-tree
  * So we can return not just the estimate, but an _trust_ measure of how much we should believe that estimate.
 
-E.g. [http://promisedata.org/repository/data/coc81/coc81_1_1.arff Coc81:
+E.g. [http://promisedata.org/repository/data/coc81/coc81_1_1.arff Coc81]:
 
  * x-axis: weighted variance of sub-tree
  * y-axis: log of error = magnitude of relative error = abs(actual - predicted)/ actual
@@ -80,12 +80,14 @@ E.g. [http://promisedata.org/repository/data/coc81/coc81_1_1.arff Coc81:
 <img width=500 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/coc81mreVar.jpg">
 coc81mreVar.jpg
 
-<img width=500 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/nasa93mreVar.jpg">
 
 [http://promisedata.org/repository/data/nasa93/nasa93.arff Nasa93]
 
  * x-axis: weighted variance of sub-tree
  * y-axis: log of error = magnitude of relative error = abs(actual - predicted)/ actual
+
+
+<img width=500 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/nasa93mreVar.jpg">
 
 [http://promisedata.org/repository/data/desharnais/desharnais_1_1.arff Desharnis]
 
