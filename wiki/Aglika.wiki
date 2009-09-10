@@ -3,9 +3,9 @@
  
 <img src="http://ourmine.google.com/svn/trunk/share/img/aga2.jpg">
 
- *CS graduate student (GRA for Dr. Arun Ross)
- *Member of group 10.
+ * CS graduate student (GRA for Dr. Arun Ross)
+ * Member of group 10.
 
-==Research Interests==
- *Pattern Recognition
- *Biometrics
+===Research Interests===
+ * Pattern Recognition
+ * Biometrics
