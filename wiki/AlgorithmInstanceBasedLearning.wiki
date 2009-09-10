@@ -94,4 +94,4 @@ E.g. [http://promisedata.org/repository/data/coc81/coc81_1_1.arff Coc81]:
  * x-axis: weighted variance of sub-tree
  * y-axis: log of error = magnitude of relative error = abs(actual - predicted)/ actual
 
-<img width=500 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/desharnaisMreVar.jpg">
+<img width=600 align=center src="http://ourmine.googlecode.com/svn/trunk/share/img/desharnaisMreVar.jpg">
