@@ -3,7 +3,7 @@
 <img width=250 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/raisinBread.jpg">
 Instance-based methods don't _think_, they don't build models from data. Instead, they take new things and float them nearest the older things. And what we decide about the new thing is taken from the older things in the local neighborhood.
 
-Think about the training data as raisins in a  loaf of bread (the analogy isn't perfect: raisin bread is  3-dimensional object and a data set with N columns makes for an N-dimensional space.... mmmm, N-dimensional bread: tasty).
+Think about the training data as raisins in a  loaf of bread (the analogy isn't perfect: raisin bread is  3-dimensional object and a data set with N columns makes for an N-dimensional space.... mmmm, N-dimensional bread.... so tasty).
 
 {{{
 dev_mode,   rely   ,data   ,cplx  ... ,loc ,time2Develop
