@@ -44,7 +44,7 @@ Chebychev distance :
     * Maximum(abs(x2 - x1) + abs(y2 - y1) + ..)
     * Things are "different" if they are different on any dimensions.
 
-= Example =
+= Example (sorting out the Raisins) =
 
 Find the nearest neighbor of the training data. Build one "pretend" instance half-way between each instance:
 
@@ -76,7 +76,7 @@ How big should "k" be?
  * irrelevant if stopping using weighted sub-tree variance.
  * and it doesn't matter (in the results below, nearly the same behavior for k=2,4,8,16
 
-= Instance-based Learning and Trust =
+= Trust (what raisins are hard to swallow?) =
 
 Nice features of this approach
  * In some data sets, there is a relationship between prediction error and variance of the performance statistic in the sub-tree
