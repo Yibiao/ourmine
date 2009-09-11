@@ -72,8 +72,14 @@ How big should "k" be?
  * k = 10
  * k = sqrt(leaf nodes)
  * try k = 1 to size of tree and use the k that has the smaller error
- * irrelevant if stopping using weighted sub-tree variance.
- * and it doesn't matter (in the results below, nearly the same behavior for k=2,4,8,16
+ * Jacky's rules (for software effort estimation).
+    * If more than 50 instances, k=3,4,5. 
+    * If less than 50 instances, k=1,2
+    * If less than 20 instances, try to collect more instances!
+
+By the way
+ * Selection of k is irrelevant if stopping using weighted sub-tree variance.
+ * And it doesn't matter so much (in the results below, nearly the same behavior for k=2,4,8,16)
 
 = Trust (what raisins are hard to swallow?) =
 
