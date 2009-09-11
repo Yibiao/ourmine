@@ -3,7 +3,7 @@
 <wiki:toc max_depth="4" />
 
 == Ostrand04 ==
-http://ourmine.googlecode.com/svn/trunk/share/pdf/eisenstein04.pdf
+http://ourmine.googlecode.com/svn/trunk/share/pdf/04ostrand.pdf
 {{{
 @inproceedings{Ostrand04,
   author         = {Thomas J. Ostrand and Elaine J. Weyuker and Robert M. Bell },
