@@ -1,4 +1,4 @@
-#summary float new conclusion in amongst the old ones
+#summary reasoning using raisin bread
 
 = Introduction =
 <img width=250 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/raisinBread.jpg">
