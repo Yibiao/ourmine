@@ -1,5 +1,6 @@
 #summary About Lonnie Bowe
 
  * Computer Science PhD student.
+ * I teach two sections of [http://cs101.wvu.edu CS101 - Introduction to Computer Applications]
  * I belong to GroupTen.
  * If you're interested, I have [http://twitter.com/lonniebowe Twitter]
