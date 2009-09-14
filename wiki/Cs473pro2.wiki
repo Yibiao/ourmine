@@ -83,8 +83,8 @@ e.g.
 
 {{{
 #prep,discretizer, cluster,fss,classify, class,     a,	b,	c,	d,	acc,	prec,	pd,	pf,	f,	g
-normalize,bin10,kmeans/5,infoGain,naiveBayes,happy, 10,	20,	30,	40,	50.0,57.1,	66.7,	75.0,	61.5,	70.6,
-doNothing,bin10 ,kmeans/5,infoGain,naiveBayes,happy,, 11,	1,	1200,	300,	20.6,	20.0,	99.7,	99.1,	33.3,	99.4
+normalize,bin10,kmeans/5,infoGain,naiveBayes,happy, 10,	20,	30,	40,	50.0,  57.1,	66.7,	75.0,	61.5,	70.6,
+doNothing,bin10 ,kmeans/5,infoGain,naiveBayes,happy,11,	1,	1200,	300,	20.6,	20.0,	99.7,	99.1,	33.3,	99.4
 ...
 }}}
 
