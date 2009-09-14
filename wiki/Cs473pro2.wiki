@@ -1,6 +1,6 @@
 #summary intermediary data mining techniques
 
-Due Monday week 7 
+= Next two projects =
 
 For this, and the next project, everyone has to code up
 
@@ -15,8 +15,7 @@ Note that:
  * There are some magic numbers associated with each of the above  functions- assume three settings for each different data miners. 
  * Which you'll repeat 10 times;
  * Over 10 data sets
- * This means that, before the end of term, you'll have to run this code 10*10*3^5^*2^5^=777 combinations.
- * Tee hee!
+ * This means that, before the end of term, you'll have to run this code for {{{10*10*3^5^*2^5=777,000}}} combinations. Tee hee!
 
 Future projects will comparatively assess these 20,000+ possible data miners. This project will just get you started.
 
@@ -33,6 +32,9 @@ To run the code, your main function must be
                    (classify     #'naiveBayes)
                    (train        "train.lisp")
                    (test         "test.lisp"))
+      (let ((training (load train))
+           ((testing  (load test)))
+       ...
      ; first prep train and test
      ; then run the discretizer
      ; then cluster the training set into k clusters
@@ -41,22 +43,28 @@ To run the code, your main function must be
      ;     ... find the cluster with the nearest centroid...
      ;     ... classify that example  using that cluster's classifier
 }}}
-When you run the testing, you must keep four separate counts, for each class X in the test
-set.
+
+When you do the classifying for the testing, you must keep four separate counts, for each class X in the test set.
 
 
-* A: the number of test things  that are NOT class=X which were NOT classified as class=X
-* B: the number of test things  that ARE class=X which were NOT classified as class=X
-* C: the number of test things  that ARE class=X where were NOT classified as class=X
+ * A: the number of test things  that are NOT class=X which were NOT classified as class=X
+ * B: the number of test things  that ARE class=X which were NOT classified as class=X
+ * C: the number of test things  that ARE class=X where were NOT classified as class=X
+ * D: the number of test things  that ARE class=X where were classified as class=X
 
+If you like pictures, A,B,C,D, comes from this matrix:
+{{{ 
+                  oh no it ain't    oh yes, it is   
+                  |--------------|----------------|
+detector said no  |     A        |       B        |
+                  |--------------|----------------|
+detector said yes |     C        |       D        |
+                  |--------------|----------------|
+}}}
 
-From 
-                  do it ain't    yes, it is   
-                  |-----------|-------------|
-detector said no  |     A     |       B     |
-                  |-----------|-------------|
-detector said yes |     C     |       D     |
-                  |-----------|-------------|
+Note that the above numbers change from class to class. So the above table must  be computed for each class, independently.
+
+Fro these numbers, the following measures can be computed:
 
     * prec= precision   = D / (C+D)
     * acc= accuracy   = (A+D) / (A+B+C+D)
@@ -70,6 +78,28 @@ Your output must be comma separated lines, one for each class in test set.
 {{{
 prep,discretizer, cluster,fss,classify, class,a,b,c,d,acc,prec,pd,pf,f,g <NEWLINE>
 }}}
+
+e.g.
+
+{{{
+#prep,discretizer, cluster,fss,classify, class,     a,	b,	c,	d,	acc,	prec,	pd,	pf,	f,	g
+normalize,bin10,kmeans/5,infoGain,naiveBayes,happy, 10,	20,	30,	40,	50.0,	normalize,bin5 ,kmeans/5,infoGain,naiveBayes,happy, 57.1,	66.7,	75.0,	61.5,	70.6,
+doNothing,bin10 ,kmeans/5,infoGain,naiveBayes,happy,, 11,	1,	1200,	300,	20.6,	20.0,	99.7,	99.1,	33.3,	99.4
+...
+}}}
+
+normalize,bin10,kmeans/5,infoGain,naiveBayes,happy,10,20,30,40,
+
+== How to Pick Test Data ==
+
+You need data sets with discrete classes; see  http://code.google.com/p/ourmine/source/browse/trunk/our/lib/lisp/tests/data/
+
+Make sure you use  big and little data sets (little to debug on, big to try out your scale up).
+
+You need easy and hard data sets. To find a range of easy/hard, look at:
+
+http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
+
 
 = Introduction =
 
