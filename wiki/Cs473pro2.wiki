@@ -1,6 +1,12 @@
 #summary intermediary data mining techniques
 
-= Next two projects =
+= To do =
+
+For proj2, implement one pre-processor, discretizer, clusterer, classifier, feature subset selector.
+
+For proj3, implement another pre-processor, discretizer, clusterer, classifier, feature subset selector, run all 32 combinations, do an evaluation experiment.
+
+= Details =
 
 For this, and the next project, everyone has to code up
 
@@ -88,7 +94,6 @@ doNothing,bin10 ,kmeans/5,infoGain,naiveBayes,happy,11,	1,	1200,	300,	20.6,	20.0
 ...
 }}}
 
-normalize,bin10,kmeans/5,infoGain,naiveBayes,happy,10,20,30,40,
 
 == How to Pick Test Data ==
 
@@ -99,16 +104,3 @@ Make sure you use  big and little data sets (little to debug on, big to try out 
 You need easy and hard data sets. To find a range of easy/hard, look at:
 
 http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
-
-
-= Introduction =
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
