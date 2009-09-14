@@ -2,7 +2,7 @@
 
 = To do =
 
-For proj2, implement one pre-processor, discretizer, clusterer, classifier, feature subset selector.
+For proj2, implement at least one of each of the _basic_ pre-processor, discretizer, clusterer, classifier, feature subset selector. For extra marks, code up another _advanced_ function.
 
 For proj3, implement another pre-processor, discretizer, clusterer, classifier, feature subset selector, run all 32 combinations, do an evaluation experiment.
 
@@ -107,15 +107,15 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 = Functions =
 
-== Pre-processors ==
+== Pre-processors (easy) ==
 
- *Normalize:
+ * Normalize:
   * Normalize all numerics zero to one.
  * BORE (best or rest):
   * Take a data set with a numeric class and discrete it into 20% "best" and 80% "rest" scores.
  * Ucube:
   * Derive a class by taking 3 normalize numeric values, mapping them into a 1*1*1 cube, then take all instances and place them in that cube, then compute the distance of each instance from "heaven" (best values on the axes) then divide those distances into 20% "best" and 80% "rest"
- *FillOut:
+ * FillOut:
   * Replace X% of the cells in each row with "?" (not the class variable).
- *FillIn:
+ * FillIn:
   * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns)
