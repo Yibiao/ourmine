@@ -109,13 +109,17 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 == Pre-processors (easy) ==
 
- * Normalize:
+ # Normalize:
   * Normalize all numerics zero to one.
- * BORE (best or rest):
+ # BORE (best or rest):
   * Take a data set with a numeric class and discrete it into 20% "best" and 80% "rest" scores.
- * Ucube:
+ # Ucube (normalize + BORE):
   * Derive a class by taking 3 normalize numeric values, mapping them into a 1*1*1 cube, then take all instances and place them in that cube, then compute the distance of each instance from "heaven" (best values on the axes) then divide those distances into 20% "best" and 80% "rest"
- * FillOut:
+ # FillOut:
   * Replace X% of the cells in each row with "?" (not the class variable).
- * FillIn:
+ # FillIn:
   * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns)
+ # Sub-sample
+    * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling)
+ # Super-sample (for binary classes only)
+    * During training, find the minority class and randomly repeat its rows till it has the same frequency as the next most common class.   Use the learner trained on this super-sample on the test data (without super-sampling)
