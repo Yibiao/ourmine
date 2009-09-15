@@ -129,7 +129,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 == Discretizers (basic) ==
 
  # N-bins (equal-width discretization)
-    * Find max and min of each numeric columns. Replace number X with round(N*(X - min)/(max-min))
+    * Find max and min of each numeric columns. Replace number X with {{{round(N*(X - min)/(max-min))}}}
  # bin-logging
      * Same as N-bins but "N" is set to the log of the number of unique values.
  # N-chops (equal-frequency discretization)
