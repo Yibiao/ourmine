@@ -2,9 +2,9 @@
 
 = To do =
 
-For proj2, implement at least one of each of the _basic_ pre-processor, discretizer, clusterer, classifier, feature subset selector. For extra marks, code up another _advanced_ function.
+For proj2, implement at least one of each of the _basic_ pre-processor, discretizer, clusterer, classifier, feature subset selector. For 2*F extra marks, code up F more   functions (but no more than two of the EASY ones, and no more than F=3). 
 
-For proj3, implement another pre-processor, discretizer, clusterer, classifier, feature subset selector, run all 32 combinations, do an evaluation experiment.
+For proj3,  not sure of the details yet but it will probably be implementing another pre-processor, discretizer, clusterer, classifier, feature subset selector, run all 32 combinations, do an evaluation experiment.
 
 = Details =
 
@@ -49,6 +49,9 @@ To run the code, your main function must be
      ;     ... find the cluster with the nearest centroid...
      ;     ... classify that example  using that cluster's classifier
 }}}
+
+Note that, in the above, if you only generate k=1 cluster than means you skip
+clustering and just use all the data.
 
 When you do the classifying for the testing, you must keep four separate counts, for each class X in the test set.
 
@@ -109,57 +112,72 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 == Pre-processors  ==
 
- # Normalize:
+ # (EASY) Normalize:
   * Normalize all numerics zero to one.
- # BORE (best or rest):
+ # (EASY) BORE (best or rest):
   * Take a data set with a numeric class and discrete it into 20% "best" and 80% "rest" scores.
  # Ucube (normalize + BORE):
   * Derive a class by taking 3 normalize numeric values, mapping them into a 1*1*1 cube, then take all instances and place them in that cube, then compute the distance of each instance from "heaven" (best values on the axes) then divide those distances into 20% "best" and 80% "rest"
- # Fill out:
+ # (EASY) Fill out:
   * Replace X% of the cells in each row with "?" (not the class variable).
- # Fill in:
+ # (EASY) Fill in:
   * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns)
  # Sub-sample
     * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling)
  # Super-sample (for binary classes only)
     * During training, find the minority class and randomly repeat its rows till it has the same frequency as the next most common class.   Use the learner trained on this super-sample on the test data (without super-sampling)
+ # Best(k)
+    * Given some performance measure and N training examples remove 20 training instance (at random) then for k=1 to N-1 for a conclusion by polling the k-th nearest neighbors. Return the k value that maximizes the performance score.
  # Roll your own
     * But clear it with the lecturer first.
 
 == Discretizers (basic) ==
 
- # N-bins (equal-width discretization)
+ # (EASY) N-bins (equal-width discretization)
     * Find max and min of each numeric columns. Replace number X with {{{round(N*(X - min)/(max-min))}}}
- # bin-logging
+ # (EASY) bin-logging
      * Same as N-bins but "N" is set to the log of the number of unique values.
- # N-chops (equal-frequency discretization)
+ # (EASY) N-chops (equal-frequency discretization)
     * Sort the numbers, find the number at the end of the first N% of the data, call that break1. Until the next smallest number is different to break1, walk up the list. Find the number at the next N% of the data, call that break2.  Until the next smallest number is different to break2, walk up the list. Etc. Go back over the data: everything underneath break1 is in bin1, the remainder underneath break2 is in bin2, etc.
- # Normal-chops
+ # (EASY) Normal-chops
     * Assume data is Gaussian and divide into -3, -2, -1, 0, 1,2,3 standard deviations away from the mean. Hint: see lisp/tricks/normal.lisp
- # (ADVANCED) Recursive supervised discretization:
+ # Recursive supervised discretization:
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
-    * Compute the gain of each split using sum(p,,i,,^2^{{{*}}}log(p..i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
- # (ADVANCED) Write one descritizer that does any of the above using different functions passed in as lambda bodies. Demonstrate that this approach works by implementing two of the above discretizers.
+    * Compute the gain of each split using sum(p,,i,,^2^{{{*}}}log(p..i,,))  where  
+      * p,,i,, is the number of instances of class "I" divided by the number of instances in this split
+ # Write one descritizer that does any of the above using different functions passed in as lambda bodies. Demonstrate that this approach works by implementing two of the above discretizers.
 
 == Clusterers ==
 
  # K-means
    * Pick k instances at random and call them centroids0. Mark each instance with its closest centroid0. Move each centroid to the median position of its marked instances. Repeat till centroids stop moving.
  # K-means++
-   * Same as K-means but take care when selecting the initial centroids. Pick one instance at random. Label each remaining instance with the normalized  distance to pick1 (divide by max distance). Repeat until you find K-1 more centroids:
-
+   * Same as K-means but take care when selecting the initial centroids (try to keep them far apart).
+   * Pick one instance at random. 
+   * Label each remaining instance with the (D/maxD)^2^: the  square of the normalized  distance to pick1 divided by max distance. 
+   * Repeat until you find K-1 more centroids: 
+       * Pick an instance at random
+       * Make it a centroid if  rand() > (D/max)^2
  # GAC (Greedy Agglomerative Clustering.)
-   * Move each instance to its nearest pair and create an artifical instance halfway between them. Repeat until you form a binary tree.
+   * Move each instance to its nearest pair and create an artificial instance halfway between them. Repeat until you form a binary tree.
  # GENIC
     * See http://code.google.com/p/ourmine/wiki/Gg#Gupta
- # (ADVANCED) Recursive 2-means. 
+ # GENIC2
+    * Same as GENIC but be adaptive on the number of clusters returned. Start with K=10 centroids. At each era, prune any that are weighted less than 0.5*maxWeight. If no  centroids are pruned, set K to K{{{*}}}1.5. 
+ # Recursive 2-means. 
    * Apply 2-means, then re-apply it to both generated clusters. Stop when the size of the sub-clusters is below a certain threshold or the diversity of the clusters is too small (diversity measured using entropy: sum(p,,i,,^2^{{{*}}}log(p..i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
 
 
 == Classifiers ==
 
- # K-th nearest neighbor 
- 
- * two clusterers
+ # K-th nearest neighbor  
+   * post-processor to clustering. The classification on the test instance comes from a poll of the k-th nearest instances in the training set.
+ is two clusterers
+
+one-r
+2R
+2bayes (a.k.a. AODE)
+PowerOfTwo
+
  * two classifiers
  * two feature subset selectors.
