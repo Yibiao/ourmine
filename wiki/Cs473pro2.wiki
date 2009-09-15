@@ -135,14 +135,31 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
  # N-chops (equal-frequency discretization)
     * Sort the numbers, find the number at the end of the first N% of the data, call that break1. Until the next smallest number is different to break1, walk up the list. Find the number at the next N% of the data, call that break2.  Until the next smallest number is different to break2, walk up the list. Etc. Go back over the data: everything underneath break1 is in bin1, the remainder underneath break2 is in bin2, etc.
  # Normal-chops
-    * Assume data is Gaussian and divide into -3, -2, -1, 0, 1,2,3 standard deviations away from the mean
+    * Assume data is Gaussian and divide into -3, -2, -1, 0, 1,2,3 standard deviations away from the mean. Hint: see lisp/tricks/normal.lisp
  # (ADVANCED) Recursive supervised discretization:
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
+    * Compute the gain of each split using sum(p,,i,,^2^{{{*}}}log(p..i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
+ # (ADVANCED) Write one descritizer that does any of the above using different functions passed in as lambda bodies. Demonstrate that this approach works by implementing two of the above discretizers.
 
-to the max of bucket one, walk up the list. 
-    *
- * two pre-processors
- * two discretizers
+== Clusterers ==
+
+ # K-means
+   * Pick k instances at random and call them centroids0. Mark each instance with its closest centroid0. Move each centroid to the median position of its marked instances. Repeat till centroids stop moving.
+ # K-means++
+   * Same as K-means but take care when selecting the initial centroids. Pick one instance at random. Label each remaining instance with the normalized  distance to pick1 (divide by max distance). Repeat until you find K-1 more centroids:
+
+ # GAC (Greedy Agglomerative Clustering.)
+   * Move each instance to its nearest pair and create an artifical instance halfway between them. Repeat until you form a binary tree.
+ # GENIC
+    * See http://code.google.com/p/ourmine/wiki/Gg#Gupta
+ # (ADVANCED) Recursive 2-means. 
+   * Apply 2-means, then re-apply it to both generated clusters. Stop when the size of the sub-clusters is below a certain threshold or the diversity of the clusters is too small (diversity measured using entropy: sum(p,,i,,^2^{{{*}}}log(p..i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
+
+
+== Classifiers ==
+
+ # K-th nearest neighbor 
+ 
  * two clusterers
  * two classifiers
  * two feature subset selectors.
