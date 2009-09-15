@@ -142,6 +142,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     * Sort the numbers, find the number at the end of the first N% of the data, call that break1. Until the next smallest number is different to break1, walk up the list. Find the number at the next N% of the data, call that break2.  Until the next smallest number is different to break2, walk up the list. Etc. Go back over the data: everything underneath break1 is in bin1, the remainder underneath break2 is in bin2, etc.
  # (EASY) Normal-chops
     * Assume data is Gaussian and divide into -3, -2, -1, 0, 1,2,3 standard deviations away from the mean. Hint: see lisp/tricks/normal.lisp
+ # (EASY) PKID
+    * See
  # Recursive supervised discretization:
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
     * Compute the gain of each split using sum(p,,i,,^2^{{{*}}}log(p,,i,,))  where  
@@ -203,6 +205,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
            * r = freq(r in Rest) / SizeOfRest
       * Sort each attribute by the median score of b^^2^^/(b+r).
       * Reject attributes with les than X% of the max. median score.
+ # Relief:
+    * See notes at 
 
 == Classifiers ==
 
@@ -219,8 +223,11 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * Same as IPO-C but this is a post-processor to IPO-prune.
  # OneR
    * See http://code.google.com/p/ourmine/wiki/Hh#Holte93
- # B
-
+ # TwoR
+   * http://www.cs.waikato.ac.nz/~ihw/papers/95NM-GH-IHW-Develop.pdf
+ # Random forests
+    *  http://www.stat.berkeley.edu/~breiman/RandomForests/.
+ greedy forward search on nomograms
 one-r
 2R
 2bayes (a.k.a. AODE)
@@ -230,6 +237,8 @@ PowerOfTwo
  * two feature subset selectors.
 
 = Appendix =
+
+== IPO ==
 {{{
 (deftest test-ipo()
   (let ((factors (ipo '(3 3 2 2))))
@@ -315,6 +324,42 @@ vector can be modified to include the tuple."
 		  tests))
        (format t "missing pair ~a~%" pair)
        (return-from check-tests nil)))))
-
-
 }}}
+
+== Relief ==
+
+
+    * [http://code.google.com/p/ourmine/wiki/Kk#Kononenko97 Kononenko97]
+    * useful attributes differentiate between instances from other class
+    * randomly pick some instances (here, 250)
+    * find something similar, in an another class
+    * compute distance this one to the other one
+    * Stochastic sampler: scales to large data sets.
+    * Binary RELIEF (two class system) for "n" instances for weights on features "F"
+{{{
+      set all weights W[f]=0
+      for i = 1 to n; do
+         randomly select instance R with class C
+         find nearest hit H      // closest thing of same class
+         find nearest miss M     // closest thing of difference class
+         for f = 1 to #features; do
+             W[f] = W[f] - diff(f,R,H)/n + diff(f,R,M)/n
+         done
+      done
+}}}
+    * computing "diff":
+          o discrete differences: 0 if same 1 if not.
+          o continuous: differences absolute differences
+          o normalized to 0:1
+          o When values are missing, see Kononenko97, p4. 
+    * N-class RELIEF: not 1 near hit/miss, but k nearest misses for each class C
+{{{
+      W[f]= W[f] - ∑i=1..k diff(f,R, Hi) / (n*k) 
+                 + ∑C ≠ class(R) ∑i=1..k ( 
+                                      P(C) / ( 1 - P(class(R)))
+                                      * diff(f,R, Mi(C)) / (n*k)
+                                     )
+}}}
+      The P(C) / (1 - P(class(R)) expression is a normalization function that
+          o demotes the effect of R from rare classes
+          o and rewards the effect of near hits from common classes. 
