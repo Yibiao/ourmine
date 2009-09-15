@@ -146,7 +146,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     * See
  # Recursive supervised discretization:
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
-    * Compute the gain of each split using sum(p,,i,,^2^{{{*}}}log(p,,i,,))  where  
+    * Compute the gain of each split using ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,))  where  
       * p,,i,, is the number of instances of class "I" divided by the number of instances in this split
  # Write one descritizer that does any of the above using different functions passed in as lambda bodies. Demonstrate that this approach works by implementing two of the above discretizers.
 
@@ -167,7 +167,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
  # GENIC2
     * Same as GENIC but be adaptive on the number of clusters returned. Start with K=10 centroids. At each era, prune any that are weighted less than 0.5*maxWeight. If no  centroids are pruned, set K to K{{{*}}}1.5. 
  # Recursive 2-means. 
-   * Apply 2-means, then re-apply it to both generated clusters. Stop when the size of the sub-clusters is below a certain threshold or the diversity of the clusters is too small (diversity measured using entropy: sum(p,,i,,^2^{{{*}}}log(p,,i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
+   * Apply 2-means, then re-apply it to both generated clusters. Stop when the size of the sub-clusters is below a certain threshold or the diversity of the clusters is too small (diversity measured using entropy: ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
  # GAC (Greedy Agglomerative Clustering.)
    * Move each instance to its nearest pair and create an artificial instance halfway between them. Repeat until you form a binary tree.
  # IPO
@@ -194,7 +194,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 = Feature Subset Selection =
 
  # InfoGain
-     * Rank each column by dividing up its values into different classes. Rank each column by sum(p,,i,,^2^{{{*}}}log(p,,i,,)). Reject columns that have less than X% of the maximum InfoGain.
+     * Rank each column by dividing up its values into different classes. Rank each column by ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,)). Reject columns that have less than X% of the maximum InfoGain.
  # B-squared 
       * Replace each class symbol with a utility score (lower score = higher utility). 
       * Sort instances by that score and divide them using N=20%-chops. 
