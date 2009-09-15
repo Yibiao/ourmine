@@ -1,6 +1,8 @@
 #summary intermediary data mining techniques
 #labels Featured
 
+<wiki:toc max_depth="4" />
+
 = To do =
 
 For proj2
