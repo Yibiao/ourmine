@@ -131,7 +131,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
  # Roll your own
     * But clear it with the lecturer first.
 
-== Discretizers (basic) ==
+== Discretizers  ==
 
  # (EASY) N-bins (equal-width discretization)
     * Find max and min of each numeric columns. Replace number X with {{{round(N*(X - min)/(max-min))}}}
@@ -158,6 +158,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * Repeat until you find K-1 more centroids: 
        * Pick an instance at random
        * Make it a centroid if  rand() > (D/max)^2^ (this favors centroids that are, on average, 75% away from the initial centroid). 
+ # GRID
+    * Impose a coarse grained mesh over the data (e.g. all numerics divided into 10) and sort each bucket in the mesh by the density of items in that bucket. Take the densest bucket and while there exist a (transitive) neighbor with densities less than or equal to that bucket, add it into that bucket. For more details, see http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9395 .
  # GENIC
     * See http://code.google.com/p/ourmine/wiki/Gg#Gupta
  # GENIC2
@@ -182,6 +184,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     *  or very high variance (you won't trust those).
  # IPO-prune
    * Same as GAC-prune but the tree is built before seeing any data and the pruning happens after see the data.
+
 
 == Classifiers ==
 
