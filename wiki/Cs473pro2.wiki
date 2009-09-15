@@ -6,7 +6,10 @@ For proj2
 
  * implement at least one of each of the _basic_ pre-processor, discretizer, clusterer, classifier, feature subset selector.  
  * Also, port my NaiveBayes code into your rig (so it can be compared to everything else).
- * For 2*F bonus marks, code up F more   functions (no more than F=3 and  no more than two of the EASY ones).  
+ * For 2*F bonus marks, code up F more   functions 
+     * no more than F=3 
+     * no more than two of the ones marked EASY.  
+     * HINT: there are common inference patterns in the following functions. With a little lambda abstraction you should be able to implement MULTIPLE functions using the same LISP code (but called using slightly different functions).
  * Note, unless it is for bonus marks, once on group picks a function no other group can pick the same one.
 
 For proj3,  not sure of the details yet but it will probably be implementing another pre-processor, discretizer, clusterer, classifier, feature subset selector, run all 32 combinations, do an evaluation experiment.
@@ -153,7 +156,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
     * Compute the gain of each split using ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,))  where  
       * p,,i,, is the number of instances of class "I" divided by the number of instances in this split
- # Write one descritizer that does any of the above using different functions passed in as lambda bodies. Demonstrate that this approach works by implementing two of the above discretizers.
+ # Roll your own
+    * But clear it with the lecturer first.
 
 == Clusterers ==
 
@@ -194,6 +198,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * Same as GAC-prune but the tree is built before seeing any data and the pruning happens after see the data.
  # GRID
     * Impose a coarse grained mesh over the data (e.g. using N=10bins or IPO) and sort each bucket in the mesh by the density of items in that bucket. Take the densest bucket and while there exist a (transitive) neighbor with densities less than or equal to that bucket, add it into that bucket. For more details, see http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9395 .
+  # Roll your own
+    * But clear it with the lecturer first.
 
 = Feature Subset Selection =
 
