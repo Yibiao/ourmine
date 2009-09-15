@@ -175,7 +175,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
             (0 1 2 0) (0 1 1 0) (3 0 2 0) (3 0 1 0)  
             (2 0 2 0) (2 0 1 0) (1 0 2 0) (1 0 1 0)) 
 }}}
-       * This pairwise heuristic is very powerful. Data sets with 100 binary attributes generate 15 centroids and 20 attributes with a range of 10 generate around 200 centroids.
+       * This pairwise heuristic is very powerful. Data sets with 100 binary attributes generate 15 centroids and 20 attributes with a range of 10 generate around 200 centroids. For more details, see the table at the bottom of http://pairwise.org/tools.asp.
    * Make each of these a cluster.
    * Perform GAC to build an index over those clusters. 
    * Amazingly, all this can be done _before you see any data_.
