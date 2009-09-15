@@ -16,13 +16,13 @@ For proj3,  not sure of the details yet but it will probably be implementing ano
 
 = Details =
 
-For this, and the next project, everyone has to code up
+By the end of proj2 and proj3, every group will have implemented:
 
- * two pre-processors
- * two discretizers
- * two clusterers
- * two classifiers
- * two feature subset selectors.
+ * at least two pre-processors
+ * at least two discretizers
+ * at least two clusterers
+ * at least two classifiers
+ * at least two feature subset selectors.
 
 Note that:
 
