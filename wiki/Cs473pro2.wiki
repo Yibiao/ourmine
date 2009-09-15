@@ -161,7 +161,6 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * Repeat until you find K-1 more centroids: 
        * Pick an instance at random
        * Make it a centroid if  rand() > (D/max)^2^ (this favors centroids that are, on average, 75% away from the initial centroid). 
-
  # GENIC
     * See http://code.google.com/p/ourmine/wiki/Gg#Gupta
  # GENIC2
@@ -205,14 +204,14 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
       * Sort each range (r) by b^^2/(b+r) where
            * b = freq(r in Best) / SizeOfBest
            * r = freq(r in Rest) / SizeOfRest
-           * btw, if b &lt; r, then b = 0.
-      * Sort each attribute by the median score of b^^2^^/(b+r).
+           * btw, if b < r, then b = 0.
+      * Sort each attribute by the median score of b^2^/(b+r).
       * Reject attributes with les than X% of the max. median score.
  # Nomograms:
       * Same as B-squared  but score r using odds ratio log(b)/log(r) 
       * For examples of ranges sorted on log of odds ratio, see below.
       * btw, 
-         * if b &lt; r, then log(oddsRatio) = 0.
+         * if b < r, then log(oddsRatio) = 0.
          * if log(oddsRatio) less than N% of max log(oddsRatio), then log(oddsRatio) = 0.
          * if b too small (how small?) then ignore it.
 
@@ -220,8 +219,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 == Classifiers ==
 
  # K-th nearest neighbor  
-   * post-processor to clustering. The classification on the test instance comes from a poll of the k-th nearest instances in the training set.
- is two clusterers
+   * post-processor to clustering. The classification on the test instance comes from a poll of the k-th nearest instances in the training set. 
  # EKREM-C
    * Post-processor to EKREM. Recursively move test instances to the nearest neighbor in the pruned GAC tree. Return the leaf median value and a measure of trust in that sub-tree.
  # EKREM-prune-C
@@ -234,16 +232,11 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * See http://code.google.com/p/ourmine/wiki/Hh#Holte93
  # TwoR
    * http://www.cs.waikato.ac.nz/~ihw/papers/95NM-GH-IHW-Develop.pdf
+ # 2B (a.k.a. AODE)
  # Random forests
     *  http://www.stat.berkeley.edu/~breiman/RandomForests/.
- greedy forward search on nomograms
-one-r
-2R
-2bayes (a.k.a. AODE)
-PowerOfTwo
-
- * two classifiers
- * two feature subset selectors.
+ # Greedy-R
+    greedy forward search on nomograms
 
 = Appendix =
 
