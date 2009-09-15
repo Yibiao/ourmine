@@ -198,7 +198,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * Same as GAC-prune but the tree is built before seeing any data and the pruning happens after see the data.
  # GRID
     * Impose a coarse grained mesh over the data (e.g. using N=10bins or IPO) and sort each bucket in the mesh by the density of items in that bucket. Take the densest bucket and while there exist a (transitive) neighbor with densities less than or equal to that bucket, add it into that bucket. For more details, see http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9395 .
-  # Roll your own
+ # Roll your own
     * But clear it with the lecturer first.
 
 = Feature Subset Selection =
@@ -225,7 +225,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
          * if b < r, then log(oddsRatio) = 0.
          * if log(oddsRatio) less than N% of max log(oddsRatio), then log(oddsRatio) = 0.
          * if b too small (how small?) then ignore it.
-
+ # Roll your own
+    * But clear it with the lecturer first.
 
 == Classifiers ==
 
@@ -248,7 +249,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     *  http://www.stat.berkeley.edu/~breiman/RandomForests/.
  # Greedy-R
     greedy forward search on nomograms
-
+ # Roll your own
+    * But clear it with the lecturer first.
 = Appendix =
 
 == IPO ==
