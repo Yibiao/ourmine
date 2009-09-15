@@ -132,7 +132,7 @@ Pre-processors handle certain common set-up tasks.
  # (EASY) Fill out:
   * Replace X% of the cells in each row with "?" (not the class variable).
  # (EASY) Fill in:
-  * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns)
+  * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns) for rows of that class.
  # Sub-sample
     * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling)
  # Super-sample (for binary classes only)
@@ -158,7 +158,12 @@ Discretizers take numeric ranges and chop them up into a handful of bins (typica
  # (EASY) Normal-chops
     * Assume data is Gaussian and divide into -3, -2, -1, 0, 1,2,3 standard deviations away from the mean. Hint: see lisp/tricks/normal.lisp
  # (EASY) PKID
-    * See
+    * See http://iccle.googlecode.com/svn/trunk/share/pdf/YangWebb03.pdf
+ # ONERd
+	* Sort each numeric attribute, along with its associated class.
+	* Place the first 6 instances in bin1. 
+    * Grow bin1 as long as the majority class in bin1 remains constant.
+	* Repeat for the rest of the data.
  # Recursive supervised discretization:
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
     * Compute the gain of each split using ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,))  where  
@@ -255,17 +260,30 @@ Classifiers make decisions.
    * Post-processor to C. Recursively move test instances to the nearest neighbor in the pruned GAC tree. Return the leaf median value and a measure of trust in that sub-tree.
  # IPO-prune-C
    * Same as IPO-C but this is a post-processor to IPO-prune.
+ # PRISM
+   * [AlgorithmPrism PRISM1] 
  # PRISM2
-   * PRISM1 runs throught the attributes in any order. PRISM2 queiries the feature subset selector to normalize the score of each attribute (FSS,,i,,/ 
+   * [AlgorithmPrism PRISM1] runs throught the attributes in any order. PRISM2 queiries the feature subset selector to normalize the score of each attribute (x=FSS,,i,,/ ∑FSS,,i,,)  and picks the first attribute with _n> rand()_. Then, when adding rarnges, its tries sorts them by their FSS score. And before adding into anew range, if the old addition only added less that N% to the rule, we just stop.  
+ # PRISM2-NB
+   * [AlgorithmPrism PRISM1] runs throught the attributes in any order. PRISM2 queiries the feature subset selector to normalize the score of each attribute (x=FSS,,i,,/ ∑FSS,,i,,)  and picks the first attribute with _n> rand()_. Then, when adding rarnges, its tries sorts them by their FSS score. And before adding into anew range, if the old addition only added less that N% to the rule, we just stop.  
  # OneR
-   * See http://code.google.com/p/ourmine/wiki/Hh#Holte93
+	* Select for classes using one attribute.
+{{{
+For each attribute, 
+	For each value of the attribute, make a rule as follows: 
+		count how often each class appears 
+		find the most frequent class 
+		make the rule assign that class to this attribute-value 
+	Calculate the error rate of the rules (see example at bottom)
+Choose the rules with the smallest error rate 
+}}}
+   * Note: "missing" is treated as a separate attribute  value
+   * For more details, see  http://code.google.com/p/ourmine/wiki/Hh#Holte93
  # TwoR
-   * http://www.cs.waikato.ac.nz/~ihw/papers/95NM-GH-IHW-Develop.pdf
+	* Same as OneR but as a pre-processor, take N columns and create a new data by combining all pairs to make N^2^/2-N new attributes.
+	* For more detail, http://www.cs.waikato.ac.nz/~ihw/papers/95NM-GH-IHW-Develop.pdf
  # 2B (a.k.a. AODE)
- # Random forests
-    *  http://www.stat.berkeley.edu/~breiman/RandomForests/.
- # Greedy-R
-    greedy forward search on nomograms
+	* Same as NaiveBayes but as a pre-processor, take N columns and create a new data by combining all pairs to make N^2^/2-N new attributes.
  # Roll your own
     * But clear it with the lecturer first.
 
@@ -400,3 +418,10 @@ vector can be modified to include the tuple."
 == Some ranges, scored on log(oddsRation) ==
 
 http://iccle.googlecode.com/svn/trunk/share/img/nomofss.png
+
+== OneR example ==
+{{{
+http://iccle.googlecode.com/svn/trunk/share/img/onerdata.png
+
+http://iccle.googlecode.com/svn/trunk/share/img/onererror.png
+}}}
