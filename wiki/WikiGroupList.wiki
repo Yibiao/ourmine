@@ -28,7 +28,7 @@ Group 12
 <img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/group.jpg">
 = CS 473 =
 
-Group 20
+[Group20 Group 20]
  * [TimBielawa Tim Bielawa]
  * Elijah Flesher
  * Drew Waltman
