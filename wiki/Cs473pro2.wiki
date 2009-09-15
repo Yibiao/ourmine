@@ -240,6 +240,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * Post-processor to C. Recursively move test instances to the nearest neighbor in the pruned GAC tree. Return the leaf median value and a measure of trust in that sub-tree.
  # IPO-prune-C
    * Same as IPO-C but this is a post-processor to IPO-prune.
+ # NaiveBayes
  # OneR
    * See http://code.google.com/p/ourmine/wiki/Hh#Holte93
  # TwoR
@@ -251,6 +252,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     greedy forward search on nomograms
  # Roll your own
     * But clear it with the lecturer first.
+
 = Appendix =
 
 == IPO ==
