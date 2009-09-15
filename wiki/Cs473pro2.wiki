@@ -10,7 +10,7 @@ For proj2
      * no more than F=3 
      * no more than two of the ones marked EASY.  
      * HINT: there are common inference patterns in the following functions. With a little lambda abstraction you should be able to implement MULTIPLE functions using the same LISP code (but called using slightly different functions).
- * Note, unless it is for bonus marks, once on group picks a function no other group can pick the same one.
+ * Note, unless it is for bonus marks, once one group picks a function no other group can pick the same one.
 
 For proj3,  not sure of the details yet but it will probably be implementing another pre-processor, discretizer, clusterer, classifier, feature subset selector, run all 32 combinations, do an evaluation experiment.
 
