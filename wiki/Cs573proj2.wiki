@@ -1,0 +1,43 @@
+#summary Report on preliminary results (10 pages, 2 column), 20% .
+
+<wiki:toc max_depth="4" />
+
+= Mission =
+
+Your mission is to report either show the presence or prove the absence of a general theory of defect prediction, learned from the NASA (USA) and SoftLab (Turkey) data sets.
+
+= Todo =
+
+Referring to the [Cs473proj2] project, you should code up
+ #  the inputs and outputs shown in the [Cs47sproj2#Details Details] section.
+ # a pre-processor that replaces numeric value _N_ with 
+     * {{{log(N< 0.0001 ? 0.0001 : N)}}}
+ # a pre-processor that builds a new "(data) call from N existing data sets
+ # a pre-processor  that splits one "(data)" into 10 bins, then 
+     * builds a train "(data)" from 90% of the data 
+     * "(test)' data from 10% of the data.
+     * Note that the distribution of classes in "train/test" should be similar to the original data set
+ # a nearest-neighbor tool that finds the k-th nearest examples from example1 in some "(data)" set. For this you will need
+     * A "normalizer" that reduces all numerics to min..max zero..one
+     * A "bestK" tool
+          * Given some performance measure (use "g") and N training examples remove 20 training instance (at random) then for k=1 to N-1 for a conclusion by polling the k-th nearest neighbors. Return the k value that maximizes the performance score. 
+ 
+You also need to hand-convert:
+ * all the  arff files in http://unbox.org/wisp/trunk/ourmine/2.0/lib/arffs/softlab/
+ * all the SHARED arff files into http://code.google.com/p/ourmine/source/browse/trunk/our/arffs/promise/ into our LISP format
+
+ 
+ 
+
+# Sub-sample
+
+    * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling) 
+
+# Super-sample (for binary classes only)
+
+    * During training, find the minority class and randomly repeat its rows till it has the same frequency as the next most common class. Use the learner trained on this super-sample on the test data (without super-sampling) 
+
+# Best(k)
+
+    * Given some performance measure and N training examples remove 20 training instance (at random) then for k=1 to N-1 for a conclusion by polling the k-th nearest neighbors. Return the k value that maximizes the performance score. 
+ 
