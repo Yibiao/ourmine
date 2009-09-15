@@ -121,6 +121,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 == Pre-processors  ==
 
+Pre-processors handle certain common set-up tasks.
+
  # (EASY) Normalize:
   * Normalize all numerics zero to one.
  # (EASY) BORE (best or rest):
@@ -142,6 +144,11 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 == Discretizers  ==
 
+Discretizers take numeric ranges and chop them up into a handful of bins (typically, less than 20, often between 2 and 8). Think of them like a condensor: 
+ * some signal is spread out thinly like drops of water across a bunch of numbers
+ * discretization compresses that signal into a small number of bins
+ * at which point the signal condenses and becomes visible.
+
  # (EASY) N-bins (equal-width discretization)
     * Find max and min of each numeric columns. Replace number X with {{{round(N*(X - min)/(max-min))}}}
  # (EASY) bin-logging
@@ -160,6 +167,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     * But clear it with the lecturer first.
 
 == Clusterers ==
+
+Clusters group together related rows.
 
  # K-means
    * Pick k instances at random and call them centroids0. Mark each instance with its closest centroid0. Move each centroid to the median position of its marked instances. Repeat till centroids stop moving.
@@ -203,6 +212,9 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 = Feature Subset Selection =
 
+
+Feature subset selectors throw out irrelevant columns.
+
  # InfoGain
      * Rank each column by dividing up its values into different classes. Rank each column by ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,)). Reject columns that have less than X% of the maximum InfoGain.
  # Relief:
@@ -229,6 +241,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     * But clear it with the lecturer first.
 
 == Classifiers ==
+
+Classifiers make decisions.
 
  # K-th nearest neighbor  
    * post-processor to clustering. The classification on the test instance comes from a poll of the k-th nearest instances in the training set. 
