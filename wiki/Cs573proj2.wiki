@@ -12,7 +12,10 @@ Your mission is to report either show the presence or prove the absence of a gen
 
 = Todo =
 
-Referring to the [Cs473proj2] project, you should code up
+Referring to the [Cs473proj2] project, you should code up...
+
+== Pre-processors ==
+
  #  the inputs and outputs shown in the [Cs47sproj2#Details Details] section.
  # a pre-processor that replaces numeric value _N_ with 
      * {{{log(N< 0.0001 ? 0.0001 : N)}}}
@@ -25,10 +28,7 @@ Referring to the [Cs473proj2] project, you should code up
      * A "normalizer" that reduces all numerics to min..max zero..one
      * A "bestK" tool
           * Given some performance measure (use "g") and N training examples remove 20 training instance (at random) then for k=1 to N-1 for a conclusion by polling the k-th nearest neighbors. Return the k value that maximizes the performance score. 
- 
-You also need to hand-convert:
- * all the  arff files in http://unbox.org/wisp/trunk/ourmine/2.0/lib/arffs/softlab/
- * all the SHARED arff files into http://code.google.com/p/ourmine/source/browse/trunk/our/arffs/promise/ into our LISP format
+
 
  
  
@@ -45,3 +45,9 @@ You also need to hand-convert:
 
     * Given some performance measure and N training examples remove 20 training instance (at random) then for k=1 to N-1 for a conclusion by polling the k-th nearest neighbors. Return the k value that maximizes the performance score. 
  
+ 
+== Other ===
+
+You also need to hand-convert:
+ * all the  arff files in http://unbox.org/wisp/trunk/ourmine/2.0/lib/arffs/softlab/
+ * all the SHARED arff files into http://code.google.com/p/ourmine/source/browse/trunk/our/arffs/promise/ into our LISP format
