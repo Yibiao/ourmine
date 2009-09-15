@@ -244,6 +244,7 @@ Feature subset selectors throw out irrelevant columns.
 
 Classifiers make decisions.
 
+ # NaiveBayes
  # K-th nearest neighbor  
    * post-processor to clustering. The classification on the test instance comes from a poll of the k-th nearest instances in the training set. 
  # EKREM-C
@@ -254,7 +255,8 @@ Classifiers make decisions.
    * Post-processor to C. Recursively move test instances to the nearest neighbor in the pruned GAC tree. Return the leaf median value and a measure of trust in that sub-tree.
  # IPO-prune-C
    * Same as IPO-C but this is a post-processor to IPO-prune.
- # NaiveBayes
+ # PRISM2
+   * PRISM1 runs throught the attributes in any order. PRISM2 queiries the feature subset selector to normalize the score of each attribute (FSS,,i,,/ 
  # OneR
    * See http://code.google.com/p/ourmine/wiki/Hh#Holte93
  # TwoR
