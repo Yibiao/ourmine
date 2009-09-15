@@ -158,8 +158,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
    * Repeat until you find K-1 more centroids: 
        * Pick an instance at random
        * Make it a centroid if  rand() > (D/max)^2^ (this favors centroids that are, on average, 75% away from the initial centroid). 
- # GRID
-    * Impose a coarse grained mesh over the data (e.g. all numerics divided into 10) and sort each bucket in the mesh by the density of items in that bucket. Take the densest bucket and while there exist a (transitive) neighbor with densities less than or equal to that bucket, add it into that bucket. For more details, see http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9395 .
+
  # GENIC
     * See http://code.google.com/p/ourmine/wiki/Gg#Gupta
  # GENIC2
@@ -176,7 +175,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
             (0 1 2 0) (0 1 1 0) (3 0 2 0) (3 0 1 0)  
             (2 0 2 0) (2 0 1 0) (1 0 2 0) (1 0 1 0)) 
 }}}
-       * This pairwise heuristic is very powerful. Data sets with a cross-product space of billions can generate only a few hundred centroids.
+       * This pairwise heuristic is very powerful. Data sets with 100 binary attributes generate 15 centroids and 20 attributes with a range of 10 generate around 200 centroids.
    * Make each of these a cluster.
    * Perform GAC to build an index over those clusters. 
    * Amazingly, all this can be done _before you see any data_.
@@ -186,7 +185,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     *  or very high variance (you won't trust those).
  # IPO-prune
    * Same as GAC-prune but the tree is built before seeing any data and the pruning happens after see the data.
-
+ # GRID
+    * Impose a coarse grained mesh over the data (e.g. using N=10bins or IPO) and sort each bucket in the mesh by the density of items in that bucket. Take the densest bucket and while there exist a (transitive) neighbor with densities less than or equal to that bucket, add it into that bucket. For more details, see http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9395 .
 
 == Classifiers ==
 
