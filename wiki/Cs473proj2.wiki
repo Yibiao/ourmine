@@ -119,20 +119,22 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 = Functions =
 
+Note that the following list is very long. But you only need to code up for proj2 five of the following.
+
 == Pre-processors  ==
 
 Pre-processors handle certain common set-up tasks.
 
+ # (EASY) Fill out:
+  * Replace X% of the cells in each row with "?" (not the class variable).
+ # (EASY) Fill in:
+  * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns) for rows of that class.
  # (EASY) Normalize:
   * Normalize all numerics zero to one.
  # (EASY) BORE (best or rest):
   * Take a data set with a numeric class and discrete it into 20% "best" and 80% "rest" scores.
  # Ucube (normalize + BORE):
   * Derive a class by taking 3 normalize numeric values, mapping them into a 1*1*1 cube, then take all instances and place them in that cube, then compute the distance of each instance from "heaven" (best values on the axes) then divide those distances into 20% "best" and 80% "rest"
- # (EASY) Fill out:
-  * Replace X% of the cells in each row with "?" (not the class variable).
- # (EASY) Fill in:
-  * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns) for rows of that class.
  # Sub-sample
     * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling)
  # Super-sample (for binary classes only)
@@ -160,10 +162,10 @@ Discretizers take numeric ranges and chop them up into a handful of bins (typica
  # (EASY) PKID
     * See http://iccle.googlecode.com/svn/trunk/share/pdf/YangWebb03.pdf
  # ONERd
-	* Sort each numeric attribute, along with its associated class.
-	* Place the first 6 instances in bin1. 
+    * Sort each numeric attribute, along with its associated class.
+    * Place the first 6 instances in bin1. 
     * Grow bin1 as long as the majority class in bin1 remains constant.
-	* Repeat for the rest of the data.
+    * Repeat for the rest of the data.
  # Recursive supervised discretization:
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
     * Compute the gain of each split using ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,))  where  
