@@ -220,7 +220,7 @@ Clusters group together related rows.
  # Roll your own
     * But clear it with the lecturer first.
 
-= Feature Subset Selection =
+== Feature Subset Selection ==
 
 
 Feature subset selectors throw out irrelevant columns.
