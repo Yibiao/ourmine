@@ -2,6 +2,12 @@
 
 <wiki:toc max_depth="4" />
 
+<img align=middle src="http://www.ksu.edu.sa/sites/Colleges/AppliedMedicalSciences/PublishingImages/under-construction.jpg" width=200>
+
+*NOTE: This 
+draft is not yet released.*
+
+
 = Mission =
 
 Your mission is to report either show the presence or prove the absence of a general theory of defect prediction, learned from the NASA (USA) and SoftLab (Turkey) data sets.
