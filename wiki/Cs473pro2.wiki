@@ -44,7 +44,8 @@ To run the code, your main function must be
      ; first prep train and test
      ; then run the discretizer
      ; then cluster the training set into k clusters
-     ; then train a classifier for each cluster
+     ; the do FSS on each cluster 
+     ; then on the remaining attributes, train a classifier for each cluster
      ; then for all example in the test set
      ;     ... find the cluster with the nearest centroid...
      ;     ... classify that example  using that cluster's classifier
@@ -188,6 +189,21 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
  # GRID
     * Impose a coarse grained mesh over the data (e.g. using N=10bins or IPO) and sort each bucket in the mesh by the density of items in that bucket. Take the densest bucket and while there exist a (transitive) neighbor with densities less than or equal to that bucket, add it into that bucket. For more details, see http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.9395 .
 
+= Feature Subset Selection =
+
+ # InfoGain
+     * Rank each column by dividing up its values into different classes. Rank each column by sum(p,,i,,^2^{{{*}}}log(p,,i,,)). Reject columns that have less than X% of the maximum InfoGain.
+ # B-squared 
+      * Replace each class symbol with a utility score (lower score = higher utility). 
+      * Sort instances by that score and divide them using N=20%-chops. 
+      * Label all the rows in bin=1 "best" and the remaining "rest". 
+      * Pretend you are doing NaiveBayes and collect the frequencies of ranges in best/rest.
+      * Sort each range (r) by b^^2/(b+r) where
+           * b = freq(r in Best) / SizeOfBest
+           * r = freq(r in Rest) / SizeOfRest
+      * Sort each attribute by the median score of b^^2^^/(b+r).
+      * Reject attributes with les than X% of the max. median score.
+
 == Classifiers ==
 
  # K-th nearest neighbor  
@@ -202,7 +218,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
  # IPO-prune-C
    * Same as IPO-C but this is a post-processor to IPO-prune.
  # OneR
-   *
+   * See http://code.google.com/p/ourmine/wiki/Hh#Holte93
+ # B
 
 one-r
 2R
