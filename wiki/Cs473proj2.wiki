@@ -277,8 +277,6 @@ Choose the rules with the smallest error rate
  # TwoR
    * Same as OneR but as a pre-processor, take N columns and create a new data by combining all pairs to make N^2^/2-N new attributes.
    * For more detail, http://www.cs.waikato.ac.nz/~ihw/papers/95NM-GH-IHW-Develop.pdf
- # Roll your own
-   * But clear it with the lecturer first.
  # PRISM
    * [AlgorithmPrism PRISM1] . 
  # PRISM2
@@ -288,6 +286,8 @@ Choose the rules with the smallest error rate
       * Given a rule of the form if(A,,1,,=V,,1,, and A,,2,,=V,,2,, and ... then class,,c,,) 
       * then its score is L,,c,,^2^/(L,,c,, + L,,not(c),,) 
       * where L,,c,,=p,,c,,{{{*}}}PROD,,i,,{{{*}}}freq(A,,i,,=V,,i,, in class,,c,,)/(number of class,,c,, entries)
+ # Roll your own
+   * But clear it with the lecturer first.
 
 = Appendix =
 
