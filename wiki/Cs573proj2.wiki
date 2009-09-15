@@ -3,7 +3,7 @@
 <wiki:toc max_depth="4" />
 
 <img align=left src="http://www.ksu.edu.sa/sites/Colleges/AppliedMedicalSciences/PublishingImages/under-construction.jpg" width=200> *NOTE: This 
-draft is not yet released.*<br><br><br><br><br><br><br><br><br><br>
+draft is not yet released.*<br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 = Mission =
