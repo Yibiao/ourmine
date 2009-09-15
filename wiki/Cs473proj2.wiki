@@ -280,8 +280,7 @@ For each attribute,
 	Calculate the error rate of the rules (see example at bottom)
 Choose the rules with the smallest error rate 
 }}}
-   * Note: "missing" is treated as a separate attribute  value
-   * For more details, see  http://code.google.com/p/ourmine/wiki/Hh#Holte93
+   * Note: "missing" is treated as a separate attribute  value.  For more details, see  http://code.google.com/p/ourmine/wiki/Hh#Holte93
  # TwoR
 	* Same as OneR but as a pre-processor, take N columns and create a new data by combining all pairs to make N^2^/2-N new attributes.
 	* For more detail, http://www.cs.waikato.ac.nz/~ihw/papers/95NM-GH-IHW-Develop.pdf
