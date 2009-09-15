@@ -209,7 +209,19 @@ PowerOfTwo
 
 = Appendix =
 {{{
-
+(deftest test-ipo()
+  (let ((factors (ipo '(3 3 2 2))))
+(check
+ (equalp '((2 3 1) (2 2 1) (2 1 1) (1 3 1) (1 2 0) (1 1 0))
+	 (ipo '(2 3 1)) )	
+ (equalp  '((0 3 2 0) (0 3 1 0) (0 2 2 0) (0 2 1 0) (0 1 2 0) 
+	    (0 1 1 0) (3 0 2 0) (3 0 1 0) (2 0 2 0) (2 0 1 0) 
+	    (1 0 2 0) (1 0 1 0))   
+	  (generate-pairs 2 '(3 3 2 2)))
+ (equalp 1000000 (match-pat '(0 3 2 0) '(1 1 0 0)))
+ (equalp 1 (match-pat '(1 1 2 0) '(1 1 0 0)))
+ (equalp 0 (match-pat '(1 1 0 0) '(1 1 0 0)))	
+ )))
 
 (defun ipo (factors)
   "From a list of ranges, generate test cases for each range
@@ -282,17 +294,5 @@ vector can be modified to include the tuple."
        (format t "missing pair ~a~%" pair)
        (return-from check-tests nil)))))
 
-(deftest test-ipo()
-  (let ((factors (ipo '(3 3 2 2))))
-(check
- (equalp '((2 3 1) (2 2 1) (2 1 1) (1 3 1) (1 2 0) (1 1 0))
-	 (ipo '(2 3 1)) )	
- (equalp  '((0 3 2 0) (0 3 1 0) (0 2 2 0) (0 2 1 0) (0 1 2 0) 
-	    (0 1 1 0) (3 0 2 0) (3 0 1 0) (2 0 2 0) (2 0 1 0) 
-	    (1 0 2 0) (1 0 1 0))   
-	  (generate-pairs 2 '(3 3 2 2)))
- (equalp 1000000 (match-pat '(0 3 2 0) '(1 1 0 0)))
- (equalp 1 (match-pat '(1 1 2 0) '(1 1 0 0)))
- (equalp 0 (match-pat '(1 1 0 0) '(1 1 0 0)))	
- )))
+
 }}}
