@@ -423,6 +423,6 @@ http://iccle.googlecode.com/svn/trunk/share/img/nomofss.png
 
 == OneR example ==
 
-http://ourmine.googlecode.com/svn/trunk/share/img/onerdata.png
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/onerdata.png">
 
-http://ourmine.googlecode.com/svn/trunk/share/img/onererr.png
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/onererr.png">
