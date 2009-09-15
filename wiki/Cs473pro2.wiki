@@ -2,7 +2,7 @@
 
 = To do =
 
-For proj2, implement at least one of each of the _basic_ pre-processor, discretizer, clusterer, classifier, feature subset selector. For 2*F extra marks, code up F more   functions (but no more than two of the EASY ones, and no more than F=3). 
+For proj2, implement at least one of each of the _basic_ pre-processor, discretizer, clusterer, classifier, feature subset selector. For 2*F bonus marks, code up F more   functions (no more than F=3 and  no more than two of the EASY ones).  Note, unless it is for bonus marks, once on group picks a function no other group can pick the same one.
 
 For proj3,  not sure of the details yet but it will probably be implementing another pre-processor, discretizer, clusterer, classifier, feature subset selector, run all 32 combinations, do an evaluation experiment.
 
