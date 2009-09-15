@@ -107,7 +107,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 = Functions =
 
-== Pre-processors (easy) ==
+== Pre-processors  ==
 
  # Normalize:
   * Normalize all numerics zero to one.
@@ -115,11 +115,34 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
   * Take a data set with a numeric class and discrete it into 20% "best" and 80% "rest" scores.
  # Ucube (normalize + BORE):
   * Derive a class by taking 3 normalize numeric values, mapping them into a 1*1*1 cube, then take all instances and place them in that cube, then compute the distance of each instance from "heaven" (best values on the axes) then divide those distances into 20% "best" and 80% "rest"
- # FillOut:
+ # Fill out:
   * Replace X% of the cells in each row with "?" (not the class variable).
- # FillIn:
+ # Fill in:
   * Replace all "?" with the most common symbol (in discrete columns) or the median value (in numeric columns)
  # Sub-sample
     * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling)
  # Super-sample (for binary classes only)
     * During training, find the minority class and randomly repeat its rows till it has the same frequency as the next most common class.   Use the learner trained on this super-sample on the test data (without super-sampling)
+ # Roll your own
+    * But clear it with the lecturer first.
+
+== Discretizers (basic) ==
+
+ # N-bins (equal-width discretization)
+    * Find max and min of each numeric columns. Replace number X with round(N*(X - min)/(max-min))
+ # bin-logging
+     * Same as N-bins but "N" is set to the log of the number of unique values.
+ # N-chops (equal-frequency discretization)
+    * Sort the numbers, find the number at the end of the first N% of the data, call that break1. Until the next smallest number is different to break1, walk up the list. Find the number at the next N% of the data, call that break2.  Until the next smallest number is different to break2, walk up the list. Etc. Go back over the data: everything underneath break1 is in bin1, the remainder underneath break2 is in bin2, etc.
+ # Normal-chops
+    * Assume data is Gaussian and divide into -3, -2, -1, 0, 1,2,3 standard deviations away from the mean
+ # (ADVANCED) Recursive supervised discretization:
+    * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
+
+to the max of bucket one, walk up the list. 
+    *
+ * two pre-processors
+ * two discretizers
+ * two clusterers
+ * two classifiers
+ * two feature subset selectors.
