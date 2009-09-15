@@ -265,8 +265,7 @@ Classifiers make decisions.
  # PRISM2
    * [AlgorithmPrism PRISM1] runs throught the attributes in any order. PRISM2 first discards all attribute ranges that score badly on (say) InfoGain, Relief, B-squared or nomograms., etc.
  # PRISM2-B
-   * This is PRISM2-B using B-squared as its FSS, and  each rule is scored using pre-computed frequency counts, without running over the data.  
-Given a rule of the form if(A,,1,,=V,,1,, and A,,2,,=V,,2,, and ... then class,,c,,) then its score is L,,c,,^2/(L,,c,, + L,,not(c),,) where L,,c,,=p,,c,,{{{*}}}PROD,,i,,{{{*}}}freq(A,,i,,=V,,i,, in class,,c,,)/(number of class,,c,, entries)
+   * This is PRISM2-B using B-squared as its FSS, and  each rule is scored using pre-computed frequency counts, without running over the data.  Given a rule of the form if(A,,1,,=V,,1,, and A,,2,,=V,,2,, and ... then class,,c,,) then its score is L,,c,,^2^/(L,,c,, + L,,not(c),,) where L,,c,,=p,,c,,{{{*}}}PROD,,i,,{{{*}}}freq(A,,i,,=V,,i,, in class,,c,,)/(number of class,,c,, entries)
  # OneR
 	* Select for classes using one attribute.
 {{{
