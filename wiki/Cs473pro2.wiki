@@ -167,7 +167,15 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
  # GAC (Greedy Agglomerative Clustering.)
    * Move each instance to its nearest pair and create an artificial instance halfway between them. Repeat until you form a binary tree.
  # IPO
-   * Given the range of discretized data, generate a small number of centroids equidistant across the space of possible centroids. The _IPO_ function, shown below, builds centroids with the property that no two centroids share the same pair of values. Make each of these a cluster, then perform GAC to build an index over those clusters. Amazingly, all this can be done _before you see any data_.
+   * Given the range of discretized data, generate a small number of centroids equidistant across the space of possible centroids. The _IPO_ function, shown below, builds centroids with the property that no two centroids share the same pair of values. 
+       * For example, (ipo '(2 3 1))  returns  {{{    
+           ((0 3 2 0) (0 3 1 0) (0 2 2 0) (0 2 1 0)  
+            (0 1 2 0) (0 1 1 0) (3 0 2 0) (3 0 1 0)  
+            (2 0 2 0) (2 0 1 0) (1 0 2 0) (1 0 1 0)) }}}
+       * This pairwise heuristic is very powerful. Data sets with a cross-product space of billions can generate only a few hundred centroids.
+   * Make each of these a cluster.
+   * Perform GAC to build an index over those clusters. 
+   * Amazingly, all this can be done _before you see any data_.
  # GAC-prune
    * Same as GAC, then descend the tree and replace certain  sub-trees with the median performance statistic within those sub-trees. Replace sub-trees that have
     *  very low diversity (so their conclusion is nearly certain) 
