@@ -143,7 +143,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
     * Assume data is Gaussian and divide into -3, -2, -1, 0, 1,2,3 standard deviations away from the mean. Hint: see lisp/tricks/normal.lisp
  # Recursive supervised discretization:
     * See https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002988.html  
-    * Compute the gain of each split using sum(p,,i,,^2^{{{*}}}log(p..i,,))  where  
+    * Compute the gain of each split using sum(p,,i,,^2^{{{*}}}log(p,,i,,))  where  
       * p,,i,, is the number of instances of class "I" divided by the number of instances in this split
  # Write one descritizer that does any of the above using different functions passed in as lambda bodies. Demonstrate that this approach works by implementing two of the above discretizers.
 
@@ -165,7 +165,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
  # GENIC2
     * Same as GENIC but be adaptive on the number of clusters returned. Start with K=10 centroids. At each era, prune any that are weighted less than 0.5*maxWeight. If no  centroids are pruned, set K to K{{{*}}}1.5. 
  # Recursive 2-means. 
-   * Apply 2-means, then re-apply it to both generated clusters. Stop when the size of the sub-clusters is below a certain threshold or the diversity of the clusters is too small (diversity measured using entropy: sum(p,,i,,^2^{{{*}}}log(p..i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
+   * Apply 2-means, then re-apply it to both generated clusters. Stop when the size of the sub-clusters is below a certain threshold or the diversity of the clusters is too small (diversity measured using entropy: sum(p,,i,,^2^{{{*}}}log(p,,i,,))  where  p,,i,, is the number of instances of class "I" divided by the number of instances
 
 
 == Classifiers ==
