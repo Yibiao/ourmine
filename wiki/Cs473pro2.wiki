@@ -195,6 +195,8 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
  # InfoGain
      * Rank each column by dividing up its values into different classes. Rank each column by ∑,,i,,(p,,i,,^2^{{{*}}}log(p,,i,,)). Reject columns that have less than X% of the maximum InfoGain.
+ # Relief:
+    * See notes, below. 
  # B-squared 
       * Replace each class symbol with a utility score (lower score = higher utility). 
       * Sort instances by that score and divide them using N=20%-chops. 
@@ -203,10 +205,17 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
       * Sort each range (r) by b^^2/(b+r) where
            * b = freq(r in Best) / SizeOfBest
            * r = freq(r in Rest) / SizeOfRest
+           * btw, if b &lt; r, then b = 0.
       * Sort each attribute by the median score of b^^2^^/(b+r).
       * Reject attributes with les than X% of the max. median score.
- # Relief:
-    * See notes at 
+ # Nomograms:
+      * Same as B-squared  but score r using odds ratio log(b)/log(r) 
+      * For examples of ranges sorted on log of odds ratio, see below.
+      * btw, 
+         * if b &lt; r, then log(oddsRatio) = 0.
+         * if log(oddsRatio) less than N% of max log(oddsRatio), then log(oddsRatio) = 0.
+         * if b too small (how small?) then ignore it.
+
 
 == Classifiers ==
 
@@ -363,3 +372,7 @@ vector can be modified to include the tuple."
       The P(C) / (1 - P(class(R)) expression is a normalization function that
           o demotes the effect of R from rare classes
           o and rewards the effect of near hits from common classes. 
+
+== Some ranges, scored on log(oddsRation) ==
+
+http://iccle.googlecode.com/svn/trunk/share/img/nomofss.png
