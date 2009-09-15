@@ -1,7 +1,5 @@
 <img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/group_20.gif">
 
-= Group 20 =
-
  * [TimBielawa Tim Bielawa]
  * Elijah Flesher
  * Drew Waltman
