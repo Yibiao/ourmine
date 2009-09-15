@@ -119,7 +119,7 @@ http://iccle.googlecode.com/svn/trunk/share/img/bayesVsOthers.png
 
 = Functions =
 
-Note that the following list is very long. But you only need to code up for proj2 five of the following.
+Note that the following list is very long (46 items). But you only need to code up five of them.
 
 == Pre-processors  ==
 
