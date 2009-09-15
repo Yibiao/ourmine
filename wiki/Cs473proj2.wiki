@@ -144,7 +144,7 @@ Pre-processors handle certain common set-up tasks.
 
 == Discretizers  ==
 
-Discretizers take numeric ranges and chop them up into a handful of bins (typically, less than 20, often between 2 and 8). Think of them like a condensor: 
+Discretizers take numeric ranges and chop them up into a handful of bins (typically, less than 20, often between 2 and 8). Think of them like a condenser: 
  * some signal is spread out thinly like drops of water across a bunch of numbers
  * discretization compresses that signal into a small number of bins
  * at which point the signal condenses and becomes visible.
@@ -280,7 +280,7 @@ Choose the rules with the smallest error rate
  # PRISM
    * [AlgorithmPrism PRISM1] . 
  # PRISM2
-   * [AlgorithmPrism PRISM1] runs throught the attributes in any order. PRISM2 first discards all attribute ranges that score badly on (say) InfoGain, Relief, B-squared or nomograms., etc.
+   * [AlgorithmPrism PRISM1] runs through the attributes in any order. PRISM2 first discards all attribute ranges that score badly on (say) InfoGain, Relief, B-squared or nomograms., etc.
  # PRISM2-B
    * This is PRISM2-B using B-squared as its FSS, and  each rule is scored using pre-computed frequency counts, without running over the data.  
       * Given a rule of the form if(A,,1,,=V,,1,, and A,,2,,=V,,2,, and ... then class,,c,,) 
@@ -422,8 +422,7 @@ vector can be modified to include the tuple."
 http://iccle.googlecode.com/svn/trunk/share/img/nomofss.png
 
 == OneR example ==
-{{{
+
 http://iccle.googlecode.com/svn/trunk/share/img/onerdata.png
 
 http://iccle.googlecode.com/svn/trunk/share/img/onererror.png
-}}}
