@@ -156,5 +156,25 @@ Note that you'll be after reductions that hold true for multiple data sets. Whic
 
 == Learners ==
 
- * Instance-based methods (already assigned to Adam/Aaron);
-  Rule-learners:
+See if you can buiid/find a learner that has stable conclusions across the N data sets.
+Learners are:
+
+ * Instance-based (already taken: Aaron and Adam2)
+ * NaiveBayes
+ * PRISIM (with the search-space reduced by FSS).
+ * WHICH
+
+= Appendix =
+
+== WHICH ==
+
+The WHICH  rule learner loops over the space of possible feature ranges, evaluating 
+various combinations of features. 
+
+ #  WHICH maintains a stack of of combinations of features, sorted by an evaluation criteria P. 
+ # Initially, WHICH's "combinations" are just each range of each feature. Subsequently, they can create conjunctions of two or more features. 
+ # Two combinations are picked at random, favoring those combinations that are ranked highly by P . 
+ #  The two combinations are themselves combined, scored, then sorted into the stacked population of prior combinations. 
+ # Go to step 1. 
+
+
