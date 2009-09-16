@@ -1,6 +1,6 @@
 #summary This is the page for Group Ten
 
-<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/10_playing_cards.jpg">
+<img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/10_playing_cards.jpg">
 
 = Members =
  * [Aglika Aglika Gyaourova]
