@@ -40,6 +40,11 @@ Methods for reducing the size of the data set (from http://menzies.us/pdf/08ceil
           * Select N defect classes at random. Select N nondefect classes at random
           * See results in [http://menzies.us/pdf/08ceiling.pdf section 3.2].
  # The Burak filter
+     * For all T test instances, find the 10 nearest instances in the train set
+     * Train a NaiveBayes on  that set of T*10 instances, remove duplicates
+ # The super-Burak filter
+     * Find the union of the T*10 test instances for D data sets.
+     * Delete all instances not in that union. 
  
 == Other ===
 
