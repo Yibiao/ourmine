@@ -9,6 +9,20 @@ draft is not yet released.*<br><br><br><br><br><br><br><br><br><br><br><br>
 = Mission =
 
 Your mission is to report either show the presence or prove the absence of a general theory of defect prediction, learned from the NASA (USA) and SoftLab (Turkey) data sets.
+Your challenge, which is up to you, is to come up with some visualization that illustrates stability (or instability) in the learned theories.
+
+Every group has to do the [http://code.google.com/p/ourmine/wiki/Cs573proj2#Set_up setup], 
+
+After that, it s a free for all trying to find what learners + row/column pruning leads to stablest theories.
+
+When we do demos for this project, I will be looking for two products:
+ # defects: You'll all have to write deftests that demonstrate that:
+   *  the setup code is working
+   *  your preferred data reducer(s) are working.
+ # Report (preliminary reports); You also need to include a pdf in branch/ProjNumber/proj2/report.pdf in the format of the ACM conference "tighter" papers http://www.acm.org/sigs/publications/proceedings-templates.
+   * 10 pages max, 2 column.
+   * Include a bibliography and pseudo-code for any algorithms you use.
+
 
 = Set up =
 
@@ -120,7 +134,7 @@ Methods for reducing the size of the data set (from http://menzies.us/pdf/08ceil
  * Sub-sample
      * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling). See [http://menzies.us/pdf/08ceiling.pdf Figure 3]. 
      * Special case: micro-sampling :
-          * Select N defect classes at random. Select N nondefect classes at random
+          * Select N defect classes at random. Select N non-defect classes at random
           * See results in [http://menzies.us/pdf/08ceiling.pdf section 3.2].
 
 Methods for reducing the size of the data set (from http://menzies.us/pdf/08ccwc.pdf):
@@ -156,17 +170,15 @@ Note that you'll be after reductions that hold true for multiple data sets. Whic
 
 == Learners ==
 
-See if you can buiid/find a learner that has stable conclusions across the N data sets.
+See if you can build/find a learner that has stable conclusions across the N data sets.
 Learners are:
 
  * Instance-based (already taken: Aaron and Adam2)
  * NaiveBayes
- * PRISIM (with the search-space reduced by FSS).
- * WHICH
+ * PRISM (with the search-space reduced by FSS).
+ * WHICH (see the appendix, and http://menzies.us/pdf/08which.pdf)
 
-= Appendix =
-
-== WHICH ==
+= Appendix: WHICH =
 
 The WHICH  rule learner loops over the space of possible feature ranges, evaluating 
 various combinations of features. 
