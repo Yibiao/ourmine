@@ -29,22 +29,17 @@ Referring to the [Cs473proj2] project, you should code up...
      * A "bestK" tool
           * Given some performance measure (use "g") and N training examples remove 20 training instance (at random) then for k=1 to N-1 for a conclusion by polling the k-th nearest neighbors. Return the k value that maximizes the performance score. 
 
+== Build Small Theories ==
 
- 
- 
+For us to check of there is theory stability, it is wise to reduce the size of the training set (and so generate a small theory)
 
-# Sub-sample
-
-    * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling) 
-
-# Super-sample (for binary classes only)
-
-    * During training, find the minority class and randomly repeat its rows till it has the same frequency as the next most common class. Use the learner trained on this super-sample on the test data (without super-sampling) 
-
-# Best(k)
-
-    * Given some performance measure and N training examples remove 20 training instance (at random) then for k=1 to N-1 for a conclusion by polling the k-th nearest neighbors. Return the k value that maximizes the performance score. 
- 
+Methods for reducing the size of the data set (from http://menzies.us/pdf/08ceiling.pdf)
+ # Sub-sample
+     * During training, find the minority class and throw away instances (at random) from the other classes till all classes have the same frequency. Use the learner trained on this sub-sample on the test data (without sub-sampling). See [http://menzies.us/pdf/08ceiling.pdf Figure 3]. 
+     * Special case: micro-sampling :
+          * Select N defect classes at random. Select N nondefect classes at random
+          * See results in [http://menzies.us/pdf/08ceiling.pdf section 3.2].
+ # The Burak filter
  
 == Other ===
 
