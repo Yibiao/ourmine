@@ -114,7 +114,7 @@ Recall that there are two kinds of data reduction methods: row pruners and colum
 I don't know if any of these are useful, but  in your quest for stable theories,
 you may need to try them all
 
-=== Reducing Rows ===
+== Reducing Rows ==
 
 Methods for reducing the size of the data set (from http://menzies.us/pdf/08ceiling.pdf):
  * Sub-sample
