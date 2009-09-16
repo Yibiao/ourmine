@@ -107,8 +107,6 @@ doNothing,bin10 ,kmeans/5,infoGain,naiveBayes,happy,11,	1,	1200,	300,	20.6,	20.0
 ...
 }}}
 
-
- 
 = Build Small Data Sets =
 
 For us to check of there is theory stability, it is wise to reduce the size of the training set (and so generate a small theory). 
@@ -126,7 +124,7 @@ Methods for reducing the size of the data set (from http://menzies.us/pdf/08ceil
           * Select N defect classes at random. Select N nondefect classes at random
           * See results in [http://menzies.us/pdf/08ceiling.pdf section 3.2].
 
-Methods for reducing the size of the data set (from Cs573proj2.wiki):
+Methods for reducing the size of the data set (from http://menzies.us/pdf/08ccwc.pdf):
  * The Burak filter
      * For all T test instances, find the 10 nearest instances in the train set
      * Train a NaiveBayes on  that set of T*10 instances, remove duplicates
