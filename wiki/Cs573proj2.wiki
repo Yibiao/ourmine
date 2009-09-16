@@ -21,7 +21,6 @@ You need to hand-convert some data to LISP:
 == Build Some Pre-Processors ==
 
 You'll need to code the following tools:
- *  the inputs and outputs shown in the [http://code.google.com/p/ourmine/wiki/Cs473proj2#Details Details] section.
  * a pre-processor that replaces numeric value _N_ with 
      * {{{log(N< 0.0001 ? 0.0001 : N)}}}
  * a pre-processor that builds a new "(data) call from N existing data sets
@@ -64,7 +63,6 @@ Note that, in the above, if you only generate k=1 cluster than means you skip
 clustering and just use all the data.
 
 When you do the classifying for the testing, you must keep four separate counts, for each class X in the test set.
-
 
  * A: the number of test things  that are NOT class=X which were NOT classified as class=X
  * B: the number of test things  that ARE class=X which were NOT classified as class=X
@@ -113,9 +111,10 @@ For us to check of there is theory stability, it is wise to reduce the size of t
 
 Recall that there are two kinds of data reduction methods: row pruners and column pruners.
 
-I don't know if any of these are useful, but you'll need to try them all
+I don't know if any of these are useful, but  in your quest for stable theories,
+you may need to try them all
 
-=== Reducing Columns ===
+=== Reducing Rows ===
 
 Methods for reducing the size of the data set (from http://menzies.us/pdf/08ceiling.pdf):
  * Sub-sample
@@ -134,7 +133,27 @@ Yet another idea:
      * Find the union of the T*10 test instances for D data sets.
      * Delete all instances not in that union. 
 
-=== Reducing Rows ===
+== Reducing Columns ==
+
+Note that you'll be after reductions that hold true for multiple data sets. Which means you don't InfoGain (problems with log(p) for low p) but ones that use support-based pruning:
+ 
+ * B-squared
+    * Replace each class symbol with a utility score (lower score = higher utility).
+    * Sort instances by that score and divide them using N=20%-chops.
+    * Label all the rows in bin=1 "best" and the remaining "rest".
+    * Pretend you are doing NaiveBayes? and collect the frequencies of ranges in best/rest.
+    * Sort each range (r) by b^^2/(b+r) where
+          o b = freq(r in Best) / SizeOfBest?
+          o r = freq(r in Rest) / SizeOfRest?
+          o btw, if b < r, then b = 0. 
+          o if b under some magic value, then ignore them
+    * Sort each attribute by the median score of b2/(b+r).
+    * Reject attributes with les than X% of the max. median score.  
+ * Greedy forward select
+    * Find the next best attribute to add
+ * Greedy back select
+    * Find the next best attribute to delete
+
 == Learners ==
 
  * Instance-based methods (already assigned to Adam/Aaron);
