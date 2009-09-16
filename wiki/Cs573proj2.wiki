@@ -2,10 +2,6 @@
 
 <wiki:toc max_depth="4" />
 
-<img align=left src="http://www.ksu.edu.sa/sites/Colleges/AppliedMedicalSciences/PublishingImages/under-construction.jpg" width=200> *NOTE: This 
-draft is not yet released.*<br><br><br><br><br><br><br><br><br><br><br><br>
-
-
 = Mission =
 
 Your mission is to report either show the presence or prove the absence of a general theory of defect prediction, learned from the NASA (USA) and SoftLab (Turkey) data sets.
@@ -16,7 +12,7 @@ Every group has to do the [http://code.google.com/p/ourmine/wiki/Cs573proj2#Set_
 After that, it s a free for all trying to find what learners + row/column pruning leads to stablest theories.
 
 When we do demos for this project, I will be looking for two products:
- # defects: You'll all have to write deftests that demonstrate that:
+ # deftests: You'll all have to write deftests that demonstrate that:
    *  the setup code is working
    *  your preferred data reducer(s) are working.
  # Report (preliminary reports); You also need to include a pdf in branch/ProjNumber/proj2/report.pdf in the format of the ACM conference "tighter" papers http://www.acm.org/sigs/publications/proceedings-templates.
