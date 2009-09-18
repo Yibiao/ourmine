@@ -31,9 +31,9 @@ Speaking as a data mining reseracher, I'm here to say that selecting _data anays
    * So "empirical methods" becomes "how to control a project".
 
 ----
+<img align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/death2powerpoint.png">
 = Why Aren't we Looking at PowerPoint? =
 
-<img align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/death2powerpoint.png">
 
 Like many before me, ([#Tufte05], [#Tufte06]),
 I distrust PowerPoint:
