@@ -50,14 +50,14 @@ Anwyway,  this talk comes from a different intellectual tradition:
 
 Seems inapprpriate to dress it up in PowerPoint
  
-= References =
+= References ==
 
-== Easterbrook07 ==
+=== Easterbrook07 ===
 
 Easterbrook, S. M., Singer, J., Storey, M, and Damian, D. Selecting Empirical Methods for Software Engineering Research. Appears in F. Shull and J. Singer (eds) "Guide to Advanced Empirical Software Engineering", Springer, 2007.
 http://www.cs.toronto.edu/~sme/papers/2007/SelectingEmpiricalMethods.pdf
 
-== Tufte05 ==
+=== Tufte05 ===
 
 Tufte, E. PowerPoint Does Rocket Science--and Better Techniques for Technical Reports.  September 6, 2005.
 http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001yB&topic_id=1&topic=Ask+E.T.
