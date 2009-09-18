@@ -33,7 +33,8 @@ Speaking as a data mining reseracher, I'm here to say that selecting _data anays
 ----
 = Why Aren't we Looking at PowerPoint? =
 
-death2powerpoint.png
+<img align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/death2powerpoint.png">
+
 Like many before me, ([#Tufte05], [#Tufte06]),
 I distrust PowerPoint:
  * PowerPoint is a tool for a one-way broadcast of completed ideas 
@@ -50,7 +51,7 @@ Anwyway,  this talk comes from a different intellectual tradition:
 
 Seems inapprpriate to dress it up in PowerPoint
 
----- 
+----
 = References =
 
 == Easterbrook07 ==
