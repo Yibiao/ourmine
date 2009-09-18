@@ -1,12 +1,12 @@
 #summary A little but of hereshy
 
 = Data Mining: the Missing Link in Empirical Software Engineering =
-
+<wiki:toc max_depth="4" />
 == Introduction ==
 
 Remember of the old joke?
 
-thenAMiracle.jpg
+http://ourmine.googlecode.com/svn/trunk/share/img/thenAMiracle.jpg
 
 If you read the empirical SE literature, you can find a similiar description of how to conduct empirical SE studies.
 Consider the contents of a recent (2007) paper on
