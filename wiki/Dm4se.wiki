@@ -28,8 +28,8 @@ Speaking as a data mining reseracher, I'm here to say that selecting _data anays
    * Data analysis may never produce generalizable SE theories 
      * Shock! Horror!
      * (And if such generalizations exist, shouldn't we have found them by now?)
-    * Methods of "data analysis" are close to methods of "control"
-      * So "empirical methods" becomes "how to control a project".
+ * Methods of "data analysis" are close to methods of "control"
+   * So "empirical methods" becomes "how to control a project".
 
 = Why Aren't we Looking at PowerPoint? =
 
@@ -62,6 +62,6 @@ http://www.cs.toronto.edu/~sme/papers/2007/SelectingEmpiricalMethods.pdf
 Tufte, E. PowerPoint Does Rocket Science--and Better Techniques for Technical Reports.  September 6, 2005.
 http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001yB&topic_id=1&topic=Ask+E.T.
 
-== Tufte06 ==
+=== Tufte06 ===
 Tufte, E. The Cognitive Style of PowePoint: Pitching Out Corrupts Within, 2006.
 http://www.edwardtufte.com/tufte/books_pp
