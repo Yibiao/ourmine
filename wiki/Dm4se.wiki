@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="4" />
 
-== Introduction ==
+= Introduction =
 
 Remember of the old joke?
 
@@ -10,7 +10,7 @@ http://ourmine.googlecode.com/svn/trunk/share/img/thenAMiracle.jpg
 
 If you read the empirical SE literature, you can find a similiar "missing link" in current
 descriptions of how to conduct empirical SE studies.
- * [#Easterbrook07 Selecting Empirical Methods for Software Engineering Researchs]:
+ * [#Easterbrook07 Selecting Empirical Methods for Software Engineering Research]:
   * 3 pages: research questions
   * 2 pages: differnt forms of "empirical truth"
   * 1 page: role of theory building
@@ -30,7 +30,8 @@ Speaking as a data mining reseracher, I'm here to say that selecting _data anays
  * Methods of "data analysis" are close to methods of "control"
    * So "empirical methods" becomes "how to control a project".
 
-== Why Aren't we Looking at PowerPoint? ==
+____
+= Why Aren't we Looking at PowerPoint? =
 
 death2powerpoint.png
 Like many before me, ([#Tufte05], [#Tufte06]),
@@ -48,19 +49,20 @@ Anwyway,  this talk comes from a different intellectual tradition:
    * Using the hammer changes the hammer.
 
 Seems inapprpriate to dress it up in PowerPoint
- 
-== References ==
 
-=== Easterbrook07 ===
+____ 
+= References =
+
+== Easterbrook07 ==
 
 Easterbrook, S. M., Singer, J., Storey, M, and Damian, D. Selecting Empirical Methods for Software Engineering Research. Appears in F. Shull and J. Singer (eds) "Guide to Advanced Empirical Software Engineering", Springer, 2007.
 http://www.cs.toronto.edu/~sme/papers/2007/SelectingEmpiricalMethods.pdf
 
-=== Tufte05 ===
+== Tufte05 ==
 
 Tufte, E. PowerPoint Does Rocket Science--and Better Techniques for Technical Reports.  September 6, 2005.
 http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001yB&topic_id=1&topic=Ask+E.T.
 
-=== Tufte06 ===
+== Tufte06 ==
 Tufte, E. The Cognitive Style of PowePoint: Pitching Out Corrupts Within, 2006.
 http://www.edwardtufte.com/tufte/books_pp
