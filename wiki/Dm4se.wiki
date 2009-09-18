@@ -30,7 +30,7 @@ Speaking as a data mining reseracher, I'm here to say that selecting _data anays
  * Methods of "data analysis" are close to methods of "control"
    * So "empirical methods" becomes "how to control a project".
 
-____
+----
 = Why Aren't we Looking at PowerPoint? =
 
 death2powerpoint.png
@@ -50,7 +50,7 @@ Anwyway,  this talk comes from a different intellectual tradition:
 
 Seems inapprpriate to dress it up in PowerPoint
 
-____ 
+---- 
 = References =
 
 == Easterbrook07 ==
