@@ -1,25 +1,24 @@
-#summary A little but of hereshy
+#summary Data Mining : The Missing Link in Empirical Software Engineering
 
-= Data Mining: the Missing Link in Empirical Software Engineering =
 <wiki:toc max_depth="4" />
+
 == Introduction ==
 
 Remember of the old joke?
 
-<img src="http://ourmine.googlecode.com/svn/trunk/share/img/thenAMiracle.jpg" align=center>
+http://ourmine.googlecode.com/svn/trunk/share/img/thenAMiracle.jpg
 
-If you read the empirical SE literature, you can find a similiar description of how to conduct empirical SE studies.
-Consider the contents of a recent (2007) paper on
-[#Easterbrook07 Selecting Empirical Methods for Software Engineering Researchs]:
-
- * 3 pages: research questions
- * 2 pages: differnt forms of "empirical truth"
- * 1 page: role of theory building
- * 9 pages: selecting methods
- * 1 page: data collection tecniques
- * 0 pages: data analysis (and then a miracle happens)
- * 2 pages: empirical validity
- *  1 page: conclusions
+If you read the empirical SE literature, you can find a similiar "missing link" in current
+descriptions of how to conduct empirical SE studies.
+ * [#Easterbrook07 Selecting Empirical Methods for Software Engineering Researchs]:
+  * 3 pages: research questions
+  * 2 pages: differnt forms of "empirical truth"
+  * 1 page: role of theory building
+  * 9 pages: selecting methods
+  * 1 page: data collection tecniques
+  * 0 pages: data analysis (and then a miracle happens)
+  * 2 pages: empirical validity
+  *  1 page: conclusions
 
 Speaking as a data mining reseracher, I'm here to say that selecting _data anaysis_ methods deserves more than 0 pages:
 
@@ -31,7 +30,7 @@ Speaking as a data mining reseracher, I'm here to say that selecting _data anays
  * Methods of "data analysis" are close to methods of "control"
    * So "empirical methods" becomes "how to control a project".
 
-= Why Aren't we Looking at PowerPoint? =
+== Why Aren't we Looking at PowerPoint? ==
 
 death2powerpoint.png
 Like many before me, ([#Tufte05], [#Tufte06]),
@@ -50,7 +49,7 @@ Anwyway,  this talk comes from a different intellectual tradition:
 
 Seems inapprpriate to dress it up in PowerPoint
  
-= References ==
+== References ==
 
 === Easterbrook07 ===
 
