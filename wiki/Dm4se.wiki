@@ -5,7 +5,7 @@
 = Abstract =
 
 We distinguish "theories" (which are "true" in some global sense) from 
-"models" (which may not be "true", be are useful for some local task.
+"models" (which may not be "true", be are useful for some local task).
 Software engineering research rarely produces externally valid theories.
 There are so very few examples of generalizable theories,
 despite there being so many examples of research groups trying to find them.
@@ -17,8 +17,8 @@ To illustrate this point, we offer examples of these failures-to-generalize from
 Even if SE can't generate theories, we can still find useful local models.  Data mining
 is a rich area of research that has generated long lists of methods that are simple to code and, usually, generate
 effective models.  This talk will offer:
- * examples of those local conclusions (as applied to software defect prediction), as well as
- * Catalogs the data mining methods that are simplest and fastest to apply, while often generating useful insights.
+ * Examples of those local conclusions (as applied to software defect prediction), as well as
+ * Catalogs of data mining methods that are simplest and fastest to apply, while often generating useful insights.
 
 Advocating the generation of local models, that usually do not generalize to theories, runs counter to the positivist
 tradition of scientific development.  A detailed look of the mechanics of data mining will highlight the difficulty
@@ -28,9 +28,15 @@ I am not the first to argue that this tradition is sterile- but I
 do not think that the SE culture fully acknowledges the failure of that approach.  For example, we still train students
 in classic design of experiments, without acknowledging that such classic designs are usually post-hoc reports
 of a far more chaotic process.
-Also, it turns out that there are general theories about finding locally useful models.  
+Also, our textbooks on empirical methods spell out in tedious details the steps required for empirical studies,
+but do not stress the embaressing fact that so few of those studies have produced generalizable theories.
+
+But I my message is not one of dispair. While all models may be wrong, many more of them are not right.
+Space of possible models smaller than you might thing.
+Rather, it is a claim that we still critically 
+it turns out that there are general theories about finding locally useful models.  
 To illustrate this point, this talk will:
- * discusses one such method from case-based reasoning, as applied to software effort estimation.
+ * Discusses one such method from case-based reasoning, as applied to software effort estimation.
 
 My conclusion will be that:
  * While we should strive to build general theories of software engineering, 
