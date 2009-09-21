@@ -28,14 +28,16 @@ tradition of scientific development.  A detailed look of the mechanics of data m
 in producing generalizable theories. 
 
 I am not the first to argue that this tradition is sterile- but I
-do not think that the SE culture fully acknowledges the failure of that approach.  For example, we still train students
-in classic design of experiments, without acknowledging that such classic designs are usually post-hoc reports
-of a far more chaotic process.
-Also, our textbooks on empirical methods spell out in tedious details the steps required for empirical studies,
-but do not stress the embaressing fact that so few of those studies have produced generalizable theories.
-
-But I my message is not one of dispair. While all models may be wrong, many more of them are not right.
-Space of possible models smaller than you might thing.
+do not think that the SE culture fully acknowledges the failure of that approach.  If we did, then we would
+augment current methods with:
+ * studies on _stochastic stability_;
+ * _noise reduction operators_, to remove spurious signals;
+ * _anomaly detectors_. for determining when a model has gone "out of scope";
+ * automatic model _repair tools_, to learn new models when the old ones are no longer relevant
+ 
+The lesson on data mining is that while nothing is "true", many more things are "false".
+While multiple models can be generted from the available data, many models are unsupported by any data.
+Now the good news is that the space of possible models smaller than you might thing. XXX
 Rather, it is a claim that we still critically 
 it turns out that there are general theories about finding locally useful models.  
 To illustrate this point, this talk will:
@@ -108,12 +110,144 @@ Seems inappropriate to dress it up in Powerpoint
 <br><br>
 <br><br>
 ----
+= The Current (Poor) State of Empirical AI =
+
+{{{
+From: Tim Menzies
+To:   David Budgen
+Date: Mon, Sep 7, 2009 at 10:19 AM
+
+This question may sound somewhat abrupt (even, rude) to you, so I
+preface it with:
+
+- Your CSEET talk completely turned my thinking around. I think about
+  it more than anything else i've seen in the last decade.
+
+- I am a strong advocate of ebse and, where possible, I support its
+  goals (e.g. I made structured abstract mandatory for PROMISE 2010)
+
+Anyway, here's my question (about empirical SE):
+
+- Where are the results?
+
+Thanks!
+t
+}}}
+Some prominent examples where initial attempts to clarify empirical SE did not produce results:
+ * e.g. Fenton's famous book on Software Metrics
+ * Fenton, 2007: "... much of the current software metrics research is inherently irrelevant to the 
+   industrial mix ..... any software metrics program that depends on some extensive metrics collection is doomed to failure ...".
+ * Now, he builds Bayesian models based on expert intutions.
+
+How to best test software?
+{{{
+phase           wbs                                     factor   RANK  
+--------------  ---    ---------------------------------------   ---- 
+concept         2.1                             Reuse Analysis   11
+                2.2           Software Architecture Assessment    9
+                2.3                 System Requirements Review   10
+                2.4                Concept Document Evaluation    8
+                2.5   SW/User Requirements Allocation Analysis    6
+                2.6                      Traceability Analysis    7
+--------------  ---    ---------------------------------------    
+requirements    3.1      Traceability Analysis -  Requirements    4
+                3.2           Software Requirements Evaluation    5
+                3.3          Interface Analysis - Requirements    3
+                3.4                  System Test Plan Analysis    2
+                3.5              Acceptance Test Plan Analysis    1   <====
+                3.6                 Timing and Sizing Analysis        ?
+--------------  ---    ---------------------------------------    
+design          4.1             Traceability Analysis - Design   16 
+                4.2                 Software Design Evaluation   15 
+                4.3                Interface Analysis - Design   14 
+                4.4                 Software FQT Plan Analysis   17 
+                4.5    Software Integration Test Plan Analysis   12 
+                4.6                          Database Analysis   13
+                4.7               Component Test Plan Analysis        ?
+--------------  ---    ---------------------------------------    
+implementation  5.1               Traceability Analysis - Code   22 
+                5.2   Source Code and Documentation Evaluation   23 
+                5.3                  Interface Analysis - Code   21 
+                5.4                  System Test Case Analysis   19 
+                5.5                 Software FQT Case Analysis   20 
+                5.6          SW Integration Test Case Analysis        ?
+                5.7              Acceptance Test Case Analysis        ?
+                5.8     SW Integration Test Procedure Analysis        ?
+                5.9       SW Integration Test Results Analysis        ?
+                5.10              Component Test Case Analysis        ?
+                5.11            System Test Procedure Analysis   18 
+                5.12           Software FQT Procedure Analysis        ?
+--------------  ----   ---------------------------------------    
+test            6.1               Traceability Analysis - Test   27 
+                6.2                   Regression Test Analysis        ?
+                6.3                        Simulation Analysis   25 
+                6.4               System Test Results Analysis   24 
+                6.5              Software FQT Results Analysis   26 
+--------------  ---    ---------------------------------------    
+other           7.1             Operating Procedure Evaluation        ?
+                7.2                         Anomaly Evaluation        ?
+                7.3                       Migration Assessment        ?
+                7.4                      Retirement Assessment        ?
+}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+see, i recently had to review an IEEE standard on IV&V. 83 supposedly
+"best practices" and i could only find empirical evidence  comment on
+just a handful of those practices.
+
+Effort estimation research has made
+some
+excellent attempts at recording those best practices 
+[#Jørgensen04 Jørgensen04]  [#]Kitchenham07 Kitchenham07]:
+but even those do not offer clear guidelines:
+ * [#Jørgensen04 Jørgensen04] reports that expert estimates are better/worse/same as model estimates in5/5/5 reported cases studies
+ * [#]Kitchenham07 Kitchenham07]: reports that the jury is out on the value of using local vs imported data for building estimates.
+
+Is SE is so diverse, so fundamentally weird, that:
+* there are no "general principles". 
+
+What i suspect is that the are not general SE
+principles:
+ *  but there might be general methods for finding the local
+
+
+
+Mon, Sep 7, 2009 at 10:19 AM
 = References =
 
 == Easterbrook07 ==
 
 Easterbrook, S. M., Singer, J., Storey, M, and Damian, D. Selecting Empirical Methods for Software Engineering Research. Appears in F. Shull and J. Singer (eds) "Guide to Advanced Empirical Software Engineering", Springer, 2007.
 http://www.cs.toronto.edu/~sme/papers/2007/SelectingEmpiricalMethods.pdf
+
+== Jørgensen04 =
+
+“A Review of Studies on Expert Estimation of Software
+M. Jørgensen, “A Review of Studies on Expert Estimation of Software
+Development Effort,” J. Systems and Software, vol. 70, nos. 1–2, 2004,
+pp.  37–60;
+
+== Kitchenham07 ==
+
+B.A. Kitchenham, E. Mendes, and G.H. Travassos Cross versus
+Within-Company Cost Estimation Studies: A Systematic Review,  IEEE
+Transactions on Software Engineering archive Volume 33 , Issue 5
+May 2007, Pages 316-329
+
+== Menzies07a ==
+"Learning Better IV&V Practices" by T. Menzies and M. Benson and K. Costello and C. Moats and M. Northey and J. Richarson. Innovations in Systems and Software Engineering March 2008 . Available from http://menzies.us/pdf/07ivv.pdf. 
 
 == Tufte05 ==
 
