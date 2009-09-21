@@ -133,13 +133,20 @@ Anyway, here's my question (about empirical SE):
 Thanks!
 t
 }}}
-Some prominent examples where initial attempts to clarify empirical SE did not produce results:
- * e.g. Fenton's famous book on Software Metrics
+Some prominent examples where initial attempts to clarify empirical SE did not produce results.
+
+Example1:   Fenton's famous book on [#Fenton98 Software Metrics]
+
  * Fenton, 2007: "... much of the current software metrics research is inherently irrelevant to the 
    industrial mix ..... any software metrics program that depends on some extensive metrics collection is doomed to failure ...".
  * Now, he builds Bayesian models based on expert intutions.
 
-How to best test software?
+Example2: how best to assess software written at another site?
+ * This is the _Independent V&V_ task
+ * Over a hundred tasks proposed by different authors for IV&V.
+ * At NASA, from 2005 to 2007, the list was as follows.
+ * In 2007, I found [#Menzies07a very few attempts] to assess the relative cost-benefits of these tasks. 
+
 {{{
 phase           wbs                                     factor   RANK  
 --------------  ---    ---------------------------------------   ---- 
@@ -190,6 +197,11 @@ other           7.1             Operating Procedure Evaluation        ?
                 7.4                      Retirement Assessment        ?
 }}}
 
+(BTW, the numbers on the RHS show the result of a six month study with some NASA civil servants who performed
+several pieces of magic with their databases. Rankings are based on how many high severity issues were found
+using the least cost. For more details, see [#Menzies07 here]).
+
+Example3:
 
 
 
@@ -231,6 +243,13 @@ Mon, Sep 7, 2009 at 10:19 AM
 
 Easterbrook, S. M., Singer, J., Storey, M, and Damian, D. Selecting Empirical Methods for Software Engineering Research. Appears in F. Shull and J. Singer (eds) "Guide to Advanced Empirical Software Engineering", Springer, 2007.
 http://www.cs.toronto.edu/~sme/papers/2007/SelectingEmpiricalMethods.pdf
+
+== Fenton98 ==
+
+Software Metrics: A Rigorous Approach 
+by Norman E. Fenton, Shari Lawrence Pfleeger.
+PWS, 1998 (second edition).
+
 
 == Jørgensen04 =
 
