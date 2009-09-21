@@ -135,13 +135,13 @@ t
 }}}
 Some prominent examples where initial attempts to clarify empirical SE did not produce results.
 
-Example1:   Fenton's famous book on [#Fenton98 Software Metrics]
+== Example1:   Fenton's famous book on [#Fenton98 Software Metrics] ==
 
  * Fenton, 2007: "... much of the current software metrics research is inherently irrelevant to the 
    industrial mix ..... any software metrics program that depends on some extensive metrics collection is doomed to failure ...".
  * Now, he builds Bayesian models based on expert intutions.
 
-Example2: how best to assess software written at another site?
+== Example2: how best to assess software written at another site? ==
  * This is the _Independent V&V_ task
  * Over a hundred tasks proposed by different authors for IV&V.
  * At NASA, from 2005 to 2007, the list was as follows.
@@ -199,9 +199,10 @@ other           7.1             Operating Procedure Evaluation        ?
 
 (BTW, the numbers on the RHS show the result of a six month study with some NASA civil servants who performed
 several pieces of magic with their databases. Rankings are based on how many high severity issues were found
-using the least cost. For more details, see [#Menzies07 here]).
+using the least cost. For more details, see [#Menzies07a:w
+ here]).
 
-Example3: What is the Best Computer Programming Language?
+== Example3: What is the Best Computer Programming Language? ==
 
 No termination on that debate; increased diversity in that conclusion, as time goes by:
 
