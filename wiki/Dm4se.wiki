@@ -201,7 +201,11 @@ other           7.1             Operating Procedure Evaluation        ?
 several pieces of magic with their databases. Rankings are based on how many high severity issues were found
 using the least cost. For more details, see [#Menzies07 here]).
 
-Example3:
+Example3: What is the Best Computer Programming Language?
+
+No termination on that debate; increased diversity in that conclusion, as time goes by:
+
+http://unbox.org/wisp/var/timm/09/310/share/img/tiobe-index.png
 
 
 
