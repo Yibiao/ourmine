@@ -199,8 +199,7 @@ other           7.1             Operating Procedure Evaluation        ?
 
 (BTW, the numbers on the RHS show the result of a six month study with some NASA civil servants who performed
 several pieces of magic with their databases. Rankings are based on how many high severity issues were found
-using the least cost. For more details, see [#Menzies07a:w
- here]).
+using the least cost. For more details, see [#Menzies07a here]).
 
 == Example3: What is the Best Computer Programming Language? ==
 
