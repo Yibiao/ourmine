@@ -259,10 +259,12 @@ Some details on cliff learning (from https://list.scms.waikato.ac.nz/pipermail/w
                 * measure = 0.2{{{*}}} rightMeasure + 0.8{{{*}}}leftMeasure
           * e.g. variance,  info gain etc etc
                 * Common practice is to follow the lead of [Fayyad93] and use info gain
-                   * if classes X and Y occur on the right-hand-side (containing 20%) of the data with frequency F,,x,, and F,,y,, in a space of N=F,,x,, + F,,y,, numbers 
-                   * then p,,x,, = F,,x,,/N  and p,,y,, = F,,y,,/N
-                   * and entropy,,i,, = -p,,i,,{{{*}}}log,,2,,(p,,i,,)
-				   * and weighted entropy,,right,, = -0.2{{{*}}} (entopy,,x,, + entropy,,y,,)
+                   * Let classes X and Y occur on the right-hand-side (containing 20%) of the data 
+                   * Let class frequency be F,,x,, and F,,y,, (and N=F,,x,, + F,,y,, numbers)
+                   * Let p,,x,, = F,,x,,/N  
+                   * Let  p,,y,, = F,,y,,/N
+                   * Let entropy,,i,, = -p,,i,,{{{*}}}log,,2,,(p,,i,,)
+				   * Let weighted entropy,,right,, = -0.2{{{*}}} (entopy,,x,, + entropy,,y,,)
 				   * Return the split that minimizes entropy,,right,, + entropy,,left,,
     * Repeat recursively in both subsets (the ones less than and greater than the cut point) until either
           * the subset is "pure" i.e. only contains instances of a single class
