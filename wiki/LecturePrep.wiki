@@ -2,7 +2,7 @@
 
 The truth of the matter is that most of the time spent in data mining is really spent on data pre-processing.
 
-<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/effort.gif">
+<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/effort.gif">
 
 So lets talk about pre-processing.
 
@@ -51,12 +51,12 @@ This data has the following properties:
     * Denomormalized (i.e. joins across multiple separate data sources)
     * Not the best representation
     * e.g. trees are hard; 
-          o Not everyone has parents. What to write into the file?
-          o What about all the implicit relations; e,g, sister
-          o Pre-compute and cache in the ARFF?
-          o Bad! Massive blow-out of data size.
+          * Not everyone has parents. What to write into the file?
+          * What about all the implicit relations; e,g, sister
+          * Pre-compute and cache in the ARFF?
+          * Bad! Massive blow-out of data size.
 
-http://ourmine.googlecode.com/svn/trunk/share/img/family_tree.gif
+http://ourmine.googlecode.com/svn/trunk/share/img/family_tree.jpg
 
 = Numeric Transforms =
 
@@ -66,22 +66,21 @@ Pragmatically, the following transforms for numbers are very useful:
     * More generally, discretize them (see [#Discretization[). 
 
  * Log: if the numerics form an exponential distribution, convert all N to log(N)
-
     * Used in the COCOMO example
     * pragmatics: missing values can't be "zero" (infinitely negative log values)
     * Apply some min value (e.g. 0.0001) and use:
-    * if N
-
+    * new = (if old < min then log(min) else log(old))
  * Remove outliers: suspiciously large/small values
- * Means: replace unknowns with mean value
+ * Replace unknowns with most expected  value
+    * Numerics: use mean or median
+	* Discretes: use most common symbol
+    * ?cluster first, then fill in from local neighborhood
     * Warning: maybe missing really means missing!
-
+    * Also, some learners can handle missing valus.
  * Bore: Best or Rest
     * Sort: rename the top X% (best) values "good" and the rest "bad"; eg. X=25%
     * Scales to multi-variables (can be used to replace multiple numeric target classes with one binary classification)
-
-# Time series:
-
+ *  Time series 
     * Add attributes to record the moving average over the last N minutes, 5N minutes, 25N minutes, etc
 
 = Sampling =
@@ -96,6 +95,7 @@ Build data sets by sub-sampling real data
           o Ignore all but the relevant data (how to judge? domain knowledge? nearest neighbor?).
 
 http://ourmine.googlecode.com/svn/trunk/share/img/samples.png
+
 When the target class is rare,
 
     * Sub-sample: create training sets that contain all the target instances and an equal number of randomly selected non-target instances (stand back! give the little guy some air!).
@@ -107,7 +107,7 @@ Some experimental results:
     * In one study, under-sampling beat over-sampling [Drummond03].
     * In another, once again, over-sampling was useless and under-sampling did the same as no-sampling, but with much much less data [Menzies08a]. The following results show balance results for the above data sets. NB= naive bayes. J48= a decision tree learner.
 
-http://ourmine.googlecode.com/svn/trunk/share/img/overunder.png
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/overunder.png">
 
 
 
@@ -125,18 +125,18 @@ Stemming
 
     * These words are all "connect": connect, connected, connecting, connection,connections
     * PorterStemming: the standard stemming algorithm, available in multiple languages: http://www.tartarus.org/~martin/PorterStemmer/
-          o Definition: http://www.tartarus.org/~martin/PorterStemmer/def.txt
+          * Definition: http://www.tartarus.org/~martin/PorterStemmer/def.txt
 
 Reject all but the top k most interesting words
 
     * Interesting if frequent OR usually appears in just a few paragraphs
     * TF{{{*}}}IDF (term frequency, inverse document frequency)
     * Interesting =
-      F[i,j] {{{*}}} log((Number of documents)/(number of documents including word i))
-    * F[i,j]: frequency of word i in document j
+      F(i,j) {{{*}}} log((Number of documents)/(number of documents including word i))
+    * F(i,j): frequency of word i in document j
     * Often, on a very small percentage of the words are high scorers, so a common transform is to just use the high fliers. e.g. here's data from five bug tracking systems a,b,c,d,e:
 
-http://ourmine.googlecode.com/svn/trunk/share/img/tfidf.png
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/tfidf.png" width=400>
 
 Build a symbol table of all the remaining words
 
