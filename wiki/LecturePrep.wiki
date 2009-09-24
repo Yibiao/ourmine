@@ -155,3 +155,270 @@ Sample randomly
 Sample instances according to the mis-classification rate of its class
      * So focus more on the things that are harder to classify
      * Also called Boosting: discussed (much) later
+
+= Discretization =
+
+Discretization
+
+Think of learning like an accordion- some target concept is spread out across all the data and our task is to squeeze it together till it is dense enough to be visible. That is, learning is like a compression algorithm.
+
+One trick that helps compressions is discretization: i.e. clumping together observations taken over a continuous range into a small number of regions. Humans often discretize real world data. For example, parents often share tips for "toddlers"; i.e. humans found between the breaks of age=1 and age=3.
+
+Many researchers report that discretization improves the performance of a learner since it gives a learner a smaller space to reason about, with more examples in each part of the space (Dou95, Lu06, Yang03, Fayyad93).
+What is Discretization?
+
+Formally, discretization can generally be described as a process of assigning data attribute instances to bins or buckets that they fit in according to their value or some other score:
+
+    * The general concept for discretization as a binning process is dividing up each instance of an attribute to be discretized into a number distinct buckets or bins.
+    * The number of bins is most often a user-defined, arbitrary value.
+    * However, some methods use more advanced techniques to determine an ideal number of bins to use for the values.
+    * While others use the user-defined value as a starting point and expand or contract the number of bins that are actually used (based upon the number of data instances being placed in the bins).
+    * Each bin or bucket is assigned a range of the attribute values to contain, and discretization occurs when the values that fall within a particular bucket (or bin) are replaced by identifier for the bucket into which they fall. 
+
+After Gama and Pinto [Gama06], we say that
+
+    * Discretization is the process of converting a continuous range into a histogram with "k" break points
+    * b1 ... bk (where for all i < j : bi ? bj).
+    * The histogram divides a continuous range into bins (one for each break) and many observations from the range may fall between two break points bi and bi+1 at frequency counts ci. 
+
+Simple discretizers are unsupervised methods that build their histograms without exploiting information about the target class; e.g.
+
+    * equal width discretization: (bi - bi-1) = (bj - bj-1)
+    * equal frequency discretization: ci = cj 
+
+How to discretize
+
+Unsupervised discretization: ignore the class variable, just chop each column (this may seem dumb, but often works surprisingly well)
+
+Supervised discretization: separates the numerics according to the class variable
+Unsupervised methods
+
+Nbins: divide data into N equal width bins
+
+    * Pass1: find min and max of each column. Find bin size for each column (max - min)/N.
+    * Pass2: convert all numbers X to floor(X - min)/binsize.
+    * N=10 is a commonly used number (but for Naive Bayes classifiers working on "n" instances, Yang and Webb Yang03 advocate equal frequency with ci=cj=sqrt(n)).
+    * Example:
+          * e.g. divide 0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100 using 10bins
+
+            0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
+            -------------------------------------------|--|--|--|--|---|
+            bin1                                        b2 b3 b5 b9 b10
+
+          * one bucket would get numbers 1 to 25,
+          * the last 4 numbers would get a bin each.
+          * So our learner would have 5 bins with nothing in it,
+                + one bin with 83% of the data and
+                + 4 bins with 3.3% of the data in each.
+          * Simple variants:
+                + BinLogging: set N via the number of unique numerics N=max(1,log2(uniqueValues))
+                      # Caution, for numbers generated from some random process and if you are using many significant figures, then you may need to round back. 
+                + Logging filter: hit distributions like the above with X = log(X). This smoothes out the distributions across more of the buckets. 
+
+Percentile chop: diver data into N equal sized bins
+
+    * Pass1: collect all numbers for each column. Sort them. Break the sorted numbers into N equal frequency regions (checking that numbers each size of the break are different).
+    * So the frequency counts in each bin is equal (flat histogram).
+    * Example: In practice, not quite flat. e.g. 10 equal frequency bins on the above data:
+
+      0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
+       -----|----|-----|-----|-----|-----|-----|------|---------|
+       bin1  bin2 bin3  bin4  bin5  bin6  bin7  bin8   bin9
+
+    * Note the buckets with repeated entries. Its a design choice what to do with those.
+    * We might squash them together such that there are no repeats in the numbers that are the boundaries between bins.
+
+      0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
+      --------------|-------------|--------|----|-------|-------
+      bin1           bin2          bin3     bin4 bin5     bin6
+
+Supervised Discretization
+
+Find a cliff where suddenly everything switches from one class to another. For example:
+
+    * class=dead (always) if age under 120; class=alive (sometimes) if age under 120
+          * 120 is the cliff
+          * The following graph shows the number of o-ring damage reports seen in the space shuttle prior to the Challenger launch. There is a cliff at X=65 degrees, below which all launches had o-ring damage. 
+
+
+http://ourmine.googlecode.com/svn/trunk/share/img/orings.jpg
+
+Some details on cliff learning (from https://list.scms.waikato.ac.nz/pipermail/wekalist/2004-October/002986.html. Per numeric attribute, apply the following:
+
+    * Sort the instances on the attribute of interest
+    * Look for potential cut-points.
+          * Cut points are points in the sorted list above where the class labels change.
+          * Eg. if I had five instances with values for the attribute of interest and labels
+          * (1.0,A), (1.4,A), (1.7, A), (2.0,B), (3.0, B), (7.0, A),
+          * then there are two cut points of interest (mid-way between the points where the classes change from A to B or vice versa):
+                + 1.85
+                + 5
+    * Apply your favorite measure on each of the cuts, and choose the one with the maximum value
+          * e.g. support, max, min, info gain, gain ratio, gini coefficient, chi-squared test.
+          * Common practice is to follow the lead of [Fayyad93] and use info gain
+    * Repeat recursively in both subsets (the ones less than and greater than the cut point) until either
+          * the subset is "pure" i.e. only contains instances of a single class
+          * some stopping criterion is reached. e.g. too few examples to proceed
+
+Incremental Discretization
+
+An interesting variant on discretization is incremental discretization. Suppose we are learning from an infinite data stream so we'll never know "the number of unique symbols" or the "max" and "min" of that data. How might we conduct discretization?
+
+Incremental discretization can be very simple. Below, we describe two schemes:
+
+    * D.J. Bolands' RBST method (a local favorite; see Boland07);
+    * Gamma and Pinto's PIM method (more widely used; see Gama06). 
+
+RBSTs for Incremental Discretization
+
+Consider this binary search tree BST, where everything on the left is less than everything on the right.
+
+          4
+         / \
+        2   6
+
+We can add the number "5" in at least two places in this tree, and still preserve the search property that everything on the left is less than the stuff on the right. In case (a), we insert at root and in (b), we insert at leaf.
+
+    (a)   5          (b)  4
+         / \             / \
+        4   6           2   6
+       /                    /
+      2                    5
+
+Internally, what we really do is always insert at leaf and sometimes bubble up the leaf to the root, switching sub-trees as we go to preserve the ordering. In random BST (RBST), we insert at root of a sub-tree with probability 1/(N+1), where "N" is the number of sub-tree nodes. RBST's tend to generate balanced trees.
+
+Why? Because we are reaching in at random to a distribution, and dividing into into two sets below and above a number. Repeat that a few times and you tend to get balanced trees. So you very rarely get this:
+
+                      7
+                     /
+                    6
+                   /
+                  5
+                 /
+                4
+               /
+              3
+             /
+            2
+
+Rather, you tend to get this:
+
+                      5
+                     / \
+                    3   6
+                   / \   \
+                  2   4   7
+
+So, what has all this got to do with incremental discretization?
+
+    * Note that if we had a balanced tree, we could perform discretization by just returning (say) the breaks at level 3 of the tree (below 2, 2 to 4, 4 to 7, above 7). To do this, we'd add a counter to each node and if something arrives T times at node N, then N's counter value is T. So balanced trees can be used for batched discretization.
+    * But note that RBSTs adjust themselves after each insertion. So if used for an infinite stream of arrivals, they are always self-adjusting. This ability to react to new data and changes in the distribution of the new data reacting is exactly what we want from an incremental discretizer.
+    * Infinite data streams cause memory problems (cannot store infinite memory). RBSTs support a simple garbage collection algorithm. If we are discretizing at level L (in the above case, L=3) then we can periodically throw away the subtrees below level (say) 2*L. Yes, we'll lose some details but those details are down in the weeds and we can live without them. 
+
+Pid
+Gama and and Pinto's Partition Incremental Discretization (PiD) maintains two sets of "break" points and "counts" of values that fall into each break:
+
+    * Layer two: the actual discretized ranges. Layer two is very small and is generated on demand from layer one.
+    * Layer one: is very large (say, 30 times the number of bins you seek); Layer one just maintains counts on a large number of bins and if one bin gets too big (e.g. 1/(number of bins)), it is split in two (and all the breaks and counts arrays are pushed up by one index value). 
+
+That's nearly all there is too it. Layer one is initialized according to some wild guess about the min and max possible values (and if data arrives outside that range, then a new bin is added bottom or two of "breaks" and "counts"). Layer two could be generated in any number of ways (nbins, logbins, FayyadIranni, etc) and those methods could work by querying the layer one data.
+
+When should we recreate layer2? Here are three policies:
+
+    * For equal width discretization: if ever we split a bin, rebuild layer2.
+    * For equal frequency discretization: if a layer1 bin gets two large, rebuild layer2. If we have seen "n" examples, and our bins have min and max counts of "cmin" and "cmax" then rebuild layer2 when we see an interval with:
+          * count below (1-?)*cmin/n or
+          * count above (1+?)*cmax/n 
+      Gama and Pinto comment that ?=1/100 seems to be a useful value.
+    * For other discretization policies, recreate layer2 after seeing N examples (say, N=100). 
+
+Here's the pseudo-code for updating layer1. Its a little tacky (a linear time operation to increase the size of an array) but it runs so fast than no one cares:
+
+Update-Layer1(x, breaks, counts, NrB, alfa, Nr) 
+  x - observed value of the random variable 
+  breaks - vector of actual set of break points 
+  counts - vector of actual set of frequency counts 
+  NrB - Actual number of breaks 
+  alfa - threshold for Split an interval 
+  Nr - Number of observed values 
+
+If (x < breaks[1]) k = 1; Min.x = x 
+Else If (x > breaks[NrB] k = NrB; Max.x = x 
+Else k = 2 + integer((x - breaks[1]) / step) 
+
+while(x < breaks[k-1]) k <- k - 1 
+while(x > breaks[k]) k <- k + 1 
+
+counts[k] = 1 + counts[k] 
+Nr = 1 + Nr 
+If ((1+counts[k])/(Nr+2) > alfa) { 
+  val = counts[k] / 2            
+  counts[k] = val 
+  if (k == 1) { 
+     breaks = append(breaks[1]-step, breaks) 
+     counts <- append(val,counts) 
+  } 
+  else { 
+     if(k == NrB) { 
+        breaks <- append(breaks, breaks[NrB]+step) 
+        counts <- append(counts,val) 
+     } 
+     else { 
+        breaks <- Insert((breaks[k]+ breaks[k+1])/2, breaks, k) 
+        counts <- Insert(val, counts, k) 
+     } 
+  }   
+  NrB = NrB + 1 
+} 
+
+Applications of Incremental Discretization: Anomaly Detection and Repair
+
+Curiously, the literature is silent on two obvious applications of incremental discretization:
+
+    * Anomaly detection: if the discretization boundaries in an incremental discretizer where stable, then start changing, then something is happening to the data generating phenomena. Incremental discretizers could alert when old knowledge needs to be thrown out and new learning initiated.
+    * Repair: if we could track how discretization ranges changed, then we could take old knowledge, patch its ranges, and test the fixes. If that happened incrementally with changes to the discretization boundaries, then we'd be keeping the knowledge up to date with the underlying data generating phenomena. 
+
+What Works Best?
+The following graph from Dou95, shows results from three experiments:
+
+    * Experiment 1: Running a standard Naive Bayes classifier
+    * Experiment 2,3: Discretizing the data in one of two ways, then running Naive Bayes. 
+
+The y-axis of this graph shows the difference between experiment1 and the others. Any "y" value greater than one means that discretization increased accuracy. The data sets on the x-axis are sorted by the delta between the experiment 2,3 results (so, on the left, one discretizer is best and, on the right, the other is best).
+
+http://ourmine.googlecode.com/svn/trunk/share/img/diffnb.png
+
+Note that:
+
+    * discretization rarely made things worse;
+    * often made things much better;
+    * and the exact nature of the discretizer was not so important. 
+{{{
+What        win loss ties
+----------  --- ---- ----
+fayyadIrani 4    0    0
+pkid        2    1    1
+disctree3   2    1    1
+tbin        1    3    0
+cat         0    4    0
+}}}
+
+Here's another result, from Boland07. These are "win-loss-tie" tables showing a statistical analysis of the difference between several discretization methods:
+
+    * Some of the undiscretized methods shown below:
+          * "tbin" is Nbins (discussed below) with N=10
+          * "disctree3" (a neat trick from Boland07); 
+    * A supervised methods (discussed below) called "fayyadIrani" from [Fayyad93] (discussed below, see "cliff learning").
+    * And other methods including "cat" (do nothing). 
+
+Note that there is an overall winner (fayyadIrani) and this is the discretizer in widest current use.
+
+But if you look at the raw numbers (say, for "balance"), a different picture emerges. This is one result, out of the hundreds explored by Boland07. Note, as before:
+
+    * discretization rarely made things worse (i.e. do worse than "cat";
+    * can make things much better;
+    * and the exact nature of the discretizer is not so important. 
+
+http://ourmine.googlecode.com/svn/trunk/share/img/discrete.png
+
+From the above, we conclude that discretization is important and that we not get too tense about exploring better discretizers. Time to move on. 
