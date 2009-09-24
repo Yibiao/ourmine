@@ -263,8 +263,9 @@ Some details on cliff learning (from https://list.scms.waikato.ac.nz/pipermail/w
                    * Let class frequency be F,,x,, and F,,y,, (and N=F,,x,, + F,,y,, numbers)
                    * Let p,,x,, = F,,x,,/N  
                    * Let  p,,y,, = F,,y,,/N
-                   * Let entropy,,i,, = -p,,i,,{{{*}}}log,,2,,(p,,i,,)
-                   * Let weighted entropy,,right,, = -0.2{{{*}}} (entopy,,x,, + entropy,,y,,)
+                   * Let entropy,,x,, = -p,,x,,{{{*}}}log,,2,,(p,,x,,)
+                   * Let entropy,,y,, = -p,,y,,{{{*}}}log,,2,,(p,,y,,)
+                   * Let weighted entropy,,right,, = -0.2{{{*}}} (entropy,,x,, + entropy,,y,,)
                    * Return the split that minimizes entropy,,right,, + entropy,,left,,
     * Repeat recursively in both subsets (the ones less than and greater than the cut point) until either
           * the subset is "pure" i.e. only contains instances of a single class
