@@ -87,12 +87,12 @@ Pragmatically, the following transforms for numbers are very useful:
 Build data sets by sub-sampling real data
 
     * Column sub-sampling: manual FeatureSelection
-          o Maybe there is domain knowledge that some columns are
-          o More costly to use
-          o Less trustworthy
-          o E.g. in the MDP data: different measures from modules
+          * Maybe there is domain knowledge that some columns are
+          * More costly to use
+          * Less trustworthy
+          * E.g. in the MDP data: different measures from modules
     * Row sampling: manual [[Stratification]]
-          o Ignore all but the relevant data (how to judge? domain knowledge? nearest neighbor?).
+          * Ignore all but the relevant data (how to judge? domain knowledge? nearest neighbor?).
 
 http://ourmine.googlecode.com/svn/trunk/share/img/samples.png
 
@@ -143,16 +143,15 @@ Build a symbol table of all the remaining words
     * Convert strings to pointers into the symbol table
     * So "the cat sat on the cat" becomes 6 pointers to 4 words
 
-= Other =
-
-    * Watch for one-letter typos
-          o Check all symbols that occur only once in the data.
-    * Add synthetic attributes
-          o Capture domain knowledge
-          o e.g. risk is age/weight*temperature
-    * Sample randomly
-          o Useful when the whole data can't fit into ram.
-          o Useful when building training/test sets
-    * Sample instances according to the mis-classification rate of its class
-          o So focus more on the things that are harder to classify
-          o Also called Boosting: discussed (much) later
+= Misc =
+Watch for one-letter typos
+     * Check all symbols that occur only once in the data.
+Add synthetic attributes
+     * Capture domain knowledge
+     * e.g. risk is age/weight*temperature
+Sample randomly
+     * Useful when the whole data can't fit into ram.
+     * Useful when building training/test sets
+Sample instances according to the mis-classification rate of its class
+     * So focus more on the things that are harder to classify
+     * Also called Boosting: discussed (much) later
