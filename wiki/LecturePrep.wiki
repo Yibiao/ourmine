@@ -258,14 +258,14 @@ Some details on cliff learning (from https://list.scms.waikato.ac.nz/pipermail/w
                 * if 20% and 80% of the data fall left and right of the slot
                 * measure = 0.2{{{*}}} rightMeasure + 0.8{{{*}}}leftMeasure
           * e.g. variance,  info gain etc etc
-                * Common practice is to follow the lead of [Fayyad93] and use info gain
+                * Common practice is to follow the lead of [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 Fayyad93] and use info gain
                    * Let classes X and Y occur on the right-hand-side (containing 20%) of the data 
                    * Let class frequency be F,,x,, and F,,y,, (and N=F,,x,, + F,,y,, numbers)
                    * Let p,,x,, = F,,x,,/N  
                    * Let  p,,y,, = F,,y,,/N
                    * Let entropy,,i,, = -p,,i,,{{{*}}}log,,2,,(p,,i,,)
-				   * Let weighted entropy,,right,, = -0.2{{{*}}} (entopy,,x,, + entropy,,y,,)
-				   * Return the split that minimizes entropy,,right,, + entropy,,left,,
+                   * Let weighted entropy,,right,, = -0.2{{{*}}} (entopy,,x,, + entropy,,y,,)
+                   * Return the split that minimizes entropy,,right,, + entropy,,left,,
     * Repeat recursively in both subsets (the ones less than and greater than the cut point) until either
           * the subset is "pure" i.e. only contains instances of a single class
           * some stopping criterion is reached. e.g. too few examples to proceed
@@ -331,7 +331,7 @@ So, what has all this got to do with incremental discretization?
     * Layer two: the actual discretized ranges. Layer two is very small and is generated on demand from layer one.
     * Layer one: is very large (say, 30 times the number of bins you seek); Layer one just maintains counts on a large number of bins and if one bin gets too big (e.g. 1/(number of bins)), it is split in two (and all the breaks and counts arrays are pushed up by one index value). 
 
-That's nearly all there is too it. Layer one is initialized according to some wild guess about the min and max possible values (and if data arrives outside that range, then a new bin is added bottom or two of "breaks" and "counts"). Layer two could be generated in any number of ways (nbins, logbins, FayyadIranni, etc) and those methods could work by querying the layer one data.
+That's nearly all there is too it. Layer one is initialized according to some wild guess about the min and max possible values (and if data arrives outside that range, then a new bin is added bottom or two of "breaks" and "counts"). Layer two could be generated in any number of ways (nbins, logbins, [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 FayyadIranni], etc) and those methods could work by querying the layer one data.
 
 When should we recreate layer2? Here are three policies:
 
@@ -418,7 +418,7 @@ Here's another result, from Boland07. These are "win-loss-tie" tables showing a 
     * Some of the undiscretized methods shown below:
           * "tbin" is Nbins (discussed below) with N=10
           * "disctree3" (a neat trick from Boland07); 
-    * A supervised methods (discussed below) called "fayyadIrani" from [Fayyad93] (discussed below, see "cliff learning").
+    * A supervised methods (discussed below) called "fayyadIrani" from [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 Fayyad93] (discussed below, see "cliff learning").
     * And other methods including "cat" (do nothing). 
 
 Note that there is an overall winner (fayyadIrani) and this is the discretizer in widest current use.
