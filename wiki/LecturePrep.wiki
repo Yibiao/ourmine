@@ -1,4 +1,5 @@
 #summary Pre-processing methods
+<wiki:toc max_depth="4" />
 
 The truth of the matter is that most of the time spent in data mining is really spent on data pre-processing.
 
@@ -6,7 +7,6 @@ The truth of the matter is that most of the time spent in data mining is really 
 
 So lets talk about pre-processing.
 
-<wiki:toc max_depth="4" />
 
 = What is an Instance? =
 
@@ -184,7 +184,7 @@ Simple discretizers are unsupervised methods that build their histograms without
     * equal width discretization: (b,,i,, - b,,i,,-1) = (b,,j,, - b,,j,,-1)
     * equal frequency discretization: ci = cj 
 
-=== How to discretize ===
+== How to discretize ==
 
 Unsupervised discretization: ignore the class variable, just chop each column (this may seem dumb, but often works surprisingly well)
 
@@ -248,8 +248,8 @@ Some details on cliff learning (from https://list.scms.waikato.ac.nz/pipermail/w
           * Eg. if I had five instances with values for the attribute of interest and labels
           * (1.0,A), (1.4,A), (1.7, A), (2.0,B), (3.0, B), (7.0, A),
           * then there are two cut points of interest (mid-way between the points where the classes change from A to B or vice versa):
-                + 1.85
-                + 5
+                * 1.85
+                * 5
     * Apply your favorite measure on each of the cuts, and choose the one with the maximum value
           * e.g. support, max, min, info gain, gain ratio, gini coefficient, chi-squared test.
           * Common practice is to follow the lead of [Fayyad93] and use info gain
@@ -326,7 +326,7 @@ When should we recreate layer2? Here are three policies:
     * For equal frequency discretization: if a layer1 bin gets two large, rebuild layer2. If we have seen "n" examples, and our bins have min and max counts of "cmin" and "cmax" then rebuild layer2 when we see an interval with:
           * count below (1-beta){{{*}}}cmin/n or
           * count above (1+beta){{{*}}}cmax/n 
-      Gama and Pinto comment that beta=1/100 seems to be a useful value.
+          * Gama and Pinto comment that beta=1/100 seems to be a useful value.
     * For other discretization policies, recreate layer2 after seeing N examples (say, N=100). 
 
 Here's the pseudo-code for updating layer1. Its a little tacky (a linear time operation to increase the size of an array) but it runs so fast than no one cares:
