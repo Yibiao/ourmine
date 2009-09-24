@@ -190,7 +190,8 @@ Simple discretizers are unsupervised methods that build their histograms without
 Unsupervised discretization: ignore the class variable, just chop each column (this may seem dumb, but often works surprisingly well)
 
 Supervised discretization: separates the numerics according to the class variable
-Unsupervised methods
+
+=== Unsupervised methods ===
 
 Nbins: divide data into N equal width bins
     * Pass1: find min and max of each column. Find bin size for each column (max - min)/N.
@@ -230,9 +231,10 @@ bin1  bin2 bin3  bin4  bin5  bin6  bin7  bin8   bin9
 --------------|-------------|--------|----|-------|-------
 bin1           bin2          bin3     bin4 bin5     bin6
 }}}
-Supervised Discretization
 
-Find a cliff where suddenly everything switches from one class to another. For example:
+=== Supervised Discretization ===
+
+Find a cliff where there most change  in the class ditribution.  For example:
 
     * class=dead (always) if age under 120; class=alive (sometimes) if age under 120
           * 120 is the cliff
