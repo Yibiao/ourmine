@@ -177,7 +177,7 @@ Formally, discretization can generally be described as a process of assigning da
 After Gama and Pinto [Gama06], we say that
 
     * Discretization is the process of converting a continuous range into a histogram with "k" break points
-    * b,,1,, ... b,,k,, (where for all i < j : not(b,,i =  b,,j)).
+    * b,,1,, ... b,,k,, (where for all i < j : not(b,,i,, =  b,,j,,)).
     * The histogram divides a continuous range into bins (one for each break) and many observations from the range may fall between two break points bi and bi+1 at frequency counts ci. 
 
 Simple discretizers are unsupervised methods that build their histograms without exploiting information about the target class; e.g.
