@@ -2,7 +2,7 @@
 
 The truth of the matter is that most of the time spent in data mining is really spent on data pre-processing.
 
-http://ourmine.googlecode.com/svn/trunk/share/img/effort.gif
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/effort.gif">
 
 So lets talk about pre-processing.
 
