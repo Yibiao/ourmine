@@ -164,7 +164,7 @@ Think of learning like an accordion- some target concept is spread out across al
 One trick that helps compressions is discretization: i.e. clumping together observations taken over a continuous range into a small number of regions. Humans often discretize real world data. For example, parents often share tips for "toddlers"; i.e. humans found between the breaks of age=1 and age=3.
 
 Many researchers report that discretization improves the performance of a learner since it gives a learner a smaller space to reason about, with more examples in each part of the space 
-([http://code.google.com/p/ourmine/wiki/Dd#Dou95 Dou95], Lu06, Yang03, [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 Fayyad93]).
+([http://code.google.com/p/ourmine/wiki/Dd#Dou95 Dou95], [http://code.google.com/p/ourmine/wiki/Yy#Yang03 Yang03], [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 Fayyad93]).
 What is Discretization?
 
 Formally, discretization can generally be described as a process of assigning data attribute instances to bins or buckets that they fit in according to their value or some other score:
@@ -195,7 +195,7 @@ Unsupervised methods
 Nbins: divide data into N equal width bins
     * Pass1: find min and max of each column. Find bin size for each column (max - min)/N.
     * Pass2: convert all numbers X to floor(X - min)/binsize.
-    * N=10 is a commonly used number (but for Naive Bayes classifiers working on "n" instances, Yang and Webb Yang03 advocate equal frequency with ci=cj=sqrt(n)).
+    * N=10 is a commonly used number (but for Naive Bayes classifiers working on "n" instances, Yang and Webb [http://code.google.com/p/ourmine/wiki/Yy#Yang03 Yang03] advocate equal frequency with c,,i,,=c,,j,,=sqrt(n)).
     * Example:
           * e.g. divide 0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100 using 10bins
 {{{
