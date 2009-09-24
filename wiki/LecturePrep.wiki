@@ -163,7 +163,8 @@ Think of learning like an accordion- some target concept is spread out across al
 
 One trick that helps compressions is discretization: i.e. clumping together observations taken over a continuous range into a small number of regions. Humans often discretize real world data. For example, parents often share tips for "toddlers"; i.e. humans found between the breaks of age=1 and age=3.
 
-Many researchers report that discretization improves the performance of a learner since it gives a learner a smaller space to reason about, with more examples in each part of the space (Dou95, Lu06, Yang03, Fayyad93).
+Many researchers report that discretization improves the performance of a learner since it gives a learner a smaller space to reason about, with more examples in each part of the space 
+([http://code.google.com/p/ourmine/wiki/Dd#Dou95 Dou95], Lu06, Yang03, [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 Fayyad93]).
 What is Discretization?
 
 Formally, discretization can generally be described as a process of assigning data attribute instances to bins or buckets that they fit in according to their value or some other score:
@@ -174,7 +175,7 @@ Formally, discretization can generally be described as a process of assigning da
     * While others use the user-defined value as a starting point and expand or contract the number of bins that are actually used (based upon the number of data instances being placed in the bins).
     * Each bin or bucket is assigned a range of the attribute values to contain, and discretization occurs when the values that fall within a particular bucket (or bin) are replaced by identifier for the bucket into which they fall. 
 
-After Gama and Pinto [Gama06], we say that
+After [http://code.google.com/p/ourmine/wiki/Gg#Gama06 Gama and Pinto], we say that
 
     * Discretization is the process of converting a continuous range into a histogram with "k" break points
     * b,,1,, ... b,,k,, (where for all i < j : not(b,,i,, =  b,,j,,)).
@@ -263,8 +264,8 @@ An interesting variant on discretization is incremental discretization. Suppose 
 
 Incremental discretization can be very simple. Below, we describe two schemes:
 
-    * D.J. Bolands' RBST method (a local favorite; see Boland07);
-    * Gamma and Pinto's PIM method (more widely used; see Gama06). 
+    * D.J. Bolands' RBST method (a local favorite; sees 2007 WVU CSEE masters thesis;
+    * [http://code.google.com/p/ourmine/wiki/Gg#Gama06 Gamma and Pinto]'s PID method (more widely used). 
 
 === RBSTs for Incremental Discretization ===
 
@@ -313,7 +314,7 @@ So, what has all this got to do with incremental discretization?
     * Infinite data streams cause memory problems (cannot store infinite memory). RBSTs support a simple garbage collection algorithm. If we are discretizing at level L (in the above case, L=3) then we can periodically throw away the subtrees below level (say) 2*L. Yes, we'll lose some details but those details are down in the weeds and we can live without them. 
 
 === Pid ===
-Gama and and Pinto's Partition Incremental Discretization (PiD) maintains two sets of "break" points and "counts" of values that fall into each break:
+[http://code.google.com/p/ourmine/wiki/Gg#Gama06 Gama and and Pinto]'s Partition Incremental Discretization (PiD) maintains two sets of "break" points and "counts" of values that fall into each break:
 
     * Layer two: the actual discretized ranges. Layer two is very small and is generated on demand from layer one.
     * Layer one: is very large (say, 30 times the number of bins you seek); Layer one just maintains counts on a large number of bins and if one bin gets too big (e.g. 1/(number of bins)), it is split in two (and all the breaks and counts arrays are pushed up by one index value). 
@@ -376,7 +377,7 @@ Curiously, the literature is silent on two obvious applications of incremental d
     * Repair: if we could track how discretization ranges changed, then we could take old knowledge, patch its ranges, and test the fixes. If that happened incrementally with changes to the discretization boundaries, then we'd be keeping the knowledge up to date with the underlying data generating phenomena. 
 
 == What Works Best? ==
-The following graph from Dou95, shows results from three experiments:
+The following graph from [http://code.google.com/p/ourmine/wiki/Dd#Dou95 Dou95], shows results from three experiments:
 
     * Experiment 1: Running a standard Naive Bayes classifier
     * Experiment 2,3: Discretizing the data in one of two ways, then running Naive Bayes. 
