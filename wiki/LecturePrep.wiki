@@ -158,7 +158,6 @@ Sample instances according to the mis-classification rate of its class
 
 = Discretization =
 
-Discretization
 
 Think of learning like an accordion- some target concept is spread out across all the data and our task is to squeeze it together till it is dense enough to be visible. That is, learning is like a compression algorithm.
 
@@ -182,7 +181,6 @@ After Gama and Pinto [Gama06], we say that
     * The histogram divides a continuous range into bins (one for each break) and many observations from the range may fall between two break points bi and bi+1 at frequency counts ci. 
 
 Simple discretizers are unsupervised methods that build their histograms without exploiting information about the target class; e.g.
-
     * equal width discretization: (b,,i,, - b,,i,,-1) = (b,,j,, - b,,j,,-1)
     * equal frequency discretization: ci = cj 
 
@@ -200,9 +198,9 @@ Nbins: divide data into N equal width bins
     * Example:
           * e.g. divide 0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100 using 10bins
 {{{
-            0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
-            -------------------------------------------|--|--|--|--|---|
-            bin1                                        b2 b3 b5 b9 b10
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
+-------------------------------------------|--|--|--|--|---|
+bin1                                        b2 b3 b5 b9 b10
 }}}
           * one bucket would get numbers 1 to 25,
           * the last 4 numbers would get a bin each.
@@ -220,16 +218,16 @@ Percentile chop: diver data into N equal sized bins
     * So the frequency counts in each bin is equal (flat histogram).
     * Example: In practice, not quite flat. e.g. 10 equal frequency bins on the above data:
 {{{
-      0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
-       -----|----|-----|-----|-----|-----|-----|------|---------|
-       bin1  bin2 bin3  bin4  bin5  bin6  bin7  bin8   bin9
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
+-----|----|-----|-----|-----|-----|-----|------|---------|
+bin1  bin2 bin3  bin4  bin5  bin6  bin7  bin8   bin9
 }}}
     * Note the buckets with repeated entries. Its a design choice what to do with those.
     * We might squash them together such that there are no repeats in the numbers that are the boundaries between bins.
 {{{
-      0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
-      --------------|-------------|--------|----|-------|-------
-      bin1           bin2          bin3     bin4 bin5     bin6
+0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2,2,2,3,4,5,10,20,40,80,100
+--------------|-------------|--------|----|-------|-------
+bin1           bin2          bin3     bin4 bin5     bin6
 }}}
 Supervised Discretization
 
