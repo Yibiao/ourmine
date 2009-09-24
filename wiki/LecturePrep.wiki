@@ -179,11 +179,11 @@ After [http://code.google.com/p/ourmine/wiki/Gg#Gama06 Gama and Pinto], we say t
 
     * Discretization is the process of converting a continuous range into a histogram with "k" break points
     * b,,1,, ... b,,k,, (where for all i < j : not(b,,i,, =  b,,j,,)).
-    * The histogram divides a continuous range into bins (one for each break) and many observations from the range may fall between two break points bi and bi+1 at frequency counts ci. 
+    * The histogram divides a continuous range into bins (one for each break) and many observations from the range may fall between two break points b,,i,, and b,,i+1,, at frequency counts c,,i,,. 
 
 Simple discretizers are unsupervised methods that build their histograms without exploiting information about the target class; e.g.
     * equal width discretization: (b,,i,, - b,,i,,-1) = (b,,j,, - b,,j,,-1)
-    * equal frequency discretization: ci = cj 
+    * equal frequency discretization: c,,i,, = c,,j,, 
 
 == How to discretize ==
 
@@ -252,8 +252,16 @@ Some details on cliff learning (from https://list.scms.waikato.ac.nz/pipermail/w
                 * 1.85
                 * 5
     * Apply your favorite measure on each of the cuts, and choose the one with the maximum value
-          * e.g. support, max, min, info gain, gain ratio, gini coefficient, chi-squared test.
-          * Common practice is to follow the lead of [Fayyad93] and use info gain
+          * Weight the measures by the same size; e.g. 
+                * if 20% and 80% of the data fall left and right of the slot
+                * measure = 0.2{{{*}}} rightMeasure + 0.8{{{*}}}leftMeasure
+          * e.g. variance,  info gain etc etc
+                * Common practice is to follow the lead of [Fayyad93] and use info gain
+                   * if classes X and Y occur on the right-hand-side (containing 20%) of the data with frequency F,,x,, and F,,y,, in a space of N=F,,x,, + F,,y,, numbers 
+                   * then p,,x,, = F,,x,,/N  and p,,y,, = F,,y,,/N
+                   * and entropy,,i,, = -p,,i,,{{{*}}}log,,2,,(p,,i,,)
+				   * and weighted entropy,,right,, = -0.2{{{*}}} (entopy,,x,, + entropy,,y,,)
+				   * Return the split that minimizes entropy,,right,, + entropy,,left,,
     * Repeat recursively in both subsets (the ones less than and greater than the cut point) until either
           * the subset is "pure" i.e. only contains instances of a single class
           * some stopping criterion is reached. e.g. too few examples to proceed
