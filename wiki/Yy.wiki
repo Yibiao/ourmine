@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="4" />
 
-== Yang03
+= Yang03 =
 http://ourmine.googlecode.com/svn/trunk/share/pdf/YangWebb03.pdf
 {{{
 @inproceedings{Yang03,
