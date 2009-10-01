@@ -133,17 +133,21 @@ How to score each rule (in Pass 3)
                 * of course TAR4.0 failed
                       * single attribute probability functions say little about joint probabilities
     * TAR4.1
-          o scored each rule test by probability * support in the frequency table
-                + used likelihood as the support guess-timate
-                + L(best)^2 / (L(best) + L(rest))
-          o returned (very nearly) the same rules as TAR3
-                + Why?
-                + If you stay away from rarely visited corners of the training data,
-                      # then single attribute probability functions predict for joint probabilities
-          o Important:
-                + TAR4.1 did not need to run each rule through the training set
-                + so, used orders of magnitude less memory than TAR3
-                + so, ran one order of magnitude faster than TAR3
+          * scored each rule test by probability * support in the frequency table
+                * used likelihood as the support guess-timate
+                * L(best)^2 / (L(best) + L(rest))
+          * returned (very nearly) the same rules as TAR3
+                * Why?
+                * If you stay away from rarely visited corners of the training data,
+                      * then single attribute probability functions predict for joint probabilities
+          * Important:
+                * TAR4.1 did not need to run each rule through the training set
+                * so, used orders of magnitude less memory than TAR3
+                * so, ran one order of magnitude faster than TAR3
+
+http://www.csee.wvu.edu/~timm/cs591o/old/images/tar4mem.png
+
+http://www.csee.wvu.edu/~timm/cs591o/old/images/tar4speed.png
 
 === Example 1, TAR3 ===
 {{{
@@ -285,6 +289,8 @@ Alternative strategy for generating a rule set directly:
           * while some instances of that class remain
                 * find one rule that covers most instances of that class
                 * remove instances that are covered (i.e. match) the rule
+
+http://www.csee.wvu.edu/~timm/cs591o/old/images/cover.png
 
 Possible rule set for class b:
 
@@ -545,6 +551,8 @@ Assume we have a method for generating a single good rule
     * Finally we apply this method recursively to the two subsets produced by the rule
           * I.e. instances that are covered/not covered
 
+http://www.csee.wvu.edu/~timm/cs591o/old/images/exceptions.png
+
 == RIPPER: very Fast Covering ==
 
 Theoretically, fast. Some implementations are .... slow.
@@ -625,3 +633,5 @@ Optimize rule set:
                       * best determined by description length
 
 Pseudo-code:
+
+http://www.csee.wvu.edu/~timm/cs591o/old/images/ripper.png
