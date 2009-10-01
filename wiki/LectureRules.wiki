@@ -117,7 +117,7 @@ How to score each rule (in Pass 3)
 
     * TAR3: by lift
           * note: not so fast since required one pass over training data per rule
-                * worse, it is repeated at least F * M times
+                * worse, it is repeated at least F {{{*}}} M times
     * TAR4.0
           * assumed a two-class system
                 * e.g. BORE pre-processing
@@ -135,7 +135,7 @@ How to score each rule (in Pass 3)
     * TAR4.1
           * scored each rule test by probability * support in the frequency table
                 * used likelihood as the support guess-timate
-                * L(best)^2 / (L(best) + L(rest))
+                * L(best)^2^ / (L(best) + L(rest))
           * returned (very nearly) the same rules as TAR3
                 * Why?
                 * If you stay away from rarely visited corners of the training data,
@@ -248,8 +248,7 @@ Confidence1 Distribution:
 New draft: Diagnosis of Mission-Critical Failures
  * Gregory Gay , Tim Menzies, Misty Davies, Karen Gundy-Burlet
  * http://menzies.us/pdf/09tar3.pdf
- * Seriously kicks butt compared to standard optimizers (simulated annealing) and state of the art optimizers (Quasi- 
-Newton method with a BFGS update).
+ * Seriously kicks butt compared to standard optimizers (simulated annealing) and state of the art optimizers (Quasi- Newton method with a BFGS update).
 
 == WHICH ==
 
@@ -258,26 +257,26 @@ Newton method with a BFGS update).
 Discretize data.
 Score all ranges using some predicate P
 Add all ranges to a stack, decreasing on P
-# Pick two stack entries at random, favoring those with high scores
-# Score the combination with P
-# Sort the combination into stack according to its score
-# Goto 1
+ # Pick two stack entries at random, favoring those with high scores
+ # Score the combination with P
+ # Sort the combination into stack according to its score
+ # Goto 1
 
 Initially, stack contains singleton ranges.
-* After first pick, it is possible to have doubles, triples, etc
+ * After first pick, it is possible to have doubles, triples, etc
 
 Usually,  combinations are disjunctions
   * But if a combination contains two ranges from one attribute, that is a disjunction.
   * Also, if a combination contains all ranges from one attribute, that attribute can be removed
 
 How many picks?
-* Empirically, no improvements seen after 100 picks
+ * Empirically, no improvements seen after 100 picks
    * Usually after 20. See last figure of http://menzies.us/pdf/08which.pdf
-* So if new score at top of stack is more than old top of stack, do 20 more picks.
+ * So if new score at top of stack is more than old top of stack, do 20 more picks.
 
 If you scoring using  the TAR4.1 method,  then no need to run over the data
-* Just do frequency count lookups generated via one pass of the data
-* Very fast
+ * Just do frequency count lookups generated via one pass of the data
+ * Very fast
 
 = Exception Rule Learning =
 
