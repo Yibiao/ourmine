@@ -107,9 +107,9 @@ How to score each test (in Pass 2)
 
     * TAR3: by "lift"
 		  * give classes have a utility
-          * AsIs = sum(classFrequency * classWeight) for all examples
-          * ToBe = sum(classFrequency * classWeight) for examples selected by rules
-          * Lift = ToBe/AsIs
+          * As Is = sum(classFrequency {{{*}}} classWeight) for all examples
+          * To Be = sum(classFrequency {{{*}}} classWeight) for examples selected by rules
+          * Lift = To Be/As Is
              * if less than one, then BAD RULE
          * note: fast since can be done over single-attribute range frequency counts
 
