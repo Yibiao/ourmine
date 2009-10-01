@@ -611,7 +611,7 @@ Grow one rule:
 Prune one rule:
 
     * in reverse order of addition
-    * pop tests to find prune rule that maximizes _(p - n)/(p + n)
+    * pop tests to find prune rule that maximizes _(p - n)/(p + n)_
           * p = number of positive pruning examples covered
           * n = number of negative pruning examples covered
     * Delete all examples covered by pruned rule
