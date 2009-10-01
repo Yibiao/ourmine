@@ -278,7 +278,33 @@ How many picks?
 If you scoring using  the TAR4.1 method,  then no need to run over the data
 * Just do frequency count lookups generated via one pass of the data
 * Very fast
-   
+
+= Exception Rule Learning =
+
+Available in the WEKA
+
+    * RIDOR (ripple-down-rules learner)
+    * weka.classifiers.rules.Ridor -F 3 -S 1 -N 2.0
+
+Assume we have a method for generating a single good rule
+
+    * Then its easy to generate rules with exceptions
+    * First: default class is selected for top-level rule
+    * Then we generate a good rule for one of the remaining classes
+    * Finally we apply this method recursively to the two subsets produced by the rule
+          * I.e. instances that are covered/not covered
+
+http://www.csee.wvu.edu/~timm/cs591o/old/images/exceptions.png
+
+In classic ripple-down-rules
+* We ask humans to patch faulty rules
+
+In numerous variants:
+* Agents are called to propose patches
+ 
+Note:
+* can inter-lever human/automatic patching
+ 
 = Covering algorithms =
 
 e.g. PRISM,INDUCT,RIPPER,etc
@@ -535,23 +561,6 @@ PRISM is really a simple example of a class of separate and conquer algorithms. 
                 * Forces algorithm to either use other tests to separate out positive instances or to leave them uncovered until later on in the process
           * Note that in some cases its better to treat missing as a separate value (as in OneR)
     * When recursing, why not study the mis-classified rules (i.e. exception-rule or decision list learning).
-
-== Exception Rule / Decision List Learning ==
-
-Available in the WEKA
-
-    * RIDOR (ripple-down-rules learner)
-    * weka.classifiers.rules.Ridor -F 3 -S 1 -N 2.0
-
-Assume we have a method for generating a single good rule
-
-    * Then its easy to generate rules with exceptions
-    * First: default class is selected for top-level rule
-    * Then we generate a good rule for one of the remaining classes
-    * Finally we apply this method recursively to the two subsets produced by the rule
-          * I.e. instances that are covered/not covered
-
-http://www.csee.wvu.edu/~timm/cs591o/old/images/exceptions.png
 
 == RIPPER: very Fast Covering ==
 
