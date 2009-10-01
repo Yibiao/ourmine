@@ -66,9 +66,9 @@ Same as OneR but as a pre-processor, take N columns and create a new data by com
 
 == NR ==
 
-# Find the top sqrt(N) attributes (scored using the OneR rule)
-# Combine to form N=sqrt(N)^^2^^ new attributes
-# Go to 1
+ # Find the top sqrt(N) attributes (scored using the OneR rule)
+ # Combine to form N=sqrt(N)^^2^^ new attributes
+ # Go to 1
 
 = Stochastic Rule Generation = 
 
