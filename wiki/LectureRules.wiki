@@ -67,16 +67,16 @@ Same as OneR but as a pre-processor, take N columns and create a new data by com
 == NR ==
 
  # Find the top sqrt(N) attributes (scored using the OneR rule)
- # Combine to form N=sqrt(N)^^2^^ new attributes
+ # Combine to form N=sqrt(N)^2^ new attributes
  # Go to 1
 
 = Stochastic Rule Generation = 
 
 == Treatment Learning ==
 
-* Ying Hu, UBC, 2003.
-* Ryan Clarke, OSU, 2005
-* Greg Gay, WVU, 2009
+ * Ying Hu, UBC, 2003.
+ * Ryan Clarke, OSU, 2005
+ * Greg Gay, WVU, 2009
 
 Pass 1:
 
