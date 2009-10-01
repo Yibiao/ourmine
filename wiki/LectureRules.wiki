@@ -377,7 +377,7 @@ Pre-presbyopic,         Hypermetrope,        Yes,            Normal,            
 
 Seek rule for majority class
 
-    * Initial rule: _If ? then recommendation = hard+
+    * Initial rule: _If ? then recommendation = hard_
     * Possible tests:
 {{{
                                          p/t
