@@ -1,7 +1,7 @@
 <img width=300 align=right src="http://ourmine.googlecode.com/svn/trunk/share/img/group_20.gif">
 
  * [TimBielawa Tim Bielawa]
- * Elijah Flesher
+ * [ElijahFlesher Elijah Flesher]
  * Drew Waltman
 
 = News =
