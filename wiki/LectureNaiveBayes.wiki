@@ -1,4 +1,4 @@
-#summary NiaveByes Classifiers 101
+#summary NaiveBayes Classifiers 101
 <wiki:toc max_depth="4" />
 
 = Introduction =
@@ -359,7 +359,7 @@ In theory, batch is smarter than incremental
  * Since it sees more data before having to make decisions.
 
 In practice, the incremental performance of many learners, including NaiveBayes,
-asympotes to an performance plateau in a few hundred instances:
+asymptotes to an performance plateau in a few hundred instances:
 
 <img src="http://ourmine.googlecode.com/svn/trunk/share/img/plateau.png" width=500>
 
@@ -388,7 +388,7 @@ Note that the above scheme applies to HyperPipes as well as NaiveBayes.
 
 In anomaly detection, we report "we have not seen this before". 
 
-Inside a NaiveBaues classifier, there is a loop that combines frequency counts for different ranges.
+Inside a NaiveBayes classifier, there is a loop that combines frequency counts for different ranges.
 If we have not seen "it" before, then some of those frequency counts will drop.
 
 If we take (say) 10 attributes, and three of them halve their frequency count (cause we have not seen this
@@ -408,11 +408,11 @@ NR>=30 { Klass = likelihood(L)
        } 
 }}}
 Here's a trace of the log of the "All" likelihood for five flight simulators, divided into "eras" of 100 samples.
- * From era=1 to era=8, all planes fly the same commisioning exercise;
- * Form era=9 to era=14, all planes fly different missions, repeating the same manoveor over and over again.
+ * From era=1 to era=8, all planes fly the same commissioning exercise;
+ * Form era=9 to era=14, all planes fly different missions, repeating the same maneuver over and over again.
  * At era=15, all the planes were hit with different faults (engine flame up, flaps not working, etc)
  * In all cases, at era=15, log(likelihood("All")) dropped two orders of magnitude.
- * Note that, at no time, was the classifer given a list of specific  error conditions of the plane.
+ * Note that, at no time, was the classier given a list of specific  error conditions of the plane.
    * So it learned "I have not seen _that_ before", even though we never told it what was _that_.
    * Magic! (but so simple)
 
@@ -467,18 +467,20 @@ Note that pretending to be a child has much less benefit than the other two step
 
 In some text mining applications, there are documents grouped into a large number of classes. To classify a new document as one of the old, then
 
-The "d" matrix is often too big for processing and is pruned back to just the most relevant terms. One way to find the most relevant terms is the Tf*Idf measure:
+The "d" matrix is often too big for processing and is pruned back
+to just the most relevant terms. One way to find the most relevant
+terms is the Tf{{{*}}}Idf measure:
 
     * Tf{{{*}}}idf is shorthand for term frequency times inverse document frequency:
     * This weight is a statistical measure used to evaluate how important a word is to a document in a collection or corpus.
     * The importance increases proportionally to the number of times a word appears in the document but is offset by the frequency of the word in the corpus.
     * The term frequency in the given document is simply the number of times a given term appears in that document.
     * The inverse document frequency is a measure of the general importance of the term (obtained by dividing the number of all documents by the number of documents containing the term, and then taking the logarithm of that quotient).
-    * If there are Words number of document and each word I appears Word(I) number of times inside a set of Documents and if Document[I] be the documents containing I, then:
+    * If there are Words number of document and each word I appears Word(I) number of times inside a set of Documents and if Document(I) are the documents containing I, then:
 {{{
-      Tf*idf = Word[i] / Words*log(Documents/Document[i]) 
+      Tf*idf = Word(i) / Words*log(Documents/Document(i)) 
 }}}
-The standard way to use this measure is to cull all but the k top tf{{{*}}}idf words. [Rr#Rennie03 Rennie03] report that a variant of this score, used with a Naive Bayes classifier performs nearly as well as far more complicated schemes. Note that the following scheme was designed using the engineering judgement (so there are probably any number of variants of the following that are worthwhile to explore):
+The standard way to use this measure is to cull all but the k top tf{{{*}}}idf words. [Rr#Rennie03 Rennie03] report that a variant of this score, used with a Naive Bayes classifier performs nearly as well as far more complicated schemes. Note that the following scheme was designed using the engineering judgment (so there are probably any number of variants of the following that are worthwhile to explore):
 
 Their method is based on the following notion. If a class is rare then every other class is less rare. So instead of checking what you are, check what you aren't (since there are more counts of the other guys than you).
 
