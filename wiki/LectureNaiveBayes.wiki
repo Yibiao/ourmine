@@ -128,7 +128,7 @@ Return the classification with highest probability
           * Constant across all possible classifications;
           * So, when comparing N classifications, it cancels out 
 
--= Numerical errors ==
+== Numerical errors ==
 
 From multiplication of lots of small numbers
 
@@ -145,8 +145,8 @@ Example: Outlook    Temp.    Humidity    Windy    Play
          ?          Cool     High        True     ?%%
 }}}
 
-    * Likelihood of "yes" = 3/9 * 3/9 * 3/9 * 9/14 = 0.0238
-    * Likelihood of "no" = 1/5 * 4/5 * 3/5 * 5/14 = 0.0343
+    * Likelihood of "yes" = 3/9 {{{*}}} 3/9 {{{*}}} 3/9 {{{*}}} 9/14 = 0.0238
+    * Likelihood of "no" = 1/5 * 4/5 {{{*}}} 3/5 {{{*}}} 5/14 = 0.0343
     * P("yes") = 0.0238 / (0.0238 + 0.0343) = 41%
     * P("no") = 0.0343 / (0.0238 + 0.0343) = 59%
 
@@ -258,24 +258,23 @@ For example:
 {{{
 outlook  temperature humidity windy play
 -------  ----------- -------- ----- ---
-sunny    85          85       FALSE no
-sunny    80          90       TRUE  no
-overcast 83          86       FALSE yes
-rainy    70          96       FALSE yes
-rainy    68          80       FALSE yes
-rainy    65          70       TRUE  no
-overcast 64          65       TRUE  yes
-sunny    72          95       FALSE no
-sunny    69          70       FALSE yes
-rainy    75          80       FALSE yes
-sunny    75          70       TRUE  yes
-overcast 72          90       TRUE  yes
-overcast 81          75       FALSE yes
-rainy    71          91       TRUE  no%%
+sunny    85          85        FALSE no
+sunny    80          90        TRUE  no
+overcast 83          86        FALSE yes
+rainy    70          96        FALSE yes
+rainy    68          80        FALSE yes
+rainy    65          70        TRUE  no
+overcast 64          65        TRUE  yes
+sunny    72          95        FALSE no
+sunny    69          70        FALSE yes
+rainy    75          80        FALSE yes
+sunny    75          70        TRUE  yes
+overcast 72          90        TRUE  yes
+overcast 81          75        FALSE yes
+rainy    71          91        TRUE  no
 }}}
 This generates the following statistics:
-
-
+{{{
              Outlook           Temperature               Humidity
 =====================    =================      =================
            Yes    No             Yes    No            Yes      No
@@ -295,24 +294,130 @@ True        3     3
             -------     ----------
 False     6/9   2/5     9/14  5/14
 True      3/9   3/5
-
+}}}
 Example density value:
 
     * f(temperature=66|yes)= gaussianPdf(73,6/2,66) =0.0340
     * Classifying a new day:
-
+{{{
 Outlook    Temp.    Humidity    Windy    Play
 Sunny      66       90          true     ?%%
-
-    * Likelihood of "yes" = 2/9 * 0.0340 * 0.0221 * 3/9 * 9/14 = 0.000036
-    * Likelihood of "no" = 3/5 * 0.0291 * 0.0380 * 3/5 * 5/14 = 0.000136
-          o P("yes") = 0.000036 / (0.000036 + 0. 000136) = 20.9%
-          o P("no") = 0. 000136 / (0.000036 + 0. 000136) = 79.1%
+}}}
+    * Likelihood of "yes" = 2/9 {{{*}}} 0.0340 {{{*}}} 0.0221 {{{*}}} 3/9 {{{*}}} 9/14 = 0.000036
+    * Likelihood of "no" = 3/5 {{{*}}} 0.0291 {{{*}}} 0.0380 {{{*}}} 3/5 {{{*}}} 5/14 = 0.000136
+          * P("yes") = 0.000036 / (0.000036 + 0. 000136) = 20.9%
+          * P("no") = 0. 000136 / (0.000036 + 0. 000136) = 79.1%
 
 Note: missing values during training: not included in calculation of mean and standard deviation
 
 BTW, an alternative to the above is apply some discretization policy to the data; e.g. [Yang03]. Such discretization is good practice since it can dramatically improve the performance of a Naive Bayes classifier (see [Dougherty95].
-The Explanation Problem
+
+== Comparison pf NaiveBayes and HyperPipes ==
+
+== Simple Extensions ==
+
+=== From NaiveBayes to HyperPipes ===
+
+When NaiveBayes sees a new value, it increments a count.
+* When HyperPipes sees a  value, it just sets the count for that value to "one".
+
+So NaiveBayes remembers _how often we see "X" in class "C"_
+  * While HyperPipes just remembers that _at least once, I've seen "X" in class "K"_
+
+Also:
+  * For numeric columns, HyperPipes needs to remember the Min/Max ever seen in column "C" for class "K".
+
+{{{
+function symbol(col,value,klass) {
+   # Count[klass,col,value]++;
+  if (Numericp[col]) }
+	if (value < Min[klass,col]) Min[klass,col] = value;
+	if (value > Max[klass,col]) Max[klass,col] = value;
+  } else {
+   		Count[klass,col,value] = 1 ;
+  }
+}
+}}}
+So, to classify a test instance:
+ *  For each class, ask how what percentage of the columns  "fall into" that class;
+ *  Return the class with the highest percentage cover
+{{{
+function oneColumnFallsIntoKlass(klass,col,value) { 
+	if (Numericp[col])  
+		return Max[klass,col] >= val && Min[klass,col] <= val : 
+	else {
+		return Count[klass,col,value] > 0
+    }
+}
+}}}
+=== From NaiveBayes to Incremental Learning ===
+
+Batch learners read all data, the  given performance results.
+ * Incremental learners give intermediate results
+
+In theory, batch is smarter than incremental
+ * Since it sees more data before having to make decisions.
+
+In practice, the incremental performance of many learners, including NaiveBayes,
+asympotes to an performance plateau in a few hundred instances:
+
+http://ourmine.googlecode.com/svn/trunk/share/img/plateau.png
+
+http://ourmine.googlecode.com/svn/trunk/share/img/plateaus.png
+
+Building an incremental version of NaiveBayes is a trivial task:
+  * Just classify each new instance _before_ its counts are added to the frequency tables.
+
+Batch process:
+{{{
+Pass="train" { train() }
+Pass="test"  { Klass=likelihood(L); print $NF "," L[Klass] }
+}}}
+Incremental process:
+{{{
+# don't classify till after seeing a few instances
+NR>=30 { Klass = likelihood(L) i
+         print "want= " $NF " got= " L[Klass] 
+       }
+# but always train
+       { train() } 
+}}}
+Note that the above scheme applies to HyperPipes as well as NaiveBayes.
+
+=== Anomaly detection ===
+
+In anomaly detection, we report "we have not seen this before". 
+
+Inside a NaiveBaues classifier, there is a loop that combines frequency counts for different ranges.
+If we have not seen "it" before, then some of those frequency counts will drop.
+
+If we take (say) 10 attributes, and three of them halve their frequency count (cause we have not seen this
+before) then the product of their likelihoods will decrease to 0.5^3=12.5%.  So all we need to do is:
+ * Assign each train instance to some class "All"
+ * Track the likelihoods of "All".
+ * Complain if this number drops by orders of magnitudes.
+{{{
+# don't classify till after seeing a few instances
+NR>=30 { Klass = likelihood(L) 
+         print "want= " $NF " got= " L[Klass] " all= " L["All"]
+       } 
+# but always train
+       { train(); 
+         $NF="All"; 
+         train() 
+       } 
+}}}
+Here's a trace of the log of the "All" likelihood for five flight simulators, divided into "eras" of 100 samples.
+ * From era=1 to era=8, all planes fly the same commisioning exercise;
+ * Form era=9 to era=14, all planes fly different missions, repeating the same manoveor over and over again.
+ * At era=15, all the planes were hit with different faults (engine flame up, flaps not working, etc)
+ * In all cases, at era=15, log(likelihood("All")) dropped two orders of magnitude.
+ * Note that, at no time, was the classifer given a list of specific  error conditions of the plane.
+   * So it learned "I have not seen _that_ before", even though we never told it what was _that_.
+
+http://ourmine.googlecode.com/svn/trunk/share/img/sawtooth.png
+
+= The Explanation Problem =
 
 All learners are performance systems that make conclusions. But only some can explain how they reach those conclusions.
 
