@@ -146,7 +146,7 @@ Example: Outlook    Temp.    Humidity    Windy    Play
 }}}
 
     * Likelihood of "yes" = 3/9 {{{*}}} 3/9 {{{*}}} 3/9 {{{*}}} 9/14 = 0.0238
-    * Likelihood of "no" = 1/5 * 4/5 {{{*}}} 3/5 {{{*}}} 5/14 = 0.0343
+    * Likelihood of "no" = 1/5 {{{*}}} 4/5 {{{*}}} 3/5 {{{*}}} 5/14 = 0.0343
     * P("yes") = 0.0238 / (0.0238 + 0.0343) = 41%
     * P("no") = 0.0343 / (0.0238 + 0.0343) = 59%
 
@@ -319,7 +319,7 @@ BTW, an alternative to the above is apply some discretization policy to the data
 == From Naive Bayes to Hyper Pipes ==
 
 When NaiveBayes sees a new value, it increments a count.
-* When HyperPipes sees a  value, it just sets the count for that value to "one".
+ * When HyperPipes sees a  value, it just sets the count for that value to "one".
 
 So NaiveBayes remembers _how often we see "X" in class "C"_
   * While HyperPipes just remembers that _at least once, I've seen "X" in class "K"_
@@ -425,7 +425,7 @@ All learners are performance systems that make conclusions. But only some can ex
 
 The internal data structures of a Bayes classifier are not very pleasant to look at when listed in a table. Moreover, the particulars of that data are not what really matter.
 
-[Mozina04] argue that what really matters is the effect of a cell on the output variables. With knowledge of this goal, it is possible to design a visualization, called a nomogram, of that data. Nomograms do not confuse the user with needless detail. For example, here's nomogram describing who survived and who died on the Titanic:
+[Mm#Mozina04 Mozina04] argue that what really matters is the effect of a cell on the output variables. With knowledge of this goal, it is possible to design a visualization, called a nomogram, of that data. Nomograms do not confuse the user with needless detail. For example, here's nomogram describing who survived and who died on the Titanic:
 
 Of 2201 passengers on Titanic, 711 (32.3%) survived. To predict who will survive, the contribution of each attribute is measured as a point score (topmost axis in the nomogram), and the individual point scores are summed to determine the probability of survival (bottom two axes of the nomogram).
 
