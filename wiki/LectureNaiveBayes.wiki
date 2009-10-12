@@ -376,8 +376,8 @@ Pass="test"  { Klass=likelihood(L); print $NF "," L[Klass] }
 Incremental process:
 {{{
 # don't classify till after seeing a few instances
-NR>=30 { Klass = likelihood(L) i
-         print "want= " $NF " got= " L[Klass] 
+NR>=30 { Klass = likelihood(L) 
+         print "want= " $NF " got= " Klass 
        }
 # but always train
        { train() } 
@@ -399,7 +399,7 @@ before) then the product of their likelihoods will decrease to 0.5^3=12.5%.  So 
 {{{
 # don't classify till after seeing a few instances
 NR>=30 { Klass = likelihood(L) 
-         print "want= " $NF " got= " L[Klass] " all= " L["All"]
+         print "want= " $NF " got= " Klass " track= " L["All"]
        } 
 # but always train
        { train(); 
@@ -414,8 +414,10 @@ Here's a trace of the log of the "All" likelihood for five flight simulators, di
  * In all cases, at era=15, log(likelihood("All")) dropped two orders of magnitude.
  * Note that, at no time, was the classifer given a list of specific  error conditions of the plane.
    * So it learned "I have not seen _that_ before", even though we never told it what was _that_.
+   * Magic! (but so simple)
 
-http://ourmine.googlecode.com/svn/trunk/share/img/sawtooth.png
+
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/sawtooth.png" width=400>
 
 = The Explanation Problem =
 
