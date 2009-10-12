@@ -486,7 +486,7 @@ Their method is based on the following notion. If a class is rare then every oth
 
 In their scheme:
 
-    * There are "k" documents and "dij" denotes the count of word "i" in document "j". The expression _delta,,ij,,_ evaluates to one if word "i" appears in document "j", or zero otherwise.
+    * There are "k" documents and "d,,ij,," denotes the count of word "i" in document "j". The expression _delta,,ij,,_ evaluates to one if word "i" appears in document "j", or zero otherwise.
     * _alpha_ is a smoothing factor, often set to one.
     * They apply logs to their numbers so small numbers don't disappear under the weight of larger numbers (see steps 3,5).
     * Further, they normalize their counts by summing over the space of all counts. In step (3) they even divide by the square root of the sum (so that large sums don't disproportion-ally reduce the effects of small numbers).
