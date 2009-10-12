@@ -417,7 +417,7 @@ Here's a trace of the log of the "All" likelihood for five flight simulators, di
    * Magic! (but so simple)
 
 
-<img src="http://ourmine.googlecode.com/svn/trunk/share/img/sawtooth.png" width=400>
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/sawtooth.png" width=300>
 
 = The Explanation Problem =
 
