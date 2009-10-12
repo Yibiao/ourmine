@@ -427,6 +427,8 @@ The internal data structures of a Bayes classifier are not very pleasant to look
 
 [Mm#Mozina04 Mozina04] argue that what really matters is the effect of a cell on the output variables. With knowledge of this goal, it is possible to design a visualization, called a nomogram, of that data. Nomograms do not confuse the user with needless detail. For example, here's nomogram describing who survived and who died on the Titanic:
 
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/titanic.png">
+
 Of 2201 passengers on Titanic, 711 (32.3%) survived. To predict who will survive, the contribution of each attribute is measured as a point score (topmost axis in the nomogram), and the individual point scores are summed to determine the probability of survival (bottom two axes of the nomogram).
 
 The nomogram shows the case when we know that the passenger is a child; this score is slightly less than 50 points, and increases the posterior probability to about 52%. If we further know that the child traveled in first class (about 70 points), the points would sum to about 120, with a corresponding probability of survival of about 80%.
@@ -437,13 +439,13 @@ It is simple to calculate nomogram values for single ranges. All we want is some
     * Let the bad classes be combined together into a group we'll call notC
     * Let the frequencies of C and notC be N1 and N2.
     * Let two attribute range appears with frequency F1 and F2 in C1 and notC.
-    * Then the log(OR) = log ( (N1 / H1) / (N1 / H2) ) 
+    * Then the log(OR) = log ( (N1 / H1) / (N2 / H2) ) 
 
 We use logs since products can be visualized via simple addition. This addition can be converted back to a probability as follows. If the sum is "f" and the target class occurs "N" times out of "I" instances, then the probability of that class is "p=N/I" and and the sum's probability is:
-
+{{{
 function points2p(f,p) { return 1 / (1 + E^(-1*log(p/(1 - p)) - f )) }
-
-(For the derivation of this expression, see equation 7 of [Mozina04]. Note that their equation has a one-bracket typo.)
+}}}
+(For the derivation of this expression, see equation 7 of [Mm#Mozina04 Mozina04]. Note that their equation has a one-bracket typo.)
 
 Besides enabling prediction, the nomogram reveals the structure of the model and the relative influences of attribute values on the chances of surviving. For the Titanic data set:
 
@@ -458,101 +460,107 @@ Therefore, with nomograms, we can play cost-benefit games. Consider the survival
     * sex=female and class=first and age=child (95%) 
 
 Note that pretending to be a child has much less benefit than the other two steps. This is important since the more elaborate the model, the more demanding it becomes. Simpler models are faster to apply, use less resources (sensors and actuators), etc. So when the iceberg hits, get into a dress and buy a first-class ticket. But forget the lollipop.
-A Second Look at the Low-Frequency Problem
 
-[Rennie03] report an interesting extension to standard Naive Bayes to handle data sets with very very low frequency counts. For example, in text mining applications, "d" documents are often expressed as a matrix of counting the frequency of terms "dij" of the frequency of words "i" in document "j". The matrix "d" is often sparse; i.e. many empty cells and many cells with very small frequency counts. The reason for this is simple: while there are many terms in the English language, only a small number of them are used in a particular document.
+= A Second Look at the Low-Frequency Problem =
+
+[Rr#Rennie03 Rennie03] report an interesting extension to standard Naive Bayes to handle data sets with very very low frequency counts. For example, in text mining applications, "d" documents are often expressed as a matrix of counting the frequency of terms "dij" of the frequency of words "i" in document "j". The matrix "d" is often sparse; i.e. many empty cells and many cells with very small frequency counts. The reason for this is simple: while there are many terms in the English language, only a small number of them are used in a particular document.
 
 In some text mining applications, there are documents grouped into a large number of classes. To classify a new document as one of the old, then
 
 The "d" matrix is often too big for processing and is pruned back to just the most relevant terms. One way to find the most relevant terms is the Tf*Idf measure:
 
-    * Tf*idf is shorthand for term frequency times inverse document frequency:
+    * Tf{{{*}}}idf is shorthand for term frequency times inverse document frequency:
     * This weight is a statistical measure used to evaluate how important a word is to a document in a collection or corpus.
     * The importance increases proportionally to the number of times a word appears in the document but is offset by the frequency of the word in the corpus.
     * The term frequency in the given document is simply the number of times a given term appears in that document.
     * The inverse document frequency is a measure of the general importance of the term (obtained by dividing the number of all documents by the number of documents containing the term, and then taking the logarithm of that quotient).
-    * If there are Words number of document and each word I appears Word[I] number of times inside a set of Documents and if Document[I] be the documents containing I, then:
-
+    * If there are Words number of document and each word I appears Word(I) number of times inside a set of Documents and if Document[I] be the documents containing I, then:
+{{{
       Tf*idf = Word[i] / Words*log(Documents/Document[i]) 
-
-The standard way to use this measure is to cull all but the k top tf*idf words. [Rennie03] report that a variant of this score, used with a Naive Bayes classifier performs nearly as well as far more complicated schemes. Note that the following scheme was designed using the engineering judgement (so there are probably any number of variants of the following that are worthwhile to explore):
+}}}
+The standard way to use this measure is to cull all but the k top tf{{{*}}}idf words. [Rr#Rennie03 Rennie03] report that a variant of this score, used with a Naive Bayes classifier performs nearly as well as far more complicated schemes. Note that the following scheme was designed using the engineering judgement (so there are probably any number of variants of the following that are worthwhile to explore):
 
 Their method is based on the following notion. If a class is rare then every other class is less rare. So instead of checking what you are, check what you aren't (since there are more counts of the other guys than you).
 
 In their scheme:
 
-    * There are "k" documents and "dij" denotes the count of word "i" in document "j". The expression ?ij evaluates to one if word "i" appears in document "j", or zero otherwise.
-    * ? is a smoothing factor, often set to one.
+    * There are "k" documents and "dij" denotes the count of word "i" in document "j". The expression _delta,,ij,,_ evaluates to one if word "i" appears in document "j", or zero otherwise.
+    * _alpha_ is a smoothing factor, often set to one.
     * They apply logs to their numbers so small numbers don't disappear under the weight of larger numbers (see steps 3,5).
     * Further, they normalize their counts by summing over the space of all counts. In step (3) they even divide by the square root of the sum (so that large sums don't disproportion-ally reduce the effects of small numbers).
-    * ? is a frequency count of the number of word "i" appears in every other class.
+    * _theta_ is a frequency count of the number of word "i" appears in every other class.
     * Their decision procedure (step 8) returns the class that you are least likely to not belong too. 
 
-[Rennie03] report that this scheme works very well compared to much more complex state-of-the-art techniques. And all the above steps (1-8) take linear time and space so the this method is fast and scales to large data sets.
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/twcnb.png">
+
+[Rr#Rennie03 Rennie03] report that this scheme works very well compared to much more complex state-of-the-art techniques. And all the above steps (1-8) take linear time and space so the this method is fast and scales to large data sets.
 
 The meta-lesson of their work is that data mining algorithms are toolkits that can be modified to new purposes. Don't get too hung up on specific algorithms. Instead, view each new algorithm as a bag of tricks that you can break up and mix-and-match for your next application.
-Not so "Naive" Bayes
 
-Why does Naive Bayes work so well? [Domingos97] offer one analysis:
+= Not so "Naive" Bayes =
+
+Why does Naive Bayes work so well? [Dd#Domingoes97 Domingos97] offer one analysis:
 
     * They offer one example with three attributes where the performance where a "Naive" and a "optimal" Bayes perform nearly the same.
     * They generalized that to conclude that "Naive" bayes is only really Naive in a vanishingly small number of cases. 
 
-Their three attribute example is given below. For the generalized example, see [Domingos97].
+Their three attribute example is given below. For the generalized case, see [Dd#Domingoes97 Domingos97].
 
 Consider a Boolean concept, described by three attributes A, B and C .
 
 Assume that the two classes, denoted by + and - are equiprobable
-
+{{{
  P(+) = P(-) = 1/2   
-
+}}}
 Let A and C be independent, and let A = B (i.e., A and B are completely dependent). Therefore B should be ignored, and the optimal classification procedure for a test instance is to assign it to (i) class + if
-
+{{{
  P(A|+) * P(C|+) -  P(A|-) * P(C|-) > 0, 
-
+}}}
 and (ii) to class (if the inequality has the opposite sign), and (iii) to an arbitrary class if the two sides are equal.
 
 Note that the Bayesian classifier will take B into account as if it was independent from A, and this will be equivalent to counting A twice. Thus, the Bayesian classifier will assign the instance to class + if
-
+{{{
  P(A|+)^2 *  P(C|+) -  P(A|-)^2  * P(C|-) > 0, 
-
+}}}
 and to - otherwise.
 
 Applying Bayes' theorem, P(A|+) can be re-expressed as
-
+{{{
  P(A) * P(+|A)/P(+) 
-
+}}}
 and similarly for the other probabilities.
 
 Since P(+) = P(-), after canceling like terms this leads to the equivalent expressions
-
+{{{
  P(+|A) * P(+|C ) - P(-|A) * P(-|C ) > 0 
-
+}}}
 for the optimal decision, and
-
+{{{
  P(+|A)^2 *  P(+|C ) - P(-|A)^2 * P(-|C) > 0  
-
+}}}
 for the Bayesian classifier. Let
-
+{{{
 P(+|A) = p
 P(+|C) = q.
-
+}}}
 Then class + should be selected when
-
+{{{
  pq - (1 - p)*(1 - q) > 0    
-
+}}}
 which is equivalent to
-
+{{{
  q > 1 - p   [Optimal Bayes] 
-
+}}}
 With the Bayesian classifier, it will be selected when
-
+{{{
  p^2 * q  - (1 - p)^2 *  (1 - q) > 0  
-
+}}}
 which is equivalent to
-
+{{{
 q >  (1 - p)^2 *  p^2 +(1 - p)^2    [Simple  Bayes]
-
+}}}
 The two curves are shown in following figure. The remarkable fact is that, even though the independence assumption is decisively violated because B = A, the Bayesian classifier disagrees with the optimal procedure only in the two narrow regions that are above one of the curves and below the other; everywhere else it performs the correct classification.
+
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/optimalBayes.png">
 
 Thus, for all problems where (p, q) does not fall in those two small regions, the Bayesian classifier is effectively optimal. 
