@@ -210,6 +210,7 @@ function likelihood(l,         klass,i,inc,temp,prior,what,like) {
    return what
 }
 }}}
+== More Complex ==
 More realistic version (handles certain low-frequency cases).
 {{{
 function likelihood(l,         klass,i,inc,temp,prior,what,like) {
@@ -312,11 +313,10 @@ Note: missing values during training: not included in calculation of mean and st
 
 BTW, an alternative to the above is apply some discretization policy to the data; e.g. [Yang03]. Such discretization is good practice since it can dramatically improve the performance of a Naive Bayes classifier (see [Dougherty95].
 
-== Comparison pf NaiveBayes and HyperPipes ==
 
-== Simple Extensions ==
+= Simple Extensions =
 
-=== From NaiveBayes to HyperPipes ===
+== From NaiveBayes to HyperPipes ==
 
 When NaiveBayes sees a new value, it increments a count.
 * When HyperPipes sees a  value, it just sets the count for that value to "one".
@@ -350,7 +350,7 @@ function oneColumnFallsIntoKlass(klass,col,value) {
     }
 }
 }}}
-=== From NaiveBayes to Incremental Learning ===
+== From NaiveBayes to Incremental Learning ==
 
 Batch learners read all data, the  given performance results.
  * Incremental learners give intermediate results
@@ -384,7 +384,7 @@ NR>=30 { Klass = likelihood(L) i
 }}}
 Note that the above scheme applies to HyperPipes as well as NaiveBayes.
 
-=== Anomaly detection ===
+== From NaiveBayes to Anomaly Detection ==
 
 In anomaly detection, we report "we have not seen this before". 
 
