@@ -103,9 +103,9 @@ More generally, the above is just an application of Bayes' Theorem.
           * Event H = class value for instance
     * Naive Bayes assumption: evidence can be split into independent parts (i.e. attributes of instance!
 {{{
-                  Pr[E1 | H ]* Pr[E2 | H ] * ....  *Pr[En | H ]Pr[H ]
-      Pr[H | E] = ---------------------------------------------------
-                                     Pr[E]
+                  Pr(E1 | H )* Pr(E2 | H ) * ....  *Pr(En | H ) * Pr(H )
+      Pr(H | E) = ---------------------------------------------------
+                                     Pr(E)
 }}}
       We used this above. Here's our evidence:
 {{{
@@ -114,15 +114,15 @@ More generally, the above is just an application of Bayes' Theorem.
 }}}
       Here's the probability for "yes":
 {{{
-      Pr[ yes | E] = Pr[Outlook     = Sunny | yes] *
-                     Pr[Temperature = Cool  | yes] *
-                     Pr[Humidity     = High  | yes] * Pr[ yes]
-                     Pr[Windy       = True  | yes] * Pr[yes] / Pr[E]
-                   = (2/9 * 3/9 * 3/9 * 3/9)       * 9/14)   / Pr[E]
+      Pr( yes | E) = Pr(Outlook     = Sunny | yes) *
+                     Pr(Temperature = Cool  | yes) *
+                     Pr(Humidity     = High  | yes) * Pr( yes)
+                     Pr(Windy       = True  | yes) * Pr(yes) / Pr(E)
+                   = (2/9 * 3/9 * 3/9 * 3/9)       * 9/14)   / Pr(E)
 }}}
 Return the classification with highest probability
 
-    * Probability of the evidence Pr[E]
+    * Probability of the evidence Pr(E)
           * Constant across all possible classifications;
           * So, when comparing N classifications, it cancels out 
 
