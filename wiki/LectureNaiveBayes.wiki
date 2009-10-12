@@ -363,7 +363,7 @@ asympotes to an performance plateau in a few hundred instances:
 
 <img src="http://ourmine.googlecode.com/svn/trunk/share/img/plateau.png" width=500>
 
-< img src="http://ourmine.googlecode.com/svn/trunk/share/img/plateaus.png" width=500>
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/plateaus.png" width=500>
 
 Building an incremental version of NaiveBayes is a trivial task:
   * Just classify each new instance _before_ its counts are added to the frequency tables.
