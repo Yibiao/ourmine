@@ -316,7 +316,7 @@ BTW, an alternative to the above is apply some discretization policy to the data
 
 = Simple Extensions =
 
-== From NaiveBayes to HyperPipes ==
+== From Naive Bayes to Hyper Pipes ==
 
 When NaiveBayes sees a new value, it increments a count.
 * When HyperPipes sees a  value, it just sets the count for that value to "one".
@@ -361,9 +361,9 @@ In theory, batch is smarter than incremental
 In practice, the incremental performance of many learners, including NaiveBayes,
 asympotes to an performance plateau in a few hundred instances:
 
-http://ourmine.googlecode.com/svn/trunk/share/img/plateau.png
+<img src="http://ourmine.googlecode.com/svn/trunk/share/img/plateau.png" width=500>
 
-http://ourmine.googlecode.com/svn/trunk/share/img/plateaus.png
+< img src="http://ourmine.googlecode.com/svn/trunk/share/img/plateaus.png" width=500>
 
 Building an incremental version of NaiveBayes is a trivial task:
   * Just classify each new instance _before_ its counts are added to the frequency tables.
