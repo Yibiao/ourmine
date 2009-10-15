@@ -3,7 +3,7 @@
 <wiki:toc max_depth="4" />
 
 == hall03 ==
-http://ourmine.googlecode.com/svn/trunk/share/pdf/hall03.pdf
+http://ourmine.googlecode.com/svn/trunk/share/pdf/03hall.pdf
 
 {{{
 @article{hall03,
@@ -30,4 +30,3 @@ http://ourmine.googlecode.com/svn/trunk/share/pdf/93holte.pdf
   year =	 "1993"
 }
 }}}
-
