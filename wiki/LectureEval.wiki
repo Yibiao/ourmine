@@ -93,7 +93,7 @@ How to combine (say) PD and PF (different applications have different cost/depen
           * Note: generalizes to N-dimensional evaluation (divide by sqrt(N))
 <img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/balance.png">
           * More generally, it may be useful to weight {PD,PF} according to their relative importance.
-    * Also, if we have N theories (say _defects1 > T1 and defects2 > T2)), each with their own ROC-curve shape, we can use them in combination to design learners with some desired ROC curves.  
+    * Also, if we have N theories (say _defects1 > T1 and defects2 > T2_), each with their own ROC-curve shape, we can use them in combination to design learners with some desired ROC curves.  
 <img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/rocs.png">
 
 = Cross-Validation =
