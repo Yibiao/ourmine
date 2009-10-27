@@ -298,7 +298,7 @@ Hall & Holmes also report their studies in terms of win-loss tables that compare
       }
 }}}
     * These results are sorted in the order win - loss
-<img width=200 src="http://ourmine.googlecode.com/svn/trunk/share/img/winloss.png">
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/winloss.png">
 
 Such win-loss tables :
 
