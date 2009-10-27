@@ -298,7 +298,7 @@ Hall & Holmes also report their studies in terms of win-loss tables that compare
       }
 }}}
     * These results are sorted in the order win - loss
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/winloss.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/winloss.png">
 
 Such win-loss tables :
 
@@ -328,6 +328,7 @@ function standardDeviation(sumSq,sum,n)  {
 }}}
 (BTW, A "normal" or Gaussian distribution has a middle value (the mean) and spreads out evenly on both sides by an amount controlled by the standard deviation: large deviations lead to broad curves (e.g. the blue curve) and small deviations lead to sharply falling curves (e.g. the red curve).
 )
+
 <img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/normals.png">
 
 To test if two distributions are different, we assume that they are normal curves and seek all pairs of performance deltas and study the mean and standard deviation as follows:
@@ -454,7 +455,7 @@ Ranks   1 2.5 2.5 4 5.5 5.5 7 8 9.5 9.5 11
 Then, for _paired_ experiments (same data, different treatments) use Wilcoxon and for _non-paired_
 use Mann-Whitney (shown below):
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/mwu.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/mwu.png">
 
 For full source  see [http://ourmine.googlecode.com/svn/trunk/our/lib/awk/ranked.awk].
 
