@@ -1,7 +1,5 @@
 #summary Evaluation Bias
 
-which
-precision
 
 All learning is biased. After {search, language, over-fitting, sampling} bias comes a new one:
 
@@ -36,14 +34,14 @@ detector = loud  |     C     |       D     |
     * probability of detection = D / (B+D) (a.k.a. recall)
     * probability of false alarm = C / (A+C)
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/rocsheet.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/rocsheet.png">
 
 Harder case:
 
     * more than two classes
     * repeat the above, one for each pair of (class X) / (not class X).
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/rocsheets.png">
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/rocsheets.png">
 
 = Continuous classes =
 
@@ -64,7 +62,7 @@ Evaluation measures include RE, MRE, MMRE, PRED(N), correlation, etc.
           * if corr in -0.5 .. 0.5 then correlation is not strong
           * calculating correlation for N items stored in arrays x and y:
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/correlation.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/correlation.png">
 {{{
 sum_sq_x = 0
 sum_sq_y = 0
@@ -89,15 +87,15 @@ correlation = cov_x_y / (pop_sd_x * pop_sd_y)
 = Evaluation bias (again) =
 
 How to combine (say) PD and PF (different applications have different cost/dependability requirements).
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/roc.png">
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/roc.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/roc.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/roc.png">
 
     * A [http://code.google.com/p/ourmine/wiki/Mm#Menzies07a recent study] of defect detectors used:
           * Note: generalizes to N-dimensional evaluation (divide by sqrt(N))
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/balance.png">
+<img width=300 src="http://ourmine.googlecode.com/svn/trunk/share/img/balance.png">
           * More generally, it may be useful to weight {PD,PF} according to their relative importance.
     * Also, if we have N theories (say _defects1 > T1 and defects2 > T2)), each with their own ROC-curve shape, we can use them in combination to design learners with some desired ROC curves.  
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/rocs.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/rocs.png">
 
 = Cross-Validation =
 
@@ -119,7 +117,7 @@ One such hold-out study is an M*N-way cross-val.
           * R= number of training instances
           * h= a learned specific parameter (often, not knowable)
           * At probability 1-n:
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/vc.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/vc.png">
                 * That is, larger training sets reduce error
 
 Incremental M*N-way (a.k.a. sequence studies)
@@ -136,7 +134,7 @@ In many of the standard UCI data sets, learning plateaus long before data is exh
 
 <img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/plateau.png">
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/platueas..png">
+<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/platueas.png">
 
 (BTW: the conclusion that learners plateau after a few hundred instances has not been reported widely in the literature. Use this conclusion with care, with a pinch of salt, with healthy scepticism.)
 
@@ -149,6 +147,7 @@ Returning now to the point of this lecture (how to evaluate results from multipl
     * To generate these charts, the performance deltas for some method were sorted to find the lowest and highest quartile as well as the median value.
 
 For example, suppose we generates this log file:
+
 <small>
 {{{
     #data, learner, goal, train, test, repeats, bin, accuracy,    pd,    pf, precision
@@ -171,13 +170,13 @@ This produces a little ascii bar chart where:
     * the first and fourth quartiles are shown as starts "*".
     * the second and third quartiles are the gaps between the stars and the median.
 
-<small>
-{{{
+
+{{{<small>
         #rx, mean,   sd, n,  min,   q1,median,   q3,  max,....................0....................
    oneR/cat,  1.2,  8.0,54,-21.7, -4.3,   4.3,  6.2,  8.7,................****.|...................
  oneR/nbins,  0.0,  0.0, 3,  0.0,  0.0,   0.0,  0.0,  0.0,....................|....................
   bayes/cat,  0.0,  0.0,18,  0.0,  0.0,   0.0,  0.0,  0.0,....................|....................
-bayes/nbins, -1.2,  8.0,54, -8.7, -6.2,  -4.9,  4.3, 21.7,..................*|.****................
+bayes/nbins, -1.2,  8.0,54, -8.7, -6.2,  -4.9,  4.3, 21.7,..................*|.****................</small>
 }}}
 </small>
 This is a little hard to read so we can use a little latex magic to generate a pdf. The preamble
