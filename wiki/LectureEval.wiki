@@ -148,7 +148,6 @@ Returning now to the point of this lecture (how to evaluate results from multipl
 
 For example, suppose we generates this log file:
 
-<small>
 {{{
     #data, learner, goal, train, test, repeats, bin, accuracy,    pd,    pf, precision
 q2s/sonar,   bayes, Mine,   139,   69,       1,   1,    63.77, 61.29, 34.21,     59.38
@@ -159,7 +158,6 @@ q2s/sonar,   bayes, Mine,   139,   69,       1,   3,    73.91, 86.67, 35.90,    
 q2s/sonar,    oneR, Mine,   139,   69,       1,   3,    69.57, 72.09, 34.62,     77.50
 etc 
 }}}
-</small>
 
 We can convert this into quartile charts. To generate these charts, the performance differences for some method on the same data subsets are sorted to find the lowest and highest quartile as well as the median value; e.g
 
@@ -171,12 +169,12 @@ This produces a little ascii bar chart where:
     * the second and third quartiles are the gaps between the stars and the median.
 
 
-{{{<small>
+{{{
         #rx, mean,   sd, n,  min,   q1,median,   q3,  max,....................0....................
    oneR/cat,  1.2,  8.0,54,-21.7, -4.3,   4.3,  6.2,  8.7,................****.|...................
  oneR/nbins,  0.0,  0.0, 3,  0.0,  0.0,   0.0,  0.0,  0.0,....................|....................
   bayes/cat,  0.0,  0.0,18,  0.0,  0.0,   0.0,  0.0,  0.0,....................|....................
-bayes/nbins, -1.2,  8.0,54, -8.7, -6.2,  -4.9,  4.3, 21.7,..................*|.****................</small>
+bayes/nbins, -1.2,  8.0,54, -8.7, -6.2,  -4.9,  4.3, 21.7,..................*|.****................
 }}}
 </small>
 This is a little hard to read so we can use a little latex magic to generate a pdf. The preamble
@@ -198,60 +196,6 @@ contains:
 Then we can generate this:
 
 <img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/latexQuartiles.png">
-<small>{{{
-\begin{figure}[!t]
-\renewcommand{\baselinestretch}{0.5}
-\noindent
-{\scriptsize
-\begin{tabular}{c r  @{} c }
-\multicolumn{3}{c}{Flight} \\\hline
-
-Rank & Change  & 50\% \\
-\hline
-\rowcolor[rgb]{0.8,0.8,0.8}1 & flight2reuse, & \boxplot{17.700000}{3.500000}{21.200000}{12.100000}{33.300000} \\
-\rowcolor[rgb]{0.8,0.8,0.8}2 & improveteam, & \boxplot{20.800000}{4.500000}{25.300000}{9.100000}{34.400000} \\
-\rowcolor[rgb]{0.8,0.8,0.8}2 & none, & \boxplot{20.100000}{6.200000}{26.300000}{11.800000}{38.100000} \\
-3 & reducefunc, & \boxplot{18.700000}{8.500000}{27.200000}{11.000000}{38.200000} \\
-3 & improveprecflex, & \boxplot{22.400000}{7.700000}{30.100000}{11.800000}{41.900000} \\
-3 & flight4reuse, & \boxplot{23.000000}{7.200000}{30.200000}{12.400000}{42.600000} \\
-4 & relaxschedule, & \boxplot{21.000000}{7.500000}{28.500000}{18.400000}{46.900000} \\
-4 & archriskresl, & \boxplot{21.900000}{7.900000}{29.800000}{10.200000}{40.000000} \\
-5 & improvepmat, & \boxplot{21.200000}{10.000000}{31.200000}{15.100000}{46.300000} \\
-6 & flight3reuse, & \boxplot{23.800000}{10.600000}{34.400000}{10.400000}{44.800000} \\
-7 & reducequality, & \boxplot{30.600000}{5.500000}{36.100000}{11.400000}{47.500000} \\
-8 & improvepcap, & \boxplot{29.600000}{9.800000}{39.400000}{8.100000}{47.500000} \\
-9 & improvetooltechplat, & \boxplot{40.800000}{13.000000}{53.800000}{18.400000}{72.200000} \\
-10& flight1reuse, & \boxplot{31.400000}{35.500000}{66.900000}{14.700000}{81.600000} \\
-
-\end{tabular}~\begin{tabular}{|c r    @{} c  }
-\multicolumn{3}{|c}{Ground} \\\hline
-
-Rank & Change &  50\% \\
-\hline
-\rowcolor[rgb]{0.8,0.8,0.8}1 & ground1reuse, & \boxplot{15.400000}{5.100000}{20.500000}{28.500000}{49.000000} \\
-\rowcolor[rgb]{0.8,0.8,0.8}2 & ground4reuse, & \boxplot{22.700000}{6.400000}{29.100000}{6.500000}{35.600000} \\
-\rowcolor[rgb]{0.8,0.8,0.8}2 & ground3reuse, & \boxplot{23.300000}{6.000000}{29.300000}{7.300000}{36.600000} \\
-\rowcolor[rgb]{0.8,0.8,0.8}2 & improvepmat, & \boxplot{22.700000}{9.400000}{32.100000}{5.100000}{37.200000} \\
-\rowcolor[rgb]{0.8,0.8,0.8}2 & improveteam, & \boxplot{21.900000}{10.400000}{32.300000}{9.900000}{42.200000} \\
-3 & archriskresl, & \boxplot{26.100000}{7.800000}{33.900000}{11.100000}{45.000000} \\
-4 & none, & \boxplot{29.100000}{5.000000}{34.100000}{7.600000}{41.700000} \\
-4 & relaxschedule, & \boxplot{30.800000}{2.700000}{33.500000}{7.800000}{41.300000} \\
-4 & improveprecflex, & \boxplot{24.400000}{13.700000}{38.100000}{7.500000}{45.600000} \\
-4 & improvepcap, & \boxplot{25.500000}{10.800000}{36.300000}{10.600000}{46.900000} \\
-5 & reducefunc, & \boxplot{27.800000}{6.900000}{34.700000}{8.000000}{42.700000} \\
-6 & reducequality, & \boxplot{27.200000}{10.700000}{37.900000}{6.900000}{44.800000} \\
-7 & ground2reuse, & \boxplot{25.700000}{23.300000}{49.000000}{30.400000}{79.400000} \\
-8 & improvetooltechplat, & \boxplot{38.800000}{20.100000}{58.900000}{6.000000}{64.900000} \\
-\end{tabular}
-}
-
-\caption{EFFORT: staff months (normalized 0..100\%):  top-ranked changes are shaded.}
-\label{fig:effort}
-\end{figure}
-}}}
-</small>
-
-
 {{{
 \begin{figure}[!t]
 \renewcommand{\baselinestretch}{0.5}
@@ -259,6 +203,7 @@ Rank & Change &  50\% \\
 {\scriptsize
 \begin{tabular}{c r  @{} c }
 \multicolumn{3}{c}{Flight} \\\hline
+
 Rank & Change  & 50\% \\
 \hline
 \rowcolor[rgb]{0.8,0.8,0.8}1 & flight2reuse, & \boxplot{17.700000}{3.500000}{21.200000}{12.100000}{33.300000} \\
@@ -275,8 +220,10 @@ Rank & Change  & 50\% \\
 8 & improvepcap, & \boxplot{29.600000}{9.800000}{39.400000}{8.100000}{47.500000} \\
 9 & improvetooltechplat, & \boxplot{40.800000}{13.000000}{53.800000}{18.400000}{72.200000} \\
 10& flight1reuse, & \boxplot{31.400000}{35.500000}{66.900000}{14.700000}{81.600000} \\
+
 \end{tabular}~\begin{tabular}{|c r    @{} c  }
 \multicolumn{3}{|c}{Ground} \\\hline
+
 Rank & Change &  50\% \\
 \hline
 \rowcolor[rgb]{0.8,0.8,0.8}1 & ground1reuse, & \boxplot{15.400000}{5.100000}{20.500000}{28.500000}{49.000000} \\
@@ -295,10 +242,13 @@ Rank & Change &  50\% \\
 8 & improvetooltechplat, & \boxplot{38.800000}{20.100000}{58.900000}{6.000000}{64.900000} \\
 \end{tabular}
 }
+
 \caption{EFFORT: staff months (normalized 0..100\%):  top-ranked changes are shaded.}
 \label{fig:effort}
 \end{figure}
 }}}
+
+
 In a recent study of defect detectors this code was used to plot 100,000s of results into a very small space:
 
 <img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/quartile.png">
@@ -306,28 +256,23 @@ In a recent study of defect detectors this code was used to plot 100,000s of res
 
 
 From this diagram, we seek stand-out results.
-
     * A stand-out effect is a large and positive median with a highest quartile bunched up towards the maximum figure.
     * A negative stand-out is similar, but highly skewed towards the negative.
 
 In the above diagram, the logNums.nb are a stand-out effect since:
-
     * it has much higher medians than all the rest
     * the upper quartile is highly skewed towards the maximum
 
 The oneR results are a negative stand-out since:
-
     * it is highly skewed towards the negative.
     * In fact, it never does better than anything else, ever (since none of its deltas are positive).
 
 My preference for quartile charts stems from several factors:
-
     * They can summarize very large experiments very succinctly;
     * Unlike t-tests (discussed below), they make no assumptions the underlying distributions;
     * They only show that method1 is better than method2 if method1 exhibits stand-out effects.
 
 T-tests, on the other hand, condone conclusions like "at the 95% confidence level a difference of 2% in this methods was shown to be statistically significant".
-
     * Sometimes, "statistically significant" is actually quite insignificant and unimpressive.
     * And t-tests have their own subtle problems.
 
