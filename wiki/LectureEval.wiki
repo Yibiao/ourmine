@@ -88,7 +88,6 @@ correlation = cov_x_y / (pop_sd_x * pop_sd_y)
 
 How to combine (say) PD and PF (different applications have different cost/dependability requirements).
 <img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/roc.png">
-<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/roc.png">
 
     * A [http://code.google.com/p/ourmine/wiki/Mm#Menzies07a recent study] of defect detectors used:
           * Note: generalizes to N-dimensional evaluation (divide by sqrt(N))
@@ -176,7 +175,7 @@ This produces a little ascii bar chart where:
   bayes/cat,  0.0,  0.0,18,  0.0,  0.0,   0.0,  0.0,  0.0,....................|....................
 bayes/nbins, -1.2,  8.0,54, -8.7, -6.2,  -4.9,  4.3, 21.7,..................*|.****................
 }}}
-</small>
+
 This is a little hard to read so we can use a little latex magic to generate a pdf. The preamble
 contains:
 {{{
@@ -251,7 +250,7 @@ Rank & Change &  50\% \\
 
 In a recent study of defect detectors this code was used to plot 100,000s of results into a very small space:
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/quartile.png">
+<img width=500 src="http://ourmine.googlecode.com/svn/trunk/share/img/quartile.png">
 
 
 
@@ -282,7 +281,7 @@ Students of data mining should be aware that this view of mine is an (extremely)
 
 When Hall & Holmes report the results of their feature subset selectors, they present the following table of mean performances:
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/resultshh.png">
+<img width=500 src="http://ourmine.googlecode.com/svn/trunk/share/img/resultshh.png">
 
 Note the white and black circles comparing the column one figures to the rest. This show results that are significantly different- a concept we will explore in just a second.
 
@@ -320,23 +319,23 @@ Anyway, what does statistically different mean?
           * let sumSq be the sum of the square of the values; i.e. sumSq = sumSq + value*value
           * let the mean and standard deviation be calculated as follows:
 {{{
-            function mean(sum,n)  {
-                return sum/n 
-            }
-            function standardDeviation(sumSq,sum,n)  {
-                return sqrt((sumSq-((sum*sum)/n))/(n-1)) 
-            }
-}}
+function mean(sum,n)  {
+     return sum/n 
+}
+function standardDeviation(sumSq,sum,n)  {
+     return sqrt((sumSq-((sum*sum)/n))/(n-1)) 
+}
+}}}
 (BTW, A "normal" or Gaussian distribution has a middle value (the mean) and spreads out evenly on both sides by an amount controlled by the standard deviation: large deviations lead to broad curves (e.g. the blue curve) and small deviations lead to sharply falling curves (e.g. the red curve).
 )
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/normals.png">
+<img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/normals.png">
 
 To test if two distributions are different, we assume that they are normal curves and seek all pairs of performance deltas and study the mean and standard deviation as follows:
-
-    function tval(mean,sd,n)  { 
-        return mean/(sd/sqrt(n)) 
-    }
-
+{{{
+function tval(mean,sd,n)  { 
+    return mean/(sd/sqrt(n)) 
+}
+}}}
 If this fraction is small enough, then:
 
     * the mean of the differences is small, so the two distributions are the same;
