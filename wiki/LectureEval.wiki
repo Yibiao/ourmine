@@ -133,7 +133,7 @@ In many of the standard UCI data sets, learning plateaus long before data is exh
 
 <img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/plateau.png">
 
-<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/platueas.png">
+<img width=600 src="http://ourmine.googlecode.com/svn/trunk/share/img/plateaus.png">
 
 (BTW: the conclusion that learners plateau after a few hundred instances has not been reported widely in the literature. Use this conclusion with care, with a pinch of salt, with healthy scepticism.)
 
@@ -458,4 +458,3 @@ use Mann-Whitney (shown below):
 <img width=400 src="http://ourmine.googlecode.com/svn/trunk/share/img/mwu.png">
 
 For full source  see [http://ourmine.googlecode.com/svn/trunk/our/lib/awk/ranked.awk].
-
