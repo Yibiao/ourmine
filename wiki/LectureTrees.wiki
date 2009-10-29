@@ -114,7 +114,7 @@ Solution 1: the gain ratio
 
 == Problem: Conclusion Instability ==
 
-Recall the shape of a log curve <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Logarithms.svg/456px-Logarithms.svg.png">.
+Recall the shape of a log curve <img width=300 src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Logarithms.svg/456px-Logarithms.svg.png">.
 
 Now play with small values of -p{{{*}}}log(p); consider what happens if I change those values by plus/minus 30%.
 
