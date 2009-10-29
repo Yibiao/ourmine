@@ -71,7 +71,7 @@ Computing the information gain
 == Problem: Numeric Variables ==
 
 No problem:
-  * use [http://code.google.com/p/ourmine/wiki/LecturePrep#Supervised_Discretization cliff learning] to splot the numerics
+  * use [http://code.google.com/p/ourmine/wiki/LecturePrep#Supervised_Discretization cliff learning] to split the numerics
   * Standard method proposed by [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 Fayyad].
 
 
@@ -119,8 +119,8 @@ Recall the shape of a log curve <img width=300 src="http://upload.wikimedia.org/
 Now play with small values of -p{{{*}}}log(p); consider what happens if I change those values by plus/minus 30%.
 
 The great ones say:
-  * It is well known that the error rate of a tree on the cases from which it was constructed (the resubstitution error rate) is much lower than the error rate on unseen cases (the predictive error rate). 
-  * For example, on a well-known letter recognition dataset with 20,000 cases, the resubstitution error rate for C4.5 is 4%, but the error rate from a leave-one-out (20,000-fold) cross-validation is 11.7%. 
+  * It is well known that the error rate of a tree on the cases from which it was constructed (the re-substitution error rate) is much lower than the error rate on unseen cases (the predictive error rate). 
+  * For example, on a well-known letter recognition dataset with 20,000 cases, the re-substitution error rate for C4.5 is 4%, but the error rate from a leave-one-out (20,000-fold) cross-validation is 11.7%. 
   * As this demonstrates, leaving out a single case from 20,000 often affects the tree that is constructed! 
 
 == Problem: Comprehension ==
