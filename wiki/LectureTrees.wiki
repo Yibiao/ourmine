@@ -1,8 +1,8 @@
 #summary Learning Trees
 
 In this lecture, we discuss "iterative dichotomization" 
-* Split thigns up
-* Recurse on each split
+  * Split things up
+  * Recurse on each split
 
 = How to generate a tree =
 
@@ -25,7 +25,7 @@ Different tree learners result from different selections of
                 * Expected values under the normal curve 
 					<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/350px-Standard_deviation_diagram.svg.png">
           * condense: report the average of the instances in each bag. 
-    * M5Prime: (model trees)
+    * M5prime: (model trees)
           * measure: standard deviation
           * condense: generate a linear model of the form a+b {{{*}}} x1 +c {{{*}}} x2 + d {{{*}}} x3 +... 
     * J48: (decision trees)
@@ -35,7 +35,7 @@ Different tree learners result from different selections of
 
 = Example: C4.5 (a.k.a. J48) =
 
-<img src="http://www.csee.wvu.edu/~timm/cs591o/old/images/splits.jpg">
+<img width=500 src="http://www.csee.wvu.edu/~timm/cs591o/old/images/splits.jpg">
 
 Q: which attribute is the best to split on?
 
@@ -45,15 +45,15 @@ Heuristic: choose the attribute that produces the "purest" nodes (purity = not-m
 
 e.g. Outlook= sunny
 
-    * info((2,3))= entropy(2/5,3/5) = -2/5 * log(2/5) - 3/5 {{{*}}} log(3/5) = 0.971 bits
+    * info((2,3))= entropy(2/5,3/5) = -2/5 {{{*}}} log(2/5) - 3/5 {{{*}}} log(3/5) = 0.971 bits
 
 Outlook = overcast
 
-    * info((4,0)) = entropy(1,0) = -1 * log(1) - 0 {{{*}}} log(0) = 0 bits
+    * info((4,0)) = entropy(1,0) = -1 {{{*}}} log(1) - 0 {{{*}}} log(0) = 0 bits
 
 Outlook = rainy
 
-    * info((3,2)) = entropy(3/5, 2/5) = -3/5 * log(3/5) - 2/5 {{{*}}} log(2/5) = 0.971 bits
+    * info((3,2)) = entropy(3/5, 2/5) = -3/5 {{{*}}} log(3/5) - 2/5 {{{*}}} log(2/5) = 0.971 bits
 
 Expected info for Outlook = Weighted sum of the above
 
@@ -119,89 +119,11 @@ Recall the shape of a log curve <img src="http://upload.wikimedia.org/wikipedia/
 Now play with small values of -p{{{*}}}log(p); consider what happens if I change those values by plus/minus 30%.
 
 The great ones say:
-* It is well known that the error rate of a tree on the cases from which it was constructed (the resubstitution error rate) is much lower than the error rate on unseen cases (the predictive error rate). 
-* For example, on a well-known letter recognition dataset with 20,000 cases, the resubstitution error rate for C4.5 is 4%, but the error rate from a leave-one-out (20,000-fold) cross-validation is 11.7%. 
-* As this demonstrates, leaving out a single case from 20,000 often affects the tree that is constructed! 
+  * It is well known that the error rate of a tree on the cases from which it was constructed (the resubstitution error rate) is much lower than the error rate on unseen cases (the predictive error rate). 
+  * For example, on a well-known letter recognition dataset with 20,000 cases, the resubstitution error rate for C4.5 is 4%, but the error rate from a leave-one-out (20,000-fold) cross-validation is 11.7%. 
+  * As this demonstrates, leaving out a single case from 20,000 often affects the tree that is constructed! 
 
-
-= Other tree learning =
-== Regression trees ==
-
-    * Differences to decision trees:
-    * Splitting criterion: minimizing intra-subset variation
-    * Pruning criterion: based on numeric error measure
-    * Leaf node predicts average class values of training instances reaching that node
-    * Can approximate piecewise constant functions
-    * Easy to interpret:
-{{{
-          curb-weight <= 2660 :
-          |   curb-weight <= 2290 :
-          |   |   curb-weight <= 2090 :
-          |   |   |   length <= 161 : price=6220
-          |   |   |   length >  161 : price=7150
-          |   |   curb-weight >  2090 : price=8010
-          |   curb-weight >  2290 :
-          |   |   length <= 176 : price=9680
-          |   |   length >  176 :
-          |   |   |   normalized-losses <= 157 : price=10200
-          |   |   |   normalized-losses >  157 : price=15800
-          curb-weight >  2660 :
-          |   width <= 68.9 : price=16100
-          |   width >  68.9 : price=25500
-}}}
-
-    * More sophisticated version: model trees
-
-== Model trees ==
-
-    * Regression trees with linear regression functions at each node
-{{{
-          curb-weight <= 2660 :
-          |   curb-weight <= 2290 : LM1
-          |   curb-weight >  2290 :
-          |   |   length <= 176 : LM2
-          |   |   length >  176 : LM3
-          curb-weight >  2660 :
-          |   width <= 68.9 : LM4
-          |   width >  68.9 : LM5
-          .
-          LM1:  price = -5280 + 6.68 * normalized-losses
-                              + 4.44 * curb-weight
-                              + 22.1 * horsepower - 85.8 * city-mpg
-                              + 98.6 * highway-mpg
-          LM2:  price = 9680
-          LM3:  price = -1100 + 91 * normalized-losses
-          LM4:  price = 9940 + 47.5 * horsepower
-          LM5:  price = -19000 + 13.2 * curb-weight
-}}}
-
-    * Linear regression applied to instances that reach a node after full regression tree has been built
-    * Only a subset of the attributes is used for LR
-    * Attributes occurring in subtree (+maybe attributes occurring in path to the root)
-    * Fast: overhead for LR not large because usually only a small subset of attributes is used in tree
-
-Building the tree
-
-    * Splitting criterion: standard deviation reduction into i bins
-    * SDR = sd(T) - sum( ( |Ti| / |T| {{{*}}} sd(Ti) ) )
-          * where (|T| = number of instances in that tree).
-    * Termination criteria (important when building trees for numeric prediction):
-    * Standard deviation becomes smaller than certain fraction of sd for full training set (e.g. 5%)
-    * Too few instances remain (e.g. less than four)
-
-Smoothing (Model Trees)
-
-    * Naive method for prediction outputs value of LR for corresponding leaf node
-    * Performance can be improved by smoothing predictions using internal LR models
-    * Predicted value is weighted average of LR models along path from root to leaf
-    * Smoothing formula: p' = (np+kq)/(n+k)
-    * p' is what gets passed up the tree
-    * p is what got passed from down the tree
-    * q is the value predicted by the linear models at this node
-    * n is the number of examples that fall down to here
-    * k magic smoothing constant; default=2
-
-= Problem: Comprehension =
+== Problem: Comprehension ==
 
 Trees can hide simple rules
 
@@ -288,3 +210,81 @@ Example 3: the replicated subtree problem
                           then b 
       )
 }}}
+= Other tree learning =
+== Regression trees ==
+
+    * Differences to decision trees:
+    * Splitting criterion: minimizing intra-subset variation
+    * Pruning criterion: based on numeric error measure
+    * Leaf node predicts average class values of training instances reaching that node
+    * Can approximate piecewise constant functions
+    * Easy to interpret:
+{{{
+          curb-weight <= 2660 :
+          |   curb-weight <= 2290 :
+          |   |   curb-weight <= 2090 :
+          |   |   |   length <= 161 : price=6220
+          |   |   |   length >  161 : price=7150
+          |   |   curb-weight >  2090 : price=8010
+          |   curb-weight >  2290 :
+          |   |   length <= 176 : price=9680
+          |   |   length >  176 :
+          |   |   |   normalized-losses <= 157 : price=10200
+          |   |   |   normalized-losses >  157 : price=15800
+          curb-weight >  2660 :
+          |   width <= 68.9 : price=16100
+          |   width >  68.9 : price=25500
+}}}
+
+    * More sophisticated version: model trees
+
+== Model trees ==
+
+    * Regression trees with linear regression functions at each node
+{{{
+          curb-weight <= 2660 :
+          |   curb-weight <= 2290 : LM1
+          |   curb-weight >  2290 :
+          |   |   length <= 176 : LM2
+          |   |   length >  176 : LM3
+          curb-weight >  2660 :
+          |   width <= 68.9 : LM4
+          |   width >  68.9 : LM5
+          .
+          LM1:  price = -5280 + 6.68 * normalized-losses
+                              + 4.44 * curb-weight
+                              + 22.1 * horsepower - 85.8 * city-mpg
+                              + 98.6 * highway-mpg
+          LM2:  price = 9680
+          LM3:  price = -1100 + 91 * normalized-losses
+          LM4:  price = 9940 + 47.5 * horsepower
+          LM5:  price = -19000 + 13.2 * curb-weight
+}}}
+
+    * Linear regression applied to instances that reach a node after full regression tree has been built
+    * Only a subset of the attributes is used for LR
+    * Attributes occurring in subtree (+maybe attributes occurring in path to the root)
+    * Fast: overhead for LR not large because usually only a small subset of attributes is used in tree
+
+Building the tree
+
+    * Splitting criterion: standard deviation reduction into i bins
+    * SDR = sd(T) - sum( ( |Ti| / |T| {{{*}}} sd(Ti) ) )
+          * where (|T| = number of instances in that tree).
+    * Termination criteria (important when building trees for numeric prediction):
+    * Standard deviation becomes smaller than certain fraction of sd for full training set (e.g. 5%)
+    * Too few instances remain (e.g. less than four)
+
+Smoothing (Model Trees)
+
+    * Naive method for prediction outputs value of LR for corresponding leaf node
+    * Performance can be improved by smoothing predictions using internal LR models
+    * Predicted value is weighted average of LR models along path from root to leaf
+    * Smoothing formula: p' = (np+kq)/(n+k)
+    * p' is what gets passed up the tree
+    * p is what got passed from down the tree
+    * q is the value predicted by the linear models at this node
+    * n is the number of examples that fall down to here
+    * k magic smoothing constant; default=2
+
+
