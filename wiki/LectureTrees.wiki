@@ -158,7 +158,6 @@ Example 1: Simple rules, complex tree
 
 Example 2: Simple tree, complex rules
     * Tree:
-
 {{{
       if x == 1
          then if y == 1
