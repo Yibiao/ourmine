@@ -1,0 +1,290 @@
+#summary Learning Trees
+
+In this lecture, we discuss "iterative dichotomization" 
+* Split thigns up
+* Recurse on each split
+
+= How to generate a tree =
+
+    * Given a bag of mixed-up stuff.
+          * Need a measure of "mixed-up" 
+    * Split: Find something that divides up the bag in two new sub-bags
+          * And each sub-bag is less mixed-up;
+          * Each split is the root of a sub-tree. 
+    * Recurse: repeat for each sub-bag
+          * i.e. on just the data that falls into each part of the split
+                * Need a Stop rule
+                * Condense the instances that fall into each sub-bag 
+    * Prune back the generated tree. 
+
+Different tree learners result from different selections of
+
+    * CART: (regression trees)
+          * measure: standard deviation
+                * Three "normal" curves with [http://upload.wikimedia.org/wikipedia/commons/1/1b/Normal_distribution_pdf.png different standard deviations]
+                * Expected values under the normal curve 
+					<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/350px-Standard_deviation_diagram.svg.png">
+          * condense: report the average of the instances in each bag. 
+    * M5Prime: (model trees)
+          * measure: standard deviation
+          * condense: generate a linear model of the form a+b {{{*}}} x1 +c {{{*}}} x2 + d {{{*}}} x3 +... 
+    * J48: (decision trees)
+          * measure: "entropy"
+			<img src="http://upload.wikimedia.org/math/a/e/f/aef122e9c7f64d071b2acb4d17e88000.png">
+          * condense: report majority class 
+
+= Example: C4.5 (a.k.a. J48) =
+
+<img src="http://www.csee.wvu.edu/~timm/cs591o/old/images/splits.jpg">
+
+Q: which attribute is the best to split on?
+
+A: the one which will result in the smallest tree:
+
+Heuristic: choose the attribute that produces the "purest" nodes (purity = not-mixed-up)
+
+e.g. Outlook= sunny
+
+    * info((2,3))= entropy(2/5,3/5) = -2/5 * log(2/5) - 3/5 {{{*}}} log(3/5) = 0.971 bits
+
+Outlook = overcast
+
+    * info((4,0)) = entropy(1,0) = -1 * log(1) - 0 {{{*}}} log(0) = 0 bits
+
+Outlook = rainy
+
+    * info((3,2)) = entropy(3/5, 2/5) = -3/5 * log(3/5) - 2/5 {{{*}}} log(2/5) = 0.971 bits
+
+Expected info for Outlook = Weighted sum of the above
+
+    * info((3,2),(4,0),(3,2)) = 5/14 {{{*}}} 0.971 + 4/14 {{{*}}} 0 + 5/14 {{{*}}} 0.971 = 0.693
+
+Computing the information gain
+
+    * e.g. information before splitting minus information after splitting
+    * e.g. gain for attributes from weather data:
+    * gain("Outlook") = info([9,5]) - info([2,3],[4,0],[3,2]) = 0.940 - 0.963 = 0.247 bits
+    * gain("Temperature") = 0.247 bits
+    * gain("Humidity") = 0.152 bits
+    * gain("Windy") = 0.048 bits
+
+== Problem: Numeric Variables ==
+
+No problem:
+  * use [http://code.google.com/p/ourmine/wiki/LecturePrep#Supervised_Discretization cliff learning] to splot the numerics
+  * Standard method proposed by [http://code.google.com/p/ourmine/wiki/Ff#Fayyad93 Fayyad].
+
+
+== Problem: Highly-branching attributes ==
+
+Problematic:
+
+    * attributes with a large number of values (extreme case: ID code)
+    * Subsets are more likely to be pure if there is a large number of values
+    * Information gain is biased towards choosing attributes with a large number of values
+    * This may result in over fitting (selection of an attribute that is non-optimal for prediction); e.g.
+{{{
+          ID code    Outlook     Temp.    Humidity    Windy    Play
+            A          Sunny       Hot      High        False    No
+            B          Sunny       Hot      High        True     No
+            C          Overcast  Hot        High        False    Yes
+            D          Rainy       Mild     High        False    Yes
+            E          Rainy       Cool     Normal      False    Yes
+            F          Rainy       Cool     Normal      True     No
+            G          Overcast    Cool     Normal      True     Yes
+            H          Sunny       Mild     High        False    No
+            I          Sunny       Cool     Normal      False    Yes
+            J          Rainy       Mild     Normal      False    Yes
+            K          Sunny       Mild     Normal      True     Yes
+            L          Overcast    Mild     High        True     Yes
+            M          Overcast    Hot      Normal      False    Yes
+            N          Rainy       Mild     High        True     No%%
+}}}
+    * If we split on ID we get N sub-trees with one class in each;
+    * info("ID code")= info((0,1)) + info((0,1)) + ... + info((0,1)) = 0 bits
+    * So the info gain is 0.940 bits
+
+Solution 1: Ignore columns with more than N unique values (where N = m{{{*}}}NumberOfRows).
+Solution 1: the gain ratio
+
+    * Gain ratio: a modification of the information gain that reduces its bias
+    * Gain ratio takes number and size of branches into account when choosing an attribute
+    * It corrects the information gain by taking the intrinsic information of a split into account
+    * Intrinsic informations: entropy of distribution of instances into branches (i.e. how much info do we need to tell which branch an instance belongs to)
+
+== Problem: Conclusion Instability ==
+
+Recall the shape of a log curve <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Logarithms.svg/456px-Logarithms.svg.png">.
+
+Now play with small values of -p{{{*}}}log(p); consider what happens if I change those values by plus/minus 30%.
+
+The great ones say:
+* It is well known that the error rate of a tree on the cases from which it was constructed (the resubstitution error rate) is much lower than the error rate on unseen cases (the predictive error rate). 
+* For example, on a well-known letter recognition dataset with 20,000 cases, the resubstitution error rate for C4.5 is 4%, but the error rate from a leave-one-out (20,000-fold) cross-validation is 11.7%. 
+* As this demonstrates, leaving out a single case from 20,000 often affects the tree that is constructed! 
+
+
+= Other tree learning =
+== Regression trees ==
+
+    * Differences to decision trees:
+    * Splitting criterion: minimizing intra-subset variation
+    * Pruning criterion: based on numeric error measure
+    * Leaf node predicts average class values of training instances reaching that node
+    * Can approximate piecewise constant functions
+    * Easy to interpret:
+{{{
+          curb-weight <= 2660 :
+          |   curb-weight <= 2290 :
+          |   |   curb-weight <= 2090 :
+          |   |   |   length <= 161 : price=6220
+          |   |   |   length >  161 : price=7150
+          |   |   curb-weight >  2090 : price=8010
+          |   curb-weight >  2290 :
+          |   |   length <= 176 : price=9680
+          |   |   length >  176 :
+          |   |   |   normalized-losses <= 157 : price=10200
+          |   |   |   normalized-losses >  157 : price=15800
+          curb-weight >  2660 :
+          |   width <= 68.9 : price=16100
+          |   width >  68.9 : price=25500
+}}}
+
+    * More sophisticated version: model trees
+
+== Model trees ==
+
+    * Regression trees with linear regression functions at each node
+{{{
+          curb-weight <= 2660 :
+          |   curb-weight <= 2290 : LM1
+          |   curb-weight >  2290 :
+          |   |   length <= 176 : LM2
+          |   |   length >  176 : LM3
+          curb-weight >  2660 :
+          |   width <= 68.9 : LM4
+          |   width >  68.9 : LM5
+          .
+          LM1:  price = -5280 + 6.68 * normalized-losses
+                              + 4.44 * curb-weight
+                              + 22.1 * horsepower - 85.8 * city-mpg
+                              + 98.6 * highway-mpg
+          LM2:  price = 9680
+          LM3:  price = -1100 + 91 * normalized-losses
+          LM4:  price = 9940 + 47.5 * horsepower
+          LM5:  price = -19000 + 13.2 * curb-weight
+}}}
+
+    * Linear regression applied to instances that reach a node after full regression tree has been built
+    * Only a subset of the attributes is used for LR
+    * Attributes occurring in subtree (+maybe attributes occurring in path to the root)
+    * Fast: overhead for LR not large because usually only a small subset of attributes is used in tree
+
+Building the tree
+
+    * Splitting criterion: standard deviation reduction into i bins
+    * SDR = sd(T) - sum( ( |Ti| / |T| {{{*}}} sd(Ti) ) )
+          * where (|T| = number of instances in that tree).
+    * Termination criteria (important when building trees for numeric prediction):
+    * Standard deviation becomes smaller than certain fraction of sd for full training set (e.g. 5%)
+    * Too few instances remain (e.g. less than four)
+
+Smoothing (Model Trees)
+
+    * Naive method for prediction outputs value of LR for corresponding leaf node
+    * Performance can be improved by smoothing predictions using internal LR models
+    * Predicted value is weighted average of LR models along path from root to leaf
+    * Smoothing formula: p' = (np+kq)/(n+k)
+    * p' is what gets passed up the tree
+    * p is what got passed from down the tree
+    * q is the value predicted by the linear models at this node
+    * n is the number of examples that fall down to here
+    * k magic smoothing constant; default=2
+
+= Problem: Comprehension =
+
+Trees can hide simple rules
+
+Naive conversion
+
+    * One rule for each leaf:
+    * Antecedent contains a condition for every node on the path from the root to the leaf
+
+Problems with Naive Conversion
+
+Example 1: Simple rules, complex tree
+
+    * Rules:
+{{{
+      If a and b then x 
+      If c and d then x
+}}}
+    * Tree:
+{{{
+      if a == y 
+      then if b == y 
+           then x
+           else if b == n
+                then if c == y
+                     then if d == y 
+                          then x
+      else if b == n
+           then if c == y 
+                then if d == y
+                     then x
+}}}
+
+Example 2: Simple tree, complex rules
+    * Tree:
+
+{{{
+      if x == 1
+         then if y == 1
+              then b
+              else a
+         else if y == 1
+              then a
+              else b
+}}}
+    * Rules (unaware of structure)
+{{{
+      if x == 1 and y == 0 then a
+      if x == 0 and y == 1 then a
+      if x == 0 and y == 0 then b
+      if x == 1 and y == 1 then b
+}}}
+
+Example 3: the replicated subtree problem
+    * Rules:
+{{{
+      if x == 1 and y == 1 then a
+      if z == 1 and w == 1 then a
+      otherwise b
+}}}
+    * Tree:
+{{{
+      if x == 1
+      then if y == 1
+           then a
+           else if y == 2
+                then SUB
+                else if y == 3
+                     then SUB
+       else if y == 2
+            then SUB
+            else if y == 3
+                 then SUB
+
+      SUB : ( if z == 1
+              then if w == 1
+                   then a
+                   else if w == 2
+                         then b
+                         else if w == 3
+                               then b
+               else if z == 2
+                     then b
+                     else if z == 3
+                          then b 
+      )
+}}}
