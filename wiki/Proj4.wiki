@@ -23,9 +23,9 @@ Your mission is to report what works best. Please try to try a 5x5 cross-val of 
     * How to write posters
       * For a sample poster, see http://ourmine.googlecode.com/svn/trunk/share/pdf/poster.pdf
       * You can write this using
-         - Latex (use "svn export http://unbox.org/wisp/var/09/pom2/doc/ase09/poster/pom2poster/ poster" then run "make")
-         - Powerpoint : layup one page in 5pt text. Won't look as good as the Latex, but some will find it easier.
-         - Open Office, etc (see the Powerpoint advice)
+         * Latex (use "svn export http://unbox.org/wisp/var/09/pom2/doc/ase09/poster/pom2poster/ poster" then run "make")
+         * Powerpoint : layup one page in 5pt text. Won't look as good as the Latex, but some will find it easier.
+         * Open Office, etc (see the Powerpoint advice)
       * Basement of library can print these; you can print non-gloss ($6) or full gloss ($12).
          * For test prints, A3 sheets are readable, and cheap to produce
     * Note: remember to commit your poster.pdf somewhere in ourmine/branches/yourgroup/../etc/proj/4
