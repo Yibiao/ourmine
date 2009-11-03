@@ -12,7 +12,13 @@ To do
  * Make the output conform to the input of the WinLossTie scripts
  * Generate quartiles and win-loss-tie charts 
  * Generate a 3' by 4' landscape poster
-    * Poster should co
+    * Poster should take half its space (succinctly) describing the pre-processors, clusterers, discretizers, FSSers, and classifiers.
+    * Poster should also include a table describing the data used in the experiment:
+         * name
+         * number of discrete attributes
+         * number of continuous attributes
+		 * class data (e.g. number of discrete classes or, for numeric classes, min, max, median, std dev.
+         * (Remember to select your data sets such that 
     * Basement of library can print these; you can print non-gloss ($6) or full gloss ($12).
     * For test prints, A3 sheets are readable, and cheap to produce
     * For a sample poster, see http://ourmine.googlecode.com/svn/trunk/share/pdf/poster.pdf
