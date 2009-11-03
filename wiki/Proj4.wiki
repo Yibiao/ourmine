@@ -1,5 +1,11 @@
 #summary Last project
 
+Demos: Monday, Tuesday first week of December. Note: grade for these = 0 marks but attendance is compulsory.
+
+Presentations: class time, second week of December.
+
+Final report (cs573 only): Monday third week of November
+
 = CS473 =
 
 Your mission is to report what works best. Please try to try a 5x5 cross-val of combinations of your pre-processors, clusterers, discretizers, FSSers, classifiers to see which generates most PDs and least PFs. Compare all results using the Mann-Whitney "winLossTie" script. 
