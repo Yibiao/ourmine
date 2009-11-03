@@ -41,7 +41,7 @@ Note: there is no "final report document": the poster will suffice.
 You too must generate posters and give a presentation using the same format as the cs473 people.
 
 Note: you must also generate a "final report document".
- 
-= Errata =
 
+= Errata =
+S
 Definition of nomograms: log(b/r) not log(b)/log(r).
