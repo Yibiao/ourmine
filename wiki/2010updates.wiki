@@ -1,0 +1,13 @@
+#summary stuff to change next time around
+
+== Org changes ==
+
+ * more student control of projects
+ * give them a  text book
+ *  weekly homeworks (400)
+ * give tutorials on my lisp and ourmine
+
+== Content changes ==
+
+ * adversarial   search : http://www.cs.washington.edu/homes/pedrod/papers/kdd04.pdf
+ * single pass k-menas: (also, a good example of a research paper) :http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2607&rep=rep1&type=pdf
