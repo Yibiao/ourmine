@@ -10,4 +10,4 @@
 == Content changes ==
 
  * adversarial   search : http://www.cs.washington.edu/homes/pedrod/papers/kdd04.pdf
- * single pass k-menas: (also, a good example of a research paper) :http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.101.2607&rep=rep1&type=pdf
+ * single pass k-menas: (also, a good example of a research paper) :http://www.sigmod.org/disc/disc01/out/websites/kdd_explorations_2/farnstrom.pdf
