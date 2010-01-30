@@ -11,3 +11,11 @@
 
  * adversarial   search : http://www.cs.washington.edu/homes/pedrod/papers/kdd04.pdf
  * single pass k-menas: (also, a good example of a research paper) :http://www.sigmod.org/disc/disc01/out/websites/kdd_explorations_2/farnstrom.pdf
+
+== model trees ==
+
+Incremental Learning of Linear Model Trees
+ 	Machine Learning
+Issue	Volume 61, Numbers 1-3 / November, 2005 
+Pages	5-48
+Duncan Potts1  and Claude Sammut1 
