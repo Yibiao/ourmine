@@ -22,3 +22,73 @@ Machine Learning
 Issue	Volume 61, Numbers 1-3 / November, 2005 
 Pages	5-48
 Duncan Potts1  and Claude Sammut. 05pottsSammut.pdf
+
+== simpler code ==
+
+{{{
+(defmacro doitems ((one n list &optional out) &body body )
+  `(let ((,n -1))
+     (dolist (,one ,list ,out)  (incf ,n) ,@body)))
+
+(defmacro dohash ((key value hash &optional end) &body body)
+  `(progn (maphash #'(lambda (,key ,value) ,@body) ,hash)
+          ,end))
+
+(defmacro h+ (key hash &optional (n 1))
+  `(incf (gethash ,key ,hash ,n)))
+
+;;;;
+(defun file->lists (f)
+  (with-open-file (str f) 
+    (stream->list  str)))
+
+(defun stream->list (str &optional 
+                     (line (read-line str nil)))
+  (when line
+      (cons (string->list line)
+            (stream->list str))))
+
+(defun string->list (line)
+  (read-from-string
+   (concatenate 'string "(" (reverse line) ")")))
+
+;;;;
+(defstruct (data (:print-function data-print)) 
+  rows 
+  (n 0) 
+  (classes (make-hash-table)) 
+  (h (make-hash-table :test 'equal)))
+
+(defun data-print (d s k)
+  (declare (ignore k))
+  (format s "#S~a" 
+          `(data n ,(data-n d) classes ,(data-classes d))))
+
+(defun file->data (file &optional (label #'identity))
+  (lists->data 
+   (make-data :rows (file->lists file)) 
+   label))
+
+(defun lists->data (dat label)
+  (dolist (list (data-rows dat) dat)
+    (when list
+      (list->data list dat label))))
+
+(defun list->data (list dat label)
+  (let ((class (funcall label (first list))))
+    (incf (data-n dat))
+    (h+ class (data-classes dat))
+    (doitems (one n (rest list))
+        (h+ `(,class ,n ,one) (data-h dat)))))
+
+(defun vowelp (x) (member x '(a e i o u)))
+
+;;;;
+(defun test1 ()
+  (file->data  
+   "letter.dat"
+   #'(lambda (x)
+       (if (vowelp x) 1 0))))
+
+(test1)
+}}}
