@@ -1,7 +1,6 @@
 #summary stuff to change next time around
 
- <img  align=middle
-  5 src="http://chart.apis.google.com/chart?cht=tx&chl=x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
+ <img  align=middle src="http://chart.apis.google.com/chart?cht=tx&chl=x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 
 == Org changes ==
 
