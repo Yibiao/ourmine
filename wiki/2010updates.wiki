@@ -10,10 +10,15 @@
 == Content changes ==
 
  * adversarial   search : http://www.cs.washington.edu/homes/pedrod/papers/kdd04.pdf
-
- * single pass k-menas: (also, a good example of a research paper) :http://www.sigmod.org/disc/disc01/out/websites/kdd_explorations_2/farnstrom.pdf
-
  * discretization: [YangWebb09]
+
+=== K-means ===
+ * single pass k-menas: (a
+lso, a good example of a research paper) :http://www.sigmod.org/disc/disc01/out/websites/kdd_explorations_2/farnstrom.pdf
+
+ * triangle inequality and k-means : http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.14.8422&rep=rep1&type=pdf
+ 
+ * alternatives to k-meanshhttp://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.6.2789&rep=rep1&type=pdf
 
 == model trees ==
 
