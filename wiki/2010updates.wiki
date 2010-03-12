@@ -9,6 +9,10 @@
  *  weekly homeworks (400)
  * give tutorials on my lisp and ourmine
 
+== FSS ===
+
++ FSS for continuous classes http://researchcommons.waikato.ac.nz/handle/10289/1024
+
 == Content changes ==
 
  * adversarial   search : http://www.cs.washington.edu/homes/pedrod/papers/kdd04.pdf
