@@ -9,9 +9,12 @@
  *  weekly homeworks (400)
  * give tutorials on my lisp and ourmine
 
+== classifiers ==
+
+ * winnow: http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.21.1166&type=ab
 == FSS ===
 
-+ FSS for continuous classes http://researchcommons.waikato.ac.nz/handle/10289/1024
+ * SS for continuous classes http://researchcommons.waikato.ac.nz/handle/10289/1024
 
 == Content changes ==
 
