@@ -5,6 +5,7 @@
 == Org changes ==
 
  * more student control of projects
+    * generic project. find a user who cares about something. get rules from them (hypotheses) that reflect their current policies. get data from them. maybe do a GAC and generate at random half way between any parent/child (so higher in the tree is more abstract). learn counter examples. build classifier that learns to pick and reject counter examples (use that as a reality filter on the generator). 
  * give them a  text book
  *  weekly homeworks (400)
  * give tutorials on my lisp and ourmine
