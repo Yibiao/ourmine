@@ -2,6 +2,10 @@
 
  <img  align=middle src="http://chart.apis.google.com/chart?cht=tx&chl=x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 
+== Background Notes ==
+
+ * http://expdb.cs.kuleuven.be/expdb/index.php
+
 == Org changes ==
 
  * more student control of projects
