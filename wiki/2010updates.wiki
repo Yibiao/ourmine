@@ -13,6 +13,7 @@
  * give them a  text book
  *  weekly homeworks (400)
  * give tutorials on my lisp and ourmine
+ * active learning: http://hunch.net/~active_learning/
 
 == classifiers ==
 
