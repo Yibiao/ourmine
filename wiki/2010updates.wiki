@@ -17,6 +17,7 @@
 == classifiers ==
 
  * winnow: http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.21.1166&type=ab
+
 == FSS ===
 
  * SS for continuous classes http://researchcommons.waikato.ac.nz/handle/10289/1024
@@ -31,6 +32,7 @@
  * single pass k-menas: (also, a good example of a research paper) :http://www.sigmod.org/disc/disc01/out/websites/kdd_explorations_2/farnstrom.pdf
  * triangle inequality and k-means : http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.14.8422&rep=rep1&type=pdf
  * alternatives to k-meanshhttp://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.6.2789&rep=rep1&type=pdf
+ * other classifiers http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.125.9225&type=ab
 
 == model trees ==
 
