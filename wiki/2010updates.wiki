@@ -5,6 +5,7 @@
 == Background Notes ==
 
  * http://expdb.cs.kuleuven.be/expdb/index.php
+ * Kolmogorov complexity: http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.81.3114
 
 == Org changes ==
 
