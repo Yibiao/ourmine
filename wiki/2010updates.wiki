@@ -9,7 +9,7 @@
 
 == resources ==
 
-* http://metaoptimize.com/qa/questions/?sort=mostvoted
+ * http://metaoptimize.com/qa/questions/?sort=mostvoted
 
 == Org changes ==
 
