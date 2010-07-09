@@ -11,6 +11,10 @@
 
  * http://metaoptimize.com/qa/questions/?sort=mostvoted
 
+== evaluation ==
+
+ * http://www.site.uottawa.ca/~cdrummon/pubs/jetai09.pdf
+
 == Org changes ==
 
  * more student control of projects
