@@ -2,6 +2,11 @@
 
  <img  align=middle src="http://chart.apis.google.com/chart?cht=tx&chl=x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 
+== buzz words
+
+ * [http://en.wikipedia.org/wiki/Predictive_analytics Predictive analytics]
+ * [http://en.wikipedia.org/wiki/Business_intelligence Business Intelligence]
+
 == Background Notes ==
 
  * http://expdb.cs.kuleuven.be/expdb/index.php
