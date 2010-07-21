@@ -2,6 +2,33 @@
 
  <img  align=middle src="http://chart.apis.google.com/chart?cht=tx&chl=x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 
+== vector space model ==
+
+ * rows
+   * delete 
+      * under-sampling
+      * instance sampling
+      * anomaly detection
+   * weight
+   * group
+      * clustering
+   * add 
+      * use cluster centroids
+      * over-sampling
+      * prototype generation
+      * active learning
+ * columns
+     * delete
+        * feature selection
+     * weight
+         * fuzzy selection
+     * group
+         * 2R, AODE
+     * add
+         * PCA
+         * active learning
+
+
 == buzz words ==
 
  * [http://en.wikipedia.org/wiki/Predictive_analytics Predictive analytics]
