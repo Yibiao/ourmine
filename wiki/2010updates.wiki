@@ -6,10 +6,19 @@
 
 We have a view that the data more important than the algorithms. Therefore, we view DM as operations on tables of data. Each row of that table is a point in a hyper-dimensional space. Our job is to explore that space to discover its structure.
 
- * base methods
+We therefore structure this class around manipulations to tables (rows and columns) of data. One advantage of this is that data mining is usual the application of dozens of small functions to the tables. This view leads to a list of simple functions that can be implemented by the data mining novice. The second advantage of this view, is that it encourages more of a "mash up" view of data mining as the interaction of dozens of little functions, each of which can be easily understood. This is useful when:
+
+ * trying to improve an existing learner (you can replace the functions with other operators on the tables) 
+ * in new domains where existing techniques fail, to designing new algorithms
+ * during research: when reading a new technique, consider "what table operations does in include, subsume, improve", etc.
+
+=== Base methods ===
+
    * slice, recursively: oner.
    * build one function per class, classify by returning the class whose function returns the highest value: nb, byperpipes
-   * float in, look around (NN)
+   * float in, look around (NN) - non-parametric statistics
+
+=== Table operations ===
 
  * rows
    * delete 
