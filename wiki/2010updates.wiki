@@ -4,12 +4,20 @@
 
 == vector space model ==
 
+We have a view that the data more important than the algorithms. Therefore, we view DM as operations on tables of data. Each row of that table is a point in a hyper-dimensional space. Our job is to explore that space to discover its structure.
+
+ * base methods
+   * slice, recursively: oner.
+   * build one function per class, classify by returning the class whose function returns the highest value: nb, byperpipes
+   * float in, look around (NN)
+
  * rows
    * delete 
       * under-sampling
       * instance sampling
       * anomaly detection
    * weight
+      * kernel functions in NN
    * group
       * clustering
    * add 
@@ -21,14 +29,18 @@
      * delete
         * feature selection
      * weight
-         * fuzzy selection
+         * fuzzy selection: b^2/(b+r), infogain, tf*idf
      * group
          * 2R, AODE
      * add
-         * PCA
+         * classification
+            * utility functions (class weighting, n to one)
+            * bore: best or rest   
+         * rotate:
+            * PCA
+            * [http://www-connex.lip6.fr/~amini/RelatedWorks/svm_intro.pdf svm kerms]
          * active learning
-
-
+  
 == buzz words ==
 
  * [http://en.wikipedia.org/wiki/Predictive_analytics Predictive analytics]
@@ -39,6 +51,18 @@
 
  * http://expdb.cs.kuleuven.be/expdb/index.php
  * Kolmogorov complexity: http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.81.3114
+
+== support vector machines == 
+
+The ideaof SVmachines: map the training data into a higher- 
+dimensional feature space viaΦ, and construct a separating hyperplane with 
+maximum margin there.This yields a nonlinear decision boundary in input space. 
+By the use of a kernel function (1.2), it is possible to compute the separating 
+hyperplane without explicitly carrying out the map into the feature space. 
+
+Figs 1.4 are good and fig 1.5 and fig 1.2
+
+  * http://www-connex.lip6.fr/~amini/RelatedWorks/svm_intro.pdf
 
 == resources ==
 
