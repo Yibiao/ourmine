@@ -27,10 +27,11 @@ We therefore structure this class around manipulations to tables (rows and colum
       * under-sampling
       * instance sampling
       * anomaly detection
+         * meta-learning to delete (TEAK)
    * weight
       * kernel functions in NN
    * group
-      * clustering
+      * clustering. k-means. K++. Genic. Compass.
    * add 
       * use cluster centroids
       * over-sampling
@@ -42,8 +43,10 @@ We therefore structure this class around manipulations to tables (rows and colum
      * weight
          * fuzzy selection: b^2/(b+r), infogain, tf*idf
      * group
-         * 2R, AODE
+         *  AODE
      * add
+         * 2R
+         * which
          * classification
             * utility functions (class weighting, n to one)
             * bore: best or rest   
