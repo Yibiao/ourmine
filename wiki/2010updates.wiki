@@ -31,7 +31,7 @@ We therefore structure this class around manipulations to tables (rows and colum
    * weight
       * kernel functions in NN
    * group
-      * clustering. k-means. K++. Genic. Compass.
+      * clustering. k-means. K++. Genic. Compass. [http://www.google.com/url?sa=t&source=web&cd=1&ved=0CBYQFjAA&url=http%3A%2F%2Fhomepages.inf.ed.ac.uk%2Frbf%2FCVonline%2FLOCAL_COPIES%2FTUZEL1%2FMeanShift.pdf&ei=WVdITNrzI4T48Aab45SBDw&usg=AFQjCNFhj07okkQ7QnPjPpALOcRWhCVRLw&sig2=ei7drlysnHCzezMUfiG7wQ Mean shift]
    * add 
       * use cluster centroids
       * over-sampling
