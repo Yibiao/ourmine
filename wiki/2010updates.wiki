@@ -88,7 +88,7 @@ Figs 1.4 are good and fig 1.5 and fig 1.2
 
 == Org changes ==
 
- * start with rep grids, nomograms, timm's cheap visualizer
+ * start with rep grids, nomograms, timm's cheap visualizer, ripple down rules
  * more student control of projects
     * generic project. find a user who cares about something. get rules from them (hypotheses) that reflect their current policies. get data from them. maybe do a GAC and generate at random half way between any parent/child (so higher in the tree is more abstract). learn counter examples. build classifier that learns to pick and reject counter examples (use that as a reality filter on the generator). 
  * give them a  text book
