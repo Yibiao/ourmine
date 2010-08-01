@@ -65,6 +65,7 @@ We therefore structure this class around manipulations to tables (rows and colum
 
  * http://expdb.cs.kuleuven.be/expdb/index.php
  * Kolmogorov complexity: http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.81.3114
+ * [http://clqr.berlios.de/download.php Lisp quick index]
 
 == support vector machines == 
 
