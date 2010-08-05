@@ -1,5 +1,11 @@
 #summary stuff to change next time around
 
+== motivation ==
+
+building learners is easy. once you build some framework for loading data into some ram-based table
+structure then its a snap to build new learners- if you understand the vector space model and the
+operations that can be performed on it
+
 == exam ==
 
  * define acc, pd, pf, prec, f
