@@ -1,5 +1,19 @@
 #summary stuff to change next time around
 
+== exam ==
+
+ * define acc, pd, pf, prec, f
+    * when would you use each?
+    * when would you not use each?
+ * given some examples of actual and predicted, calculate acc, pd, pf, prec, f
+ * derive a relationship between   pdf, pf ,prec . use that expression to show when prec should be avoided.
+
+ * standard deviation, gini, entropy all measure the same thing
+     * what is that thing?
+ * define sd, gini, entopy using an equation
+     * for what kinds if data would you use each?
+ * given a sample of N things, computer their sd, gini, entropy
+ 
  <img  align=middle src="http://chart.apis.google.com/chart?cht=tx&chl=x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 
 we want to teach data mining. we want to divide the data mining task into dozens of small functions, that can be mixed and matched as required.  This is useful when:
