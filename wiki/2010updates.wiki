@@ -1,10 +1,15 @@
 #summary stuff to change next time around
 
-== motivation ==
+== intro ==
+=== motivation ===
 
 building learners is easy. once you build some framework for loading data into some ram-based table
 structure then its a snap to build new learners- if you understand the vector space model and the
 operations that can be performed on it
+
+=== the freq count example ===
+
+doing the f count for bayes, b^2/(b+r)
 
 == exam ==
 
